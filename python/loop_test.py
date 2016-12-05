@@ -18,4 +18,13 @@ sum = 0
 while n > 0:
     sum += n
     n -= 1
+    if n <= 5 :
+        break
 print('sum =', sum)
+
+n = 10
+while n > 0:
+    n = n - 1
+    if n % 2 == 1:
+        continue
+    print(n)
