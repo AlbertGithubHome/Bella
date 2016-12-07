@@ -1,4 +1,4 @@
-#List Comprehensions test
+#generator test
 
 L = [x * x for x in range(1, 20 , 2)]
 print('L = [x * x  for x in range(1, 20 , 2)] =', L)
