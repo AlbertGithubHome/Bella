@@ -1,4 +1,4 @@
-#reduce test
+#filter test
 
 L = [x for x in range(1, 20 , 1)]
 print('L = [x * x  for x in range(1, 20 , 1)] =', L)
