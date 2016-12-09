@@ -11,3 +11,4 @@ myfunc = func()
 
 print('myfunc =', myfunc)
 print('myfunc() =', myfunc(4, 5))
+
