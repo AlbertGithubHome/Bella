@@ -8,8 +8,7 @@ content = file_handle.read().replace('_', '1').split()
 file_handle.close()
 
 # decode with base64
-decode_content = reduce(lambda x, y : x + y, map(lambda n : chr(int(n, base=2)), content))
-decode_content = base64.b64decode(decode_content)
+decode_content = base64.b64decode(reduce(lambda x, y : x + y, map(lambda n : chr(int(n, base=2)), content)))
 
 # output result into a file of 'tar.gz' type
 file_handle = open('1111.segmentfault.com.tar.gz', 'wb')
