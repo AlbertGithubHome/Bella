@@ -42,5 +42,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# special file
+# special file and dir
 __pycache__
+crawler_images
+crawler_images_csdn
