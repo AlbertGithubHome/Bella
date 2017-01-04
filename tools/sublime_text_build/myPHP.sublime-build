@@ -1,0 +1,5 @@
+{
+    "cmd": ["H:\\Program Files\\wamp\\bin\\php\\php5.5.12\\php.exe", "$file"],
+    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+    "selector": "source.python",
+}
