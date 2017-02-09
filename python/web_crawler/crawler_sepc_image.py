@@ -31,5 +31,4 @@ def start_crawler():
 
 # start to crawler
 if __name__ == '__main__':
-    #start_crawler()
-    #urllib.request.urlretrieve('http://www.getuikit.net/docs/images/bg_teaser.svg', 'test.svg')
+    urllib.request.urlretrieve('http://www.getuikit.net/docs/images/bg_teaser.svg', 'bg_teaser.svg')
