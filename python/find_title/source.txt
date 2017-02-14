@@ -1,0 +1,1070 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="filetype" content="0"> 
+<meta name="publishedtype" content="1"> 
+<meta name="pagetype" content="2"> 
+<meta name="catalogs" content="3566">
+<title>中华人民共和国水利部-直属单位</title>
+<link href="../../../images/css.css" rel="stylesheet" type="text/css" />
+<link href="../../../images/style.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+.STYLE1 {font-family:Verdana, Arial, Helvetica, sans-serif}
+-->
+</style>
+</head>
+
+<body>
+<div id="body"><!--头部开始头-->
+   
+<script type="text/javascript">
+ 
+
+function SetHome(url){//设为首页
+        if (document.all) {
+            document.body.style.behavior='url(#default#homepage)';
+               document.body.setHomePage(url);
+        }else{
+            alert("抱歉，您的浏览器不支持自动设为首页，请手动设置！");
+        }
+}
+
+</script>
+
+
+<base target="_blank">
+<style>
+.tsong12_ccc{ font-family:"宋体"; font-size:12px; color:#cccccc;}
+.tsong12_004286{ font-family:"宋体"; font-size:12px; color:#004286;}
+.tari12_fff{ font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#ffffff;}
+.tari12_fff a{ font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#ffffff; text-decoration:underline;}
+.tari12_fff a:hover{ font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#ffffff; text-decoration:underline;}
+.ts12_fff{ font-family:"宋体"; font-size:12px; color:#ffffff;}
+.ts12_fff a{ font-family:"宋体"; font-size:12px; color:#ffffff; text-decoration:none;}
+.ts12_fff a:hover{ font-family:"宋体"; font-size:12px; color:#ffffff; text-decoration:underline;}
+</style>
+<style>
+.foot_t1{ color:#666666; font-size:12px; line-height:14px;}
+.foot_t1 a{ color:#0053a6;  font-size:12px; line-height:14px; text-decoration:none;}
+.foot_t1 a:hover{ color:#0053a6;  font-size:12px; line-height:14px; text-decoration:underline;}
+
+.foot_t2{ color:#666666; font-size:12px; line-height:20px;}
+.foot_t2 a{ color:#666666;  font-size:12px; line-height:20px; text-decoration:none;}
+.foot_t2 a:hover{ color:#666666;  font-size:12px; line-height:20px; text-decoration:underline;}
+#song14_bai {
+color:#FFFFFF;
+font-size:14px;
+font-weight:bold;
+text-decoration:none;
+}
+#song14_bai a:link {
+color:#FFFFFF;
+font-size:14px;
+font-weight:bold;
+text-decoration:none;
+}
+#song14_bai a:visited {
+color:#FFFFFF;
+font-size:14px;
+font-weight:bold;
+text-decoration:none;
+}
+#song14_bai a:hover {
+color:#FFFFFF;
+font-size:14px;
+font-weight:bold;
+text-decoration:underline;
+}
+</style>
+<script>
+function checksubmit()
+{
+    return true;
+}
+function checksubmit1()
+{
+        if(document.getElementById("searchword1").value.length == 0){
+             alert("请输入检索词！");
+             return false;
+        }   
+        else {
+			var words = document.getElementById("searchword1").value;
+			wordlist = words.split(' ');
+if(wordlist.length>1){
+			msg = "doctitle=" + wordlist[0]
+			for(i = 1; i < wordlist.length; i++){
+				msg += " and doctitle ="
+				msg += wordlist[i];
+			}
+			document.getElementById("searchword").value = msg;
+}
+else
+    document.getElementById("searchword").value = document.getElementById("searchword1").value ;
+            return true;
+        }
+}
+function add_option()
+{
+	var currenturl=location.href;
+	var obj=document.getElementById("searchchannel");
+	if(currenturl.indexOf("zwzc")!=-1){
+		obj.add(new Option("部长之窗","110373"));
+		obj.add(new Option("组织机构","77632"));
+		obj.add(new Option("政务公开","119848"));
+		obj.add(new Option("人事信息","119105"));
+		obj.add(new Option("政策法规","105644"));
+		obj.add(new Option("部门公报","87539"));
+	}
+	else if(currenturl.indexOf("slzx")!=-1){
+		obj.add(new Option("水利要闻","127035"));
+		obj.add(new Option("司局直属","104216"));
+		obj.add(new Option("地方水事","110150"));
+		obj.add(new Option("关注基层","191884"));
+		obj.add(new Option("媒体之声","97093"));
+		obj.add(new Option("通知公告","142051"));
+		obj.add(new Option("专题报道","192876"));
+		obj.add(new Option("简报集萃","102187"));
+		obj.add(new Option("网上展厅","115126"));
+	}
+	else if(currenturl.indexOf("sldq")!=-1){
+		obj.add(new Option("江河水利志","77537"));
+		obj.add(new Option("水利工程","94740"));
+		obj.add(new Option("水利百科","161642"));
+	}
+	else if(currenturl.indexOf("hdpt")!=-1){
+		obj.add(new Option("水利信访","128806"));
+	}	
+}
+</script>
+
+<script src="/images/20140429jquery.js"></script>
+<script src="/images/jsearch.js"></script>
+<script src="/images/layer.js"></script>
+<style>
+<style>
+#q {
+    width: 210px;
+}
+#q {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #d8d8d8 #d8d8d8 #d8d8d8 #d8d8d8;
+    border-image: none;
+    border-style: solid solid solid solid;
+    border-width: 1px 1px 1px 1px;
+    font-size: 12px;
+    height: 21px;
+	line-height: 21px;
+    margin: 0;
+    outline: 0 none;
+    vertical-align: middle;
+	z-index:1;
+}
+.jsearch-q-cover-placeholder {
+    background-color: #ffffff;
+    bottom: 1px;
+    color: #a0a0a0;
+    cursor: pointer;
+    display: none;
+    font-size: 12px;
+    left: 1px;
+    line-height: 16px;
+    padding-left: 10px;
+    position: absolute;
+    right: 1px;
+    text-align: left;
+    top: 1px;
+	height:16px;
+	margin-top:2px
+}
+.jsearch-q-wrap {
+    float: left;
+    height: auto;
+    position: relative;
+    width: 210px;
+    margin-top:5px
+}
+#jsearch-microphone {
+    bottom: 2px;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    width: 22px;
+    z-index: 100;
+    height:20px
+}
+#jsearch-microphone-setup {
+    background:  url("/images/mic-options.png") no-repeat scroll right bottom;
+    bottom: 0;
+    cursor: pointer;
+    height: 12px;
+    position: absolute;
+    right: 0;
+    width: 12px;
+	margin-top:-1px
+}
+#jsearch-microphone embed {
+    height: 100%;
+    width: 100%;
+}
+.layui-layer-btn0,.layui-layer-btn1{font-size:14px!important; color:#fff!important}
+</style>
+
+<table width="1002" cellpadding="0" cellspacing="0" border="0" align="center">
+	<tr>
+	<td height="25">
+		<table cellpadding="0" cellspacing="0" border="0" height="25" width="1002" style="background:url(/image/c_top_loginbg.gif) no-repeat;">
+			<tr>
+				<td width="149" class="tsong12_ccc">&nbsp;<script>
+					var strdate = new Date();
+					var stryear = strdate.getFullYear();
+					var strmonth = strdate.getMonth() + 1;
+					var strday = strdate.getDate();
+					var strweek = strdate.getDay();
+					var arr_week=new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+					document.write (stryear +"年"+ strmonth +"月"+ strday +"日 "+arr_week[strweek]+"&nbsp;&nbsp;");
+                </script></td>
+				<td width="585" style="padding-bottom:3px" class="tari12_fff">&nbsp;<a href="http://www.mwr.gov.cn/english/" style="color:#ffffff">English</a></td>
+				<td width="268" class="ts12_fff"><img src="/image/c_top_loginp1.gif" />&nbsp;<a href="javascript:SetHome('http://www.mwr.gov.cn/')" target="_self">设为首页</a>&nbsp;&nbsp;<img src="/image/c_top_loginp2.gif" />&nbsp;<a href="/map" style="color:#ffffff">网站地图</a>&nbsp;&nbsp;<img src="/image/c_top_loginp3.gif" />&nbsp;<a href="mailto:webmaster@mwr.gov.cn" style="color:#ffffff">联系我们</a>&nbsp;&nbsp;</td>
+			</tr>
+		</table>
+	</td>
+	</tr>
+	<tr>
+	<td height="150"><img src="/image/c_index-banner.gif" /></td>
+	</tr>
+	<tr>
+	<td height="32">
+		
+
+
+
+
+<table cellpadding="0" cellspacing="0" border="0" width="1002">
+			<tr>
+
+				<td width="95">
+					<a target="_blank"  href="http://search.mwr.gov.cn/"><img src="/images/20151111_slys.jpg" /></a>
+				</td>
+				<td width="218">
+				
+					<form action='http://search.mwr.gov.cn/jrobot/search.do' target='_blank' id='search-form' >
+
+					   <div class="jsearch-q-wrap" style="margin-top:0">
+								<div id="jsearch-microphone">
+									<div id="jsearch-microphone-setup"></div>
+
+				<embed src="/images/SpeechRecognition.swf" wmode="Opaque" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" style='z-index:2'>
+
+								</div>
+								<div style="display: block;" class="jsearch-q-cover-placeholder">
+									欢迎使用水利部<font color="#F0981D">智能搜索</font>
+								</div>
+<input name="pos" value="title,content,sectitle" type="hidden" />
+
+								<input type="text" class id="q" name="q" maxlength="50" autocomplete="off" style='display:block;width:210px' />
+
+							</div>
+				</form>
+				
+				
+				</td>
+				<td align="left"><img src='/images/20151111sousuo_11_sy.jpg' onclick='document.getElementById("search-form").submit()' style='cursor:pointer' /></td>
+				
+				<td width="317" class="tsong12_004286" align="right">
+<form action="http://mail.mwr.gov.cn/user/?q=login.do" method="post" target="_blank" name="loginMailForm" style="margin:0">	
+<script type="text/javascript">
+  document.loginMailForm.onsubmit = function() {
+    document.loginMailForm.user.value = document.loginMailForm.uid.value + '@mwr.gov.cn';
+  }
+</script>
+<input type="hidden" name="user" />
+<input type="hidden" name="go" value="/?q=base" />				
+	<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>水利部邮箱</td>
+    <td width="100" align="center"><input type="text" id="uid" style="border:solid 1px #808080; height:17px; width:89px;" value /></td>
+	<td><input type="password" name="password" style="border:solid 1px #808080;height:17px; width:89px;" /></td>
+	<td width="42" align="right"><input type="image" src="/image/c_top_loginbot.gif" border="0" /></td>
+  </tr>
+</table>			
+			
+			  </form></td>
+				
+				<td width="300" align="right">
+				  <select style="width:130px; height:21px;border:solid 1px #808080;" onchange="window.open(this.options[this.selectedIndex].value,target='_blank')" >
+				  <option value="#">--公共电子信箱--</option>
+				  <option value="/ggdzxx/gwy/">公务员行为规范监督信箱</option>
+                  <option value="/ggdzxx/slgc/">水利工程建设举报信箱</option>
+                  <option value="/hdpt/wsxf/wsxf/">水利部群众信访电子信箱</option>
+                  <option value="http://jjjc.mwr.gov.cn/wyjb/">水利纪检监察举报信箱</option>
+                  <option value="/ggdzxx/zlsy/">水利部治理商业贿赂举报信箱</option>
+                  <option value="/ggdzxx/zwgk/">政务公开监督信箱</option>
+				  </select>&nbsp;
+			  	<select style="width:130px; height:21px;border:solid 1px #808080;" onchange="window.open(this.options[this.selectedIndex].value,target='_blank')">
+				  <option value="#">--政府网站导航--</option>
+            <option value="http://www.gov.cn/">中国政府网</option>
+            <option value="http://www.mfa.gov.cn">外交部</option>
+            <option value="http://www.mod.gov.cn/">国防部</option>
+<option value="http://www.ndrc.gov.cn">发展改革委</option>
+<option value="http://www.moe.gov.cn">教育部</option>
+<option value="http://www.most.gov.cn">科技部</option>
+<option value="http://www.miit.gov.cn/">工业和信息化部</option>
+<option value="http://www.seac.gov.cn">国家民委</option>
+<option value="http://www.mps.gov.cn">公安部</option>
+<option value="http://www.ccdi.gov.cn">监察部</option>
+<option value="http://www.mca.gov.cn">民政部</option>
+<option value="http://www.moj.gov.cn/">司法部</option>
+<option value="http://www.mof.gov.cn">财政部</option>
+<option value="http://www.mohrss.gov.cn/">人力资源社会保障部</option>
+<option value="http://www.mlr.gov.cn/">国土资源部</option>
+<option value="http://www.mep.gov.cn/">环境保护部</option>
+<option value="http://www.mohurd.gov.cn/">住房城乡建设部</option>
+<option value="http://www.moc.gov.cn/">交通运输部</option>
+<option value="/">水利部</option>
+<option value="http://www.moa.gov.cn/">农业部</option>
+<option value="http://www.mofcom.gov.cn/">商务部</option>
+<option value="http://www.mcprc.gov.cn/">文化部</option>
+<option value="http://www.nhfpc.gov.cn/">卫生计生委</option>
+<option value="http://www.pbc.gov.cn/">人民银行</option>
+<option value="http://www.audit.gov.cn/">审计署</option>
+<option value="http://www.china-language.gov.cn/">国家语委</option>
+<option value="http://www.cnsa.gov.cn">航天局</option>
+<option value="http://www.caea.gov.cn">原子能机构</option>
+<option value="http://www.sasac.gov.cn/">国资委</option>
+<option value="http://www.customs.gov.cn/">海关总署</option>
+<option value="http://www.chinatax.gov.cn/">税务总局</option>
+<option value="http://www.saic.gov.cn/">工商总局</option>
+<option value="http://www.aqsiq.gov.cn/">质检总局</option>
+<option value="http://国家新闻出版广电总局.com">新闻出版广电总局</option>
+<option value="http://www.sport.gov.cn/">体育总局</option>
+<option value="http://www.chinasafety.gov.cn/">安全监管总局</option>
+<option value="http://www.sda.gov.cn/WS01/CL0001/">食品药品监管总局</option>
+<option value="http://www.stats.gov.cn/">统计局</option>
+<option value="http://www.forestry.gov.cn/">林业局</option>
+<option value="http://www.sipo.gov.cn/">知识产权局</option>
+<option value="http://www.cnta.gov.cn/">旅游局</option>
+<option value="http://www.sara.gov.cn/">宗教局</option>
+<option value="http://www.counsellor.gov.cn/">参事室</option>
+<option value="http://www.ggj.gov.cn/">国管局</option>
+<option value="http://www.ncac.gov.cn/">版权局</option>
+<option value="http://www.gqb.gov.cn/">侨办</option>
+<option value="http://www.hmo.gov.cn/">港澳办</option>
+<option value="http://www.chinalaw.gov.cn/">法制办</option>
+<option value="guoqing/2005-12/26/content_2652073.htm">国研室</option>
+<option value="http://www.gwytb.gov.cn/">台办</option>
+<option value="http://www.scio.gov.cn/">新闻办</option>
+<option value="http://www.xinhuanet.com/">新华社</option>
+<option value="http://www.cas.cn/">中科院</option>
+<option value="http://www.cssn.cn/">社科院</option>
+<option value="http://www.cae.cn/">工程院</option>
+<option value="http://www.drc.gov.cn/">发展研究中心</option>
+<option value="http://www.nsa.gov.cn/">行政学院</option>
+<option value="http://www.cea.gov.cn/">地震局</option>
+<option value="http://www.cma.gov.cn/">气象局</option>
+<option value="http://www.cbrc.gov.cn/">银监会</option>
+<option value="http://www.csrc.gov.cn/">证监会</option>
+<option value="http://www.circ.gov.cn/">保监会</option>
+<option value="http://www.ssf.gov.cn/">社保基金会</option>
+<option value="http://www.nsfc.gov.cn/">自然科学基金会</option>
+<option value="http://www.gjxfj.gov.cn/">信访局</option>
+<option value="http://www.chinagrain.gov.cn/">粮食局</option>
+<option value="http://www.nea.gov.cn/">能源局</option>
+<option value="http://www.sastind.gov.cn/">国防科工局</option>
+<option value="http://www.tobacco.gov.cn/">烟草局</option>
+<option value="http://www.safea.gov.cn/">外专局</option>
+<option value="http://www.scs.gov.cn/">公务员局</option>
+<option value="http://www.soa.gov.cn/">海洋局</option>
+<option value="http://www.sbsm.gov.cn/">测绘地信局</option>
+<option value="http://www.nra.gov.cn/">铁路局</option>
+<option value="http://www.caac.gov.cn/">民航局</option>
+<option value="http://www.post.gov.cn/">邮政局</option>
+<option value="http://www.sach.gov.cn/">文物局</option>
+<option value="http://www.satcm.gov.cn/">中医药局</option>
+<option value="http://www.safe.gov.cn/">外汇局</option>
+<option value="http://www.chinacoal-safety.gov.cn/mkaj/">煤矿安监局</option>
+<option value="http://www.saac.gov.cn/">档案局</option>
+<option value="http://www.oscca.gov.cn/">密码局</option>
+			  </select></td>
+			</tr>
+		</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</td>
+	</tr>
+</table>
+
+
+
+<!--头部结束-->
+   
+<!--内容部分开始-->
+<div>
+<!--左侧部分开始-->
+    <link href="../../images/css.css" rel="stylesheet" type="text/css" />
+
+<div>
+<!--左侧部分开始-->
+    <div id="left" >
+      <table width="183" border="0" align="center" cellpadding="0" cellspacing="0" style="margin:0px auto 5px auto; background-image:url(/image/c_left-lan.gif); background-repeat:no-repeat">
+	  <tr>
+		<td height="25" align="center" valign="middle" class="bai14" style="padding-top:2px;"><a href="/" style="font-size:14px; color:#FFFFFF">主站首页</a></td>
+	  </tr>
+	</table>	
+	  <table width="183" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td height="25" align="center" valign="middle" background="/image/c_left-lan.gif" class="bai14" style="background-repeat:no-repeat">资讯频道</td>
+        </tr>
+        <tr>
+          <td><br />
+		  <table width="155" align="center" border="0" cellpadding="0" cellspacing="0" class="left_t">           
+			<tr>
+			  <td height="25"><a target="_blank"  href="/slzx/szyw/">时政要闻</a></td>
+              <td height="25"><a target="_blank"  href="/slzx/slyw/">水利要闻</a></td>
+			            
+            </tr>			
+			<tr>
+			  <td height="25"><a target="_blank"  href="/slzx/sjzsdwdt/">司局直属</a></td> 
+              <td height="25"><a target="_blank"  href="/slzx/dfss/">地方水事</a></td>
+			          
+            </tr>			
+			<tr>
+			<td height="25"><a target="_blank"  href="/slzx/mtzs/">媒体之声</a></td>   
+              <td height="25"><a target="_blank"  href="/slzx/ztpd/">专题报道</a></td>
+			           
+            </tr>				
+			<tr>
+			<td height="25"><a target="_blank"  href="/slzx/gzjc/">关注基层</a></td>  
+              <td height="25"><a target="_blank"  href="/slzx/wszt/">网上展厅</a></td>
+			       
+            </tr>			
+			
+          </table>
+<br /></td>
+        </tr>
+      </table>
+	  <table width="183" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td height="25" align="center" valign="middle" background="/image/c_left-lan.gif" id="song14_bai" style="background-repeat:no-repeat">政务公开</td>
+        </tr>
+        <tr>
+          <td><br />
+          <table width="155" align="center" border="0" cellpadding="0" cellspacing="0" class="left_t">
+              
+			<tr>
+              <td height="25"><a target="_blank"  href="http://www.mwr.gov.cn/zwzc/ldxx/">部长之窗</a></td>
+			  <td height="25"><a target="_blank"  href="http://www.mwr.gov.cn/zwzc/jgjs/">组织机构</a></td>           
+            </tr>			
+			<tr>
+			  <td height="25"><a target="_blank"  href="/zwzc/gwywj/">国务院文件</a></td>
+              <td height="25"><a target="_blank"  href="http://zwgk.mwr.gov.cn/">公开目录</a></td>
+			</tr>			
+			<tr>
+              <td height="25"><a target="_blank"  href="/zwzc/ghjh/">规划计划</a></td>
+			  <td height="25"><a target="_blank"  href="http://www.mwr.gov.cn/zwzc/zcfg/">政策法规</a></td> 
+			  
+            </tr>			
+			<tr>          
+
+			  <td height="25"><a target="_blank"  href="http://www.mwr.gov.cn/zwzc/rsxx/">人事信息</a></td> 
+
+			  			  <td height="25"><a target="_blank"  href="http://gjkj.mwr.gov.cn/jsjd1/bzcx/">技术标准</a></td>     
+			
+            </tr>				
+			<tr>      
+
+              <td height="25"><a target="_blank"  href="http://www.mwr.gov.cn/zwzc/czxx/">财务信息</a></td>
+
+            
+	      			  <td height="25"><a href="http://www.mwr.gov.cn/zwzc/jbjc/" target="_blank">简报集萃</a></td>    
+				 </tr>			
+			<tr>       	  
+
+              <td height="25"><a target="_blank"  href="http://www.mwr.gov.cn/zwzc/hygb/">部门公报</a></td>
+			  
+			 
+
+	                    <td height="25"><a target="_blank"  href="http://www.mwr.gov.cn/zwzc/tzgg/">通知公告</a></td>
+						 </tr>			
+			<tr>       
+                    <td height="25"><a target="_blank"  href="http://rcpu.cwun.org/">信用平台</a></td>
+					<td height="25">&nbsp;</td>         
+
+
+
+            </tr>
+						
+			  
+          </table>
+          <br /></td></tr>
+      </table>
+	  <table width="183" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td height="25" align="center" valign="middle" background="/image/c_left-lan.gif" id="song14_bai" style="background-repeat:no-repeat">在线服务</td>
+        </tr>
+        <tr>
+          <td><br />
+          <table width="155" align="center" border="0" cellpadding="0" cellspacing="0" class="left_t">
+              
+			<tr>
+              <td height="25"><a target="_blank"  href="http://zwgk.mwr.gov.cn/zfxxgksq/sqzn/">依申请公开</a></td>
+			  <td height="25"><a target="_blank"  href="/zxfw/xzspml/201506/t20150610_684621.html">行政审批目录</a></td>           
+            </tr>	
+			<tr>
+              <td height="25"><a target="_blank"  href="http://xzsp.mwr.gov.cn/XZSP/ea/home/home.jsp">预受理预审查</a></td>
+			  <td height="25"><a target="_blank"  href="http://www.mwr.gov.cn/zxfw/xzcfzqqd/201512/t20151230_730574.html">行政处罚清单</a></td>           
+            </tr>
+			<tr>
+              <td height="25"><a target="_blank"  href="/hdpt/jdxx/">监督信箱</a></td>
+			  <td height="25"><a target="_blank"  href="/zxfw/zhcxfwpt/">综合查询</a></td>           
+            </tr>			
+			<tr>
+              <td height="25"><a href="http://xxfb.hydroinfo.gov.cn/" target="_blank">实时水情</a></td>
+			  <td height="25"><a target="_blank"  href="/zxfw/fwxt/">服务系统</a></td>           
+            </tr>				
+			<tr>
+              <td height="25"><a target="_blank"  href="/zwgk/wsff.htm">场景导航</a></td>
+			  <td height="25"><a target="_blank"  href="/zxfw/dffw/">地方服务</a></td>           
+            </tr>			
+			
+			  
+          </table>
+          <br /></td></tr>
+      </table>
+	  <table width="183" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td height="25" align="center" valign="middle" class="bai14" background="/image/c_left-lan.gif" style="background-repeat:no-repeat">互动回应</td>
+        </tr>
+        <tr>
+          <td><br />
+         <table width="155" align="center" border="0" cellpadding="0" cellspacing="0" class="left_t">
+              
+			<tr>
+              <td height="25"><a target="_blank"  href="/hdpt/gzzx/">公众咨询</a></td>
+			  <td height="25"><a target="_blank"  href="/zwzc/zcfg/jd/">政策解读</a></td>           
+            </tr>			
+			<tr>
+              <td height="25"><a target="_blank"  href="/hdpt/jbts/">举报投诉</a></td>
+			  <td height="25"><a target="_blank"  href="/hdpt/zxft/">在线访谈</a></td>           
+            </tr>			
+			<tr>
+              <td height="25"><a target="_blank"  href="/hdpt/wsxf/">网上信访</a></td>
+			  <td height="25"><a target="_blank"  href="/hdpt/yjzq/">征求意见</a></td>           
+            </tr>				
+			<tr>
+			 <td height="25"><a target="_blank"  href="http://www.mwr.gov.cn/hdpt/wsdt/">网上答题</a></td>
+			  <td height="25"><a target="_blank"  href="http://www.mwr.gov.cn/hdpt/xwdy/rssdy/">订阅服务</a></td> 
+            </tr>	
+
+			<tr>
+			 <td height="25"><a target="_blank"  href="http://www.mwr.gov.cn/hdpt/dfhd/">地方互动</a></td>   
+            </tr>	
+		  </table>
+          
+          <br /></td></tr>
+      </table>
+    </div>
+<!--左侧部分结束-->
+    <!--左侧部分结束-->
+	
+	
+<!--右侧内容部分开始-->	
+    <div id="maintable">
+	     <div id="maintabletop" >当前位置: <a href="../../../" class="CurrChnlCls">首页</a>&nbsp;>&nbsp;<a href="../../" class="CurrChnlCls">政务公开</a>&nbsp;>&nbsp;<a href="../" class="CurrChnlCls">组织机构</a>&nbsp;>&nbsp;<a href="./" class="CurrChnlCls">直属单位</a></div>
+		 <div style="padding:15px 0 10px 15px">
+		  <!--<div ><img src="../../../images/c_wzlj.gif" width="803" height="142" /></div>-->
+		 <div id="song14_bai" style="background-image:url(/images/20091120_bzbg.gif); height:40px; background-repeat:no-repeat;  margin:3px 0 5px 0">
+		     <table width="100%" border="0" cellspacing="0" cellpadding="0">
+               <tr>
+                 <td width="15%" height="32" align="center" valign="bottom"><a href="../" style='font-size:16px; font-weight:bold; color:#ffffff'>组织机构</a></td>
+                 <td valign="bottom" id="song14_bai">
+				 
+				  
+				 
+				 	<a href="../zyzn/">主要职能</a>&nbsp;&nbsp;
+				 				 
+				 
+				 	|&nbsp;&nbsp;<a href="../jgsj/">机关司局</a>&nbsp;&nbsp;
+				 
+				 	|&nbsp;&nbsp;<a href="./">直属单位</a>&nbsp;&nbsp;
+				 	
+				 
+				 
+				 </td>
+               </tr>
+             </table>
+		   </div>
+		   <div style="width:803px; float:left">
+		       <div style="margin-top:10px">
+		         <div class="song15_lan" style="padding-left:15px"><strong>直属单位</strong></div>
+				 <div style="padding:5px 0 0 10px"><img src="../../../images/c_wzlj-lan.gif" width="780" height="4" /></div>
+				 <div style=" padding:10px 25px 10px 20px; line-height:18px">
+				   
+				   		<div class=TRS_Editor><table cellspacing="0" cellpadding="0" width="90%" align="center" border="0">
+    <tbody>
+        <tr>
+            <td align="left">&nbsp;</td>
+        </tr>
+    </tbody>
+</table>
+<table class="unnamed1" bordercolor="#ccccff" cellspacing="1" width="90%" align="center" border="0">
+    <tbody>
+        <tr style="height: 15pt" height="35" bgcolor="#ff9900">
+            <td style="height: 15pt" height="35" width="13" align="center"><font color="#ffffff">序号</font></td>
+            <td height="35" width="240" align="center"><font color="#ffffff">部直属事业单位</font></td>
+            <td height="35" width="200" align="center"><font color="#ffffff">地<font class="font7"><span style="mso-spacerun: yes">　　　 </span></font></font><font class="font6" color="#ffffff">址</font></td>
+            <td height="35" width="45" align="center"><font color="#ffffff">邮编</font></td>
+            <td height="35" width="35" align="center"><font color="#ffffff">区号</font></td>
+            <td height="35" width="62" align="center"><font color="#ffffff">微波</font></td>
+            <td height="35" width="78" align="center"><font color="#ffffff">办公室</font></td>
+        </tr>
+        <tr style="height: 15pt" height="35" bgcolor="#f7f7f7">
+            <td style="height: 15pt" height="35" colspan="9" align="center">
+            <p align="left"><b>&nbsp;流 域 机 构</b></p>
+            </td>
+        </tr>
+        <tr style="height: 15pt" height="35" bgcolor="#f7f7f7">
+            <td style="height: 15pt" height="35" width="13" align="center">1</td>
+            <td height="35" width="240"><a target="_blank" href="http://www.cjw.gov.cn/">长江水利委员会</a></td>
+            <td height="35" width="200">湖北省武汉市解放大道<font class="font7">1863</font><font class="font6">号</font></td>
+            <td height="35" width="45" align="right">430010</td>
+            <td height="35" width="35" align="right">027</td>
+            <td height="35" width="62" align="right">9270</td>
+            <td height="35" width="78" align="right">82828245</td>
+        </tr>
+        <tr style="height: 15pt" height="35" bgcolor="#f7f7f7">
+            <td style="height: 15pt" height="35" width="13" align="center">2</td>
+            <td height="35" width="240"><a target="_blank" href="http://www.yellowriver.gov.cn/">黄河水利委员会</a></td>
+            <td height="35" width="200">河南省郑州市金水路<font class="font7">11</font><font class="font6">号</font></td>
+            <td height="35" width="45" align="right">450003</td>
+            <td height="35" width="35" align="right">0371</td>
+            <td height="35" width="62" align="right">93710</td>
+            <td height="35" width="78" align="right">66022160</td>
+        </tr>
+        <tr style="height: 15pt" height="35" bgcolor="#f7f7f7">
+            <td style="height: 15pt" height="35" width="13" align="center">3</td>
+            <td height="35" width="240"><a target="_blank" href="http://www.hrc.gov.cn/">淮河水利委员会</a>&nbsp;</td>
+            <td height="35" width="200">安徽省蚌埠市东海大道<font class="font7">3055</font><font class="font6">号</font></td>
+            <td height="35" width="45" align="right">233000</td>
+            <td height="35" width="35" align="right">0552</td>
+            <td height="35" width="62" align="right">95520</td>
+            <td height="35" width="78" align="right">3093719</td>
+        </tr>
+        <tr style="height: 15pt" height="35" bgcolor="#f7f7f7">
+            <td style="height: 15pt" height="35" width="13" align="center">4</td>
+            <td height="35" width="240"><a target="_blank" href="http://www.hwcc.gov.cn/">海河水利委员会</a></td>
+            <td height="35" width="200">天津市河东区龙潭路<font class="font7">15</font><font class="font6">号</font></td>
+            <td height="35" width="45" align="right">300170</td>
+            <td height="35" width="35" align="right">022</td>
+            <td height="35" width="62" align="right">9220</td>
+            <td height="35" width="78" align="right">24102327</td>
+        </tr>
+        <tr style="height: 15pt" height="35" bgcolor="#f7f7f7">
+            <td style="height: 15pt" height="35" width="13" align="center">5</td>
+            <td height="35" width="240"><a target="_blank" href="http://www.pearlwater.gov.cn/">珠江水利委员会</a></td>
+            <td height="35" width="200">广东省广州市天河天寿路80号</td>
+            <td height="35" width="45" align="right">510611</td>
+            <td height="35" width="35" align="right">020</td>
+            <td height="35" width="62" align="right">9200</td>
+            <td height="35" width="78" align="right">87117780</td>
+        </tr>
+        <tr style="height: 15pt" height="35" bgcolor="#f7f7f7">
+            <td style="height: 15pt" height="35" width="13" align="center">6</td>
+            <td height="35" width="240"><a target="_blank" href="http://www.slwr.gov.cn/">松辽水利委员会</a></td>
+            <td height="35" width="200">吉林省长春市解放大路<font class="font7">4188</font><font class="font6">号</font></td>
+            <td height="35" width="45" align="right">130021</td>
+            <td height="35" width="35" align="right">0431</td>
+            <td height="35" width="62" align="right">94310</td>
+            <td height="35" width="78" align="right">85607066</td>
+        </tr>
+        <tr style="height: 15pt" height="35" bgcolor="#f7f7f7">
+            <td style="height: 15pt" height="35" width="13" align="center">7</td>
+            <td height="35" width="240"><a target="_blank" href="http://www.tba.gov.cn/">太湖流域管理局</a></td>
+            <td height="35" width="200">上海市虹口区纪念路<font class="font7">480</font><font class="font6">号</font></td>
+            <td height="35" width="45" align="right">200434</td>
+            <td height="35" width="35" align="right">021</td>
+            <td height="35" width="62" align="right">9210</td>
+            <td height="35" width="78" align="right">65425171</td>
+        </tr>
+        <tr style="height: 15pt" height="35" bgcolor="#f7f7f7">
+            <td style="height: 15pt" height="35" colspan="9" align="center">
+            <p align="left"><b>&nbsp;在 京 单 位</b></p>
+            </td>
+        </tr>
+        <tr style="height: 15pt" height="35" bgcolor="#f7f7f7">
+            <td style="height: 15pt" height="35" width="13" align="center">8</td>
+            <td height="35" width="240">
+            <p><a target="_blank" href="http://www.zhsyj.org.cn/">水利部综合事业局</a></p>
+            </td>
+            <td valign="top" width="200">宣武区南线阁58号院</td>
+            <td height="35" valign="top" width="45" align="right">100053</td>
+            <td height="35" valign="top" width="35" align="right">010</td>
+            <td height="35" valign="top" width="62" align="right">&nbsp;</td>
+            <td height="35" valign="top" width="78" align="right">63204497</td>
+        </tr>
+        <tr style="height: 15pt" height="35" bgcolor="#f7f7f7">
+            <td style="height: 15pt" height="35" width="13" align="center">9</td>
+            <td height="35" width="240"><a target="_blank" href="http://www.hydroinfo.gov.cn/">水利部水文局（水利部水利信息中心）</a></td>
+            <td height="35" width="200">宣武区白广路2条2号</td>
+            <td height="35" width="45" align="right">100053</td>
+            <td height="35" width="35" align="right">010</td>
+            <td height="35" width="62" align="right">&nbsp;</td>
+            <td height="35" width="78" align="right">63202423</td>
+        </tr>
+        <tr style="height: 15pt" height="35" bgcolor="#f7f7f7">
+            <td style="height: 15pt" height="35" width="13" align="center">10</td>
+            <td height="35" width="240"><a target="_blank" href="http://nsbd.mwr.gov.cn/">水利部南水北调规划设计管理局</a></td>
+            <td height="35" width="200">海淀区玉渊潭南路3号D座</td>
+            <td height="35" width="45" align="right">100038</td>
+            <td height="35" width="35" align="right">010</td>
+            <td height="35" width="62" align="right">&nbsp;</td>
+            <td height="35" width="78" align="right">
+            <p align="right">68781209</p>
+            </td>
+        </tr>
+        <tr style="height: 15pt" height="35" bgcolor="#f7f7f7">
+            <td style="height: 15pt" height="35" width="13" align="center">11</td>
+            <td height="35" width="240"><a target="_blank" href="http://fwj.mwr.gov.cn/">水利部机关服务局</a></td>
+            <td height="35" width="200">宣武区白广路2条2号</td>
+            <td height="35" width="45" align="right">100053</td>
+            <td height="35" width="35" align="right">010</td>
+            <td height="35" width="62" align="right">&nbsp;</td>
+            <td height="35" width="78" align="right">
+            <p align="right">63202077</p>
+            </td>
+        </tr>
+        <tr style="height: 14.25pt" height="35" bgcolor="#f7f7f7">
+            <td style="height: 14.25pt" height="35" width="13" align="center">12</td>
+            <td height="35" width="240"><a target="_blank" href="http://www.giwp.org.cn/">水利部水利水电规划设计总院</a></td>
+            <td height="35" width="200">西城区六铺炕北小街2-1号</td>
+            <td height="35" width="45">
+            <p align="right">100120</p>
+            </td>
+            <td class="xl25" height="35" width="35" align="right">010</td>
+            <td height="35" width="62">
+            <p align="right">&nbsp;</p>
+            </td>
+            <td height="35" width="78">
+            <p align="right">62387584</p>
+            </td>
+        </tr>
+        <tr style="height: 15pt" height="35" bgcolor="#f7f7f7">
+            <td style="height: 15pt" height="35" width="13" align="center">13</td>
+            <td height="35" width="240"><a target="_blank" href="http://www.iwhr.com/">中国水利水电科学研究院</a></td>
+            <td height="35" width="200">海淀区复兴路甲一号</td>
+            <td height="35" width="45" align="right">100038</td>
+            <td height="35" width="35" align="right">010</td>
+            <td height="35" width="62" align="right">&nbsp;</td>
+            <td height="35" width="78">
+            <p align="right">68785301</p>
+            </td>
+        </tr>
+        <tr style="height: 14.25pt" height="35" bgcolor="#f7f7f7">
+            <td style="height: 14.25pt" height="35" width="13" align="center">14</td>
+            <td height="35" width="240"><a target="_blank" href="http://xwxc.mwr.gov.cn/">水利部新闻宣传中心</a></td>
+            <td height="35" width="200">宣武区白广路2条2号</td>
+            <td height="35" width="45">
+            <p align="right">100053</p>
+            </td>
+            <td class="xl25" height="35" width="35" align="right">010</td>
+            <td height="35" width="62">　</td>
+            <td height="35" width="78">
+            <p align="right">63202656</p>
+            </td>
+        </tr>
+        <tr style="height: 14.25pt" height="35" bgcolor="#f7f7f7">
+            <td style="height: 14.25pt" height="35" width="13" align="center">15</td>
+            <td height="35" width="240"><a target="_blank" href="http://www.chinawater.com.cn/">水情教育中心（中国水利报社）</a></td>
+            <td height="35" width="200">海淀区玉渊潭南路3号C座</td>
+            <td height="35" width="45">
+            <p align="right">100038</p>
+            </td>
+            <td class="xl25" height="35" width="35" align="right">010</td>
+            <td height="35" width="62">　</td>
+            <td height="35" width="78">
+            <p align="right">63205200</p>
+            </td>
+        </tr>
+        <tr style="height: 14.25pt" height="35" bgcolor="#f7f7f7">
+            <td style="height: 14.25pt" height="35" width="13" align="center">16</td>
+            <td height="35" width="240"><a target="_blank" href="http://www.waterpub.com.cn/">中国水利水电出版社</a></td>
+            <td height="35" width="200">西城区三里河路6号</td>
+            <td height="35" width="45">
+            <p align="right">100011</p>
+            </td>
+            <td class="xl25" height="35" width="35" align="right">010</td>
+            <td height="35" width="62">&nbsp;</td>
+            <td height="35" width="78">
+            <p align="right">68317638</p>
+            </td>
+        </tr>
+        <tr style="height: 14.25pt" height="35" bgcolor="#f7f7f7">
+            <td style="height: 14.25pt" height="35" width="13" align="center">17</td>
+            <td height="35" width="240"><a target="_blank" href="http://www.waterinfo.com.cn/">水利部发展研究中心</a></td>
+            <td height="35" width="200">海淀区玉渊潭南路3号</td>
+            <td height="35" width="45">
+            <p align="right">100038</p>
+            </td>
+            <td class="xl25" height="35" width="35" align="right">010</td>
+            <td height="35" width="62">&nbsp;</td>
+            <td height="35" width="78" align="right">63205081</td>
+        </tr>
+        <tr style="height: 15pt" height="35" bgcolor="#f7f7f7">
+            <td style="height: 15pt" height="35" width="13" align="center">18</td>
+            <td height="35" width="240"><a target="_blank" href="http://www.jsgg.com.cn/">中国灌溉排水发展中心</a></td>
+            <td height="35" width="200">宣武区广安门南街60号</td>
+            <td height="35" width="45" align="right">100053</td>
+            <td height="35" width="35" align="right">010</td>
+            <td height="35" width="62">　</td>
+            <td height="35" width="78" align="right" x:num="62387584">
+            <p>63203366</p>
+            </td>
+        </tr>
+        <tr style="height: 15pt" height="35" bgcolor="#f7f7f7">
+            <td style="height: 15pt" height="35" width="13" align="center">19</td>
+            <td height="35" width="240">水利部建设管理与质量安全中心</td>
+            <td height="35" width="200">北京复兴路甲一号</td>
+            <td height="35" width="45" align="right">100038</td>
+            <td height="35" width="35" align="right">010</td>
+            <td height="35" width="62">　</td>
+            <td height="35" width="78" align="right" x:num="63204345">
+            <p>63203366</p>
+            </td>
+        </tr>
+        <tr style="height: 14.25pt" height="35" bgcolor="#f7f7f7">
+            <td style="height: 15pt" height="35" width="13" align="center">20</td>
+            <td height="35"><a target="_blank" href="http://www.becmwr.cn/">水利部预算执行中心</a></td>
+            <td height="35">宣武区白广路2条2号</td>
+            <td height="35">
+            <p align="right">100053</p>
+            </td>
+            <td class="xl25" height="35" align="right">010</td>
+            <td height="35">　</td>
+            <td height="35" width="78" align="right">63202359</td>
+        </tr>
+        <tr style="height: 14.25pt" height="35" bgcolor="#f7f7f7">
+            <td style="height: 14.25pt" height="35" width="13" align="center">21</td>
+            <td height="35" width="240"><a target="_blank" href="http://www.ches.org.cn/">中国水利学会</a></td>
+            <td height="35">宣武区白广路2条2号</td>
+            <td height="35">
+            <p align="right">100053</p>
+            </td>
+            <td class="xl25" height="35" align="right">010</td>
+            <td height="35">　</td>
+            <td height="35" width="78" align="right">63202163</td>
+        </tr>
+        <tr style="height: 14.25pt" height="35" bgcolor="#f7f7f7">
+            <td style="height: 14.25pt" height="35" colspan="9" align="center">
+            <p align="left"><b>&nbsp;京 外 单 位</b></p>
+            </td>
+        </tr>
+        <tr style="height: 14.25pt" height="35" bgcolor="#f7f7f7">
+            <td style="height: 14.25pt" height="35" width="13" align="center">22</td>
+            <td height="35" width="240"><a target="_parent" href="http://www.nhri.cn/">南京水利科学研究院</a></td>
+            <td height="35" width="200">江苏省南京市广州路223号</td>
+            <td height="35" width="45">
+            <p align="right">210029</p>
+            </td>
+            <td class="xl25" height="35" width="35" align="right">025</td>
+            <td height="35" width="62">&nbsp;</td>
+            <td height="35" width="78">
+            <p align="right">85828113</p>
+            </td>
+        </tr>
+        <tr style="height: 14.25pt" height="35" bgcolor="#f7f7f7">
+            <td style="height: 14.25pt" height="35" width="13" align="center">23</td>
+            <td height="35" width="240"><a target="_blank" href="http://www.inshp.org/">国际小水电中心</a></td>
+            <td height="35" width="200">浙江省杭州市南山路136号</td>
+            <td height="35" width="45">
+            <p align="right">310002</p>
+            </td>
+            <td class="xl25" height="35" width="35" align="right">0571</td>
+            <td height="35" width="62">
+            <p align="right">　</p>
+            </td>
+            <td height="35" width="78">
+            <p align="right">87079113</p>
+            </td>
+        </tr>
+        <tr style="height: 14.25pt" height="35" bgcolor="#f7f7f7">
+            <td style="height: 14.25pt" height="30" width="13" align="center">24</td>
+            <td height="35" width="240"><a target="_blank" href="http://www.xiaolangdi.com.cn/">水利部小浪底水利枢纽管理中心</a></td>
+            <td height="35" width="200">河南省郑州市紫荆山路68号</td>
+            <td height="35" width="45">
+            <p align="right">450000</p>
+            </td>
+            <td class="xl25" height="35" width="35" align="right">0371</td>
+            <td height="35" width="62">&nbsp;</td>
+            <td height="35" width="78">
+            <p align="right">65362118</p>
+            </td>
+        </tr>
+        <tr style="height: 14.25pt" height="35" bgcolor="#f7f7f7">
+            <td style="height: 14.25pt" height="30" width="13" align="center">25</td>
+            <td height="35" width="240">水利部三门峡温泉疗养院</td>
+            <td height="35" width="200">中国河南三门峡西</td>
+            <td height="35" width="45">
+            <p align="right">&nbsp;</p>
+            </td>
+            <td class="xl25" height="35" width="35" align="right">0398</td>
+            <td height="35" width="62">&nbsp;</td>
+            <td height="35" width="78">
+            <p align="right">3866001</p>
+            </td>
+        </tr>
+        <tr style="height: 14.25pt" height="35" bgcolor="#f7f7f7">
+            <td style="height: 14.25pt" height="30" width="13" align="center">26</td>
+            <td height="35" width="240"><a target="_blank" href="http://www.nwmc.cn/">中国水利博物馆</a></td>
+            <td height="35" width="200">浙江省杭州市萧山区水博大道1号</td>
+            <td height="35" width="45">
+            <p align="right">311215</p>
+            </td>
+            <td class="xl25" height="35" width="35" align="right">0571</td>
+            <td height="35" width="62">&nbsp;</td>
+            <td height="35" width="78">
+            <p align="right">86660678</p>
+            </td>
+        </tr>
+    </tbody>
+</table></div>			   
+				   
+				 </div>
+		       </div>
+	       </div>
+		 </div>
+    </div>
+    <!--右侧内容部分开始-->	
+</div>
+<!--内容部分结束--> 
+<!--底部内容开始--> 
+<table style="background:url(/image/c_foot_bg.gif) repeat-x;" width="1002" height="120" align="center" cellpadding="0" cellspacing="0" border="0">
+<tr><td align="center" class="foot_t1" valign="top" style="padding-top:15px; height:30px;">
+	<a href="/slwq/wzlj/">网站链接</a> | <a href="/fwtj">访问量统计</a> | <a href="/phb">排行榜</a> | <a href="/map/">网站地图</a> <!-- |<a href="/xxbs">信息报送</a>信息报送--></td>
+</tr>
+<tr><td align="center" valign="top" height="55">
+<table height="46" border="0" cellpadding="0" cellspacing="0">
+<tr><td class="foot_t2" valign="bottom" style='font-family:Arial,Helvetica,sans-serif'><a href="http://www.miibeian.gov.cn/">京ICP备14010557号</a> ?中华人民共和国水利部版权所有</td>
+<td rowspan="2"><a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010102001080900321"><img src="/image/c_foot_p1.gif" border="0" /></a></td>
+</tr>
+<tr><td height="24" valign="bottom" class="foot_t2">主办：水利部办公厅 承办：水利部水利信息中心  </td>
+</tr>
+</table>
+</td></tr>
+<tr><td align="center" class="foot_t2" valign="top">水利部总机：&nbsp;010-63202114&nbsp;&nbsp;网站联系电话：&nbsp;010-63202558&nbsp;&nbsp;地 址：&nbsp;北京市西城区白广路二条2号&nbsp;投稿信箱：&nbsp;<a href="mailto:webmaster@mwr.gov.cn">webmaster@mwr.gov.cn</a></td>
+</tr>
+</table>
+<!--底部内容结束-->
+<script type="text/javascript">
+var DI=document.images;
+
+for (i=0;i<DI.length ;i++ )
+{
+var img = DI[i];
+var imgup = img.UploadPic;
+//if (img.UploadPic)
+//{
+	//	alert(isExist(img.src));
+
+	var url1 = img.src;
+	var url1s = url1.split('/');
+	url1 = url1s[url1s.length-1];
+
+	if (!isExist(img.src))
+	{
+		var url = '/UserFiles/' + url1;
+		//alert(url);
+		//alert(isExist(url));
+
+		//alert(isExist(url));
+		if (isExist(url))
+		{
+			img.src = url;
+		}
+	}
+
+//}
+}
+
+function isExist(sURL) {   
+    var xmlHttp;   
+    if (window.ActiveXObject){   
+        xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");   
+    }else{   
+        xmlHttp=new XMLHttpRequest();   
+    }
+	xmlHttp.abort();
+    xmlHttp.open("GET",sURL,false);
+    xmlHttp.send();
+  
+    if (xmlHttp.readyState==4) {   
+        if (xmlHttp.status==200)   
+            return true; //成功   
+        else if (xmlHttp.status==404)   
+            return false; // 没有找到   
+        else if (xmlHttp.status==500)   
+            return false; // 服务器错误   
+        else  
+            return false;   
+    }   
+}  
+
+</script>
+<script type="text/javascript">
+for (i=0;i<DI.length ;i++ )
+{
+var img = DI[i];
+var imgup = img.UploadPic;
+	var url1 = img.src;
+	var url1s = url1.split('/');
+	url1 = url1s[url1s.length-1];
+        if (url1.length>3)
+{
+	if (url1.substring(0,3)=='200')
+	{
+		if (img.width>600)
+		{
+			img.width=600;
+		}
+	}
+}
+}
+</script>
+<script>
+var leftheight = document.getElementById("left").scrollHeight;
+
+var rightheight = document.getElementById("maintable").scrollHeight;
+
+document.getElementById("left").style.height=leftheight >rightheight ?leftheight :rightheight +25;
+
+</script>
+
+<script src="http://fwtj.mwr.gov.cn/webdig.js?z=1" type="text/javascript"> 
+</script>
+<script type="text/javascript"> 
+wd_tracker();
+</script>
+<!--底部内容结束--> 
+</div>
+<div style="display:none">
+<script type="text/javascript">document.write(unescape("%3Cscript src='http://cl2.webterren.com/webdig.js?z=23' type='text/javascript'%3E%3C/script%3E"));</script>
+<script type="text/javascript">wd_paramtracker("_wdxid=000000000000000000000000000000000000000000")</script>
+</div>
+</body>
+</html>
