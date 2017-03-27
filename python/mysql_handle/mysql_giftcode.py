@@ -16,10 +16,14 @@ def pack_item(itemlist):
     return data
 
 conn = mysql.connector.connect(user = 'root', password = 'jgy', database = 'rewardcode')
+
+
+
 cursor = conn.cursor()
 
 item_data = pack_item(itemList)
-cursor.execute('call AddGiftCode(%s, %s, %s, %s)', ['J123456789111', '3', 1587756977, item_data.getvalue()])
+#cursor.execute('call AddGiftCode(%s, %s, %s, %s)', ['J123456789111', '3', 1587756977, item_data.getvalue()])
+cursor.execute('update RewardCodeMobi set item = %s', [item_data.getvalue()])
 conn.commit()
 cursor.close()
 conn.close()
