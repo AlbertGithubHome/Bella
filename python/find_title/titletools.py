@@ -9,8 +9,8 @@ req_headers = {
     'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko)' 'Chrome/51.0.2704.63 Safari/537.36'
 }
 
-re_template = r'(?<=target="_blank">)(.+?)(?=</a> </li>)'
-target_url = "http://www.gov.cn/guowuyuan/zuzhi.htm"
+re_template = r'(?<=target="_blank">)(.+?)(?=</a></td>)'
+target_url = "http://www.soa.gov.cn/zwgk/bjgk/"
 
 
 # main logic
