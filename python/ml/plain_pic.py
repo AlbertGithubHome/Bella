@@ -14,5 +14,11 @@ def make_pic():
     plt.legend()
     plt.show()
 
+def make_pic_with_column():
+    dates = pd.date_range('2017-07-22', periods = 6)
+    df = pd.DataFrame(np.random.randn(6,4), index = dates, columns = list('ABCD'))
+    df.plot()
+    plt.show()
+
 if __name__ == "__main__":
-    make_pic()
+    make_pic_with_column()
