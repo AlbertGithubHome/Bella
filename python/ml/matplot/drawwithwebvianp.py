@@ -17,17 +17,20 @@ def bytespdate2num(fmt, encoding='utf-8'):
     return bytesconverter
 
 def graph_date(stock):
-    stock_price_url = 'http://chartapi.finance.yahoo.com/instrument/1.0/'+stock+'/chartdata;type=quote;range=10y/csv'
+    stock_price_url = 'https://hk.finance.yahoo.com/chart/TSLA#eyJtdWx0aUNvbG9yTGluZSI6ZmFsc2UsImJvbGxpbmdlclVwcGVyQ29sb3IiOiIjZTIwMDgxIiwiYm9sbGluZ2VyTG93ZXJDb2xvciI6IiM5NTUyZmYiLCJtZmlMaW5lQ29sb3IiOiIjNDVlM2ZmIiwibWFjZERpdmVyZ2VuY2VDb2xvciI6IiNmZjdiMTIiLCJtYWNkTWFjZENvbG9yIjoiIzc4N2Q4MiIsIm1hY2RTaWduYWxDb2xvciI6IiMwMDAwMDAiLCJyc2lMaW5lQ29sb3IiOiIjZmZiNzAwIiwic3RvY2hLTGluZUNvbG9yIjoiI2ZmYjcwMCIsInN0b2NoRExpbmVDb2xvciI6IiM0NWUzZmYiLCJyYW5nZSI6IjF5In0%3D'
     souce_code = urllib.request.urlopen(stock_price_url).read().decode()
+    # stock_price_url = 'http://chartapi.finance.yahoo.com/instrument/1.0/'+stock+'/chartdata;type=quote;range=10y/csv'
 
+    #print(souce_code)
     stock_data = []
-    split_source = souce_code.spilt('\n')
+    split_source = souce_code.split('\n')
 
     for line in split_source:
         split_line = line.split(',')
         if len(split_line) == 6:
             if 'values' not in line:
                 stock_data.append(line)
+                print(line.encode("GBK", 'ignore'))
 
     date, closep, highp, lowp, openp, volume = np.loadtxt(stock_data,
         delimiter=',',
