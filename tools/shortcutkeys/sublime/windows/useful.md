@@ -62,8 +62,8 @@
 |Alt+Shift+5|       等分4屏|
 |Alt+Shift+8|       垂直分屏-2屏|
 |Alt+Shift+9|       垂直分屏-3屏|
-|Ctrl+k,Ctrl+↑↓|    可以分屏或取消分屏|
-|Ctrl+k,Ctrl+→←|    可以在分屏间切换|
+|Ctrl+K,Ctrl+↑↓|    可以分屏或取消分屏|
+|Ctrl+K,Ctrl+→←|    可以在分屏间切换|
 |Ctrl+Num|          可以在单个分屏的不同文件间切换|
 | | |
 |Ctrl+K+B|          开启/关闭侧边栏。|
