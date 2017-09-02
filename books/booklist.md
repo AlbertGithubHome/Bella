@@ -1,9 +1,9 @@
-#Programming#
+# Programming
 
 - Effective C++
 - More Effective C++
 
 ---
-#thinking#
+# Thinking
 
 - 黑客与画家
