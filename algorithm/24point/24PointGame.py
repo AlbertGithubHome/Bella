@@ -3,19 +3,24 @@
 #a solution for game fo 24 point
 
 __author__ = 'AlbertS'
-
+import math
 
 result = [{}]
+targetNum = 24
+
 def Fork(A, B):
+    subRet = set()
     for a in A:
         for b in B:
-            subRet = set()
-            subRet.add(str(a) + "+" + str(b))
-            subRet.add(str(a) + "-" + str(b))
-            subRet.add(str(a) + "*" + str(b))
-            subRet.add(str(a) + "/" + str(b))
-            subRet.add(str(b) + "-" + str(a))
-            subRet.add(str(b) + "/" + str(a))
+            subRet.add("(" + str(a) + "+" + str(b) + ")")
+            subRet.add("(" + str(a) + "-" + str(b) + ")")
+            subRet.add("(" + str(b) + "-" + str(a) + ")")
+            subRet.add("(" + str(a) + "*" + str(b) + ")")
+            if eval(str(b)) != 0:
+                subRet.add("(" + str(a) + "/" + str(b) + ")")
+            if eval(str(a)) != 0:
+                subRet.add("(" + str(b) + "/" + str(a) + ")")
+    return subRet
 
 
 def CalcSet(i):
@@ -23,33 +28,51 @@ def CalcSet(i):
         return result[i]
 
     subRet = set()
-    for x in range(1, i):
+    for x in range(1, math.ceil(i / 2)):
         if (x & i == x):
             pass
             subRet = subRet | Fork(CalcSet(x), CalcSet(i - x))
-    
+
     return subRet
+
+
+def Check24(strList):
+    subRet = set()
+    for strExp in strList:
+        if eval(strExp) == targetNum:
+            subRet.add(strExp)
+    return subRet
+
 
 def Point24Game(array, num = 4):
     for x in range(1, pow(2, num)):
         result.append(set())
 
     for x in range(0, num):
-        result[pow(2, x)].append(array[x])
+        result[pow(2, x)].add(array[x])
 
     for x in range(1, pow(2, num)):
         result[x] = CalcSet(x)
+        print("length =", len(result[x]), result[x])
 
-
-
-
-
-
+    finalRet = Check24(result[pow(2, num) - 1])
+    if len(finalRet) > 0:
+        print("have result:")
+        for x in finalRet:
+            print(x)
+    else:
+        print("haven't result!")
 
 if __name__ == '__main__':
     Point24Game([1,2,3,4])
 
-print(result)
 
-t = 1
-print(str(t) + "v")
+# t = set([1])
+# d = set([2])
+# print(Fork(t, d))
+
+# print(3/2)
+
+# print(eval("1+2**5"))
+
+
