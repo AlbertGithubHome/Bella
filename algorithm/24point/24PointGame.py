@@ -15,11 +15,11 @@ def Fork(A, B):
             subRet.add("(" + str(a) + "+" + str(b) + ")")
             subRet.add("(" + str(a) + "-" + str(b) + ")")
             subRet.add("(" + str(b) + "-" + str(a) + ")")
-            subRet.add("(" + str(a) + "*" + str(b) + ")")
+            subRet.add(str(a) + "*" + str(b))
             if eval(str(b)) != 0:
-                subRet.add("(" + str(a) + "/" + str(b) + ")")
+                subRet.add(str(a) + "/" + str(b))
             if eval(str(a)) != 0:
-                subRet.add("(" + str(b) + "/" + str(a) + ")")
+                subRet.add(str(b) + "/" + str(a))
     return subRet
 
 
@@ -53,7 +53,7 @@ def Point24Game(array, num = 4):
 
     for x in range(1, pow(2, num)):
         result[x] = CalcSet(x)
-        print("length =", len(result[x]), result[x])
+        #print("length =", len(result[x]), result[x])
 
     finalRet = Check24(result[pow(2, num) - 1])
     if len(finalRet) > 0:
