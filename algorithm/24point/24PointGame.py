@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #a solution for game fo 24 point
+#example [11,5,7,9] => (5+7)*(11-9)
 
 __author__ = 'AlbertS'
 import math
 
-result = [{}]
+result = [set()]
 targetNum = 24
 
 def Fork(A, B):
@@ -45,6 +46,7 @@ def Check24(strList):
 
 
 def Point24Game(array, num = 4):
+
     for x in range(1, pow(2, num)):
         result.append(set())
 
@@ -63,16 +65,18 @@ def Point24Game(array, num = 4):
     else:
         print("haven't result!")
 
+def StartGame():
+    while(True):
+        global result
+        result = [set()]
+        a, b, c, d = map(int, input("please input 4 numbers:").split())
+        print(a, b, c, d)
+        Point24Game([a, b, c, d])
+
+
 if __name__ == '__main__':
-    Point24Game([1,2,3,4])
+    StartGame()
+    #Point24Game([11,5,7,9])
 
-
-# t = set([1])
-# d = set([2])
-# print(Fork(t, d))
-
-# print(3/2)
-
-# print(eval("1+2**5"))
 
 
