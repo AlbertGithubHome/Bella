@@ -13,14 +13,14 @@ def Fork(A, B):
     subRet = set()
     for a in A:
         for b in B:
-            subRet.add("(" + str(a) + "+" + str(b) + ")")
-            subRet.add("(" + str(a) + "-" + str(b) + ")")
-            subRet.add("(" + str(b) + "-" + str(a) + ")")
-            subRet.add(str(a) + "*" + str(b))
-            if eval(str(b)) != 0:
-                subRet.add(str(a) + "/" + str(b))
-            if eval(str(a)) != 0:
-                subRet.add(str(b) + "/" + str(a))
+            subRet.add("(" + a + "+" + b + ")")
+            subRet.add("(" + a + "-" + b + ")")
+            subRet.add("(" + b + "-" + a + ")")
+            subRet.add(a + "*" + b)
+            if eval(b) != 0:
+                subRet.add(a + "/" + b)
+            if eval(a) != 0:
+                subRet.add(b + "/" + a)
     return subRet
 
 
@@ -31,7 +31,6 @@ def CalcSet(i):
     subRet = set()
     for x in range(1, math.ceil(i / 2)):
         if (x & i == x):
-            pass
             subRet = subRet | Fork(CalcSet(x), CalcSet(i - x))
 
     return subRet
@@ -51,7 +50,7 @@ def Point24Game(array, num = 4):
         result.append(set())
 
     for x in range(0, num):
-        result[pow(2, x)].add(array[x])
+        result[pow(2, x)].add(str(array[x]))
 
     for x in range(1, pow(2, num)):
         result[x] = CalcSet(x)
@@ -77,6 +76,4 @@ def StartGame():
 if __name__ == '__main__':
     StartGame()
     #Point24Game([11,5,7,9])
-
-
 
