@@ -1,6 +1,6 @@
 # Programming
 
-- Advanced Programming in the Unix Environment
+- Unix环境高级编程 ——英文版
 - Effective C++
 - Effective STL
 - More Effective C++ ——35个改善编程与设计的有效方法(中文版)
@@ -26,8 +26,8 @@
 ---
 # Psychology
 
-- 重口味心理学
-- 重口味心理学2
+- 重口味心理学 ——怎样证明你不是神经病
+- 重口味心理学2 ——怎样证明你不是变态
 
 ---
 # Military
