@@ -1,12 +1,15 @@
 # Programming
 
-- Unix环境高级编程 ——英文版
-- Effective C++
-- Effective STL
+- C和指针
+- Unix环境高级编程(英文版)
+- Effective C++(中文版)
+- Effective STL(中文版)
 - More Effective C++ ——35个改善编程与设计的有效方法(中文版)
 - 深度探索C++对象模型
+- Lua程序设计(第二版)
 - C陷阱与缺陷
 - 编程之美 ——微软计数面试心得
+- 游戏人工智能编程案例精粹(修订版)
 - Wireshark网络分析就是这么简单
 - 正则表达式必知必会
 
@@ -33,3 +36,8 @@
 # Military
 
 - 进击的局座 ——悄悄话
+
+---
+# Biography
+
+- 史蒂夫·乔布斯传
