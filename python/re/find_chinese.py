@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# find the line of containing chinese in files
 
 __author__ = 'AlbertS'
 
-# find the line of containing chinese in files
 import re
-from io import BytesIO
 
 def start_find_chinese():
-
     find_count = 0;
     with open('strkey_ko_untranslate.txt', 'wb') as outfile:
         with open('strkey_ko.txt', 'rb') as infile:
