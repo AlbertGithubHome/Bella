@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #a solution for palindrome game
-#example 人过大佛寺 * 我 = 寺佛大过人
+#example 仙人似美娟 * 我 = 娟美似人仙
 #result: 21978 * 4
 
 __author__ = 'AlbertS'
@@ -28,5 +28,6 @@ def find_palindrome():
 if __name__ == "__main__":
     find_palindrome()
 
-
+#公式： 仙人似美娟 * 我 = 娟美似人仙
+#含义： 善解人意的娟娟 在我的眼里 就像仙女一样美丽
 
