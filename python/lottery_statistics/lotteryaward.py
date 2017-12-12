@@ -63,8 +63,8 @@ def show_award_result(my_number, award_statistics):
 
 # main function
 if __name__ == '__main__':
-    #my_number = [5,6,10,11,25,30,11]
-    my_number = [1,11,14,17,27,28,15]
+    my_number = [5,6,10,11,25,30,11]
+    #my_number = [5,8,10,15,26,30,6]
     award_statistics = count_award_situation(my_number)
     show_award_result(my_number, award_statistics)
 '''
