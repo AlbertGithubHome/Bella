@@ -2,7 +2,7 @@
 import urllib.request, socket, re, sys, os
 
 # save file path
-target_path = ".\\crawler_images"  #target_path = ".\\crawler_images_csdn"
+target_path = ".\\crawler_images_douban"  #target_path = ".\\crawler_images_csdn"
 # target url that needs to crawler
 target_url = "https://www.douban.com/" #target_url = "http://www.csdn.net/"
 req_headers = {
@@ -31,5 +31,5 @@ def start_crawler():
 
 # start to crawler
 if __name__ == '__main__':
-    #start_crawler()
+    start_crawler()
     #urllib.request.urlretrieve('http://www.getuikit.net/docs/images/bg_teaser.svg', 'test.svg')
