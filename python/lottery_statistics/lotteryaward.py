@@ -63,8 +63,11 @@ def show_award_result(my_number, award_statistics):
 
 # main function
 if __name__ == '__main__':
-    my_number = [5,6,10,11,25,30,11]
+    #my_number = [5,6,10,11,25,30,11]
     #my_number = [5,8,10,15,26,30,6]
+    print("请输入6个红球和1个篮球号码，空格分隔：")
+    my_number = list(map(int, input().split()))
+
     award_statistics = count_award_situation(my_number)
     show_award_result(my_number, award_statistics)
 '''
