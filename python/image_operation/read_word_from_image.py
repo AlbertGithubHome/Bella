@@ -34,7 +34,7 @@ def get_question_image():
     region = img.crop((50, 350, 1000, 560)) # 1920 x 1080
 
     # 查看图片
-    #show_question_image(region)
+    show_question_image(region)
     
     # 利用切割数据成像
     img_bytes = io.BytesIO()
@@ -46,9 +46,7 @@ def get_baidu_token():
         headers={ 'Content-Type':'application/json;charset=UTF-8' }).json()
     return res['access_token']
 
-def get_image_words():
-    base64_data = base64.b64encode(get_question_image())
-    token = get_baidu_token()
+def get_image_words(token, base64_data):
     content = requests.post('https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic',
               params={'access_token': token}, data={'image': base64_data})
 
@@ -58,9 +56,11 @@ def get_image_words():
     return urllib.parse.quote(result)
 
 def main():
-    images_words = get_image_words()
-    print("images_words="+images_words)
-    webbrowser.open('https://baidu.com/s?wd='+ images_words)
+    base64_data = base64.b64encode(get_question_image())
+    #token = get_baidu_token(token, base64_data)
+    #images_words = get_image_words()
+    #print("images_words=" + images_words)
+    #webbrowser.open('https://baidu.com/s?wd='+ images_words)
 
 if __name__ == '__main__':
     main()
