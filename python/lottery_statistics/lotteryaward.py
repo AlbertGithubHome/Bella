@@ -49,7 +49,8 @@ def count_award_situation(my_number):
     with open('lottery_history_data.csv', 'r') as file:
         data_content = csv.reader(file)
         for row_data in data_content:
-            local_award_statistics[award_classify[count_red_blue_balls(my_number, list(map(int, row_data[1:8])))]] += 1
+            local_award_statistics[award_classify[count_red_blue_balls(
+                my_number, list(map(int, row_data[1:8])))]] += 1
     return local_award_statistics
 
 # show award statictics for a number
