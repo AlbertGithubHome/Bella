@@ -32,3 +32,20 @@ from PIL import Image
 # Python 2.7安装PIL，在Debian/Ubuntu Linux下直接通过apt安装：$ sudo apt-get install python-imaging。
 # Python 2.7安装PIL，Windows平台就去PIL官方网站下载exe安装包。[url](http://pythonware.com/products/pil/)
 # Python 3.x安装PIL,如果安装了Anaconda，Pillow就已经可用了。否则，需要在命令行下通过pip安装：$ pip install pillow
+
+import base64
+# 这个模块也是从廖雪峰老师的Python教程上可是接触的，主要负责对字符串进行base64的编码和解码工作
+# 第一次正式使用应该是做一道程序员闯关题目，其中有一道题是将一副图片的数据进行了base64的编码
+# 然后进行进制转换，最后以二进制空缺的形式显示作为题目入口，想想确实有点难度
+# 问题解析过程：https://blog.csdn.net/albertsh/article/details/53214913
+# 解题源码：https://github.com/AlbertGithubHome/Bella/blob/master/python/1111.segmentfault.com/01decode.py
+# 时间：2016年11月18日 12:04:09
+
+from functools import reduce
+# 话说这个模块我之前已经没有印象了，后来发现同样出于廖雪峰老师之手。
+# 通常和map函数连用，如果你没有听过map/reduce，那么Hadoop总该听说过了吧，这两者的思想是一致的
+# 第一次实际使用同样是解决上边这道题，如果不用这个库，代码会很长，用了之后代码量锐减。
+# 这这个例子中主要是用它把所有的单个字母串联到一起，这种情况使用map/reduce刚刚好。
+# 问题解析过程：https://blog.csdn.net/albertsh/article/details/53214913
+# 解题源码：https://github.com/AlbertGithubHome/Bella/blob/master/python/1111.segmentfault.com/01decode.py
+# 时间：2016年11月18日 12:04:09
