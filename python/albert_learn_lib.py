@@ -46,6 +46,16 @@ from functools import reduce
 # 通常和map函数连用，如果你没有听过map/reduce，那么Hadoop总该听说过了吧，这两者的思想是一致的
 # 第一次实际使用同样是解决上边这道题，如果不用这个库，代码会很长，用了之后代码量锐减。
 # 这这个例子中主要是用它把所有的单个字母串联到一起，这种情况使用map/reduce刚刚好。
+# 很奇怪map这个函数为什么不在functools中
 # 问题解析过程：https://blog.csdn.net/albertsh/article/details/53214913
 # 解题源码：https://github.com/AlbertGithubHome/Bella/blob/master/python/1111.segmentfault.com/01decode.py
 # 时间：2016年11月18日 12:04:09
+
+import string
+# 之前应该使用过这个库，不过已经忘记了什么时间使用过，最近一次使用时间(2018-04-13 13:45:26)
+# 目的是参加一个Python Challenge的第1关，其中有一个字符串映射的过程，本来我是使用map/reduce解决的
+# 转换后提示内容告诉我可以使用函数string.maketrans()建立转换表，但是这道题目的版本应该有点早
+# Python3.4已经没有string.maketrans()了，取而代之的是内建函数: bytearray.maketrans()、bytes.maketrans()、str.maketrans()
+# maketrans() 方法用于创建字符映射的转换表，对于接受两个参数的最简单的调用方式
+# 第一个参数是字符串，表示需要转换的字符，第二个参数也是字符串表示转换的目标。两个字符串的长度必须相同，为一一对应的关系
+# 但是还有一点，我发现即使不使用import string，也可以调用函数str.maketrans()，现在还没弄明白原因。
