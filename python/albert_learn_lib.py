@@ -59,3 +59,32 @@ import string
 # maketrans() 方法用于创建字符映射的转换表，对于接受两个参数的最简单的调用方式
 # 第一个参数是字符串，表示需要转换的字符，第二个参数也是字符串表示转换的目标。两个字符串的长度必须相同，为一一对应的关系
 # 但是还有一点，我发现即使不使用import string，也可以调用函数str.maketrans()，现在还没弄明白原因。
+
+import requests
+# 从开始了解爬虫时接触了这个库，对于发送get、post请求非常方便，最近一次使用时间是(2018-04-14 16:01:15)
+# 目的是参加一个Python Challenge的第2关，其中有一步是为了获取网页内容所以引入了requests库，直接发送get请求
+# response = requests.get(target_url)即可，获取内容直接response.content就能得到
+# 之前还用urllib，不过相比较来说还是这个比较简单，不过需要单独安装pip install requests，限制大了一些
+# requests 是用Python语言编写，基于 urllib，采用 Apache2 Licensed 开源协议的 HTTP 库。
+# 它比 urllib 更加方便，可以节约我们大量的工作，完全满足 HTTP 测试需求。
+# requests 的哲学是以 PEP 20 的习语为中心开发的，所以它比 urllib 更加 Pythoner。更重要的一点是它支持 Python3 哦！
+#    Beautiful is better than ugly.(美丽优于丑陋)
+#    Explicit is better than implicit.(清楚优于含糊)
+#    Simple is better than complex.(简单优于复杂)
+#    Complex is better than complicated.(复杂优于繁琐)
+#    Readability counts.(重要的是可读性)
+
+import urllib
+from urllib.request import urlopen
+from urllib.parse import urlencode
+# 这个网络请求库接触较早，第一个图片爬虫就使用了这个库，当时还没有看过多少Python代码，基本上是刚接触Python的时候
+# urllib模块是python自带的，直接调用就好，相比于requests来说的好处是不用安装，不过使用起来麻烦一点
+# 在网上找到一篇比较python3 urllib和requests模块区别的文章https://www.cnblogs.com/znyyy/p/7868511.html，说的比较好
+# 不过总体来说就是越方便的库，就越失去了灵活性，对于特殊情况不太好处理
+# 
+# urllib+正则：无第三方依赖
+# requests+BeautifulSoup：library
+# scrapy：框架
+# 
+# 从上往下抽象程度增加，方便程度增加。“路怎么走，你们自己选啊。”
+# 
