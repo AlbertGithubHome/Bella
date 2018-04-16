@@ -87,4 +87,18 @@ from urllib.parse import urlencode
 # scrapy：框架
 # 
 # 从上往下抽象程度增加，方便程度增加。“路怎么走，你们自己选啊。”
+
+import re
+# 开始接触Python的时候就用过这个正则表达式库，不过总是一知半解，用的时候找到之前的代码一粘贴就结束了
+# 结果今天（2018-04-16 17:04:17）在使用正则表达式解析网页（做python challenge）时把自己给坑了
+# 原来我一直没弄清楚匹配函数的区别，导致我使用了re.match来匹配所有符合条件的子串，结果悲剧了，一直没结果
+# 在此特别记录一下匹配函数的区别，防止以后再犯错误
+# re.match(pattern, string[, flags]): 从首字母开始开始匹配，string如果包含pattern子串，则匹配成功，返回Match对象，
+#   失败则返回None，若要完全匹配，pattern要以$结尾。
 # 
+# re.search(pattern, string[, flags]) : 若string中包含pattern子串，则返回Match对象，否则返回None，
+#   注意，如果string中存在多个pattern子串，只返回第一个。
+# 
+# re.findall(pattern, string[, flags]): 返回string中所有与pattern相匹配的全部字串，返回形式为数组。
+# 
+# re.finditer(pattern, string[, flags]): 返回string中所有与pattern相匹配的全部字串，返回形式为迭代器。 
