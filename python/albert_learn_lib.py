@@ -101,4 +101,11 @@ import re
 # 
 # re.findall(pattern, string[, flags]): 返回string中所有与pattern相匹配的全部字串，返回形式为数组。
 # 
-# re.finditer(pattern, string[, flags]): 返回string中所有与pattern相匹配的全部字串，返回形式为迭代器。 
+# re.finditer(pattern, string[, flags]): 返回string中所有与pattern相匹配的全部字串，返回形式为迭代器。
+
+import pickle
+# 这个库我确信之前没有用过，今天（2018-04-25 20:20:20）参加python challenge时第一次使用，
+# 结果发现很早以前就在python教程里看过了！这个库的作用是对python对象进行序列化，序列化之后就可以保存到文件，
+# 同时可以通过反序列化将文件中内存重新还原成与原来的对象，之前看这个库的时候肯定只是看看，没有写代码，要不然不能
+# 一点印象也没有，反序列化的函数有pickle.load(file)和pickle.loads(bytes)，前者的参数是一个打开的文件，而后者就是
+# 一个bytes数组，比如request返回的对象content，配合使用可以直接将网络资源反序列化
