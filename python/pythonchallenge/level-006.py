@@ -1,0 +1,1017 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# @Date     : 2018-05-02 12:11:59
+# @Author   : Albert Shi
+# @Link     : http://blog.csdn.net/albertsh
+# @Github   : https://github.com/AlbertGithubHome
+__author__ = 'AlbertS'
+# @Subject  : level 5 of python challenge
+# 
+# 思路：这一关对于我来说的确不简单，没有完整的做完，说一下解题思路，第一步还是查看源码，
+#       其中只有"<html> <!-- <-- zip -->"这一个信息可用。如果你拿zip替换网址中的channel，
+#       也就是访问http://www.pythonchallenge.com/pc/def/zip.html，会得到信息yes. find the zip. 
+#       说明寻找zip的方向是正确的，然后我们拿zip替换html得到http://www.pythonchallenge.com/pc/def/channel.zip
+#       尝试访问后发现这是一个zip压缩包，通过requests.get方法得到压缩包，然后引入zipfile模块，对zip文件进行解压
+#       将解压结果放到./channel目录，其中是一系列的txt文件，打开文件夹，其中有一个readme.txt文件。
+#       文件中有一句话welcome to my zipped list. hint1: start from 90052 hint2: answer is inside the zip
+#       打开目录中90052.txt发现其中内容是Next nothing is 94191，再根据hint2可知下一关的网址应该就在这些文件中
+#       看起来很像前面的第4关，尝试循环遍历文件吧，最后得到结果Collect the comments，说是在注释中，
+#       这是我从其他人那里的得到的，自己并没有分析出来，将每个文件的注释不换行打印得到hockey，
+#       访问hockey.html得到一句话it's in the air. look at the letters. 看了一些解题报告直接说在空气中的就是氧气
+#       oxygen，虽然答案真的是氧气，但是这个解释让人很难接受。
+#       
+#       忽然看到一种解释，（oxygen就是组成HOCKEY的小字母），这个解释贴切多了，再结合t's in the air. look at the letters.
+#       那答案肯定就是oxygen了
+#       
+# 
+# 备注：1. python challenge home page : http://www.pythonchallenge.com/
+#       2. current level url : http://www.pythonchallenge.com/pc/def/channel.html
+#       3. next level url : http://www.pythonchallenge.com/pc/def/oxygen.html
+
+import requests
+import zipfile
+import re
+
+# resource url
+target_url = 'http://www.pythonchallenge.com/pc/def/channel.zip'
+
+def get_zip_file():
+    file_data = requests.get(target_url).content
+    with open('./channel.zip', 'wb') as file:
+        file.write(file_data)
+
+def extract_zip_file():
+    zip_file = zipfile.ZipFile('./channel.zip')
+    zip_file.extractall('./channel')
+
+# 解决完成后发现次函数没用了
+def find_next_level_url(start_num):
+    count = 1
+    while count < 1000: #防止死循环
+        with open('./channel/' + start_num + '.txt', 'r') as file:
+            file_content = file.read();
+            ret_list = re.findall(r'(\d+)', file_content)
+            print(file_content, count)
+
+            if not ret_list:
+                break
+            start_num = ret_list[0]
+        count = count + 1
+
+def get_info_from_comments(start_num):
+    #comment_list = []
+    zip_file = zipfile.ZipFile('./channel.zip')
+    count = 1
+    while count < 1000: #防止死循环
+        #comment_list.append(zip_file.getinfo(start_num+'.txt').comment.decode("utf-8"))
+        print(zip_file.getinfo(start_num+'.txt').comment.decode("utf-8"), end=" ")
+        file_content = zip_file.read(start_num+'.txt')
+        ret_list = re.findall(r'(\d+)', file_content.decode("utf-8"))
+        #print(file_content.decode("utf-8"))
+        if not ret_list:
+            break
+        start_num = ret_list[0]
+        count = count + 1
+    #print(" ".join(comment_list))
+
+def main():
+    get_zip_file()
+    extract_zip_file()
+    #find_next_level_url('90052')
+    get_info_from_comments('90052')
+
+if __name__ == '__main__':
+    main()
+
+# 循环遍历运行结果
+'''
+Next nothing is 94191 1
+Next nothing is 85503 2
+Next nothing is 70877 3
+Next nothing is 15409 4
+Next nothing is 60838 5
+Next nothing is 80009 6
+Next nothing is 21347 7
+Next nothing is 24164 8
+Next nothing is 13836 9
+Next nothing is 80123 10
+Next nothing is 92453 11
+Next nothing is 69556 12
+Next nothing is 31491 13
+Next nothing is 13371 14
+Next nothing is 88143 15
+Next nothing is 82593 16
+Next nothing is 30645 17
+Next nothing is 88985 18
+Next nothing is 27190 19
+Next nothing is 24448 20
+Next nothing is 37468 21
+Next nothing is 49892 22
+Next nothing is 54714 23
+Next nothing is 75161 24
+Next nothing is 893 25
+Next nothing is 57882 26
+Next nothing is 40033 27
+Next nothing is 29521 28
+Next nothing is 5289 29
+Next nothing is 4701 30
+Next nothing is 32742 31
+Next nothing is 18751 32
+Next nothing is 68586 33
+Next nothing is 53984 34
+Next nothing is 52184 35
+Next nothing is 43807 36
+Next nothing is 56300 37
+Next nothing is 97649 38
+Next nothing is 88244 39
+Next nothing is 91669 40
+Next nothing is 88394 41
+Next nothing is 77575 42
+Next nothing is 70208 43
+Next nothing is 78211 44
+Next nothing is 84854 45
+Next nothing is 87594 46
+Next nothing is 26234 47
+Next nothing is 63181 48
+Next nothing is 68559 49
+Next nothing is 37695 50
+Next nothing is 64397 51
+Next nothing is 55356 52
+Next nothing is 8258 53
+Next nothing is 77074 54
+Next nothing is 28389 55
+Next nothing is 39983 56
+Next nothing is 40210 57
+Next nothing is 69972 58
+Next nothing is 48089 59
+Next nothing is 34764 60
+Next nothing is 46945 61
+Next nothing is 97812 62
+Next nothing is 95662 63
+Next nothing is 55220 64
+Next nothing is 86793 65
+Next nothing is 69785 66
+Next nothing is 85827 67
+Next nothing is 75722 68
+Next nothing is 37259 69
+Next nothing is 57622 70
+Next nothing is 57566 71
+Next nothing is 98181 72
+Next nothing is 57831 73
+Next nothing is 68947 74
+Next nothing is 29834 75
+Next nothing is 67060 76
+Next nothing is 48669 77
+Next nothing is 12761 78
+Next nothing is 47882 79
+Next nothing is 98339 80
+Next nothing is 9058 81
+Next nothing is 14745 82
+Next nothing is 60138 83
+Next nothing is 47842 84
+Next nothing is 71178 85
+Next nothing is 1091 86
+Next nothing is 52205 87
+Next nothing is 98709 88
+Next nothing is 4992 89
+Next nothing is 97673 90
+Next nothing is 92736 91
+Next nothing is 98119 92
+Next nothing is 97515 93
+Next nothing is 98939 94
+Next nothing is 36656 95
+Next nothing is 85839 96
+Next nothing is 33746 97
+Next nothing is 64122 98
+Next nothing is 41968 99
+Next nothing is 56617 100
+Next nothing is 83808 101
+Next nothing is 68613 102
+Next nothing is 99714 103
+Next nothing is 67196 104
+Next nothing is 11992 105
+Next nothing is 38192 106
+Next nothing is 61837 107
+Next nothing is 29034 108
+Next nothing is 77480 109
+Next nothing is 12737 110
+Next nothing is 39310 111
+Next nothing is 89307 112
+Next nothing is 36624 113
+Next nothing is 81412 114
+Next nothing is 51450 115
+Next nothing is 21690 116
+Next nothing is 46726 117
+Next nothing is 74576 118
+Next nothing is 57901 119
+Next nothing is 92043 120
+Next nothing is 78130 121
+Next nothing is 23647 122
+Next nothing is 39258 123
+Next nothing is 76629 124
+Next nothing is 48614 125
+Next nothing is 74736 126
+Next nothing is 53027 127
+Next nothing is 3713 128
+Next nothing is 30339 129
+Next nothing is 42197 130
+Next nothing is 12539 131
+Next nothing is 98095 132
+Next nothing is 176 133
+Next nothing is 64956 134
+Next nothing is 78307 135
+Next nothing is 35035 136
+Next nothing is 36894 137
+Next nothing is 76017 138
+Next nothing is 67036 139
+Next nothing is 33179 140
+Next nothing is 64085 141
+Next nothing is 90506 142
+Next nothing is 94079 143
+Next nothing is 76441 144
+Next nothing is 16146 145
+Next nothing is 78399 146
+Next nothing is 98044 147
+Next nothing is 64045 148
+Next nothing is 69444 149
+Next nothing is 78862 150
+Next nothing is 51492 151
+Next nothing is 52349 152
+Next nothing is 86079 153
+Next nothing is 8001 154
+Next nothing is 68750 155
+Next nothing is 65764 156
+Next nothing is 11419 157
+Next nothing is 96644 158
+Next nothing is 63154 159
+Next nothing is 70397 160
+Next nothing is 91046 161
+Next nothing is 61274 162
+Next nothing is 50678 163
+Next nothing is 94118 164
+Next nothing is 86774 165
+Next nothing is 47673 166
+Next nothing is 90792 167
+Next nothing is 95791 168
+Next nothing is 72442 169
+Next nothing is 57730 170
+Next nothing is 79566 171
+Next nothing is 66349 172
+Next nothing is 40521 173
+Next nothing is 59808 174
+Next nothing is 14628 175
+Next nothing is 39820 176
+Next nothing is 100 177
+Next nothing is 84844 178
+Next nothing is 39890 179
+Next nothing is 12930 180
+Next nothing is 97979 181
+Next nothing is 16870 182
+Next nothing is 3928 183
+Next nothing is 71245 184
+Next nothing is 8289 185
+Next nothing is 9118 186
+Next nothing is 81768 187
+Next nothing is 68242 188
+Next nothing is 65768 189
+Next nothing is 94363 190
+Next nothing is 34013 191
+Next nothing is 85632 192
+Next nothing is 82706 193
+Next nothing is 97089 194
+Next nothing is 67999 195
+Next nothing is 53542 196
+Next nothing is 68609 197
+Next nothing is 91136 198
+Next nothing is 95660 199
+Next nothing is 30395 200
+Next nothing is 19822 201
+Next nothing is 55325 202
+Next nothing is 33630 203
+Next nothing is 65277 204
+Next nothing is 34563 205
+Next nothing is 44890 206
+Next nothing is 54001 207
+Next nothing is 75838 208
+Next nothing is 83931 209
+Next nothing is 68010 210
+Next nothing is 62369 211
+Next nothing is 30318 212
+Next nothing is 79479 213
+Next nothing is 31117 214
+Next nothing is 43267 215
+Next nothing is 9623 216
+Next nothing is 46206 217
+Next nothing is 56408 218
+Next nothing is 91586 219
+Next nothing is 60171 220
+Next nothing is 21279 221
+Next nothing is 74921 222
+Next nothing is 91523 223
+Next nothing is 82519 224
+Next nothing is 40257 225
+Next nothing is 76116 226
+Next nothing is 7556 227
+Next nothing is 99775 228
+Next nothing is 74219 229
+Next nothing is 82223 230
+Next nothing is 35247 231
+Next nothing is 52390 232
+Next nothing is 89160 233
+Next nothing is 16586 234
+Next nothing is 24065 235
+Next nothing is 69983 236
+Next nothing is 55163 237
+Next nothing is 73389 238
+Next nothing is 91965 239
+Next nothing is 98094 240
+Next nothing is 11616 241
+Next nothing is 3651 242
+Next nothing is 56582 243
+Next nothing is 70915 244
+Next nothing is 16041 245
+Next nothing is 22628 246
+Next nothing is 21140 247
+Next nothing is 24595 248
+Next nothing is 2015 249
+Next nothing is 1063 250
+Next nothing is 81810 251
+Next nothing is 16744 252
+Next nothing is 63875 253
+Next nothing is 55449 254
+Next nothing is 93756 255
+Next nothing is 90763 256
+Next nothing is 92265 257
+Next nothing is 12362 258
+Next nothing is 31981 259
+Next nothing is 33177 260
+Next nothing is 64602 261
+Next nothing is 95085 262
+Next nothing is 22509 263
+Next nothing is 16043 264
+Next nothing is 75290 265
+Next nothing is 50374 266
+Next nothing is 67572 267
+Next nothing is 37055 268
+Next nothing is 77186 269
+Next nothing is 32544 270
+Next nothing is 1878 271
+Next nothing is 65126 272
+Next nothing is 72092 273
+Next nothing is 17712 274
+Next nothing is 81039 275
+Next nothing is 87476 276
+Next nothing is 18375 277
+Next nothing is 29494 278
+Next nothing is 46210 279
+Next nothing is 12351 280
+Next nothing is 11352 281
+Next nothing is 16030 282
+Next nothing is 3390 283
+Next nothing is 603 284
+Next nothing is 11827 285
+Next nothing is 1123 286
+Next nothing is 3924 287
+Next nothing is 66402 288
+Next nothing is 36832 289
+Next nothing is 76131 290
+Next nothing is 51106 291
+Next nothing is 24644 292
+Next nothing is 66351 293
+Next nothing is 34515 294
+Next nothing is 3572 295
+Next nothing is 66200 296
+Next nothing is 63804 297
+Next nothing is 47248 298
+Next nothing is 4931 299
+Next nothing is 41894 300
+Next nothing is 88223 301
+Next nothing is 76945 302
+Next nothing is 18520 303
+Next nothing is 1440 304
+Next nothing is 39405 305
+Next nothing is 72571 306
+Next nothing is 4506 307
+Next nothing is 38221 308
+Next nothing is 82852 309
+Next nothing is 62826 310
+Next nothing is 24567 311
+Next nothing is 4682 312
+Next nothing is 88024 313
+Next nothing is 33791 314
+Next nothing is 29446 315
+Next nothing is 67233 316
+Next nothing is 17152 317
+Next nothing is 730 318
+Next nothing is 28928 319
+Next nothing is 88004 320
+Next nothing is 65514 321
+Next nothing is 88301 322
+Next nothing is 74357 323
+Next nothing is 32837 324
+Next nothing is 59049 325
+Next nothing is 91793 326
+Next nothing is 43083 327
+Next nothing is 97338 328
+Next nothing is 22601 329
+Next nothing is 27898 330
+Next nothing is 56149 331
+Next nothing is 95637 332
+Next nothing is 39483 333
+Next nothing is 94070 334
+Next nothing is 92752 335
+Next nothing is 95205 336
+Next nothing is 73840 337
+Next nothing is 38673 338
+Next nothing is 78668 339
+Next nothing is 72782 340
+Next nothing is 50761 341
+Next nothing is 68023 342
+Next nothing is 27107 343
+Next nothing is 61416 344
+Next nothing is 18525 345
+Next nothing is 26202 346
+Next nothing is 34548 347
+Next nothing is 48464 348
+Next nothing is 18987 349
+Next nothing is 2539 350
+Next nothing is 16362 351
+Next nothing is 97400 352
+Next nothing is 35559 353
+Next nothing is 49787 354
+Next nothing is 27738 355
+Next nothing is 58043 356
+Next nothing is 65166 357
+Next nothing is 63997 358
+Next nothing is 20717 359
+Next nothing is 24530 360
+Next nothing is 21174 361
+Next nothing is 68030 362
+Next nothing is 55286 363
+Next nothing is 17904 364
+Next nothing is 86545 365
+Next nothing is 95763 366
+Next nothing is 18922 367
+Next nothing is 27319 368
+Next nothing is 61270 369
+Next nothing is 1064 370
+Next nothing is 8424 371
+Next nothing is 59672 372
+Next nothing is 51066 373
+Next nothing is 44848 374
+Next nothing is 22633 375
+Next nothing is 25923 376
+Next nothing is 58240 377
+Next nothing is 51783 378
+Next nothing is 33131 379
+Next nothing is 75249 380
+Next nothing is 49394 381
+Next nothing is 87771 382
+Next nothing is 404 383
+Next nothing is 93575 384
+Next nothing is 82483 385
+Next nothing is 78096 386
+Next nothing is 28374 387
+Next nothing is 58341 388
+Next nothing is 75198 389
+Next nothing is 64511 390
+Next nothing is 44038 391
+Next nothing is 25136 392
+Next nothing is 88199 393
+Next nothing is 46518 394
+Next nothing is 71787 395
+Next nothing is 68974 396
+Next nothing is 75307 397
+Next nothing is 12176 398
+Next nothing is 62030 399
+Next nothing is 49856 400
+Next nothing is 64466 401
+Next nothing is 668 402
+Next nothing is 57709 403
+Next nothing is 52400 404
+Next nothing is 94833 405
+Next nothing is 65415 406
+Next nothing is 80057 407
+Next nothing is 73422 408
+Next nothing is 86874 409
+Next nothing is 94159 410
+Next nothing is 16466 411
+Next nothing is 6549 412
+Next nothing is 92525 413
+Next nothing is 40627 414
+Next nothing is 27531 415
+Next nothing is 88177 416
+Next nothing is 4465 417
+Next nothing is 99189 418
+Next nothing is 47856 419
+Next nothing is 83694 420
+Next nothing is 54379 421
+Next nothing is 47454 422
+Next nothing is 87096 423
+Next nothing is 3469 424
+Next nothing is 99254 425
+Next nothing is 4630 426
+Next nothing is 75878 427
+Next nothing is 21776 428
+Next nothing is 92781 429
+Next nothing is 23060 430
+Next nothing is 89587 431
+Next nothing is 18346 432
+Next nothing is 47867 433
+Next nothing is 41004 434
+Next nothing is 13430 435
+Next nothing is 381 436
+Next nothing is 8755 437
+Next nothing is 58832 438
+Next nothing is 92450 439
+Next nothing is 64821 440
+Next nothing is 84642 441
+Next nothing is 2105 442
+Next nothing is 17305 443
+Next nothing is 60154 444
+Next nothing is 77752 445
+Next nothing is 39994 446
+Next nothing is 30257 447
+Next nothing is 60804 448
+Next nothing is 8060 449
+Next nothing is 83168 450
+Next nothing is 81281 451
+Next nothing is 29319 452
+Next nothing is 84291 453
+Next nothing is 2134 454
+Next nothing is 12889 455
+Next nothing is 70671 456
+Next nothing is 53206 457
+Next nothing is 3864 458
+Next nothing is 71232 459
+Next nothing is 35128 460
+Next nothing is 45383 461
+Next nothing is 43864 462
+Next nothing is 83422 463
+Next nothing is 45657 464
+Next nothing is 90923 465
+Next nothing is 93059 466
+Next nothing is 82431 467
+Next nothing is 32308 468
+Next nothing is 94968 469
+Next nothing is 19185 470
+Next nothing is 55937 471
+Next nothing is 53897 472
+Next nothing is 62026 473
+Next nothing is 63032 474
+Next nothing is 81488 475
+Next nothing is 8601 476
+Next nothing is 73718 477
+Next nothing is 22577 478
+Next nothing is 99460 479
+Next nothing is 58858 480
+Next nothing is 65384 481
+Next nothing is 13622 482
+Next nothing is 14212 483
+Next nothing is 90949 484
+Next nothing is 19069 485
+Next nothing is 48930 486
+Next nothing is 48909 487
+Next nothing is 55205 488
+Next nothing is 51696 489
+Next nothing is 11560 490
+Next nothing is 98848 491
+Next nothing is 82785 492
+Next nothing is 85828 493
+Next nothing is 74671 494
+Next nothing is 47269 495
+Next nothing is 87933 496
+Next nothing is 83248 497
+Next nothing is 9002 498
+Next nothing is 55287 499
+Next nothing is 81455 500
+Next nothing is 47329 501
+Next nothing is 16738 502
+Next nothing is 68790 503
+Next nothing is 31232 504
+Next nothing is 98034 505
+Next nothing is 45243 506
+Next nothing is 43597 507
+Next nothing is 98246 508
+Next nothing is 36542 509
+Next nothing is 54606 510
+Next nothing is 9301 511
+Next nothing is 87282 512
+Next nothing is 48551 513
+Next nothing is 91285 514
+Next nothing is 11090 515
+Next nothing is 71454 516
+Next nothing is 65829 517
+Next nothing is 44481 518
+Next nothing is 23672 519
+Next nothing is 34339 520
+Next nothing is 90980 521
+Next nothing is 78901 522
+Next nothing is 3423 523
+Next nothing is 37522 524
+Next nothing is 19932 525
+Next nothing is 92578 526
+Next nothing is 12931 527
+Next nothing is 12677 528
+Next nothing is 819 529
+Next nothing is 6125 530
+Next nothing is 53248 531
+Next nothing is 14469 532
+Next nothing is 64440 533
+Next nothing is 35616 534
+Next nothing is 67375 535
+Next nothing is 49214 536
+Next nothing is 66203 537
+Next nothing is 80968 538
+Next nothing is 79396 539
+Next nothing is 37781 540
+Next nothing is 9715 541
+Next nothing is 24581 542
+Next nothing is 63414 543
+Next nothing is 63949 544
+Next nothing is 46595 545
+Next nothing is 9384 546
+Next nothing is 64974 547
+Next nothing is 94277 548
+Next nothing is 27064 549
+Next nothing is 55621 550
+Next nothing is 69222 551
+Next nothing is 70168 552
+Next nothing is 63528 553
+Next nothing is 80304 554
+Next nothing is 94510 555
+Next nothing is 40068 556
+Next nothing is 86847 557
+Next nothing is 4861 558
+Next nothing is 91570 559
+Next nothing is 18108 560
+Next nothing is 92797 561
+Next nothing is 10653 562
+Next nothing is 58973 563
+Next nothing is 65708 564
+Next nothing is 85683 565
+Next nothing is 58791 566
+Next nothing is 84134 567
+Next nothing is 16715 568
+Next nothing is 4130 569
+Next nothing is 8333 570
+Next nothing is 2658 571
+Next nothing is 29888 572
+Next nothing is 92509 573
+Next nothing is 24885 574
+Next nothing is 85346 575
+Next nothing is 88754 576
+Next nothing is 87449 577
+Next nothing is 80326 578
+Next nothing is 41417 579
+Next nothing is 62569 580
+Next nothing is 34147 581
+Next nothing is 37638 582
+Next nothing is 28177 583
+Next nothing is 59599 584
+Next nothing is 98155 585
+Next nothing is 1035 586
+Next nothing is 88241 587
+Next nothing is 12774 588
+Next nothing is 88944 589
+Next nothing is 19873 590
+Next nothing is 8308 591
+Next nothing is 46992 592
+Next nothing is 83493 593
+Next nothing is 49337 594
+Next nothing is 10134 595
+Next nothing is 89272 596
+Next nothing is 21051 597
+Next nothing is 10771 598
+Next nothing is 80834 599
+Next nothing is 89357 600
+Next nothing is 14114 601
+Next nothing is 31302 602
+Next nothing is 51107 603
+Next nothing is 23249 604
+Next nothing is 91555 605
+Next nothing is 20144 606
+Next nothing is 57011 607
+Next nothing is 61058 608
+Next nothing is 59316 609
+Next nothing is 109 610
+Next nothing is 22645 611
+Next nothing is 83445 612
+Next nothing is 66015 613
+Next nothing is 82896 614
+Next nothing is 33160 615
+Next nothing is 80234 616
+Next nothing is 69853 617
+Next nothing is 17729 618
+Next nothing is 20261 619
+Next nothing is 95032 620
+Next nothing is 19899 621
+Next nothing is 43848 622
+Next nothing is 53819 623
+Next nothing is 1946 624
+Next nothing is 75651 625
+Next nothing is 62387 626
+Next nothing is 70384 627
+Next nothing is 68507 628
+Next nothing is 88256 629
+Next nothing is 29789 630
+Next nothing is 83043 631
+Next nothing is 14979 632
+Next nothing is 97422 633
+Next nothing is 96333 634
+Next nothing is 665 635
+Next nothing is 83779 636
+Next nothing is 15008 637
+Next nothing is 11812 638
+Next nothing is 32086 639
+Next nothing is 19311 640
+Next nothing is 38267 641
+Next nothing is 7440 642
+Next nothing is 8587 643
+Next nothing is 84193 644
+Next nothing is 19413 645
+Next nothing is 47199 646
+Next nothing is 98913 647
+Next nothing is 79128 648
+Next nothing is 1447 649
+Next nothing is 19812 650
+Next nothing is 7520 651
+Next nothing is 58170 652
+Next nothing is 78767 653
+Next nothing is 36504 654
+Next nothing is 12155 655
+Next nothing is 53725 656
+Next nothing is 15724 657
+Next nothing is 31280 658
+Next nothing is 531 659
+Next nothing is 21899 660
+Next nothing is 21132 661
+Next nothing is 45275 662
+Next nothing is 14983 663
+Next nothing is 9207 664
+Next nothing is 82137 665
+Next nothing is 13076 666
+Next nothing is 32752 667
+Next nothing is 94091 668
+Next nothing is 91316 669
+Next nothing is 17593 670
+Next nothing is 86692 671
+Next nothing is 83916 672
+Next nothing is 84429 673
+Next nothing is 6123 674
+Next nothing is 52149 675
+Next nothing is 35368 676
+Next nothing is 85722 677
+Next nothing is 84034 678
+Next nothing is 71297 679
+Next nothing is 226 680
+Next nothing is 20433 681
+Next nothing is 83398 682
+Next nothing is 5442 683
+Next nothing is 81622 684
+Next nothing is 93237 685
+Next nothing is 76689 686
+Next nothing is 67773 687
+Next nothing is 16764 688
+Next nothing is 12187 689
+Next nothing is 45084 690
+Next nothing is 23959 691
+Next nothing is 83235 692
+Next nothing is 38733 693
+Next nothing is 55868 694
+Next nothing is 29 695
+Next nothing is 83831 696
+Next nothing is 80100 697
+Next nothing is 14723 698
+Next nothing is 60832 699
+Next nothing is 72946 700
+Next nothing is 37493 701
+Next nothing is 27258 702
+Next nothing is 67542 703
+Next nothing is 28426 704
+Next nothing is 35520 705
+Next nothing is 19478 706
+Next nothing is 53315 707
+Next nothing is 89835 708
+Next nothing is 45636 709
+Next nothing is 84411 710
+Next nothing is 44013 711
+Next nothing is 67751 712
+Next nothing is 94119 713
+Next nothing is 15872 714
+Next nothing is 97486 715
+Next nothing is 4530 716
+Next nothing is 2285 717
+Next nothing is 48179 718
+Next nothing is 36594 719
+Next nothing is 52069 720
+Next nothing is 44214 721
+Next nothing is 50187 722
+Next nothing is 63191 723
+Next nothing is 96123 724
+Next nothing is 37905 725
+Next nothing is 35302 726
+Next nothing is 26074 727
+Next nothing is 24510 728
+Next nothing is 77136 729
+Next nothing is 34296 730
+Next nothing is 29704 731
+Next nothing is 22944 732
+Next nothing is 10945 733
+Next nothing is 73256 734
+Next nothing is 40940 735
+Next nothing is 2718 736
+Next nothing is 94666 737
+Next nothing is 53811 738
+Next nothing is 75159 739
+Next nothing is 14802 740
+Next nothing is 29858 741
+Next nothing is 79484 742
+Next nothing is 55887 743
+Next nothing is 8798 744
+Next nothing is 89519 745
+Next nothing is 60659 746
+Next nothing is 53544 747
+Next nothing is 8514 748
+Next nothing is 97430 749
+Next nothing is 1228 750
+Next nothing is 16133 751
+Next nothing is 19944 752
+Next nothing is 25547 753
+Next nothing is 76840 754
+Next nothing is 57327 755
+Next nothing is 96467 756
+Next nothing is 97937 757
+Next nothing is 22345 758
+Next nothing is 75533 759
+Next nothing is 80499 760
+Next nothing is 39170 761
+Next nothing is 25194 762
+Next nothing is 78713 763
+Next nothing is 7331 764
+Next nothing is 92642 765
+Next nothing is 45567 766
+Next nothing is 58155 767
+Next nothing is 4918 768
+Next nothing is 92414 769
+Next nothing is 42478 770
+Next nothing is 57589 771
+Next nothing is 46276 772
+Next nothing is 28529 773
+Next nothing is 36871 774
+Next nothing is 44875 775
+Next nothing is 66783 776
+Next nothing is 1043 777
+Next nothing is 78311 778
+Next nothing is 65698 779
+Next nothing is 95457 780
+Next nothing is 28935 781
+Next nothing is 58156 782
+Next nothing is 12445 783
+Next nothing is 21019 784
+Next nothing is 81654 785
+Next nothing is 82814 786
+Next nothing is 75481 787
+Next nothing is 41055 788
+Next nothing is 55067 789
+Next nothing is 49768 790
+Next nothing is 7422 791
+Next nothing is 30983 792
+Next nothing is 81931 793
+Next nothing is 45122 794
+Next nothing is 75101 795
+Next nothing is 71773 796
+Next nothing is 52323 797
+Next nothing is 41386 798
+Next nothing is 36729 799
+Next nothing is 24027 800
+Next nothing is 82430 801
+Next nothing is 53824 802
+Next nothing is 75518 803
+Next nothing is 38146 804
+Next nothing is 27401 805
+Next nothing is 1321 806
+Next nothing is 20200 807
+Next nothing is 30934 808
+Next nothing is 43923 809
+Next nothing is 9472 810
+Next nothing is 87617 811
+Next nothing is 7973 812
+Next nothing is 40413 813
+Next nothing is 34242 814
+Next nothing is 51833 815
+Next nothing is 7298 816
+Next nothing is 26372 817
+Next nothing is 22704 818
+Next nothing is 87196 819
+Next nothing is 1866 820
+Next nothing is 10454 821
+Next nothing is 8810 822
+Next nothing is 14074 823
+Next nothing is 77163 824
+Next nothing is 15394 825
+Next nothing is 5630 826
+Next nothing is 17801 827
+Next nothing is 80920 828
+Next nothing is 22571 829
+Next nothing is 25311 830
+Next nothing is 270 831
+Next nothing is 2144 832
+Next nothing is 63031 833
+Next nothing is 82371 834
+Next nothing is 94758 835
+Next nothing is 38188 836
+Next nothing is 34663 837
+Next nothing is 69757 838
+Next nothing is 37718 839
+Next nothing is 55552 840
+Next nothing is 81137 841
+Next nothing is 27652 842
+Next nothing is 87492 843
+Next nothing is 25632 844
+Next nothing is 95731 845
+Next nothing is 53233 846
+Next nothing is 69684 847
+Next nothing is 75600 848
+Next nothing is 84135 849
+Next nothing is 72452 850
+Next nothing is 73281 851
+Next nothing is 45808 852
+Next nothing is 934 853
+Next nothing is 12130 854
+Next nothing is 15750 855
+Next nothing is 69210 856
+Next nothing is 99905 857
+Next nothing is 63643 858
+Next nothing is 47850 859
+Next nothing is 83564 860
+Next nothing is 77241 861
+Next nothing is 75978 862
+Next nothing is 24255 863
+Next nothing is 89197 864
+Next nothing is 42934 865
+Next nothing is 76920 866
+Next nothing is 29994 867
+Next nothing is 45675 868
+Next nothing is 30076 869
+Next nothing is 69280 870
+Next nothing is 70557 871
+Next nothing is 43708 872
+Next nothing is 62628 873
+Next nothing is 89095 874
+Next nothing is 80504 875
+Next nothing is 76887 876
+Next nothing is 27720 877
+Next nothing is 67628 878
+Next nothing is 11080 879
+Next nothing is 37351 880
+Next nothing is 55940 881
+Next nothing is 56000 882
+Next nothing is 79866 883
+Next nothing is 33203 884
+Next nothing is 16228 885
+Next nothing is 8716 886
+Next nothing is 74862 887
+Next nothing is 32459 888
+Next nothing is 58183 889
+Next nothing is 18633 890
+Next nothing is 40377 891
+Next nothing is 70141 892
+Next nothing is 84619 893
+Next nothing is 28850 894
+Next nothing is 45925 895
+Next nothing is 7057 896
+Next nothing is 16792 897
+Next nothing is 54610 898
+Next nothing is 21249 899
+Next nothing is 15667 900
+Next nothing is 91038 901
+Next nothing is 44221 902
+Next nothing is 992 903
+Next nothing is 8700 904
+Next nothing is 45100 905
+Next nothing is 68628 906
+Next nothing is 67824 907
+Next nothing is 46145 908
+Collect the comments. 909
+[Finished in 2.8s]
+'''
+
+# 最终结果
+'''
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+ * *                                                                                                                         * * 
+ * *       O O         O O         X X             Y Y Y Y         G G         G G     E E E E E E   N N             N N     * * 
+ * *       O O         O O     X X X X X X       Y Y Y Y Y Y       G G       G G       E E E E E E     N N         N N       * * 
+ * *       O O         O O   X X X     X X X   Y Y Y       Y Y     G G   G G           E E               N N     N N         * * 
+ * *       O O O O O O O O   X X         X X   Y Y                 G G G               E E E E E           N N N N           * * 
+ * *       O O O O O O O O   X X         X X   Y Y                 G G G               E E E E E             N N             * * 
+ * *       O O         O O   X X X     X X X   Y Y Y       Y Y     G G   G G           E E                   N N             * * 
+ * *       O O         O O     X X X X X X       Y Y Y Y Y Y       G G       G G       E E E E E E           N N             * * 
+ * *       O O         O O         X X             Y Y Y Y         G G         G G     E E E E E E           N N             * * 
+ * *                                                                                                                         * * 
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+   * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+ [Finished in 2.7s]
+ '''
