@@ -32,6 +32,17 @@ from PIL import Image
 # Python 2.7安装PIL，在Debian/Ubuntu Linux下直接通过apt安装：$ sudo apt-get install python-imaging。
 # Python 2.7安装PIL，Windows平台就去PIL官方网站下载exe安装包。[url](http://pythonware.com/products/pil/)
 # Python 3.x安装PIL,如果安装了Anaconda，Pillow就已经可用了。否则，需要在命令行下通过pip安装：$ pip install pillow
+# 
+# 补充一下由bytes数组直接转换成Image对象的方法，时间2018-05-03 13:53
+#    从网上下载图片bytes，直接转换成Image对象
+#    from PIL import Image
+#    import requests
+#    import io
+#
+#    image_data = requests.get(target_url).content
+#    stream = io.BytesIO(image_data)
+#    img = Image.open(stream)
+#    img.show();
 
 import base64
 # 这个模块也是从廖雪峰老师的Python教程上可是接触的，主要负责对字符串进行base64的编码和解码工作
