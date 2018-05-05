@@ -14,6 +14,11 @@ __author__ = 'AlbertS'
 #       pw: 'BZh91AY&SY\x94$|\x0e\x00\x00\x00\x81\x00\x03$ \x00!\x9ah3M\x13<]\xc9\x14\xe1BBP\x91\xf08'
 #       -->
 #       这看起来就是username和password，只要解析了这段看着像十六进制的字符串应该就能通关了吧!
+#       说起来容易做起来难，每次都卡在将文本中的十六机制形式的字符串转换成十六进制
+#       这次也是一样，又卡在这了，怎么办，好在每次都有所进步，这次找不到直接函数，那就自己写一个吧，、
+#       最终写了一个不太完美的版本str2bytes，不过解决了我的问题，可是得到十六进制串并没有完成
+#       还得计算出原来的信息，这个我没接触过，前面使用了zip，这次据大神所说是bz2，于是调用bz2的解压方法
+#       得到了答案username:huge password:file
 #       
 # 
 # 备注：1. python challenge home page : http://www.pythonchallenge.com/
