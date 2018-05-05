@@ -5,7 +5,7 @@
 # @Link     : http://blog.csdn.net/albertsh
 # @Github   : https://github.com/AlbertGithubHome
 __author__ = 'AlbertS'
-# @Subject  : level 5 of python challenge
+# @Subject  : level 7 of python challenge
 # 
 # 思路：这一关一点思路也没有，源码中也没有任何提示，css文件没有任何异常，只有一张
 #       打了马赛克的图片感觉有点问题，于是试了试单词mosaic，与python无关注定失败

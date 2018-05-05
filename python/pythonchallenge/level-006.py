@@ -5,7 +5,7 @@
 # @Link     : http://blog.csdn.net/albertsh
 # @Github   : https://github.com/AlbertGithubHome
 __author__ = 'AlbertS'
-# @Subject  : level 5 of python challenge
+# @Subject  : level 6 of python challenge
 # 
 # 思路：这一关对于我来说的确不简单，没有完整的做完，说一下解题思路，第一步还是查看源码，
 #       其中只有"<html> <!-- <-- zip -->"这一个信息可用。如果你拿zip替换网址中的channel，
