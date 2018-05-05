@@ -126,3 +126,33 @@ import zipfile
 # 其实这个库除了解压还有很多其他的操作，都是关于zip文件的，参考https://www.cnblogs.com/sun-haiyu/p/7082063.html
 # 最常用法：zip_file = zipfile.ZipFile('channel.zip') 打开zip文件
 # zip_file.extractall('./channel')将zip文件全部解压到目录'./channel'中
+
+import bz2
+# 前几天使用了zip压缩文件，今天（2018-05-04 16:30:12）又接触到了新的压缩类型bz2，这是一种常用的压缩格式
+# 同样是在进行python challenge时使用到的，根据我的推断应该是压缩的字节流起始字节是BZ，因为我解压的两个bytes都是这样的
+# 
+#    username_bytes = b'BZh91AY&SYA\xaf\x82\r\x00\x00\x01\x01\x80\x02\xc0\x02\x00 \x00!\x9ah3M\x07<]\xc9\x14\xe1BA\x06\xbe\x084'
+#    password_bytes = b'BZh91AY&SY\x94$|\x0e\x00\x00\x00\x81\x00\x03$ \x00!\x9ah3M\x13<]\xc9\x14\xe1BBP\x91\xf08'
+#    
+#    print("username:", bz2.decompress(username_bytes))
+#    print("password:", bz2.decompress(password_bytes))
+# 
+# 使用非常方便，直接调用方法decompress，将需要解压的内容传入即可
+# 在python challenge第8关，使用到了bz2，并且写了一个函数str2bytes，用来解决将文件中的BZh91AY&SYA\xaf\x82\r字符串，转成16进制
+# 原来花费了很多时间都没有搞定，这次自定义实现了
+# 
+# def str2bytes(str_content):
+#    result_list = [];
+#    pos = 0
+#    str_content = str_content.replace("\\n", "\n").replace("\\t", "\t").replace("\\r", "\r")
+#    content_len = len(str_content)
+#    while pos < content_len:
+#        if str_content[pos] == '\\' and pos + 3 < content_len and str_content[pos + 1] == 'x':
+#            sub_str = str_content[pos + 2: pos + 4]
+#            result_list.append(int(sub_str, 16))
+#            pos = pos + 4
+#        else:
+#            result_list.append(ord(str_content[pos]))
+#            pos = pos + 1
+#    return bytes(result_list)
+
