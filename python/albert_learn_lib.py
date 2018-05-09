@@ -113,6 +113,35 @@ import re
 # re.findall(pattern, string[, flags]): 返回string中所有与pattern相匹配的全部字串，返回形式为数组。
 # 
 # re.finditer(pattern, string[, flags]): 返回string中所有与pattern相匹配的全部字串，返回形式为迭代器。
+# 
+# 2018年5月9日补充，参考：https://www.cnblogs.com/pigwan7/p/7814777.html
+# 
+# 1、.(句点)匹配除了换行之外的所有一个字符， .*(点-星)匹配除了换行外的所有字符
+# >>> r=re.compile(r'.*')
+# >>> r.search('How are you\nFine thank you and you\nI am fine too').group()
+# 'How are you'
+# 
+# 这个例子可以看出.*(点-星)匹配除了换行外的所有字符，但无法匹配换行符，如何匹配包括换行符的所有字符呢
+# 
+# 2、通过传入re.DOTALL或者re.S作为re.compile()的第二个参数
+# >>> r=re.compile(r'.*',re.DOTALL)
+# >>> r.search('How are you\nFine thank you and you\nI am fine too').group()
+# 'How are you\nFine thank you and you\nI am fine too'
+# 
+# >>> r=re.compile(r'.*',re.S)
+# >>> r.search('How are you\nFine thank you and you\nI am fine too').group()
+# 'How are you\nFine thank you and you\nI am fine too'
+# 
+# 3、通过  (.|\n)*  正则表达式来匹配所有字
+# >>> r=re.compile(r'(.|\n)*')
+# >>> r.search('How are you\nFine thank you and you\nI am fine too').group()
+# 'How are you\nFine thank you and you\nI am fine too'
+# 
+# 4、除了re.DOTALL外，re.IGNORCASE(等价于re.I),re.MULTILINE(re.M)，也是很有用的参数，re.IGNORCASE可以忽略大小写
+# >>> r=re.compile(r'hello',re.I)
+# >>> r.findall('Hello hello world heLLo')
+# ['Hello', 'hello', 'heLLo']
+
 
 import pickle
 # 这个库我确信之前没有用过，今天（2018-04-25 20:20:20）参加python challenge时第一次使用，
@@ -169,4 +198,43 @@ import bz2
 # b'BZh91AY&SYA\xaf\x82\r\x00\x00\x01\x01\x80\x02\xc0\x02\x00 \x00!\x9ah3M\x07<]\xc9\x14\xe1BA\x06\xbe\x084'
 # [Finished in 0.1s]
 # 
+
+from PIL import ImageDraw
+# 之前使用过Image这个库，最近（2018-05-08 13:37:23）在做python challenge时，涉及到一个图像处理的的操作
+# 具体的用法就是使用Image库创建图片对象，然后使用ImageDraw来进行下一步的图像绘制，例如
+#    img = Image.new('RGB', (width, height))
+#    draw = ImageDraw.Draw(img)
+#    draw.line(first_list)
+#    draw.line(second_list)
+#    img.show()
+# 其中line函数的参数是一个数字的list，表示点的信息，具体例子参考：
+# https://github.com/AlbertGithubHome/Bella/blob/master/python/pythonchallenge/level-009.py
+
+import urllib.request
+# 使用这个库的参考网上的解决方案用来解决python challenge第9关中的密码验证问题，因为网页需要验证才能打开
+# 而这样的网页有不同于登录页面，其中只需要一个验证，使用requests库一直没有找到解决方法，post，get，session
+# cookies都用过了也没有解决，后来偶然间发现urllib.request可以办到，于是使用了网上的代码：
+#
+#    # create a password manager  
+#    password_mgr = urllib.request.HTTPPasswordMgrWithDefaultRealm()
+#      
+#    # Add the username and password.
+#    # If we knew the realm, we could use it instead of None.
+#    top_level_url = "http://www.pythonchallenge.com/pc/return/good.html"
+#    password_mgr.add_password(None, top_level_url, 'huge', 'file')
+#    handler = urllib.request.HTTPBasicAuthHandler(password_mgr)
+#      
+#    # create "opener" (OpenerDirector instance)
+#    opener = urllib.request.build_opener(handler)
+#
+#    # use the opener to fetch a URL
+#    a_url = "http://www.pythonchallenge.com/pc/return/good.html"
+#    x = opener.open(a_url)
+#    print(x.read())
+#    
+#    接着又有好消息，原来requests也能办到，并且更加简便：
+#    login_data = requests.get(target_url, auth=('huge', 'file')).content
+#    
+#    看来urllib.request要想真正的发挥作用还需要后续的探索了
+
 
