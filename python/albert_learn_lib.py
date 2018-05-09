@@ -155,4 +155,18 @@ import bz2
 #            result_list.append(ord(str_content[pos]))
 #            pos = pos + 1
 #    return bytes(result_list)
+#    
+# 找到了更简单的的方法：
+#   str_content = 'BZh91AY&SYA\\xaf\\x82\\r\\x00\\x00\\x01\\x01\\x80\\x02\\xc0\\x02\\x00 \\x00!\\x9ah3M\\x07<]\\xc9\\x14\\xe1BA\x06\\xbe\\x084'
+#   bytes_content = bytes(str_content, "latin1")
+#   print(bytes_content.decode('unicode_escape').encode('latin1'))
+#   
+# 或者
+#   import codecs
+#   print(codecs.escape_decode(bytes_content)[0])
+# 
+# 结果：
+# b'BZh91AY&SYA\xaf\x82\r\x00\x00\x01\x01\x80\x02\xc0\x02\x00 \x00!\x9ah3M\x07<]\xc9\x14\xe1BA\x06\xbe\x084'
+# [Finished in 0.1s]
+# 
 
