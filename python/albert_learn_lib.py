@@ -141,6 +141,11 @@ import re
 # >>> r=re.compile(r'hello',re.I)
 # >>> r.findall('Hello hello world heLLo')
 # ['Hello', 'hello', 'heLLo']
+# 
+# 2018-05-14补充，参考https://blog.csdn.net/lwnylslwnyls/article/details/8901273
+# Python对标准正则表达式增加的扩展功能——命名组
+# 按连续相同的数字分组print(re.findall(r'((?P<word>\d)(?P=word)*)', '111221233334'))
+# 结果: [('111', '1'), ('22', '2'), ('1', '1'), ('2', '2'), ('3333', '3'), ('4', '4')]
 
 
 import pickle
