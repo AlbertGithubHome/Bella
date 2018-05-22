@@ -19,6 +19,10 @@ __author__ = 'AlbertS'
 #       2. current level url : http://www.pythonchallenge.com/pc/return/evil.html
 #       3. next level url : http://www.pythonchallenge.com/pc/return/disproportional.html
 #       4. username:huge password:file
+#       5. 做13关的时候发现有一条线索来自12关，查看图片evil4.jpg，也就是访问网址：
+#           http://www.pythonchallenge.com/pc/return/evil4.jpg，得到一句话Bert is evil! go back!
+#           注意必须用IE浏览器才能看到，火狐、google都看不到，这就是游戏所在，明明evil3.jpg的内容是
+#           no more evils，结果在evil4.jpg中隐藏着真正的evil
 
 from PIL import Image
 import requests

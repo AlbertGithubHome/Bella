@@ -242,4 +242,25 @@ import urllib.request
 #    
 #    看来urllib.request要想真正的发挥作用还需要后续的探索了
 
-
+import xmlrpc.client
+import xmlrpc.server
+# 这个库真的是第一次(2018-05-22 13:39:51)听说，第一次使用，居然使用了rpc，很神奇的经历，
+# 之前一直以为这些分布式服务器通常用C++来写，没想到第一次使用的居然是xml版本，居然还是在Python上
+# 使用方法很简单，就像调用本地对象的函数一样就可以，但是需要区分Python2.x 和Python3.x版本，两个版本有很大的不同
+# 以网址'http://www.pythonchallenge.com/pc/phonebook.php'提供的服务为例
+# Python2.x
+#   import xmlrpclib  
+#   server = xmlrpclib.ServerProxy('http://www.pythonchallenge.com/pc/phonebook.php')  
+#   print server.system.listMethods()  
+#   print server.system.methodHelp('phone')  
+#   print server.phone('Bert')
+#
+# Python3.x
+#   import xmlrpc.client
+#   server = xmlrpc.client.ServerProxy('http://www.pythonchallenge.com/pc/phonebook.php')
+#   print(server.system.listMethods()) 
+#   print(server.system.methodHelp('phone'))
+#   print(server.phone('Bert'))
+#   
+# 这些不同主要体现在创建连接服务器上，Python2.x参考https://blog.csdn.net/comprel/article/details/72633406
+# 新的版本将服务器和客户端统一移动到库xmlrpc中，不需要安装，Python3.x参考https://docs.python.org/3/library/xmlrpc.html
