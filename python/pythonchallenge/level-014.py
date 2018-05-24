@@ -13,10 +13,15 @@ __author__ = 'AlbertS'
 #       可惜我的难懂真的解释不了这一切，看看网络大神的解法吧，
 #       原来这个图片是10000个像素点也就是100*100，怎么拆分呢？其实就是按照转圈的方式一直往中心走
 #       那个加法公式也证实了这一点，解决他最后拼出的图片是一只猫，所以下一关的url是cat
+#
+#       请原谅我的无知，通过查看http://www.pythonchallenge.com/pc/return/cat.html发现它并不是下一关的链接
+#       网页页面上只有一张图片，图片上是两只猫，看起来这个图片是第二幅图的完整版本
+#       网页标题uzi，并且附带一句描述and its name is uzi. you'll hear from him later.
+#       走到这里应该完事了，下关的url是uzi
 # 
 # 备注：1. python challenge home page : http://www.pythonchallenge.com/
 #       2. current level url : http://www.pythonchallenge.com/pc/return/italy.html
-#       3. next level url : http://www.pythonchallenge.com/pc/return/cat.html
+#       3. next level url : http://www.pythonchallenge.com/pc/return/uzi.html
 #       4. username:huge password:file
 #
 
