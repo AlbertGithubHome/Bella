@@ -264,3 +264,21 @@ import xmlrpc.server
 #   
 # 这些不同主要体现在创建连接服务器上，Python2.x参考https://blog.csdn.net/comprel/article/details/72633406
 # 新的版本将服务器和客户端统一移动到库xmlrpc中，不需要安装，Python3.x参考https://docs.python.org/3/library/xmlrpc.html
+
+import datetime
+# 这个库不是第一次使用，今天（2018-05-24 16:08:04）记录一下简单用法，用来生成日期或处理日期格式的数据
+# 比如通过年月日生成一个日期的代码：
+# 
+#   import datetime
+#   date = datetime.date(1997,12,25)
+#   print(date)
+#
+# 结果为：1997-12-25
+
+import calendar
+# 这个库之前没有用到过，今天（2018-05-24 16:08:04）解决Python Challenge 15的时候第一次听说
+# 其实就是一个日历相关的模块，使用这个模块可以简单查询一个年份是否是闰年，使用方式如下:
+# 
+#   calendar.isleap(year)
+# 
+# 结果为：true或者false
