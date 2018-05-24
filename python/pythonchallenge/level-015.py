@@ -35,7 +35,7 @@ import datetime
 import calendar
 
 def main():
-    for year in range(1006, 1996, 10):
+    for year in range(1006, 1997, 10):
         date = datetime.date(year, 1, 26)
         if calendar.isleap(year) and date.isoweekday() == 1:
             print(date)
