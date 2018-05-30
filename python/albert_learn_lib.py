@@ -88,6 +88,7 @@ import requests
 import urllib
 from urllib.request import urlopen
 from urllib.parse import urlencode
+import urllib.parse
 # 这个网络请求库接触较早，第一个图片爬虫就使用了这个库，当时还没有看过多少Python代码，基本上是刚接触Python的时候
 # urllib模块是python自带的，直接调用就好，相比于requests来说的好处是不用安装，不过使用起来麻烦一点
 # 在网上找到一篇比较python3 urllib和requests模块区别的文章https://www.cnblogs.com/znyyy/p/7868511.html，说的比较好
@@ -98,6 +99,12 @@ from urllib.parse import urlencode
 # scrapy：框架
 # 
 # 从上往下抽象程度增加，方便程度增加。“路怎么走，你们自己选啊。”
+#
+# 今天(2018-05-30 17:03:34)使用了urllib库中的一个函数，可以将%26SY%94%3A%E2I%00%00形式的内容直接转换成bytes数组，如下
+#   import urllib.parse
+#   cookies_str = '%26SY%94%3A%E2I%00%00'
+#   cookies_bytes = urllib.parse.unquote_to_bytes(cookies_str.replace('+',' '))
+#   print(cookies_bytes) 
 
 import re
 # 开始接触Python的时候就用过这个正则表达式库，不过总是一知半解，用的时候找到之前的代码一粘贴就结束了
