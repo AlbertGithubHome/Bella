@@ -289,3 +289,17 @@ import calendar
 #   calendar.isleap(year)
 # 
 # 结果为：true或者false
+
+import wave
+# 关于音频的操作之前没有接触过，今天（2018-06-04 13:39:48）参见Pyhton challenge第一次使用，其实wave本质上
+# 操作的是一个二进制文件，将这个文件通过wave库打开即可使用关于音频操作的一些函数，下面的代码展示了如何将一个
+# 音频文件的每一帧反转形成一个新的音频文件，其中设置参数可以通过setparams一个函数代替下面的三个指定参数:
+# 
+#   with wave.open('indian.wav','rb') as indian:
+#       with wave.open('indian_reverse.wav', 'wb') as indian_reverse:
+#           indian_reverse.setparams(indian.getparams())
+#           #indian_reverse.setnchannels(indian.getnchannels())
+#           #indian_reverse.setsampwidth(indian.getsampwidth())
+#           #indian_reverse.setframerate(indian.getframerate())
+#           for x in range(indian.getnframes()):
+#               indian_reverse.writeframes(indian.readframes(1)[::-1])
