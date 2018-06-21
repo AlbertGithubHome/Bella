@@ -84,6 +84,9 @@ import requests
 #    Simple is better than complex.(简单优于复杂)
 #    Complex is better than complicated.(复杂优于繁琐)
 #    Readability counts.(重要的是可读性)
+#    
+# request库断点续传的代码，Range参数需要加入到header中
+#    requests.get(url, auth=('butter', 'fly'), headers={'Accept-Encoding': '','Range':'bytes=0-1023'});
 
 import urllib
 from urllib.request import urlopen
@@ -167,6 +170,8 @@ import zipfile
 # 其实这个库除了解压还有很多其他的操作，都是关于zip文件的，参考https://www.cnblogs.com/sun-haiyu/p/7082063.html
 # 最常用法：zip_file = zipfile.ZipFile('channel.zip') 打开zip文件
 # zip_file.extractall('./channel')将zip文件全部解压到目录'./channel'中
+# 解压带密码的zip文件：
+# zip_file.extractall('./challenge20', pwd=bytes("password", "utf8" ))
 
 import bz2
 # 前几天使用了zip压缩文件，今天（2018-05-04 16:30:12）又接触到了新的压缩类型bz2，这是一种常用的压缩格式
