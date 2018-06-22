@@ -308,3 +308,9 @@ import wave
 #           #indian_reverse.setframerate(indian.getframerate())
 #           for x in range(indian.getnframes()):
 #               indian_reverse.writeframes(indian.readframes(1)[::-1])
+
+import zlib
+# 这个库也是一个用来解压文件数据的库，今天（2018-06-21 18:11:07）解决python challenge 21时，第一次使用，
+# 使用方法很类似于bz2这个库，使用zlib库解压的数据开头的连个字节为b'x\x9c'或者写成b'\x78\x9c'
+# 解压方法就是decompress，直接调用就可以
+# content_data = zlib.decompress(content_data);
