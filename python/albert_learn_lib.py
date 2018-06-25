@@ -43,6 +43,14 @@ from PIL import Image
 #    stream = io.BytesIO(image_data)
 #    img = Image.open(stream)
 #    img.show();
+#    
+# gif图像取每一帧的图像：
+#    for frame in range(img.n_frames):
+#        img.seek(frame)
+#
+# 快速获得图像的轮廓：
+# left, top, right, bottom = img.getbbox()
+# 
 
 import base64
 # 这个模块也是从廖雪峰老师的Python教程上可是接触的，主要负责对字符串进行base64的编码和解码工作
@@ -226,6 +234,8 @@ from PIL import ImageDraw
 #    img.show()
 # 其中line函数的参数是一个数字的list，表示点的信息，具体例子参考：
 # https://github.com/AlbertGithubHome/Bella/blob/master/python/pythonchallenge/level-009.py
+# 也可以在图像上画点的，具体方法为：
+#    draw.point([center_x, center_y])
 
 import urllib.request
 # 使用这个库的参考网上的解决方案用来解决python challenge第9关中的密码验证问题，因为网页需要验证才能打开
