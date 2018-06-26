@@ -78,6 +78,12 @@ import string
 # maketrans() 方法用于创建字符映射的转换表，对于接受两个参数的最简单的调用方式
 # 第一个参数是字符串，表示需要转换的字符，第二个参数也是字符串表示转换的目标。两个字符串的长度必须相同，为一一对应的关系
 # 但是还有一点，我发现即使不使用import string，也可以调用函数str.maketrans()，现在还没弄明白原因。
+# 
+# 26个字母循环转换方法
+# def auto_trans(src_str):
+#     for x in range(26):
+#         trans_table = str.maketrans('abcdefghijklmnopqrstuvwxyz', 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz'[x:x+26])
+#         print(src_str.translate(trans_table))
 
 import requests
 # 从开始了解爬虫时接触了这个库，对于发送get、post请求非常方便，最近一次使用时间是(2018-04-14 16:01:15)
@@ -324,3 +330,28 @@ import zlib
 # 使用方法很类似于bz2这个库，使用zlib库解压的数据开头的连个字节为b'x\x9c'或者写成b'\x78\x9c'
 # 解压方法就是decompress，直接调用就可以
 # content_data = zlib.decompress(content_data);
+
+import this
+# 真的没想到this也是一个库，今天（2018-06-26 15:20:13）在结果python challenge 23时第一次听说
+# import之后会自动打印出Python哲学，内容如下：
+#       The Zen of Python, by Tim Peters
+#
+#       Beautiful is better than ugly.
+#       Explicit is better than implicit.
+#       Simple is better than complex.
+#       Complex is better than complicated.
+#       Flat is better than nested.
+#       Sparse is better than dense.
+#       Readability counts.
+#       Special cases aren't special enough to break the rules.
+#       Although practicality beats purity.
+#       Errors should never pass silently.
+#       Unless explicitly silenced.
+#       In the face of ambiguity, refuse the temptation to guess.
+#       There should be one-- and preferably only one --obvious way to do it.
+#       Although that way may not be obvious at first unless you're Dutch.
+#       Now is better than never.
+#       Although never is often better than *right* now.
+#       If the implementation is hard to explain, it's a bad idea.
+#       If the implementation is easy to explain, it may be a good idea.
+#       Namespaces are one honking great idea -- let's do more of those!
