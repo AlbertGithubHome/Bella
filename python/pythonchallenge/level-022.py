@@ -11,7 +11,7 @@ __author__ = 'AlbertS'
 #       也就是仿真、模拟的意思，源代码中还有一行注释<!-- or maybe white.gif would be more bright-->，试着访问了
 #       一下http://www.pythonchallenge.com/pc/hex/white.gif，果然可以打开，但是图片显示是黑色的，没有再找到其他线索
 #       可能需要分析gif图片的像素，终于又看了大神们的答案，其实就是把gif图像中的每一帧都展开，取出其中与周围像素不同的点，
-#       将找到的这些点依次连线就会找到答案，实际上这些点就是摇杆滑动的轨迹，看到答案后一切都明白了，最后得到一串字母，bones
+#       将找到的这些点依次连线就会找到答案，实际上这些点就是摇杆滑动的轨迹，看到答案后一切都明白了，最后得到一串字母，bonus
 #       这就是通往下一关的url
 #       
 #       其实每个像素点表示的是运动的方向，是个向量
@@ -20,7 +20,7 @@ __author__ = 'AlbertS'
 #
 # 备注：1. python challenge home page : http://www.pythonchallenge.com/
 #       2. current level url : http://www.pythonchallenge.com/pc/hex/copper.html
-#       3. next level url : http://www.pythonchallenge.com/pc/hex/bones.html
+#       3. next level url : http://www.pythonchallenge.com/pc/hex/bonus.html
 #       4. curlevel username:butter password:fly
 #
 
