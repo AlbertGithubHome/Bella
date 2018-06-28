@@ -51,6 +51,8 @@ from PIL import Image
 # 快速获得图像的轮廓：
 # left, top, right, bottom = img.getbbox()
 # 
+# 获取像素点
+# img.getpixel((x, y))
 
 import base64
 # 这个模块也是从廖雪峰老师的Python教程上可是接触的，主要负责对字符串进行base64的编码和解码工作
@@ -186,6 +188,8 @@ import zipfile
 # zip_file.extractall('./channel')将zip文件全部解压到目录'./channel'中
 # 解压带密码的zip文件：
 # zip_file.extractall('./challenge20', pwd=bytes("password", "utf8" ))
+# 
+# zip文件的数据开头为：b'PK\x03\x04\x14\x00...
 
 import bz2
 # 前几天使用了zip压缩文件，今天（2018-05-04 16:30:12）又接触到了新的压缩类型bz2，这是一种常用的压缩格式
