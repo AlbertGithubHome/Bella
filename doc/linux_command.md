@@ -3,17 +3,20 @@
 # 系统命令
 1.查询内核版本
 
-**uname -r**
-**uname -a**
-**cat /proc/version**
+- **uname -r**
+- **uname -a**
+- **cat /proc/version**
 
 ```shell
-[shihengzhen@localhost#19:55:24#/home/shihengzhen]$uname -a
-Linux localhost.localdomain 2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012 x86_64 x86_64 x86_64 GNLinux
-[shihengzhen@localhost#19:55:35#/home/shihengzhen]$uname -r
+[shihengzhen@localhost#20:16:15#/home/shihengzhen]$date
+2018年 06月 28日 星期四 20:16:19 CST
+[shihengzhen@localhost#20:16:19#/home/shihengzhen]$uname -r
 2.6.32-279.el6.x86_64
-[shihengzhen@localhost#19:55:46#/home/shihengzhen]$cat /proc/version
-Linux version 2.6.32-279.el6.x86_64 (mockbuild@c6b9.bsys.dev.centos.org) (gcc version 4.4.6 20120305 (Red Hat4.4.6-4) (GCC) ) #1 SMP Fri Jun 22 12:19:21 UTC 2012
+[shihengzhen@localhost#20:16:23#/home/shihengzhen]$uname -a
+Linux localhost.localdomain 2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012 x86_64 x86_64 x86_64 GNU/Linux
+[shihengzhen@localhost#20:16:25#/home/shihengzhen]$cat /proc/version
+Linux version 2.6.32-279.el6.x86_64 (mockbuild@c6b9.bsys.dev.centos.org) (gcc version 4.4.6 20120305 (Red Hat 4.4.6-4) (GCC) ) #1 SMP Fri Jun 22 12:19:21 UTC 2012
+[shihengzhen@localhost#20:16:28#/home/shihengzhen]$
 ```
 其中2.6.32-279.el6.x86_64就是版本号，一般查询工具的使用环境时用到，也可根绝内核版本确定是否可以使用某个，这次查询（2018-06-18 20:10:30）查询内核就是因为学习epoll时提到“epoll是在2.6内核中提出的，是之前的select和poll的增强版本”，所以查了下开发环境的内核版本，经确定次内核可以使用epoll
 
