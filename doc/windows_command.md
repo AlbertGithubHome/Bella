@@ -95,6 +95,44 @@ C:\Users\Administrator>arp -a
 
 这就是我电脑arp的缓存情况，如果想清空使用`arp -d`即可
 
+2. 显示套接字内容
 
+**netstat -nao**
+
+```
+C:\Users\Administrator>netstat -nao
+
+活动连接
+
+  协议  本地地址          外部地址        状态           PID
+  TCP    0.0.0.0:135            0.0.0.0:0              LISTENING       800
+  TCP    0.0.0.0:445            0.0.0.0:0              LISTENING       4
+  TCP    0.0.0.0:1025           0.0.0.0:0              LISTENING       632
+  TCP    0.0.0.0:1026           0.0.0.0:0              LISTENING       1064
+  TCP    0.0.0.0:1027           0.0.0.0:0              LISTENING       744
+  TCP    0.0.0.0:1028           0.0.0.0:0              LISTENING       1160
+  TCP    0.0.0.0:1031           0.0.0.0:0              LISTENING       736
+  TCP    0.0.0.0:1034           0.0.0.0:0              LISTENING       3424
+  TCP    0.0.0.0:2425           0.0.0.0:0              LISTENING       5092
+  TCP    0.0.0.0:3306           0.0.0.0:0              LISTENING       1524
+  TCP    0.0.0.0:8080           0.0.0.0:0              LISTENING       4
+  TCP    0.0.0.0:8090           0.0.0.0:0              LISTENING       4
+  TCP    0.0.0.0:27036          0.0.0.0:0              LISTENING       4132
+  TCP    0.0.0.0:30985          0.0.0.0:0              LISTENING       5092
+  TCP    0.0.0.0:31105          0.0.0.0:0              LISTENING       2496
+  TCP    0.0.0.0:35729          0.0.0.0:0              LISTENING       1252
+  TCP    0.0.0.0:47984          0.0.0.0:0              LISTENING       3704
+  TCP    0.0.0.0:47989          0.0.0.0:0              LISTENING       3704
+  TCP    0.0.0.0:48010          0.0.0.0:0              LISTENING       3704
+  TCP    127.0.0.1:1102         127.0.0.1:65001        ESTABLISHED     3704
+  TCP    127.0.0.1:1515         127.0.0.1:1516         ESTABLISHED     5768
+  ...
+```
+
+显示了协议类型、计算机本身ip和端口，对方的ip和端口，通讯状态、进程id
+其中0.0.0.0表示通讯还没开始
+a显示所有套接字
+n显示ip和端口
+o显示使用套接字的进程id
 
 # 工具命令

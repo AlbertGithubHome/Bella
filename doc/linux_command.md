@@ -18,7 +18,8 @@ Linux localhost.localdomain 2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC
 Linux version 2.6.32-279.el6.x86_64 (mockbuild@c6b9.bsys.dev.centos.org) (gcc version 4.4.6 20120305 (Red Hat 4.4.6-4) (GCC) ) #1 SMP Fri Jun 22 12:19:21 UTC 2012
 [shihengzhen@localhost#20:16:28#/home/shihengzhen]$
 ```
-其中2.6.32-279.el6.x86_64就是版本号，一般查询工具的使用环境时用到，也可根绝内核版本确定是否可以使用某个，这次查询（2018-06-18 20:10:30）查询内核就是因为学习epoll时提到“epoll是在2.6内核中提出的，是之前的select和poll的增强版本”，所以查了下开发环境的内核版本，经确定次内核可以使用epoll
+
+其中 2.6.32-279.el6.x86_64 就是版本号，一般查询工具的使用环境时用到，也可根据内核版本确定是否可以使用某个工具，这次查询（2018-06-18 20:10:30）查询内核就是因为学习epoll时，有一句话提到“epoll是在2.6内核中提出的，是之前的select和poll的增强版本”，所以查了下开发环境的内核版本，经确定此内核可以使用epoll
 
 
 
