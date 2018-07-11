@@ -53,3 +53,14 @@ int main(int argc, char *argv[])
     }
     return 0;
 }
+
+/*
+[xxx]$./zgethostbyname www.baidu.com
+gethostbyname param : www.baidu.com
+>official: www.a.shifen.com
+>[alias] : www.baidu.com
+>addrtype: IPv4
+>length  : 4
+>address : 119.75.213.61
+>address : 119.75.216.20
+*/
