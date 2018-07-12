@@ -67,4 +67,11 @@ getaddrinfo('www.zhihu.com', NULL, ...);
 >[IPv4] 118.89.204.190
 >[IPv4] 118.89.204.100
 >[IPv4] 118.89.204.109
+
+[yyy]$./zgetaddrinfo www.ipv6.net.cn
+getaddrinfo('www.ipv6.net.cn', NULL, ...);
+>[IPv4] 27.221.20.228
+>[IPv6] 240c:f:1:14:ffff:ffff:1bdd:14e4
+>[IPv6] 240c:f:1:14:ffff:ffff:76f4:e833
+
 */
