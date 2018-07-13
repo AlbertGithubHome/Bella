@@ -21,6 +21,39 @@ Linux version 2.6.32-279.el6.x86_64 (mockbuild@c6b9.bsys.dev.centos.org) (gcc ve
 
 其中 2.6.32-279.el6.x86_64 就是版本号，一般查询工具的使用环境时用到，也可根据内核版本确定是否可以使用某个工具，这次查询（2018-06-18 20:10:30）查询内核就是因为学习epoll时，有一句话提到“epoll是在2.6内核中提出的，是之前的select和poll的增强版本”，所以查了下开发环境的内核版本，经确定此内核可以使用epoll
 
+2.查看硬盘剩余情况
 
+- **df -TH**
+
+```shell
+[shihengzhen@localhost#12:20:24#/tmp]$df -TH
+文件系统    类型      容量  已用  可用 已用%% 挂载点
+/dev/mapper/VolGroup-lv_root
+              ext4      53G    51G      0 100% /
+tmpfs        tmpfs     4.2G      0   4.2G   0% /dev/shm
+/dev/sda1     ext4     508M    33M   449M   7% /boot
+/dev/mapper/VolGroup-lv_home
+              ext4      83G    33G    47G  42% /home
+```
+
+3. 查看磁盘空间占用
+
+- **du -m**
+
+```shell
+[shihengzhen@localhost#20:50:24#/home/shihengzhen/test]$du -m
+1   ./epoll_cs_demo
+1   ./mysql/include/mysql
+1   ./mysql/include
+1   ./mysql
+1   ./network
+1   ./linux_version
+1026    ./so/withoutvoice
+1027    ./so/withvoice
+3970    ./so
+1   ./logs
+22915   .
+```
+与df命令不同的是Linux du命令是对文件和目录磁盘使用的空间的查看
 
 # 工具命令
