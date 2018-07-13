@@ -56,4 +56,49 @@ tmpfs        tmpfs     4.2G      0   4.2G   0% /dev/shm
 ```
 与df命令不同的是Linux du命令是对文件和目录磁盘使用的空间的查看
 
+4. 查看硬盘信息
+
+- **fdisk -l**
+- **sudo fdisk -l**
+
+```shell
+[shihengzhen@localhost#12:27:06#/home/shihengzhen]$sudo fdisk -l
+
+Disk /dev/sda: 146.8 GB, 146815733760 bytes
+255 heads, 63 sectors/track, 17849 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x7960ae01
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *           1          64      512000   83  Linux
+Partition 1 does not end on cylinder boundary.
+/dev/sda2              64       17850   142861312   8e  Linux LVM
+
+Disk /dev/mapper/VolGroup-lv_root: 53.7 GB, 53687091200 bytes
+255 heads, 63 sectors/track, 6527 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x00000000
+
+
+Disk /dev/mapper/VolGroup-lv_swap: 8388 MB, 8388608000 bytes
+255 heads, 63 sectors/track, 1019 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x00000000
+
+
+Disk /dev/mapper/VolGroup-lv_home: 84.2 GB, 84213235712 bytes
+255 heads, 63 sectors/track, 10238 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x00000000
+```
+如果直接执行没有输出任何信息应该是没有权限，尝试用root用户执行
+
 # 工具命令
