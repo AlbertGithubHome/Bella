@@ -22,9 +22,7 @@ __author__ = 'AlbertS'
 #       文件中，打印数据的前20字节，前几个字节为b'\x00P\x00K\x00\x03，其中包含PK据说是zip文件，这里面还有一个坑，就是有很多0
 #       那些数据是没有用的，需要剔除掉多出的0，删除后德奥b'PK\x03\x04\x14\x00，据说是zip文件了，解压后得到两个文件，一张图片
 #       maze.jpg上有字母显示lake，这就是通往下一关的url，还有一个文件mybroken.zip，暂时还不知道有什么用
-#       
-#       
-#       
+#
 #
 # 备注：1. python challenge home page : http://www.pythonchallenge.com/
 #       2. current level url : http://www.pythonchallenge.com/pc/hex/ambiguity.html
@@ -146,10 +144,7 @@ def new_search(img, pos):
         footpath.append(pos)
         path.append(footpath)
 
-    if find_path:
-        return path
-    else:
-        return []
+    return path if find_path else []
 
 
 def main():
