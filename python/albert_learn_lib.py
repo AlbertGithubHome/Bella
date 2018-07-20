@@ -53,6 +53,10 @@ from PIL import Image
 # 
 # 获取像素点
 # img.getpixel((x, y))
+# 
+# 补充时间：2018-07-20 15:03:26，Python challenge 25
+# 粘贴图片，将图片part_img粘贴到图片new_image的(x,y)坐标处
+# new_image.paste(part_img, x, y)
 
 import base64
 # 这个模块也是从廖雪峰老师的Python教程上可是接触的，主要负责对字符串进行base64的编码和解码工作
