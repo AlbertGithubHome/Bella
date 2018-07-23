@@ -24,7 +24,7 @@ __author__ = 'AlbertS'
 #       re.findall ：返回string中所有与pattern相匹配的全部字串，返回形式为数组。 
 # 
 # 备注：1. python challenge home page : http://www.pythonchallenge.com/
-#       2. current level url : http://www.pythonchallenge.com/pc/ocr/equality.html
+#       2. current level url : http://www.pythonchallenge.com/pc/def/equality.html
 #       3. next level url : http://www.pythonchallenge.com/pc/def/linkedlist.php
 
 import requests

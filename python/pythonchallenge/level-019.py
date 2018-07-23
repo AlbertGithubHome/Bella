@@ -42,7 +42,7 @@ __author__ = 'AlbertS'
 #       
 #
 # 备注：1. python challenge home page : http://www.pythonchallenge.com/
-#       2. current level url : http://www.pythonchallenge.com/pc/return/balloons.html
+#       2. current level url : http://www.pythonchallenge.com/pc/hex/bin.html
 #       3. next level url : http://www.pythonchallenge.com/pc/hex/idiot2.html
 #       4. curlevel username:butter password:fly
 #

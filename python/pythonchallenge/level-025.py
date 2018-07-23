@@ -20,7 +20,7 @@ __author__ = 'AlbertS'
 #
 # 备注：1. python challenge home page : http://www.pythonchallenge.com/
 #       2. current level url : http://www.pythonchallenge.com/pc/hex/lake.html
-#       3. next level url : http://www.pythonchallenge.com/pc/hex/lake.html
+#       3. next level url : http://www.pythonchallenge.com/pc/hex/decent.html
 #       4. curlevel username:butter password:fly
 #
 

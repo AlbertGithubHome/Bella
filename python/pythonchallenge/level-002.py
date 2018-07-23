@@ -15,7 +15,7 @@ __author__ = 'AlbertS'
 #       其中包含的字母就是equality
 # 
 # 备注：1. python challenge home page : http://www.pythonchallenge.com/
-#       2. current level url : http://www.pythonchallenge.com/pc/ocr/map.html
+#       2. current level url : http://www.pythonchallenge.com/pc/def/ocr.html
 #       3. next level url : http://www.pythonchallenge.com/pc/def/equality.html
 
 
