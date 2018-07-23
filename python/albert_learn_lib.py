@@ -363,3 +363,13 @@ import this
 #       If the implementation is hard to explain, it's a bad idea.
 #       If the implementation is easy to explain, it may be a good idea.
 #       Namespaces are one honking great idea -- let's do more of those!
+
+import md5
+import hashlib
+# 这个库基本上在各个成熟点的语言中都存在，在解答Python Challenge 26关时（2018-07-23 12:14:04）第一次使用
+# 有个生成数字摘要的方法，使用如下：
+# if md5.md5(new_data).hexdigest() == 'bbb8b499a0eef99b52c7f13f4e78c24b' :
+#     pass
+# 这样就可以判断数字摘要是否等于某个值！
+# 注意在Python2.x版本需要使用import md5
+# 在Python3.x版本需要使用import hashlib
