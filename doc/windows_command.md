@@ -182,6 +182,54 @@ IPv6 路由表
   无
 ```
 
-以上就是路由信息表了，具体还需还不太理解。
+以上就是路由信息表了，具体数据还不太理解。
+
+4. 查询显卡信息
+
+- **nvidia-smi**
+
+```cmd
+C:\Program Files\NVIDIA Corporation\NVSMI>nvidia-smi
+Fri Jul 27 10:05:24 2018
++------------------------------------------------------+
+| NVIDIA-SMI 364.72     Driver Version: 364.72         |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name            TCC/WDDM | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  GeForce GTX 750 Ti WDDM  | 0000:01:00.0      On |                  N/A |
+| 33%   33C    P8     1W / 100W |    485MiB /  2048MiB |      4%      Default |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID  Type  Process name                               Usage      |
+|=============================================================================|
+|    0       576  C+G   Insufficient Permissions                     N/A      |
+|    0      1396  C+G   C:\Windows\system32\Dwm.exe                  N/A      |
+|    0      5424  C+G   ...m Files (x86)\Mozilla Firefox\firefox.exe N/A      |
+|    0      6488  C+G   ...x86)\Youdao\YoudaoNote\YNoteCefRender.exe N/A      |
+|    0      6804  C+G   ...Steam\bin\cef\cef.win7\steamwebhelper.exe N/A      |
+|    0      8452  C+G   ...m Files (x86)\Mozilla Firefox\firefox.exe N/A      |
+|    0      9380  C+G   ...m Files (x86)\Mozilla Firefox\firefox.exe N/A      |
+|    0      9568  C+G   ...m Files (x86)\Mozilla Firefox\firefox.exe N/A      |
+|    0     10148  C+G   ...m Files (x86)\Mozilla Firefox\firefox.exe N/A      |
++-----------------------------------------------------------------------------+
+```
+
+这个命令实际上是调用NVIDIA的程序，如果这个程序加到了环境变量中，直接在cmd串口输入即可，
+否则需要进入到安装目录执行，默认安装目录一般是`C:\Program Files\NVIDIA Corporation\NVSMI>`
+
+5. 查询程序或DLL所在位置
+
+- **where msvcp140.dll**
+
+```cmd
+C:\Program Files\NVIDIA Corporation\NVSMI>where msvcp140.dll
+C:\Windows\System32\msvcp140.dll
+H:\Program Files\TortoiseSVN\bin\msvcp140.dll
+```
+
+where 命令后面直接跟需要查找的程序或者DLL即可
 
 # 工具命令
