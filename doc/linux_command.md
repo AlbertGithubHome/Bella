@@ -146,4 +146,19 @@ i: unknown command
 1e  Hidden W95 FAT1
 ```
 
+5. 查看指定端口连接及数据堆积情况
+
+- **netstat | grep 'Recv-Q\|8876'**
+
+```shell
+[shihengzhen@localhost#17:54:57#/home/shihengzhen]$netstat | grep 'Recv-Q\|8876'
+Proto Recv-Q Send-Q Local Address               Foreign Address             State      
+tcp        0      0 192.168.1.214:8876          192.168.1.108:64711         ESTABLISHED 
+tcp        0    228 192.168.1.214:8876          192.168.1.151:31064         ESTABLISHED 
+```
+
+本质上是netstat命令，然后通过grep过滤出标题和指定端口的行
+其中"Recv-Q"和"Send-Q"指的是接收队列和发送队列。这些数字一般都应该是0。
+如果不是则表示软件包正在队列中堆积。这种情况只能在非常少的情况见到。
+
 # 工具命令
