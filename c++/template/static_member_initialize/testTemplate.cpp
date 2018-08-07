@@ -1,7 +1,7 @@
 // testTemplate.cpp
 //
 #include <stdio.h>
-#include "template.h"
+#include "testTemplate.h"
 
 int main()
 {
