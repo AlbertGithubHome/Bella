@@ -1,7 +1,7 @@
 *本文主要总结一些用到的linux命令，做这个总结主要是为了便于后续查找，因为自己在工作过程中也用过不少的命令，一般在反复使用的那段时间，命令记得特别熟，但是稍微搁置几天就有些记不清了，所以萌生了总结到一起的想法，初步的思路就是用到哪些就记录哪些，没有什么先后顺序和层次关系，只要方便查找就好，一切为了进步！*
 
 # 系统命令
-1.查询内核版本
+1. 查询内核版本
 
 - **uname -r**
 - **uname -a**
@@ -23,7 +23,7 @@ Linux version 2.6.32-279.el6.x86_64 (mockbuild@c6b9.bsys.dev.centos.org) (gcc ve
 
 其中 2.6.32-279.el6.x86_64 就是版本号，一般查询工具的使用环境时用到，也可根据内核版本确定是否可以使用某个工具，这次查询（2018-06-18 20:10:30）查询内核就是因为学习epoll时，有一句话提到“epoll是在2.6内核中提出的，是之前的select和poll的增强版本”，所以查了下开发环境的内核版本，经确定此内核可以使用epoll
 
-2.查看硬盘剩余情况
+2. 查看硬盘剩余情况
 
 - **df -TH**
 
@@ -160,5 +160,29 @@ tcp        0    228 192.168.1.214:8876          192.168.1.151:31064         ESTA
 本质上是netstat命令，然后通过grep过滤出标题和指定端口的行
 其中"Recv-Q"和"Send-Q"指的是接收队列和发送队列。这些数字一般都应该是0。
 如果不是则表示软件包正在队列中堆积。这种情况只能在非常少的情况见到。
+
+6. 查看文件类型
+
+- **file xxx**
+
+
+```shell
+[shihengzhen@localhost#20:02:20#/home/shihengzhen/test/gdbtest]$ll
+总用量 76
+-rwxrwxr-x 1 shihengzhen shihengzhen 47049 8月  16 19:44 a.out
+-rwxr-xr-x 1 shihengzhen shihengzhen   221 8月  16 18:08 cc.sh
+-rw-rw-r-- 1 shihengzhen shihengzhen 18595 8月  16 19:39 gdbhelp.txt
+-rw-rw-r-- 1 shihengzhen shihengzhen   306 8月  16 19:44 main.cpp
+[shihengzhen@localhost#20:03:23#/home/shihengzhen/test/gdbtest]$file a.out 
+a.out: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.18, not stripped
+[shihengzhen@localhost#20:03:34#/home/shihengzhen/test/gdbtest]$file cc.sh 
+cc.sh: ASCII text
+[shihengzhen@localhost#20:03:39#/home/shihengzhen/test/gdbtest]$file gdbhelp.txt 
+gdbhelp.txt: ASCII English text, with CRLF line terminators
+[shihengzhen@localhost#20:03:51#/home/shihengzhen/test/gdbtest]$file main.cpp 
+main.cpp: ISO-8859 C program text
+[shihengzhen@localhost#20:04:02#/home/shihengzhen/test/gdbtest]$
+```
+file xxx就可以查看文件的类型，只要把xxx替换成要查看的文件就可以了。
 
 # 工具命令
