@@ -46,15 +46,15 @@ void test1()
 
 void test2()
 {
-	shared_ptr<Example> ptr2(new Example(2));	// Example: 2（输出内容）
-	if (ptr2)
-		cout << "ptr2 is valid" << endl;
+    shared_ptr<Example> ptr2(new Example(2));   // Example: 2（输出内容）
+    if (ptr2)                                   // 调用operator bool
+        cout << "ptr2 is valid" << endl;        // ptr2 is valid（输出内容），说明ptr2是有效的
 
-	ptr2.reset();
+    ptr2.reset();                               // ~Example: 2（输出内容），设置内部对象为空
 
-	if (ptr2)
-		cout << "ptr2 is valid" << endl;
-}
+    if (ptr2)                                   // 调用operator bool
+        cout << "ptr2 is valid" << endl;        // 没有输出，说明ptr2已经无效
+} 
 
 void test3()
 {
