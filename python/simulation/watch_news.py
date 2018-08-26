@@ -9,6 +9,7 @@ __author__ = 'AlbertS'
 
 import os
 import time
+import random
 
 # 截屏取点
 def pull_screenshot():
@@ -18,6 +19,7 @@ def pull_screenshot():
 # 点击屏幕
 def click(x1,y1,x2,y2,swipe_time,pause_time,info):
     cmd = 'adb shell input swipe {0} {1} {2} {3} {4}'.format(x1,y1,x2,y2,swipe_time);
+    pause_time += random.randrange(-1, 3)
     print('{0} => {1}, pause_time = {2}'.format(info, cmd, pause_time))
     os.system(cmd)
     if pause_time > 0: time.sleep(pause_time)
@@ -30,13 +32,13 @@ def simulation_click():
     from_x,from_y,to_x,to_y = 550,1000,550,350
 
     click(refresh_x, refresh_y, refresh_x, refresh_y, 800, 5, "refresh news list") # 刷新新闻
-    for n in range(4):
+    for n in range(3):
         click(x, y, x, y, 500, 8, "watch news") # 选择新闻进入
         for k in range(3):
             click(from_x, from_y, to_x, to_y, 900, 2, "change page") # 向上滑动翻看
 
         click(return_x,return_y, return_x, return_y, 500, 5, "return main") # 点击返回按钮
-        y += 300
+        y += 400
         
 # 模拟主循环
 def main(max_count):
