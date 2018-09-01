@@ -24,7 +24,7 @@ public:
 	void a_use_count() { cout << "a use count : " << m_ptr_a.use_count() << endl; }
 	void show() { cout << "this is class CB!" << endl; }
 private:
-	shared_ptr<CA> m_ptr_a;
+	weak_ptr<CA> m_ptr_a;
 };
 
 void test_refer_to_each_other()
