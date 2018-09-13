@@ -40,10 +40,13 @@
 - 天天桌面便签
 - 鼠标连点器
 - 按键精灵
+- Everything
+- MetalScroll
+- Xoreax IncrediBuild
 
 # 文档查看工具
 - WPS文档
-- 急速PDF阅读器
+- 极速PDF阅读器
 - WPS表格
 - LibreOffice 3.5
 
@@ -64,6 +67,8 @@
 - node.js
 - Tesseract-OCR
 - Go Programing Language
+- WampServer
+- hexo
 
 # 检测内存泄漏工具
 - Leak Dialog
@@ -86,27 +91,23 @@
 - HTTPAnalyzeFullV7
 - WireShark
 - wpe三件套
+- WinCap
 
 # 其他工具
-- hexo
-- Everything
 - 电脑管家
 - 驱动精灵
 - 逍遥安卓多开管理器
 - 逍遥安卓模拟器
 - 靠谱天天模拟器
 - exeScope
-- WampServer
-- WinCap
 - WinRAR
-- Xoreax IncrediBuild
 - 有道云笔记
 - 有道词典
 - 搜狗输入法
 - 搜狗五笔输入法
 - 酷狗音乐
 - 金山打字通
-- MetalScroll
+
 
 # 游戏
 - 剑踪

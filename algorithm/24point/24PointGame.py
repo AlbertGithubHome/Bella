@@ -31,6 +31,7 @@ def CalcSet(i):
     subRet = set()
     for x in range(1, math.ceil(i / 2)):
         if (x & i == x):
+            print(i, x)
             subRet = subRet | Fork(CalcSet(x), CalcSet(i - x))
 
     return subRet

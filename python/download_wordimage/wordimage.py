@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# @Date     : 2017-12-20 15:31:45
+# @Date     : 2018-08-20 10:31:45
 # @Author   : Albert Shi
 # @Link     : http://blog.csdn.net/albertsh
 # @Github   : https://github.com/AlbertGithubHome
 __author__ = 'AlbertS'
-# @Subject  : crawl pictures with pretending browser
+# @Subject  : crawl pictures with simple browser
 
-import urllib.request, socket, re, sys, os
+import urllib.request, os
 
 '''
 http://www.171english.cn/renai/7a/ebook/images/136.jpg
@@ -39,12 +39,11 @@ def start_crawler():
                 urllib.request.urlretrieve(target_url.format(catogery, page), full_file_name)
                 print("{0} download success!".format(full_file_name))
             except:
-                pass
+                passc
 
 # start to crawler
 if __name__ == '__main__':
     start_crawler()
-    #print(get_file_local_path('7a', 126))
 
 
 # crawler result:
