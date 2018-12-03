@@ -232,4 +232,17 @@ H:\Program Files\TortoiseSVN\bin\msvcp140.dll
 
 where 命令后面直接跟需要查找的程序或者DLL即可
 
+6. 定时关机
+
+- ** shutdown /s /t 3600
+
+```cmd
+C:\Users\Administrator>shutdown /s /t 7200
+
+C:\Users\Administrator>shutdown /s /t 7200
+已经计划系统关机。(1190)
+```
+
+实际上这个命令是延时关机，最后面的数字就是距离关机的时间（单位：秒），第一次敲命令时命令窗口没有反馈，但是系统右下角会给出2小时后关机的提醒，这时延时关机就已经生效了，再次输入命令就会得到“已经计划系统关机。(1190)”的提醒。
+
 # 工具命令
