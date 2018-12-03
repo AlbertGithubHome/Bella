@@ -234,7 +234,7 @@ where 命令后面直接跟需要查找的程序或者DLL即可
 
 6. 定时关机
 
-- ** shutdown /s /t 3600
+- ** shutdown /s /t 3600**
 
 ```cmd
 C:\Users\Administrator>shutdown /s /t 7200
