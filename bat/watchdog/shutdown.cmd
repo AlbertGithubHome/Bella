@@ -1,0 +1,1 @@
+@echo 关机时间:%DATE% %time%>>E:\Log\TimeRecord.log
