@@ -1,2 +1,2 @@
 @echo --------------------------------------------- >>E:\Log\TimeRecord.log
-@echo ¿ª»úÊ±¼ä:%DATE% %time%>>E:\Log\TimeRecord.log
+@echo å¼€æœºæ—¶é—´:%DATE% %time%>>E:\Log\TimeRecord.log

@@ -1,1 +1,1 @@
-@echo 关机时间:%DATE% %time%>>E:\Log\TimeRecord.log
+@echo 鍏虫満鏃堕棿:%DATE% %time%>>E:\Log\TimeRecord.log
