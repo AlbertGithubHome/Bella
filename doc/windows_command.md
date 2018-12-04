@@ -245,4 +245,15 @@ C:\Users\Administrator>shutdown /s /t 7200
 
 实际上这个命令是延时关机，最后面的数字就是距离关机的时间（单位：秒），第一次敲命令时命令窗口没有反馈，但是系统右下角会给出2小时后关机的提醒，这时延时关机就已经生效了，再次输入命令就会得到“已经计划系统关机。(1190)”的提醒。
 
+7. 打开组策略面板
+
+- **gpedit**
+
+```cmd
+C:\Users\Administrator>gpedit
+
+```
+
+敲完命令回车后就会打开本地组策略编辑器，gpedit本身应该是GroupPolicy Edit的缩写，主要用于配置一些策略信息，比如开关机运行脚本，就可以在“本地计算机 策略->计算机配置->Windows 设置 ->脚本（启动/关机）”中进行配置。[示例开关机脚本](https://github.com/AlbertGithubHome/Bella/tree/master/bat/watchdog)
+
 # 工具命令
