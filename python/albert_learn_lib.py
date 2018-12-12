@@ -374,3 +374,8 @@ import hashlib
 # 注意在Python2.x版本需要使用import md5
 # 在Python3.x版本需要使用import hashlib
 
+from tkinter import *
+from tkinter import ttk
+# 这个库是做游戏开发时想显示地图阻挡颜色时查到的，主要为了做一个显示界面，用来显示各种地图阻挡信息
+# 界面很简单，用各种标签设置颜色用来表现信息（2018-12-07 18:00:34）第一次使用，具体用法参考例子：
+# https://github.com/AlbertGithubHome/Bella/blob/master/python/ui/colorplate.py
