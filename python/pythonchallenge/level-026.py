@@ -14,7 +14,7 @@ __author__ = 'AlbertS'
 #       Join us at the IRC: irc.freenode.net #pythonchallenge
 #       -->
 #       看起来和本关没有关系，前面的关卡确实有一关提到了道歉，好像还是用的RPC，我找找
-#       查询后发现王志伟http://www.pythonchallenge.com/pc/hex/bin.html，在19关左右
+#       查询后发现网址为http://www.pythonchallenge.com/pc/hex/bin.html，在19关左右
 #       注释内容让我从图片中获得邮件地址，难道让我给猴子发邮件？
 #       其实19关的源码里已经提供了邮箱，就是leopold.moz@pythonchallenge.com
 #       给这个邮箱发邮件，主题是Sorry，马上收到邮件回复，内容如下：
