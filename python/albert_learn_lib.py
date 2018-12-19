@@ -25,6 +25,7 @@ from aip import AipOcr
 # 第一次使用是在2018-03-28 20:48:36，用于和pytesseract识别图片做对比
 
 from PIL import Image
+# pip install Pillow
 # 一开始是在廖雪峰老师的Python教程上学到的，主要是用来处理图片的，可以做旋转、模糊二值化等等。
 # PIL：Python Imaging Library，已经是Python平台事实上的图像处理标准库了。PIL功能非常强大，但API却非常简单易用。
 # 由于PIL仅支持到Python 2.7，加上年久失修，于是一群志愿者在PIL的基础上创建了兼容的版本，名字叫Pillow，
@@ -92,6 +93,7 @@ import string
 #         print(src_str.translate(trans_table))
 
 import requests
+# pip install requests
 # 从开始了解爬虫时接触了这个库，对于发送get、post请求非常方便，最近一次使用时间是(2018-04-14 16:01:15)
 # 目的是参加一个Python Challenge的第2关，其中有一步是为了获取网页内容所以引入了requests库，直接发送get请求
 # response = requests.get(target_url)即可，获取内容直接response.content就能得到
