@@ -185,4 +185,20 @@ main.cpp: ISO-8859 C program text
 ```
 file xxx就可以查看文件的类型，只要把xxx替换成要查看的文件就可以了。
 
+
+7. 建立软链接
+
+- **ln -s source newlink**
+
+```shell
+[shihengzhen@localhost#17:28:54#/home/shihengzhen]$ll | grep git
+drwxrwxr-x  3 shihengzhen shihengzhen      4096 3月  17 2017 gitproject
+[shihengzhen@localhost#17:29:06#/home/shihengzhen]$ln -s gitproject gittest
+[shihengzhen@localhost#17:29:37#/home/shihengzhen]$ll | grep git
+drwxrwxr-x  3 shihengzhen shihengzhen      4096 3月  17 2017 gitproject
+lrwxrwxrwx  1 shihengzhen shihengzhen        10 12月 18 17:29 gittest -> gitproject
+```
+使用的时候要注意源文件与新的链接文件的顺序，不要搞反了，个人理解硬链接类似于引用计数，软连接是一个特殊的
+文本文件，其中包含指向源文件的信息
+
 # 工具命令
