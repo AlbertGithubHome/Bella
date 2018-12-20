@@ -57,7 +57,12 @@ from PIL import Image
 # 
 # 补充时间：2018-07-20 15:03:26，Python challenge 25
 # 粘贴图片，将图片part_img粘贴到图片new_image的(x,y)坐标处
-# new_image.paste(part_img, x, y)
+# new_image.paste(part_img, x, y)# 
+#
+# 补充时间：2018-12-20 13:47:46，Python challenge 27
+# 获得GIF图像的调色板
+# img = Image.open("challenge27/zigzag.gif")
+# palette = img.getpalette()
 
 import base64
 # 这个模块也是从廖雪峰老师的Python教程上可是接触的，主要负责对字符串进行base64的编码和解码工作
@@ -381,3 +386,8 @@ from tkinter import ttk
 # 这个库是做游戏开发时想显示地图阻挡颜色时查到的，主要为了做一个显示界面，用来显示各种地图阻挡信息
 # 界面很简单，用各种标签设置颜色用来表现信息（2018-12-07 18:00:34）第一次使用，具体用法参考例子：
 # https://github.com/AlbertGithubHome/Bella/blob/master/python/ui/colorplate.py
+
+import keyword
+# 这个库包含了python的关键字，在解答Python Challenge 27关时（2018-12-20 16:30:07）第一次使用
+# 其中有一个方法用于判断是否是python关键字
+# keyword.iskeyword(mystr)
