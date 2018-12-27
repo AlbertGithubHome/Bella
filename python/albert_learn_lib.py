@@ -391,3 +391,16 @@ import keyword
 # 这个库包含了python的关键字，在解答Python Challenge 27关时（2018-12-20 16:30:07）第一次使用
 # 其中有一个方法用于判断是否是python关键字
 # keyword.iskeyword(mystr)
+
+import numpy
+from numpy import genfromtxt
+# 这个库可以说是python数据处理必学的，之前见过多次，但都是忙于解决问题，没有掌握怎么使用，在
+# 解答Python Challenge 30关时（2018-12-26 16:15:42）开始学习使用方法，用于数据的处理
+# 安装方法：pip install numpy
+# genfromtxt可以把标准的CSV文件转为array，但是如果列数不统一，会转换失败
+
+import operator
+# 这个库里包含了运算的操作符，在解答Python Challenge 30关时（2018-12-27 11:28:32）第一次用到
+# 一般使用+-*/就可以了，但是在需要函数的时候用这个库更合理一些，比如将二维list转换为一维list
+# L = [[1,2], [3,4]]
+# L = reduce(operator.add, L)
