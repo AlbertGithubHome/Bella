@@ -63,6 +63,11 @@ from PIL import Image
 # 获得GIF图像的调色板
 # img = Image.open("challenge27/zigzag.gif")
 # palette = img.getpalette()
+#
+# 补充时间：2018-12-28 12:15:45，Python challenge 30
+# 可以将图片颠倒，旋转
+# img = img.transpose(Image.FLIP_LEFT_RIGHT)
+# img = img.transpose(Image.ROTATE_90)
 
 import base64
 # 这个模块也是从廖雪峰老师的Python教程上可是接触的，主要负责对字符串进行base64的编码和解码工作

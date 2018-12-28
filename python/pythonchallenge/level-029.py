@@ -15,8 +15,8 @@ __author__ = 'AlbertS'
 #       b'BZh91AY&SY\xd9\xc2p\x18\...，看来是压缩过的，使用bz2解压试试，得到信息Isn't it clear? I am yankeedoodle!
 #       看来和yankeedoodle有关，
 #       
-#       搜索单词含义是：扬基歌（美国独立战争时流行的一首歌曲），通往下一关的地址就是yankeedoodle，可是这和ya不得而知nkeedoodle
-#       有什么关系，这一关的图片又有什么用？
+#       搜索单词含义是：扬基歌（美国独立战争时流行的一首歌曲），通往下一关的地址就是yankeedoodle，可是这和yankeedoodle
+#       有什么关系，这一关的图片又有什么用？不得而知!
 #       
 #
 # 备注：1. python challenge home page : http://www.pythonchallenge.com/
