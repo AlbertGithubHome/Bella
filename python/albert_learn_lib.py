@@ -18,6 +18,7 @@ import pytesseract
 # 与（ORC）光学字符识别有关，全称为Optical Character Recognition，
 # 简单来说就是识别图片上的文字，一开始接触于百万英雄答题外挂，用于截取答题页面截图后，
 # 分析识别图片上的文字，后来又在黑板客爬虫游戏中应用，用于动态验证码识别
+# pip install pytesseract
 
 from aip import AipOcr
 # 同样是用于识别图片文字的，来源于百度的api。
@@ -409,3 +410,4 @@ import operator
 # 一般使用+-*/就可以了，但是在需要函数的时候用这个库更合理一些，比如将二维list转换为一维list
 # L = [[1,2], [3,4]]
 # L = reduce(operator.add, L)
+# L is [1, 2, 3, 4]
