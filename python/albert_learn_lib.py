@@ -411,3 +411,8 @@ import operator
 # L = [[1,2], [3,4]]
 # L = reduce(operator.add, L)
 # L is [1, 2, 3, 4]
+
+import xlwt
+import xlrd
+# 这两个库用于操作Excel表和其他类型文件的转换，据我分析应该是Excel Write 和Excel Read的缩写
+# 在尝试把自己的支出记录转换成txt表格时（2019-1-6 17:04:05）时第一次使用，具体用法后续补充
