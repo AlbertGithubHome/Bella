@@ -1,0 +1,26 @@
+{
+	"bootstrapped": true,
+	"channels":
+	[
+		"D:/PureData/channel_v3.json",
+		"https://packagecontrol.io/channel_v3.json"
+	],
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"All Autocomplete",
+		"CTags",
+		"LuaJumpDefinition",
+		"LuaSmartTips",
+		"OpenResty lua snippets",
+		"Package Control",
+		"Starbound Lua",
+		"SublimeLinter",
+		"SublimeLinter-lua",
+		"SublimeLinter-luacheck",
+		"Theme - Windows 10",
+		"TortoiseSVN"
+	]
+}
