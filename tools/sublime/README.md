@@ -1,0 +1,68 @@
+本文件主要是对当前目录中其他文件的简单说明，用来记录sublime Text的使用过程和配置备份
+
+# Sublime Text.exe
+
+这个是sublime text软件的稳定版本，下载时间2019-1-12 21:08:29
+软件的强大功能和常用快捷键参考[Sublime Text3使用指南](https://www.cnblogs.com/ma-dongdong/p/7653231.html)
+
+# channel_v3.json
+
+这个是安装Package Control以后sublime需要访问的一个文件，其中记录了可以安装的插件，但是常常因为网络问题无法访问这个文件，所以可以下载为本地文件，改为本地访问
+具体做法参考[Sublime Text 安装插件时出现There are no packages available for installation解决步骤](https://blog.csdn.net/weixin_41762173/article/details/79382132)
+
+# lua.exe
+
+配置lua环境所需的软件，当前可执行文件为自己编译，使用的Lua5.3版本源代码，并且加入了Lua File System
+加入lfs库主要为了使用lua-check插件，这时官网的要求，参考[lua5.3中加入lfs(luafilesystem)库](https://blog.csdn.net/qq_20363225/article/details/80806070)
+
+# luacheck.zip
+
+lua check 插件所需要调用的环境
+参考[github源码及说明](https://github.com/mpeterv/luacheck)
+配置参考[Lua在Sublime中的配置及插件推荐](https://www.onlyzyx.com/00025.html)和[sublime使用sublimelint-luacheck屏蔽指定警告](http://www.cnblogs.com/cheerupforyou/p/6592357.html)
+
+# ctags58.zip
+
+ctags 插件所需要调用的环境，但是生成的很多都无法跳转
+配置方法参考[如何在sublime text中实现函数跟踪跳转(ctags)](https://blog.csdn.net/menglongfc/article/details/51141084)
+改进方法参考[增强ctags对lua的支持](https://www.xuebuyuan.com/952070.html)
+
+# zRebuildCTags.bat
+
+配合ctags插件，手动生成tags文件，可以使ctags发挥更大的作用
+
+# Installed Packages
+
+已经安装的插件，这些插件与以往认识的插件有些不同，他们仅仅是对已有环境的调用插件，并不会安装所以来的内容，比如SublimeLinter-luacheck插件，需要lua解释器和lua check环境，但是插件中并不包含这些内容，这些都需要提前安装好，lua和lua-check的可执行文件所在目录都要添加到环境变量Path中，才可以被sublime、的SublimeLinter-luacheck插件调用，其他的插件也大概如此。
+
+- All Autocomplete
+- CTags
+- LuaJumpDefinition
+- LuaSmartTips
+- OpenResty lua snippets
+- Package Control
+- Starbound Lua
+- SublimeLinter
+- SublimeLinter-lua
+- SublimeLinter-luacheck
+- Theme - Windows 10
+- TortoiseSVN
+
+# User
+
+用户自己的配置文件，sublime的配置文件分为两部分，程序以及插件自带的默认配置和用户自己的配置，前者为只读文件，无法修改，所以要添加自定义内容只能修改用户自己的配置，并且用户自己的配置可以覆盖默认配置
+
+配置文件目前发现3类：
+
+1. 基础配置，以sublime-settings结尾
+ - CTags.sublime-settings
+ - Package Control.sublime-settings
+ - Preferences.sublime-settings
+ - SublimeLinter.sublime-settings
+ - TortoiseSVN.sublime-settings
+
+2. 快捷键配置，以sublime-keymap结尾
+ - Default (Windows).sublime-keymap
+
+3. 编译系统配置，以sublime-build结尾
+ - selfLua.sublime-build
