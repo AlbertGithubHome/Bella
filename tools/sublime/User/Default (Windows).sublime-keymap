@@ -1,1 +1,13 @@
+[
+    // open md file by browser
+    {
+        "keys": ["alt+m"],
+        "command": "markdown_preview",
+        "args": {"target": "browser", "parser":"markdown"}
+    },
 
+    // insert file desc by file type
+    { "keys":["alt+shift+s"], "command":"sh_head"},
+    { "keys":["alt+shift+p"], "command":"py_head" },
+    { "keys":["alt+shift+j"], "command":"java_head"},
+]
