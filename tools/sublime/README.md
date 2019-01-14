@@ -1,35 +1,29 @@
 本文件主要是对当前目录中其他文件的简单说明，用来记录sublime Text的使用过程和配置备份
 
-# Sublime Text.exe
+# Sublime Text Build 3176 x64 Setup.exe
 
-这个是sublime text软件的稳定版本，下载时间2019-1-12 21:08:29
-软件的强大功能和常用快捷键参考[Sublime Text3使用指南](https://www.cnblogs.com/ma-dongdong/p/7653231.html)
+这个是sublime text软件的稳定版本，下载时间2019-1-12 21:08:29，软件的强大功能和常用快捷键参考[Sublime Text3使用指南](https://www.cnblogs.com/ma-dongdong/p/7653231.html)
 
 # channel_v3.json
 
 这个是安装Package Control以后sublime需要访问的一个文件，其中记录了可以安装的插件，但是常常因为网络问题无法访问这个文件，所以可以下载为本地文件，改为本地访问
-具体做法参考[Sublime Text 安装插件时出现There are no packages available for installation解决步骤](https://blog.csdn.net/weixin_41762173/article/details/79382132)
+来解决的`There are no packages available for installation`问题，具体做法参考[Sublime Text 安装插件时出现There are no packages available for installation解决步骤](https://blog.csdn.net/weixin_41762173/article/details/79382132)
 
 # lua.exe
 
-配置lua环境所需的软件，当前可执行文件为自己编译，使用的Lua5.3版本源代码，并且加入了Lua File System
-加入lfs库主要为了使用lua-check插件，这时官网的要求，参考[lua5.3中加入lfs(luafilesystem)库](https://blog.csdn.net/qq_20363225/article/details/80806070)
+配置lua环境所需的软件，当前可执行文件为自己编译，使用的Lua5.3版本源代码，并且加入了Lua File System，加入lfs库主要为了使用lua-check插件，这时官网的要求，参考[lua5.3中加入lfs(luafilesystem)库](https://blog.csdn.net/qq_20363225/article/details/80806070)
 
 # luacheck.zip
 
-lua check 插件所需要调用的环境
-参考[github源码及说明](https://github.com/mpeterv/luacheck)
-配置参考[Lua在Sublime中的配置及插件推荐](https://www.onlyzyx.com/00025.html)和[sublime使用sublimelint-luacheck屏蔽指定警告](http://www.cnblogs.com/cheerupforyou/p/6592357.html)
+lua check 插件所需要调用的环境，参考[github源码及说明](https://github.com/mpeterv/luacheck)，配置参考[Lua在Sublime中的配置及插件推荐](https://www.onlyzyx.com/00025.html)和[sublime使用sublimelint-luacheck屏蔽指定警告](http://www.cnblogs.com/cheerupforyou/p/6592357.html)
 
 # ctags58.zip
 
-ctags 插件所需要调用的环境，但是生成的很多都无法跳转
-配置方法参考[如何在sublime text中实现函数跟踪跳转(ctags)](https://blog.csdn.net/menglongfc/article/details/51141084)
-改进方法参考[增强ctags对lua的支持](https://www.xuebuyuan.com/952070.html)
+ctags 插件所需要调用的环境，但是生成的很多都无法跳转，需要进一步配置生成，配置方法参考[如何在sublime text中实现函数跟踪跳转(ctags)](https://blog.csdn.net/menglongfc/article/details/51141084)，改进方法参考[增强ctags对lua的支持](https://www.xuebuyuan.com/952070.html)
 
 # zRebuildCTags.bat
 
-配合ctags插件，手动生成tags文件，可以使ctags发挥更大的作用
+配合ctags插件，手动生成tags文件，可以使ctags发挥更大的作用，调用了ctags58改进方法
 
 # Installed Packages
 
@@ -66,3 +60,12 @@ ctags 插件所需要调用的环境，但是生成的很多都无法跳转
 
 3. 编译系统配置，以sublime-build结尾
  - selfLua.sublime-build
+
+# User/old version sublime
+
+这个目录保存了之前使用的sublime text版本的配置信息，用来查找对比
+
+# User/Default (Windows).sublime-keymap
+
+这里面是用户自己添加的所有快捷键，与默认不可修改的Default/Default (Windows).sublime-keymap文件对应，可以进行覆盖，一些重要的添加列举在此：
+[SublimeText 快速添加注释](https://blog.csdn.net/tianshan2008/article/details/48397741)
