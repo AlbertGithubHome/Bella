@@ -10,10 +10,14 @@
 	],
 	"installed_packages":
 	[
+		"Alignment",
 		"All Autocomplete",
+		"ConvertToUTF8",
 		"CTags",
+		"Insert Nums",
 		"LuaJumpDefinition",
 		"LuaSmartTips",
+		"MarkdownPreview",
 		"OpenResty lua snippets",
 		"Package Control",
 		"Starbound Lua",

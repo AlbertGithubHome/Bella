@@ -10,4 +10,6 @@
     { "keys":["alt+shift+s"], "command":"sh_head"},
     { "keys":["alt+shift+p"], "command":"py_head" },
     { "keys":["alt+shift+j"], "command":"java_head"},
+
+    { "keys": ["ctrl+alt+f"], "command": "alignment" }
 ]
