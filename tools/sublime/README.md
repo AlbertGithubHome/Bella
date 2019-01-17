@@ -35,16 +35,24 @@ ctags 插件所需要调用的环境，但是生成的很多都无法跳转，�
 
 已经安装的插件，这些插件与以往认识的插件有些不同，他们仅仅是对已有环境的调用插件，并不会安装所以来的内容，比如SublimeLinter-luacheck插件，需要lua解释器和lua check环境，但是插件中并不包含这些内容，这些都需要提前安装好，lua和lua-check的可执行文件所在目录都要添加到环境变量Path中，才可以被 sublime text 的SublimeLinter-luacheck插件调用，其他的插件也大概如此。
 
+- Alignment
 - All Autocomplete
+- ChineseLocalizations
+- ColorPicker
+- ConvertToUTF8
 - CTags
+- Insert Nums
 - LuaJumpDefinition
 - LuaSmartTips
+- MarkdownPreview
 - OpenResty lua snippets
 - Package Control
 - Starbound Lua
 - SublimeLinter
 - SublimeLinter-lua
 - SublimeLinter-luacheck
+- SublimeREPL
+- Sublimerge Pro
 - Theme - Windows 10
 - TortoiseSVN
 
@@ -55,10 +63,13 @@ ctags 插件所需要调用的环境，但是生成的很多都无法跳转，�
 配置文件目前发现3类：
 
 1. 基础配置，以sublime-settings结尾
+ - Base File.sublime-settings
  - CTags.sublime-settings
+ - Localization.sublime-settings
  - Package Control.sublime-settings
  - Preferences.sublime-settings
  - SublimeLinter.sublime-settings
+ - Sublimerge.sublime-settings
  - TortoiseSVN.sublime-settings
 
 2. 快捷键配置，以sublime-keymap结尾
