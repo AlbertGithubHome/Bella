@@ -58,6 +58,40 @@ tmpfs        tmpfs     4.2G      0   4.2G   0% /dev/shm
 ```
 与df命令不同的是Linux du命令是对文件和目录磁盘使用的空间的查看
 
+- **du -h --max-depth=1**
+
+```shell
+[shihengzhen@localhost#14:57:40#/home/shihengzhen]$sudo du -h --max-depth=1
+5.0M    ./encoding
+4.0K    ./.gnome2
+332K    ./link_test
+8.0K    ./externtest
+191M    ./badoop
+36K ./maptest
+853M    ./svn_test
+188K    ./ip_test
+24K ./var_test
+506M    ./hadoop
+56K ./.subversion
+32K ./intel
+2.0M    ./r002hs
+1.1G    ./software
+80K ./r000hs-bad
+16K ./testfriend
+32K ./.intel
+76K ./r001hs-bad
+40K ./tmp
+2.3M    ./gdbtest
+34M ./logs
+8.0K    ./.ssh
+8.0K    ./.pki
+168M    ./libtest
+136K    ./ziptest
+7.0G    .
+```
+
+查看当前目录下最占用硬盘的是哪个文件或者目录
+
 4. 查看硬盘信息
 
 - **fdisk -l**
@@ -119,30 +153,30 @@ WARNING: DOS-compatible mode is deprecated. It's strongly recommended to
 Command (m for help): i
 i: unknown command
 
- 0  Empty           24  NEC DOS         81  Minix / old Lin bf  Solaris        
+ 0  Empty           24  NEC DOS         81  Minix / old Lin bf  Solaris
  1  FAT12           39  Plan 9          82  Linux swap / So c1  DRDOS/sec (FAT-
  2  XENIX root      3c  PartitionMagic  83  Linux           c4  DRDOS/sec (FAT-
  3  XENIX usr       40  Venix 80286     84  OS/2 hidden C:  c6  DRDOS/sec (FAT-
- 4  FAT16 <32M      41  PPC PReP Boot   85  Linux extended  c7  Syrinx         
- 5  Extended        42  SFS             86  NTFS volume set da  Non-FS data    
+ 4  FAT16 <32M      41  PPC PReP Boot   85  Linux extended  c7  Syrinx
+ 5  Extended        42  SFS             86  NTFS volume set da  Non-FS data
  6  FAT16           4d  QNX4.x          87  NTFS volume set db  CP/M / CTOS / .
- 7  HPFS/NTFS       4e  QNX4.x 2nd part 88  Linux plaintext de  Dell Utility   
- 8  AIX             4f  QNX4.x 3rd part 8e  Linux LVM       df  BootIt         
- 9  AIX bootable    50  OnTrack DM      93  Amoeba          e1  DOS access     
- a  OS/2 Boot Manag 51  OnTrack DM6 Aux 94  Amoeba BBT      e3  DOS R/O        
- b  W95 FAT32       52  CP/M            9f  BSD/OS          e4  SpeedStor      
- c  W95 FAT32 (LBA) 53  OnTrack DM6 Aux a0  IBM Thinkpad hi eb  BeOS fs        
- e  W95 FAT16 (LBA) 54  OnTrackDM6      a5  FreeBSD         ee  GPT            
+ 7  HPFS/NTFS       4e  QNX4.x 2nd part 88  Linux plaintext de  Dell Utility
+ 8  AIX             4f  QNX4.x 3rd part 8e  Linux LVM       df  BootIt
+ 9  AIX bootable    50  OnTrack DM      93  Amoeba          e1  DOS access
+ a  OS/2 Boot Manag 51  OnTrack DM6 Aux 94  Amoeba BBT      e3  DOS R/O
+ b  W95 FAT32       52  CP/M            9f  BSD/OS          e4  SpeedStor
+ c  W95 FAT32 (LBA) 53  OnTrack DM6 Aux a0  IBM Thinkpad hi eb  BeOS fs
+ e  W95 FAT16 (LBA) 54  OnTrackDM6      a5  FreeBSD         ee  GPT
  f  W95 Ext'd (LBA) 55  EZ-Drive        a6  OpenBSD         ef  EFI (FAT-12/16/
 10  OPUS            56  Golden Bow      a7  NeXTSTEP        f0  Linux/PA-RISC b
-11  Hidden FAT12    5c  Priam Edisk     a8  Darwin UFS      f1  SpeedStor      
-12  Compaq diagnost 61  SpeedStor       a9  NetBSD          f4  SpeedStor      
-14  Hidden FAT16 <3 63  GNU HURD or Sys ab  Darwin boot     f2  DOS secondary  
-16  Hidden FAT16    64  Novell Netware  af  HFS / HFS+      fb  VMware VMFS    
-17  Hidden HPFS/NTF 65  Novell Netware  b7  BSDI fs         fc  VMware VMKCORE 
+11  Hidden FAT12    5c  Priam Edisk     a8  Darwin UFS      f1  SpeedStor
+12  Compaq diagnost 61  SpeedStor       a9  NetBSD          f4  SpeedStor
+14  Hidden FAT16 <3 63  GNU HURD or Sys ab  Darwin boot     f2  DOS secondary
+16  Hidden FAT16    64  Novell Netware  af  HFS / HFS+      fb  VMware VMFS
+17  Hidden HPFS/NTF 65  Novell Netware  b7  BSDI fs         fc  VMware VMKCORE
 18  AST SmartSleep  70  DiskSecure Mult b8  BSDI swap       fd  Linux raid auto
-1b  Hidden W95 FAT3 75  PC/IX           bb  Boot Wizard hid fe  LANstep        
-1c  Hidden W95 FAT3 80  Old Minix       be  Solaris boot    ff  BBT            
+1b  Hidden W95 FAT3 75  PC/IX           bb  Boot Wizard hid fe  LANstep
+1c  Hidden W95 FAT3 80  Old Minix       be  Solaris boot    ff  BBT
 1e  Hidden W95 FAT1
 ```
 
@@ -152,9 +186,9 @@ i: unknown command
 
 ```shell
 [shihengzhen@localhost#17:54:57#/home/shihengzhen]$netstat | grep 'Recv-Q\|8876'
-Proto Recv-Q Send-Q Local Address               Foreign Address             State      
-tcp        0      0 192.168.1.214:8876          192.168.1.108:64711         ESTABLISHED 
-tcp        0    228 192.168.1.214:8876          192.168.1.151:31064         ESTABLISHED 
+Proto Recv-Q Send-Q Local Address               Foreign Address             State
+tcp        0      0 192.168.1.214:8876          192.168.1.108:64711         ESTABLISHED
+tcp        0    228 192.168.1.214:8876          192.168.1.151:31064         ESTABLISHED
 ```
 
 本质上是netstat命令，然后通过grep过滤出标题和指定端口的行
@@ -173,13 +207,13 @@ tcp        0    228 192.168.1.214:8876          192.168.1.151:31064         ESTA
 -rwxr-xr-x 1 shihengzhen shihengzhen   221 8月  16 18:08 cc.sh
 -rw-rw-r-- 1 shihengzhen shihengzhen 18595 8月  16 19:39 gdbhelp.txt
 -rw-rw-r-- 1 shihengzhen shihengzhen   306 8月  16 19:44 main.cpp
-[shihengzhen@localhost#20:03:23#/home/shihengzhen/test/gdbtest]$file a.out 
+[shihengzhen@localhost#20:03:23#/home/shihengzhen/test/gdbtest]$file a.out
 a.out: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.18, not stripped
-[shihengzhen@localhost#20:03:34#/home/shihengzhen/test/gdbtest]$file cc.sh 
+[shihengzhen@localhost#20:03:34#/home/shihengzhen/test/gdbtest]$file cc.sh
 cc.sh: ASCII text
-[shihengzhen@localhost#20:03:39#/home/shihengzhen/test/gdbtest]$file gdbhelp.txt 
+[shihengzhen@localhost#20:03:39#/home/shihengzhen/test/gdbtest]$file gdbhelp.txt
 gdbhelp.txt: ASCII English text, with CRLF line terminators
-[shihengzhen@localhost#20:03:51#/home/shihengzhen/test/gdbtest]$file main.cpp 
+[shihengzhen@localhost#20:03:51#/home/shihengzhen/test/gdbtest]$file main.cpp
 main.cpp: ISO-8859 C program text
 [shihengzhen@localhost#20:04:02#/home/shihengzhen/test/gdbtest]$
 ```
