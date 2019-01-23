@@ -1,0 +1,16 @@
+// SublimeLinter Settings - User
+{
+    "linters": {
+        "lua": {
+            "@disable": false,
+            "args": [],
+            "excludes": []
+        },
+        "luacheck": {
+            "@disable": false,
+            "args": "--ignore 631 621 614 611 111 612 212",
+            "excludes": [],
+            "ignore": ""
+        }
+    },
+}

@@ -41,20 +41,26 @@ ctags 插件所需要调用的环境，但是生成的很多都无法跳转，�
 - ColorPicker
 - ConvertToUTF8
 - CTags
+- GMod Lua
+- IMESupport
 - Insert Nums
+- LuaExtended
 - LuaJumpDefinition
 - LuaSmartTips
 - MarkdownPreview
 - OpenResty lua snippets
 - Package Control
+- PackageSync
 - Starbound Lua
 - SublimeLinter
 - SublimeLinter-lua
 - SublimeLinter-luacheck
 - SublimeREPL
 - Sublimerge Pro
+- Sync Settings
 - Theme - Windows 10
 - TortoiseSVN
+- Vue Syntax Highlight
 
 # User
 
@@ -67,9 +73,11 @@ ctags 插件所需要调用的环境，但是生成的很多都无法跳转，�
  - CTags.sublime-settings
  - Localization.sublime-settings
  - Package Control.sublime-settings
+ - PackageSync.sublime-settings
  - Preferences.sublime-settings
  - SublimeLinter.sublime-settings
  - Sublimerge.sublime-settings
+-  SyncSettings.sublime-settings
  - TortoiseSVN.sublime-settings
 
 2. 快捷键配置，以sublime-keymap结尾
@@ -96,4 +104,9 @@ ctags 插件所需要调用的环境，但是生成的很多都无法跳转，�
 这里面是用户自己添加的sublime text基础配置，与默认不可修改的Default/Preferences.sublime-settings文件对应，可以进行覆盖，一些重要的添加列举在此：
 
 - 解决中文上下错位的问题参考[sublime 3143新版本中文字体上下不齐的问题](https://blog.csdn.net/qq_21108581/article/details/80357855)
+
+
+# 目前已通过Sync Settings插件同步到gist上
+
+具体方法参考[使用 Sync Settings 同步 Sublime Text 3 设置(转)](https://www.jianshu.com/p/e27e2453d499)
 
