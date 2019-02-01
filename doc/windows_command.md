@@ -4,7 +4,7 @@
 1.查看arp缓存
 
 - **arp -a**
-- **arp -d** 
+- **arp -d**
 
 ```cmd
 C:\Users\Administrator>arp -a
@@ -256,4 +256,16 @@ C:\Users\Administrator>gpedit
 
 敲完命令回车后就会打开本地组策略编辑器，gpedit本身应该是GroupPolicy Edit的缩写，主要用于配置一些策略信息，比如开关机运行脚本，就可以在“本地计算机 策略->计算机配置->Windows 设置 ->脚本（启动/关机）”中进行配置。[示例开关机脚本](https://github.com/AlbertGithubHome/Bella/tree/master/bat/watchdog)
 
+
 # 工具命令
+
+1. 查看dll中的符号信息
+
+- **dumpbin**
+
+```
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin>dumpbin -exports G:\Server\Bin\msvcp90d.dll > G:\Server\Bin\msvcp90d.txt
+```
+
+dumpbin是Visual Studio自带的工具，一般没有放到环境变量中，所以要进入对应的目录使用，如果这个目录在环境变量中，
+则可以在任何目录下使用，按照上述格式将dll中的函数符号导出到对应的查看文件中
