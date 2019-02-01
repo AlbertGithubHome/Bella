@@ -264,7 +264,7 @@ C:\Users\Administrator>gpedit
 - **dumpbin**
 
 ```
-C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin>dumpbin -exports G:\Server\Bin\msvcp90d.dll > G:\Server\Bin\msvcp90d.txt
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin>dumpbin -exports G:\msvcp90d.dll > G:\msvcp90d.txt
 ```
 
 dumpbin是Visual Studio自带的工具，一般没有放到环境变量中，所以要进入对应的目录使用，如果这个目录在环境变量中，
