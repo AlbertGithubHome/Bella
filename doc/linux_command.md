@@ -259,4 +259,58 @@ lrwxrwxrwx  1 shihengzhen shihengzhen        10 12月 18 17:29 gittest -> gitpro
 命令很简单，就是有时候参数不记得，容易把参数弄反，不清楚的时候看一下就行了，解压的时候如果是解压到指定目录
 添加参数-d即可，否则就是解压到当前目录
 
+11. 定时任务的查看与编辑
+
+- **crontab -l**
+- **crontab -e**
+
+```shell
+# 查看定时任务
+[shihengzhen@localhost#13:48:51#/home/shihengzhen]$crontab -l
+*/10 * * * * /bin/sh /home/shihengzhen/checkmemforlord.sh
+*/1 * * * * /bin/sh /home/shihengzhen/trun.sh
+*/1 * * * * /bin/sh /home/shihengzhen/t.sh
+
+# 编辑定时任务
+[shihengzhen@localhost#13:58:13#/home/shihengzhen]$crontab -e
+crontab: no changes made to crontab
+
+      1 */10 * * * * /bin/sh /home/shihengzhen/checkmemforlord.sh
+      2 */1 * * * * /bin/sh /home/shihengzhen/trun.sh
+      3 */1 * * * * /bin/sh /home/shihengzhen/t.sh
+
+# 直接编辑定时任务文件
+[shihengzhen@localhost#13:56:54#/home/shihengzhen]$sudo vi /var/spool/cron/shihengzhen
+Error detected while processing /root/.vimrc:
+line    1:
+E484: Can't open file ${save}/.vimrc
+Press ENTER or type command to continue
+
+*/10 * * * * /bin/sh /home/shihengzhen/checkmemforlord.sh
+*/1 * * * * /bin/sh /home/shihengzhen/trun.sh
+*/1 * * * * /bin/sh /home/shihengzhen/t.sh
+
+```
+
+最主要的还是查看和编辑，我曾遇到过使用`crontab -e`编辑不了的情况，改成直接编辑`/var/spool/cron/xxx`文件即可
+参考[Linux 定时任务](https://www.cnblogs.com/mingforyou/p/3930636.html)
+
+11. 查看服务存在并启动
+
+- **service xxxd status**
+- **service xxxd start**
+
+```shell
+[shihengzhen@localhost#14:04:02#/home/shihengzhen]$service crond status
+crond (pid  1181) 正在运行...
+[shihengzhen@localhost#14:04:05#/home/shihengzhen]$service mysqld status
+mysqld 已停
+
+[shihengzhen@localhost#14:04:13#/home/shihengzhen]$service mysqld start
+正在启动 mysqld：                                          [失败]
+```
+
+服务其实就是一个特定的程序，只不过用来提供某种服务，比如说mysqld就是用来提供mysql的使用服务器的，
+可以直接使用`service`命令查询，并且可以启动某项服务
+
 # 工具命令
