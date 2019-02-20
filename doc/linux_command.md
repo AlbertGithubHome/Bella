@@ -290,12 +290,21 @@ Press ENTER or type command to continue
 */1 * * * * /bin/sh /home/shihengzhen/trun.sh
 */1 * * * * /bin/sh /home/shihengzhen/t.sh
 
+# 查看定时任务日志
+[shihengzhen@localhost#14:15:51#/home/shihengzhen]$sudo more /var/log/cron
+Feb 17 03:07:01 localhost run-parts(/etc/cron.daily)[24635]: finished logrotate
+Feb 17 03:07:01 localhost run-parts(/etc/cron.daily)[24623]: starting makewhatis.cron
+Feb 17 03:07:02 localhost run-parts(/etc/cron.daily)[24754]: finished makewhatis.cron
+Feb 17 03:07:02 localhost anacron[24558]: Job `cron.daily' terminated
+Feb 17 03:07:02 localhost anacron[24558]: Normal exit (1 job run)
+Feb 17 03:08:01 localhost CROND[24757]: (shihengzhen) CMD (/bin/sh /home/shihengzhen/t.sh)
+...
 ```
 
 最主要的还是查看和编辑，我曾遇到过使用`crontab -e`编辑不了的情况，改成直接编辑`/var/spool/cron/xxx`文件即可
 参考[Linux 定时任务](https://www.cnblogs.com/mingforyou/p/3930636.html)
 
-11. 查看服务存在并启动
+12. 查看服务存在并启动
 
 - **service xxxd status**
 - **service xxxd start**
@@ -312,5 +321,25 @@ mysqld 已停
 
 服务其实就是一个特定的程序，只不过用来提供某种服务，比如说mysqld就是用来提供mysql的使用服务器的，
 可以直接使用`service`命令查询，并且可以启动某项服务
+
+13. 查看文件尾部几行
+
+- **tail [-f] filename**
+
+```shell
+[shihengzhen@localhost#14:16:30#/home/shihengzhen]$sudo tail -f /var/log/cron
+Feb 19 14:13:01 localhost CROND[11719]: (shihengzhen) CMD (/bin/sh /home/shihengzhen/t.sh)
+Feb 19 14:13:01 localhost CROND[11720]: (shihengzhen) CMD (/bin/sh /home/shihengzhen/trun.sh)
+Feb 19 14:14:01 localhost CROND[11729]: (shihengzhen) CMD (/bin/sh /home/shihengzhen/t.sh)
+Feb 19 14:14:01 localhost CROND[11730]: (shihengzhen) CMD (/bin/sh /home/shihengzhen/trun.sh)
+Feb 19 14:15:01 localhost CROND[11744]: (shihengzhen) CMD (/bin/sh /home/shihengzhen/t.sh)
+Feb 19 14:15:01 localhost CROND[11745]: (shihengzhen) CMD (/bin/sh /home/shihengzhen/trun.sh)
+Feb 19 14:16:01 localhost CROND[11758]: (shihengzhen) CMD (/bin/sh /home/shihengzhen/t.sh)
+Feb 19 14:16:01 localhost CROND[11759]: (shihengzhen) CMD (/bin/sh /home/shihengzhen/trun.sh)
+Feb 19 14:17:01 localhost CROND[11769]: (shihengzhen) CMD (/bin/sh /home/shihengzhen/t.sh)
+Feb 19 14:17:01 localhost CROND[11770]: (shihengzhen) CMD (/bin/sh /home/shihengzhen/trun.sh)
+```
+
+`tail`可以查看文件的最后几行，如果加上参数`-f`当文件修改后会实时更新
 
 # 工具命令
