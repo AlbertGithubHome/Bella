@@ -9,9 +9,9 @@ from PIL import ImageDraw
 standard_scale = 0.34
 standard_crop = (0, 180, 1080, 1880)
 input_image = [
-    [(255,0,0),     100, (720, 900), "Screenshot_20190303-111401.jpg", "干啥呢？", standard_crop],
-    [(255,255,0),   100, (10, 900), "Screenshot_20190303-111528.jpg", "欺负人！", standard_crop],
-    [(255,0,255),   100, (10, 700), "Screenshot_20190303-163015.jpg", "我美吗？", standard_crop]
+    [(0,255,0),     220, (220, 1200), "Screenshot_20190303-111401.jpg", "干啥呢？", standard_crop],
+    [(255,97,0),   220, (10, 900), "Screenshot_20190303-111528.jpg", "欺负人！", standard_crop],
+    [(255,0,255),   220, (10, 200), "Screenshot_20190303-163015.jpg", "我美吗？", standard_crop]
 ]
 
  
@@ -38,7 +38,7 @@ def make_gif(gif_name):
         #for j in range(3):
         frames.append(imageio.imread('{0}.jpg'.format(x)))
     # Save them as frames into a gif 
-    imageio.mimsave(gif_name, frames, 'GIF', duration = 1.2)
+    imageio.mimsave(gif_name, frames, 'GIF', duration = 1.4)
 
 
 def add_text():
