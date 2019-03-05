@@ -342,4 +342,43 @@ Feb 19 14:17:01 localhost CROND[11770]: (shihengzhen) CMD (/bin/sh /home/shiheng
 
 `tail`可以查看文件的最后几行，如果加上参数`-f`当文件修改后会实时更新
 
+
+14. 文件内替换字符串
+
+- **:%s/^/#/** 每一行都加上一个#，起到注释作用
+- **:%s/^#//** 每一行开头的#去掉，起到取消注释作用
+- **:n,$s/str1/str2/** 替换第 n 行开始到最后一行中每一行的第一个str1为str2
+- **:n,$s/str1/str2/g** 替换第 n 行开始到最后一行中每一行所有str1为str2
+
+各种替换查找`:s`的各种变形
+
+15. 查看程序进程启动时间和运行参数
+
+- **ps -eo pid,lstart,cmd | grep gameserver**
+
+```shell
+[shihengzhen@localhost#11:04:22#/home/shihengzhen/legend/Server]$ps -eo pid,lstart,cmd | grep ini
+    1 Thu Feb 21 11:49:59 2019 /sbin/init
+30936 Tue Feb 26 11:04:25 2019 grep ini
+```
+
+本质上使用的是ps命令，使用`-eo`可以添加自定义参数，`lstart`就是程序的启动时间
+
+16. 文件中查找指定内容并显示所在文件行数
+
+- **grep -rn 'socket' . --include=\*.cpp**
+
+```shell
+[shihengzhen@localhost#16:04:11#/home/shihengzhen/test]$grep -rn 'socket' . --include=*.cpp
+./epoll_cs_demo/testfd.cpp:5:   int listen_fd = socket(AF_INET, SOCK_STREAM, 0);
+./epoll_cs_demo/testfd.cpp:8:   listen_fd = socket(AF_INET, SOCK_STREAM, 0);
+./epoll_cs_demo/testfd.cpp:11:  listen_fd = socket(AF_INET, SOCK_STREAM, 0);
+./epoll_cs_demo/testfd.cpp:14:  listen_fd = socket(AF_INET, SOCK_STREAM, 0);
+./epoll_cs_demo/testfd.cpp:21:  listen_fd = socket(AF_INET, SOCK_STREAM, 0);
+./epoll_cs_demo/testfd.cpp:25:  listen_fd = socket(AF_INET, SOCK_STREAM, 0);
+./epoll_cs_demo/client.cpp:18:    int client_fd = socket(AF_INET, SOCK_STREAM, 0);
+```
+
+grep原来还可以这样用，感觉参数比find简单啊
+
 # 工具命令

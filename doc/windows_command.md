@@ -256,6 +256,36 @@ C:\Users\Administrator>gpedit
 
 敲完命令回车后就会打开本地组策略编辑器，gpedit本身应该是GroupPolicy Edit的缩写，主要用于配置一些策略信息，比如开关机运行脚本，就可以在“本地计算机 策略->计算机配置->Windows 设置 ->脚本（启动/关机）”中进行配置。[示例开关机脚本](https://github.com/AlbertGithubHome/Bella/tree/master/bat/watchdog)
 
+8. 创建目录链接
+
+- **mklink /J newName sourceName**
+
+```cmd
+E:\batTool>mklink /?
+创建符号链接。
+
+MKLINK [[/D] | [/H] | [/J]] Link Target
+
+        /D      创建目录符号链接。默认为文件
+                符号链接。
+        /H      创建硬链接而非符号链接。
+        /J      创建目录联接。
+        Link    指定新的符号链接名称。
+        Target  指定新链接引用的路径
+                (相对或绝对)。
+
+E:\batTool>mklink /J gitref ../GitProject
+无效开关 - "GitProject"。
+
+E:\batTool>mklink /J gitref ..\GitProject
+为 gitref <<===>> ..\GitProject 创建的联接
+
+```
+
+需要注意的是这个命令与linux下的`ln`命令的区别，是新创建链接文件的名字是在前面的，与linux下命令是反的，很容易记错，如上面例子就是新建了链接文件gitref指向了外层目录GitProject，实际上是多了一个对GitProject目录的引用，与快捷方式不同
+
+还有一点需要注意下，就是在windows10版本下的PowerShell中不识别这个命令，必须使用cmd才可以
+
 
 # 工具命令
 
