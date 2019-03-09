@@ -74,7 +74,7 @@ count--数组元素的个数
 返回值：无
 注意：	只用来表示思路，不考虑指针为空等特殊情况
 */
-void insert_sort(int array[], int count)
+void shell_sort(int array[], int count)
 {
     int step = count / 2;
     while (step > 0)
