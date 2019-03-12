@@ -7,8 +7,8 @@
 // 数组元素的个数
 #define MAX_ELEMNT_COUNT 10
 
-// 插入排序，从小到大
-void insert_sort(int array[], int count);
+// 希尔排序，从小到大
+void shell_sort(int array[], int count);
 
 // 数组输出函数
 void print_array(int array[], int count);
@@ -27,7 +27,7 @@ int main(int argc, char* argv[])
 
     // 调用排序函数
     printf("\nsort action...\n\n");
-    insert_sort(array_data, MAX_ELEMNT_COUNT);
+    shell_sort(array_data, MAX_ELEMNT_COUNT);
 
 
     // 排序后输出
