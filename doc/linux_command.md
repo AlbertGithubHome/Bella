@@ -9,7 +9,7 @@
 - **cat /etc/issue**  =>>查询发布版本
 - **lsb_release -a**  =>>有些系统没有
 
-```shell
+```bash
 [shihengzhen@localhost#20:16:15#/home/shihengzhen]$date
 2018年 06月 28日 星期四 20:16:19 CST
 [shihengzhen@localhost#20:16:19#/home/shihengzhen]$uname -r
@@ -27,7 +27,7 @@ Linux version 2.6.32-279.el6.x86_64 (mockbuild@c6b9.bsys.dev.centos.org) (gcc ve
 
 - **df -TH**
 
-```shell
+```bash
 [shihengzhen@localhost#12:20:24#/tmp]$df -TH
 文件系统    类型      容量  已用  可用 已用%% 挂载点
 /dev/mapper/VolGroup-lv_root
@@ -42,7 +42,7 @@ tmpfs        tmpfs     4.2G      0   4.2G   0% /dev/shm
 
 - **du -m**
 
-```shell
+```bash
 [shihengzhen@localhost#20:50:24#/home/shihengzhen/test]$du -m
 1   ./epoll_cs_demo
 1   ./mysql/include/mysql
@@ -60,7 +60,7 @@ tmpfs        tmpfs     4.2G      0   4.2G   0% /dev/shm
 
 - **du -h --max-depth=1**
 
-```shell
+```bash
 [shihengzhen@localhost#14:57:40#/home/shihengzhen]$sudo du -h --max-depth=1
 5.0M    ./encoding
 4.0K    ./.gnome2
@@ -97,7 +97,7 @@ tmpfs        tmpfs     4.2G      0   4.2G   0% /dev/shm
 - **fdisk -l**
 - **sudo fdisk -l**
 
-```shell
+```bash
 [shihengzhen@localhost#12:27:06#/home/shihengzhen]$sudo fdisk -l
 
 Disk /dev/sda: 146.8 GB, 146815733760 bytes
@@ -137,7 +137,7 @@ Disk identifier: 0x00000000
 ```
 如果直接执行没有输出任何信息应该是没有权限，尝试用root用户执行
 
-```shell
+```bash
 [shihengzhen@localhost#14:01:25#/home/shihengzhen]$sudo fdisk /dev/sda1
 Device contains neither a valid DOS partition table, nor Sun, SGI or OSF disklabel
 Building a new DOS disklabel with disk identifier 0xb9c2964d.
@@ -184,7 +184,7 @@ i: unknown command
 
 - **netstat | grep 'Recv-Q\|8876'**
 
-```shell
+```bash
 [shihengzhen@localhost#17:54:57#/home/shihengzhen]$netstat | grep 'Recv-Q\|8876'
 Proto Recv-Q Send-Q Local Address               Foreign Address             State
 tcp        0      0 192.168.1.214:8876          192.168.1.108:64711         ESTABLISHED
@@ -200,7 +200,7 @@ tcp        0    228 192.168.1.214:8876          192.168.1.151:31064         ESTA
 - **file xxx**
 
 
-```shell
+```bash
 [shihengzhen@localhost#20:02:20#/home/shihengzhen/test/gdbtest]$ll
 总用量 76
 -rwxrwxr-x 1 shihengzhen shihengzhen 47049 8月  16 19:44 a.out
@@ -224,7 +224,7 @@ file xxx就可以查看文件的类型，只要把xxx替换成要查看的文件
 
 - **ln -s source newlink**
 
-```shell
+```bash
 [shihengzhen@localhost#17:28:54#/home/shihengzhen]$ll | grep git
 drwxrwxr-x  3 shihengzhen shihengzhen      4096 3月  17 2017 gitproject
 [shihengzhen@localhost#17:29:06#/home/shihengzhen]$ln -s gitproject gittest
@@ -264,7 +264,7 @@ lrwxrwxrwx  1 shihengzhen shihengzhen        10 12月 18 17:29 gittest -> gitpro
 - **crontab -l**
 - **crontab -e**
 
-```shell
+```bash
 # 查看定时任务
 [shihengzhen@localhost#13:48:51#/home/shihengzhen]$crontab -l
 */10 * * * * /bin/sh /home/shihengzhen/checkmemforlord.sh
@@ -309,7 +309,7 @@ Feb 17 03:08:01 localhost CROND[24757]: (shihengzhen) CMD (/bin/sh /home/shiheng
 - **service xxxd status**
 - **service xxxd start**
 
-```shell
+```bash
 [shihengzhen@localhost#14:04:02#/home/shihengzhen]$service crond status
 crond (pid  1181) 正在运行...
 [shihengzhen@localhost#14:04:05#/home/shihengzhen]$service mysqld status
@@ -326,7 +326,7 @@ mysqld 已停
 
 - **tail [-f] filename**
 
-```shell
+```bash
 [shihengzhen@localhost#14:16:30#/home/shihengzhen]$sudo tail -f /var/log/cron
 Feb 19 14:13:01 localhost CROND[11719]: (shihengzhen) CMD (/bin/sh /home/shihengzhen/t.sh)
 Feb 19 14:13:01 localhost CROND[11720]: (shihengzhen) CMD (/bin/sh /home/shihengzhen/trun.sh)
@@ -356,7 +356,7 @@ Feb 19 14:17:01 localhost CROND[11770]: (shihengzhen) CMD (/bin/sh /home/shiheng
 
 - **ps -eo pid,lstart,cmd | grep gameserver**
 
-```shell
+```bash
 [shihengzhen@localhost#11:04:22#/home/shihengzhen/legend/Server]$ps -eo pid,lstart,cmd | grep ini
     1 Thu Feb 21 11:49:59 2019 /sbin/init
 30936 Tue Feb 26 11:04:25 2019 grep ini
@@ -368,7 +368,7 @@ Feb 19 14:17:01 localhost CROND[11770]: (shihengzhen) CMD (/bin/sh /home/shiheng
 
 - **grep -rn 'socket' . --include=\*.cpp**
 
-```shell
+```bash
 [shihengzhen@localhost#16:04:11#/home/shihengzhen/test]$grep -rn 'socket' . --include=*.cpp
 ./epoll_cs_demo/testfd.cpp:5:   int listen_fd = socket(AF_INET, SOCK_STREAM, 0);
 ./epoll_cs_demo/testfd.cpp:8:   listen_fd = socket(AF_INET, SOCK_STREAM, 0);
