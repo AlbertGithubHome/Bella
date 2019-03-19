@@ -156,8 +156,8 @@
 #
 #
 # 备注：1. python challenge home page : http://www.pythonchallenge.com/
-#       2. current level url : http://www.pythonchallenge.com/pc/rock/beer.html
-#       3. next level url : http://www.pythonchallenge.com/pc/rock/arecibo.html
+#       2. current level url : http://www.pythonchallenge.com/pc/rock/arecibo.html
+#       3. next level url : http://www.pythonchallenge.com/pc/rock/beer.html
 #       4. curlevel username:kohsamui password:thailand
 #
 
