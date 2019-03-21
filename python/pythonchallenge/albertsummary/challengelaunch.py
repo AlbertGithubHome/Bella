@@ -9,9 +9,12 @@ __author__ = 'AlbertS'
 #
 # 思路：参照之前的思路尽可能优化，减少实现的代码量
 
+import time
 import requests
+import re
 
-
+# python challenge base class begin
+# ---------------------------------->
 class ChallengeMachine(object):
     def __init__(self, level, name, passwd, url):
         self.__level = level
@@ -22,22 +25,34 @@ class ChallengeMachine(object):
 
 
     def run(self, re_download=False):
-        print('level {0}: {1}'.format(self.__level, self.__home_page + self.__url))
+        start_time = time.time()
+        print('level {0}: {1}'.format(self.get_level(), self.get_level_url()))
         if re_download:
             download_resource = getattr(self, 'download_resource')   # 获取子类的方法
             download_resource()
         action = getattr(self, 'action')
-        next_key =action()
-        print('next level key: {0}\n'.format(next_key))
+        next_key = action()
+        print('next level key: {0}'.format(next_key))
+        print('cost time: {0}s\n'.format(time.time() - start_time))
+
+    def get_home_url(self):
+        return self.__home_page
 
     def get_level_url(self):
         return self.__home_page + self.__url
+
+    def get_level(self):
+        return self.__level
 
     def download_resource(self):
         print("base download_resource")
 
     def action(self):
         print("base action")
+
+# python challenge base class end
+# ----------------------------------<
+
 
 
 class CM0(ChallengeMachine):
@@ -59,10 +74,55 @@ class CM2(ChallengeMachine):
         return ''.join([x for x in code_content if x.isalpha()])
 
 
+class CM3(ChallengeMachine):
+    def action(self):
+        html_content = requests.get(self.get_level_url()).content.decode('utf8')
+        start_index = html_content.find('<!--')
+        code_content = html_content[start_index:]
+        return ''.join(re.findall(r'[^A-Z][A-Z]{3}([a-z])[A-Z]{3}[^A-Z]', code_content))
+
+
+class CM4(ChallengeMachine):
+    def action(self):
+        nothing_value = '12345';
+        try_count = 1
+        while try_count < 400:
+            html_content = requests.get(self.get_level_url() + '?nothing=' + nothing_value).content.decode('utf8')
+            nothing_value = ''.join(re.findall(r'(\d+)', html_content))
+            if len(nothing_value) == 0 and 'html' in html_content:
+                return html_content
+            try_count = try_count + 1
+            print(nothing_value)
+            time.sleep(0.3)
+
+
+class CM5(ChallengeMachine):
+    def action(self):
+        file_data = requests.get(self.get_home_url() + '/pc/def/banner.p').content.decode('utf8')
+        data = pickle.loads(file_data)
+        with open(self.get_level() + '/pic.txt') as file:
+            file.write('\n'.join([''.join([p[0] * p[1] for p in row]) for row in data]))
+        return 'channel'
+
+
 def main():
     CM0(0, None, None, 'pc/def/0.html').run()
     CM1(1, None, None, 'pc/def/274877906944.html').run()
     CM2(2, None, None, 'pc/def/ocr.html').run()
+    CM3(3, None, None, 'pc/def/equality.html').run()
+    CM4(4, None, None, 'pc/def/linkedlist.php').run()
+    CM4(4, None, None, 'pc/def/peak.html').run()
+
+
+
+
+def test():
+    letter_list = re.findall(r'(\d+)', 'ahfakdsds')
+    print(letter_list)
+    print(len(letter_list))
+    print(len(''.join(letter_list)))
+
+    return False
 
 if __name__ == '__main__': main()
 
