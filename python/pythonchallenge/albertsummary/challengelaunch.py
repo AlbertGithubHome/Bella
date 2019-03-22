@@ -12,6 +12,8 @@ __author__ = 'AlbertS'
 import time
 import requests
 import re
+import pickle
+import os
 
 # python challenge base class begin
 # ---------------------------------->
@@ -22,7 +24,6 @@ class ChallengeMachine(object):
         self.__passwd = passwd
         self.__url = url
         self.__home_page = 'http://www.pythonchallenge.com/'
-
 
     def run(self, re_download=False):
         start_time = time.time()
@@ -44,11 +45,19 @@ class ChallengeMachine(object):
     def get_level(self):
         return self.__level
 
+    def get_resource_dir(self):
+        dir_name = str(self.__level)
+        if not os.path.exists(dir_name):
+            os.makedirs(dir_name)
+        return dir_name + '/'
+
     def download_resource(self):
         print("base download_resource")
 
     def action(self):
         print("base action")
+
+
 
 # python challenge base class end
 # ----------------------------------<
@@ -97,21 +106,34 @@ class CM4(ChallengeMachine):
 
 
 class CM5(ChallengeMachine):
-    def action(self):
-        file_data = requests.get(self.get_home_url() + '/pc/def/banner.p').content.decode('utf8')
+    def download_resource(self):
+        file_data = requests.get(self.get_home_url() + 'pc/def/banner.p').content
         data = pickle.loads(file_data)
-        with open(self.get_level() + '/pic.txt') as file:
+        with open(self.get_resource_dir() + 'pic.txt', 'w') as file:
             file.write('\n'.join([''.join([p[0] * p[1] for p in row]) for row in data]))
+
+    def action(self):
+        return 'channel'
+
+
+class CM6(ChallengeMachine):
+    def download_resource(self):
+        file_data = requests.get(self.get_home_url() + 'pc/def/channel.zip').content
+        with open(self.get_resource_dir() +'channel.zip', 'wb') as file:
+            file.write(file_data)
+
+    def action(self):
         return 'channel'
 
 
 def main():
-    CM0(0, None, None, 'pc/def/0.html').run()
-    CM1(1, None, None, 'pc/def/274877906944.html').run()
-    CM2(2, None, None, 'pc/def/ocr.html').run()
-    CM3(3, None, None, 'pc/def/equality.html').run()
-    CM4(4, None, None, 'pc/def/linkedlist.php').run()
-    CM4(4, None, None, 'pc/def/peak.html').run()
+    #CM0(0, None, None, 'pc/def/0.html').run()
+    #CM1(1, None, None, 'pc/def/274877906944.html').run()
+    #CM2(2, None, None, 'pc/def/ocr.html').run()
+    #CM3(3, None, None, 'pc/def/equality.html').run()
+    #CM4(4, None, None, 'pc/def/linkedlist.php').run()
+    CM5(5, None, None, 'pc/def/peak.html').run()
+    CM6(6, None, None, 'pc/def/channel.html').run(True)
 
 
 
