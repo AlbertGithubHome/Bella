@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# @Date     : 2019-03-28 13:45:32
+# @Author   : Albert Shi
+# @Link     : http://blog.csdn.net/albertsh
+# @Github   : https://github.com/AlbertGithubHome
+__author__ = 'AlbertS'
+# @Subject  : 实现一个近似求解Pi的的方法
+#
+# 思路：利用圆的内接多边形，用周长除以直径，近似求解
+
+import math
+
+def calc_pi(n):
+    return math.sin(math.radians(360 / n)) * n / 2
+
+
+if __name__ == '__main__':
+    fake_pi = calc_pi(10000000)
+    print(fake_pi)
+
