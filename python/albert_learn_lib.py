@@ -8,9 +8,9 @@ __author__ = 'AlbertS'
 # @Subject  : record the prcess of python library learning
 
 # 本文主要记录python各种包和库的学习过程，方便之后学习和安装
-# 
+#
 # 备注：正常安装（速度慢）：pip install 包名
-# 
+#
 #       快速安装（靠镜像）：pip install -i https://pypi.doubanio.com/simple 包名
 
 
@@ -34,7 +34,7 @@ from PIL import Image
 # Python 2.7安装PIL，在Debian/Ubuntu Linux下直接通过apt安装：$ sudo apt-get install python-imaging。
 # Python 2.7安装PIL，Windows平台就去PIL官方网站下载exe安装包。[url](http://pythonware.com/products/pil/)
 # Python 3.x安装PIL,如果安装了Anaconda，Pillow就已经可用了。否则，需要在命令行下通过pip安装：$ pip install pillow
-# 
+#
 # 补充一下由bytes数组直接转换成Image对象的方法，时间2018-05-03 13:53
 #    从网上下载图片bytes，直接转换成Image对象
 #    from PIL import Image
@@ -45,20 +45,20 @@ from PIL import Image
 #    stream = io.BytesIO(image_data)
 #    img = Image.open(stream)
 #    img.show();
-#    
+#
 # gif图像取每一帧的图像：
 #    for frame in range(img.n_frames):
 #        img.seek(frame)
 #
 # 快速获得图像的轮廓：
 # left, top, right, bottom = img.getbbox()
-# 
+#
 # 获取像素点
 # img.getpixel((x, y))
-# 
+#
 # 补充时间：2018-07-20 15:03:26，Python challenge 25
 # 粘贴图片，将图片part_img粘贴到图片new_image的(x,y)坐标处
-# new_image.paste(part_img, x, y)# 
+# new_image.paste(part_img, x, y)#
 #
 # 补充时间：2018-12-20 13:47:46，Python challenge 27
 # 获得GIF图像的调色板
@@ -96,7 +96,7 @@ import string
 # maketrans() 方法用于创建字符映射的转换表，对于接受两个参数的最简单的调用方式
 # 第一个参数是字符串，表示需要转换的字符，第二个参数也是字符串表示转换的目标。两个字符串的长度必须相同，为一一对应的关系
 # 但是还有一点，我发现即使不使用import string，也可以调用函数str.maketrans()，现在还没弄明白原因。
-# 
+#
 # 26个字母循环转换方法
 # def auto_trans(src_str):
 #     for x in range(26):
@@ -117,7 +117,7 @@ import requests
 #    Simple is better than complex.(简单优于复杂)
 #    Complex is better than complicated.(复杂优于繁琐)
 #    Readability counts.(重要的是可读性)
-#    
+#
 # request库断点续传的代码，Range参数需要加入到header中
 #    requests.get(url, auth=('butter', 'fly'), headers={'Accept-Encoding': '','Range':'bytes=0-1023'});
 
@@ -129,18 +129,18 @@ import urllib.parse
 # urllib模块是python自带的，直接调用就好，相比于requests来说的好处是不用安装，不过使用起来麻烦一点
 # 在网上找到一篇比较python3 urllib和requests模块区别的文章https://www.cnblogs.com/znyyy/p/7868511.html，说的比较好
 # 不过总体来说就是越方便的库，就越失去了灵活性，对于特殊情况不太好处理
-# 
+#
 # urllib+正则：无第三方依赖
 # requests+BeautifulSoup：library
 # scrapy：框架
-# 
+#
 # 从上往下抽象程度增加，方便程度增加。“路怎么走，你们自己选啊。”
 #
 # 今天(2018-05-30 17:03:34)使用了urllib库中的一个函数，可以将%26SY%94%3A%E2I%00%00形式的内容直接转换成bytes数组，如下
 #   import urllib.parse
 #   cookies_str = '%26SY%94%3A%E2I%00%00'
 #   cookies_bytes = urllib.parse.unquote_to_bytes(cookies_str.replace('+',' '))
-#   print(cookies_bytes) 
+#   print(cookies_bytes)
 
 import re
 # 开始接触Python的时候就用过这个正则表达式库，不过总是一知半解，用的时候找到之前的代码一粘贴就结束了
@@ -149,42 +149,42 @@ import re
 # 在此特别记录一下匹配函数的区别，防止以后再犯错误
 # re.match(pattern, string[, flags]): 从首字母开始开始匹配，string如果包含pattern子串，则匹配成功，返回Match对象，
 #   失败则返回None，若要完全匹配，pattern要以$结尾。
-# 
+#
 # re.search(pattern, string[, flags]) : 若string中包含pattern子串，则返回Match对象，否则返回None，
 #   注意，如果string中存在多个pattern子串，只返回第一个。
-# 
+#
 # re.findall(pattern, string[, flags]): 返回string中所有与pattern相匹配的全部字串，返回形式为数组。
-# 
+#
 # re.finditer(pattern, string[, flags]): 返回string中所有与pattern相匹配的全部字串，返回形式为迭代器。
-# 
+#
 # 2018年5月9日补充，参考：https://www.cnblogs.com/pigwan7/p/7814777.html
-# 
+#
 # 1、.(句点)匹配除了换行之外的所有一个字符， .*(点-星)匹配除了换行外的所有字符
 # >>> r=re.compile(r'.*')
 # >>> r.search('How are you\nFine thank you and you\nI am fine too').group()
 # 'How are you'
-# 
+#
 # 这个例子可以看出.*(点-星)匹配除了换行外的所有字符，但无法匹配换行符，如何匹配包括换行符的所有字符呢
-# 
+#
 # 2、通过传入re.DOTALL或者re.S作为re.compile()的第二个参数
 # >>> r=re.compile(r'.*',re.DOTALL)
 # >>> r.search('How are you\nFine thank you and you\nI am fine too').group()
 # 'How are you\nFine thank you and you\nI am fine too'
-# 
+#
 # >>> r=re.compile(r'.*',re.S)
 # >>> r.search('How are you\nFine thank you and you\nI am fine too').group()
 # 'How are you\nFine thank you and you\nI am fine too'
-# 
+#
 # 3、通过  (.|\n)*  正则表达式来匹配所有字
 # >>> r=re.compile(r'(.|\n)*')
 # >>> r.search('How are you\nFine thank you and you\nI am fine too').group()
 # 'How are you\nFine thank you and you\nI am fine too'
-# 
+#
 # 4、除了re.DOTALL外，re.IGNORCASE(等价于re.I),re.MULTILINE(re.M)，也是很有用的参数，re.IGNORCASE可以忽略大小写
 # >>> r=re.compile(r'hello',re.I)
 # >>> r.findall('Hello hello world heLLo')
 # ['Hello', 'hello', 'heLLo']
-# 
+#
 # 2018-05-14补充，参考https://blog.csdn.net/lwnylslwnyls/article/details/8901273
 # Python对标准正则表达式增加的扩展功能——命名组
 # 按连续相同的数字分组print(re.findall(r'((?P<word>\d)(?P=word)*)', '111221233334'))
@@ -205,23 +205,23 @@ import zipfile
 # zip_file.extractall('./channel')将zip文件全部解压到目录'./channel'中
 # 解压带密码的zip文件：
 # zip_file.extractall('./challenge20', pwd=bytes("password", "utf8" ))
-# 
+#
 # zip文件的数据开头为：b'PK\x03\x04\x14\x00...
 
 import bz2
 # 前几天使用了zip压缩文件，今天（2018-05-04 16:30:12）又接触到了新的压缩类型bz2，这是一种常用的压缩格式
 # 同样是在进行python challenge时使用到的，根据我的推断应该是压缩的字节流起始字节是BZ，因为我解压的两个bytes都是这样的
-# 
+#
 #    username_bytes = b'BZh91AY&SYA\xaf\x82\r\x00\x00\x01\x01\x80\x02\xc0\x02\x00 \x00!\x9ah3M\x07<]\xc9\x14\xe1BA\x06\xbe\x084'
 #    password_bytes = b'BZh91AY&SY\x94$|\x0e\x00\x00\x00\x81\x00\x03$ \x00!\x9ah3M\x13<]\xc9\x14\xe1BBP\x91\xf08'
-#    
+#
 #    print("username:", bz2.decompress(username_bytes))
 #    print("password:", bz2.decompress(password_bytes))
-# 
+#
 # 使用非常方便，直接调用方法decompress，将需要解压的内容传入即可
 # 在python challenge第8关，使用到了bz2，并且写了一个函数str2bytes，用来解决将文件中的BZh91AY&SYA\xaf\x82\r字符串，转成16进制
 # 原来花费了很多时间都没有搞定，这次自定义实现了
-# 
+#
 # def str2bytes(str_content):
 #    result_list = [];
 #    pos = 0
@@ -236,20 +236,20 @@ import bz2
 #            result_list.append(ord(str_content[pos]))
 #            pos = pos + 1
 #    return bytes(result_list)
-#    
+#
 # 找到了更简单的的方法：
 #   str_content = 'BZh91AY&SYA\\xaf\\x82\\r\\x00\\x00\\x01\\x01\\x80\\x02\\xc0\\x02\\x00 \\x00!\\x9ah3M\\x07<]\\xc9\\x14\\xe1BA\x06\\xbe\\x084'
 #   bytes_content = bytes(str_content, "latin1")
 #   print(bytes_content.decode('unicode_escape').encode('latin1'))
-#   
+#
 # 或者
 #   import codecs
 #   print(codecs.escape_decode(bytes_content)[0])
-# 
+#
 # 结果：
 # b'BZh91AY&SYA\xaf\x82\r\x00\x00\x01\x01\x80\x02\xc0\x02\x00 \x00!\x9ah3M\x07<]\xc9\x14\xe1BA\x06\xbe\x084'
 # [Finished in 0.1s]
-# 
+#
 
 from PIL import ImageDraw
 # 之前使用过Image这个库，最近（2018-05-08 13:37:23）在做python challenge时，涉及到一个图像处理的的操作
@@ -269,15 +269,15 @@ import urllib.request
 # 而这样的网页有不同于登录页面，其中只需要一个验证，使用requests库一直没有找到解决方法，post，get，session
 # cookies都用过了也没有解决，后来偶然间发现urllib.request可以办到，于是使用了网上的代码：
 #
-#    # create a password manager  
+#    # create a password manager
 #    password_mgr = urllib.request.HTTPPasswordMgrWithDefaultRealm()
-#      
+#
 #    # Add the username and password.
 #    # If we knew the realm, we could use it instead of None.
 #    top_level_url = "http://www.pythonchallenge.com/pc/return/good.html"
 #    password_mgr.add_password(None, top_level_url, 'huge', 'file')
 #    handler = urllib.request.HTTPBasicAuthHandler(password_mgr)
-#      
+#
 #    # create "opener" (OpenerDirector instance)
 #    opener = urllib.request.build_opener(handler)
 #
@@ -285,10 +285,10 @@ import urllib.request
 #    a_url = "http://www.pythonchallenge.com/pc/return/good.html"
 #    x = opener.open(a_url)
 #    print(x.read())
-#    
+#
 #    接着又有好消息，原来requests也能办到，并且更加简便：
 #    login_data = requests.get(target_url, auth=('huge', 'file')).content
-#    
+#
 #    看来urllib.request要想真正的发挥作用还需要后续的探索了
 
 import xmlrpc.client
@@ -298,26 +298,26 @@ import xmlrpc.server
 # 使用方法很简单，就像调用本地对象的函数一样就可以，但是需要区分Python2.x 和Python3.x版本，两个版本有很大的不同
 # 以网址'http://www.pythonchallenge.com/pc/phonebook.php'提供的服务为例
 # Python2.x
-#   import xmlrpclib  
-#   server = xmlrpclib.ServerProxy('http://www.pythonchallenge.com/pc/phonebook.php')  
-#   print server.system.listMethods()  
-#   print server.system.methodHelp('phone')  
+#   import xmlrpclib
+#   server = xmlrpclib.ServerProxy('http://www.pythonchallenge.com/pc/phonebook.php')
+#   print server.system.listMethods()
+#   print server.system.methodHelp('phone')
 #   print server.phone('Bert')
 #
 # Python3.x
 #   import xmlrpc.client
 #   server = xmlrpc.client.ServerProxy('http://www.pythonchallenge.com/pc/phonebook.php')
-#   print(server.system.listMethods()) 
+#   print(server.system.listMethods())
 #   print(server.system.methodHelp('phone'))
 #   print(server.phone('Bert'))
-#   
+#
 # 这些不同主要体现在创建连接服务器上，Python2.x参考https://blog.csdn.net/comprel/article/details/72633406
 # 新的版本将服务器和客户端统一移动到库xmlrpc中，不需要安装，Python3.x参考https://docs.python.org/3/library/xmlrpc.html
 
 import datetime
 # 这个库不是第一次使用，今天（2018-05-24 16:08:04）记录一下简单用法，用来生成日期或处理日期格式的数据
 # 比如通过年月日生成一个日期的代码：
-# 
+#
 #   import datetime
 #   date = datetime.date(1997,12,25)
 #   print(date)
@@ -327,16 +327,16 @@ import datetime
 import calendar
 # 这个库之前没有用到过，今天（2018-05-24 16:08:04）解决Python Challenge 15的时候第一次听说
 # 其实就是一个日历相关的模块，使用这个模块可以简单查询一个年份是否是闰年，使用方式如下:
-# 
+#
 #   calendar.isleap(year)
-# 
+#
 # 结果为：true或者false
 
 import wave
 # 关于音频的操作之前没有接触过，今天（2018-06-04 13:39:48）参见Pyhton challenge第一次使用，其实wave本质上
 # 操作的是一个二进制文件，将这个文件通过wave库打开即可使用关于音频操作的一些函数，下面的代码展示了如何将一个
 # 音频文件的每一帧反转形成一个新的音频文件，其中设置参数可以通过setparams一个函数代替下面的三个指定参数:
-# 
+#
 #   with wave.open('indian.wav','rb') as indian:
 #       with wave.open('indian_reverse.wav', 'wb') as indian_reverse:
 #           indian_reverse.setparams(indian.getparams())
@@ -416,3 +416,8 @@ import xlwt
 import xlrd
 # 这两个库用于操作Excel表和其他类型文件的转换，据我分析应该是Excel Write 和Excel Read的缩写
 # 在尝试把自己的支出记录转换成txt表格时（2019-1-6 17:04:05）时第一次使用，具体用法后续补充
+
+from matplotlib import pyplot as plt
+# 用于绘图的一个常用库，与Numpy使用可以有效的替代MatLab开源方案，也可以和图形工具包一起使用，
+# 如 PyQt 和 wxPython，在系统学习Numpy使用方法时（2019-3-26 11:33:03），了解了一下，参考网址：
+# http://www.runoob.com/numpy/numpy-matplotlib.html
