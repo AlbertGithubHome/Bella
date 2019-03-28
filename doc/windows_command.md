@@ -299,3 +299,13 @@ C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin>dumpbin -exports G:\m
 
 dumpbin是Visual Studio自带的工具，一般没有放到环境变量中，所以要进入对应的目录使用，如果这个目录在环境变量中，
 则可以在任何目录下使用，按照上述格式将dll中的函数符号导出到对应的查看文件中
+
+2. 查看lib文件中的符号信息
+
+- **dumpbin**
+
+```
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin>dumpbin /all  G:\test.lib> G:\test.txt
+```
+
+参考查看dll信息就可以，但是使用`-exports`选项不行，需要`/all`选项
