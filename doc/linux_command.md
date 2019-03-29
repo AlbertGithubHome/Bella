@@ -381,4 +381,27 @@ Feb 19 14:17:01 localhost CROND[11770]: (shihengzhen) CMD (/bin/sh /home/shiheng
 
 grep原来还可以这样用，感觉参数比find简单啊
 
+17. 查看磁盘上文件时显示完整时间
+
+- **ls --full-time**
+
+```bash
+[shihengzhen@localhost#15:12:18#/home/shihengzhen/test/so]$ls --full-time
+总用量 36212
+-rw-rw-r-- 1 shihengzhen shihengzhen 37025922 2017-07-05 19:36:18.461884977 +0800 JgMir.txt
+-rwxrwxr-x 1 shihengzhen shihengzhen     5887 2017-07-05 18:01:45.025882762 +0800 libtesta.so
+-rwxrwxr-x 1 shihengzhen shihengzhen     5887 2017-07-05 18:02:03.801822586 +0800 libtestb.so
+-rwxrwxr-x 1 shihengzhen shihengzhen     6911 2017-07-05 18:19:38.101697879 +0800 main
+-rw-rw-r-- 1 shihengzhen shihengzhen      262 2017-07-05 18:07:58.824796782 +0800 main.c
+-rw-rw-r-- 1 shihengzhen shihengzhen     1592 2017-07-05 18:03:28.328884445 +0800 main.o
+-rw-rw-r-- 1 shihengzhen shihengzhen      123 2017-07-05 17:56:04.210889388 +0800 testliba.c
+-rw-rw-r-- 1 shihengzhen shihengzhen       82 2017-07-05 17:54:38.023060881 +0800 testliba.h
+-rw-rw-r-- 1 shihengzhen shihengzhen      123 2017-07-05 17:56:54.336764733 +0800 testlibb.c
+-rw-rw-r-- 1 shihengzhen shihengzhen       82 2017-07-05 17:57:12.535697631 +0800 testlibb.h
+drwxrwxr-x 2 shihengzhen shihengzhen     4096 2017-07-06 10:30:20.430765733 +0800 withoutvoice
+
+```
+
+本质上就是`ls`命令，一般使用 `ls -l` 或者 `ll` 就可以了，但是如果精确到毫秒，那么就得加 `--full-time`参数了
+
 # 工具命令
