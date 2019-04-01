@@ -5,7 +5,7 @@
 # @Link     : http://blog.csdn.net/albertsh
 # @Github   : https://github.com/AlbertGithubHome
 __author__ = 'AlbertS'
-# @Subject  : 使用numpy和Matplot近似使用正弦波叠加出方波
+# @Subject  : 使用Matplot近似使用正弦波叠加出方波
 
 import numpy as np
 from matplotlib import pyplot as plt
@@ -22,8 +22,9 @@ def main():
     y = 4 * np.sin(x) / np.pi
 
     for i in range(3, 3000, 2):
-        y = y + 4 * np.sin(i * x) / np.pi / i
-        plt.plot(x, y, ":")
+        y1 = 4 * np.sin(i * x) / np.pi / i
+        y = y + y1
+        plt.plot(x, y1, ":")
 
     plt.plot(x, y)
     plt.show()
