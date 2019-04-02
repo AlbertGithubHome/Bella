@@ -421,3 +421,8 @@ from matplotlib import pyplot as plt
 # 用于绘图的一个常用库，与Numpy使用可以有效的替代MatLab开源方案，也可以和图形工具包一起使用，
 # 如 PyQt 和 wxPython，在系统学习Numpy使用方法时（2019-3-26 11:33:03），了解了一下，参考网址：
 # http://www.runoob.com/numpy/numpy-matplotlib.html
+
+import configparser
+# 用来读取配置文件，配置文件的格式跟windows下的ini配置文件相似，可以包含一个或多个节(section),
+# 每个节可以有多个参数（键=值），在看《自动化平台测试开发》一书时（2019-4-2 10:05:59）第一次发现
+# 当时只是看文档，还没来得及试一下
