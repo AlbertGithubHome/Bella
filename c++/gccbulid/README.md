@@ -18,7 +18,9 @@ gcc main.o -o main
 ```
 
 ### 文件大小
->$ll
+
+```bash
+[/test/build]$ll
 总用量 48
 -rwxrwxr-x 1 shihengzhen shihengzhen  6550 4月  10 17:47 main
 -rw-rw-r-- 1 shihengzhen shihengzhen   173 4月  10 17:46 main.c
@@ -26,7 +28,7 @@ gcc main.o -o main
 -rw-rw-r-- 1 shihengzhen shihengzhen 16802 4月  10 17:46 main.i
 -rw-rw-r-- 1 shihengzhen shihengzhen  1664 4月  10 17:47 main.o
 -rw-rw-r-- 1 shihengzhen shihengzhen   978 4月  10 17:47 main.s
-
+```
 
 
 ## g++
@@ -45,7 +47,9 @@ g++ main.o -o main
 ```
 
 ### 文件大小
->$ll
+
+```bash
+[/test/build]$ll
 总用量 48
 -rwxrwxr-x 1 shihengzhen shihengzhen  6550 4月  10 17:47 main
 -rw-rw-r-- 1 shihengzhen shihengzhen   173 4月  10 17:46 main.c
@@ -53,3 +57,4 @@ g++ main.o -o main
 -rw-rw-r-- 1 shihengzhen shihengzhen 16802 4月  10 17:46 main.i
 -rw-rw-r-- 1 shihengzhen shihengzhen  1664 4月  10 17:47 main.o
 -rw-rw-r-- 1 shihengzhen shihengzhen   978 4月  10 17:47 main.s
+```
