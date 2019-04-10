@@ -51,10 +51,11 @@ g++ main.o -o main
 ```bash
 [/test/build]$ll
 总用量 48
--rwxrwxr-x 1 shihengzhen shihengzhen  6550 4月  10 17:47 main
--rw-rw-r-- 1 shihengzhen shihengzhen   173 4月  10 17:46 main.c
--rwxrwxr-x 1 shihengzhen shihengzhen  6550 4月  10 17:48 main_direct
--rw-rw-r-- 1 shihengzhen shihengzhen 16802 4月  10 17:46 main.i
--rw-rw-r-- 1 shihengzhen shihengzhen  1664 4月  10 17:47 main.o
--rw-rw-r-- 1 shihengzhen shihengzhen   978 4月  10 17:47 main.s
+-rwxrwxr-x 1 shihengzhen shihengzhen  6924 4月  10 18:03 main
+-rw-rw-r-- 1 shihengzhen shihengzhen   173 4月  10 17:42 main.c
+-rwxrwxr-x 1 shihengzhen shihengzhen  6924 4月  10 17:51 main_direct
+-rw-rw-r-- 1 shihengzhen shihengzhen 17369 4月  10 17:51 main.i
+-rw-rw-r-- 1 shihengzhen shihengzhen  1752 4月  10 17:52 main.o
+-rw-rw-r-- 1 shihengzhen shihengzhen  1077 4月  10 17:51 main.s
+
 ```
