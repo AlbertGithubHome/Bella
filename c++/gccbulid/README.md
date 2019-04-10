@@ -20,7 +20,7 @@ gcc main.o -o main
 ### 文件大小
 
 ```bash
-[/test/build]$ll
+[/test/build/c]$ll
 总用量 48
 -rwxrwxr-x 1 shihengzhen shihengzhen  6550 4月  10 17:47 main
 -rw-rw-r-- 1 shihengzhen shihengzhen   173 4月  10 17:46 main.c
@@ -49,7 +49,7 @@ g++ main.o -o main
 ### 文件大小
 
 ```bash
-[/test/build]$ll
+[/test/build/c++]$ll
 总用量 48
 -rwxrwxr-x 1 shihengzhen shihengzhen  6924 4月  10 18:03 main
 -rw-rw-r-- 1 shihengzhen shihengzhen   173 4月  10 17:42 main.c
