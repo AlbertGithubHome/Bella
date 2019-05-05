@@ -404,6 +404,40 @@ drwxrwxr-x 2 shihengzhen shihengzhen     4096 2017-07-06 10:30:20.430765733 +080
 
 本质上就是`ls`命令，一般使用 `ls -l` 或者 `ll` 就可以了，但是如果精确到毫秒，那么就得加 `--full-time`参数了
 
+18. 查看网卡流量
+
+- **iftop -B**
+
+```bash
+[shihengzhen@localhost#10:18:27#/home/shihengzhen]$sudo iftop
+interface: eth0
+IP address is: 192.168.1.214
+MAC address is: 00:13:72:5b:a2:84
+
+                       195Kb                  391Kb                   586Kb                  781Kb              977Kb
+mqqqqqqqqqqqqqqqqqqqqqqvqqqqqqqqqqqqqqqqqqqqqqvqqqqqqqqqqqqqqqqqqqqqqqvqqqqqqqqqqqqqqqqqqqqqqvqqqqqqqqqqqqqqqqqqqqqqq
+192.168.1.214:8876                          <=> 192.168.1.150:5088                            24.7Kb  25.2Kb  25.1Kb
+192.168.1.214:8876                          <=> 192.168.1.29:2731                             19.0Kb  21.2Kb  21.4Kb
+192.168.1.214:8876                          <=> 192.168.1.84:53507                            15.2Kb  14.1Kb  14.4Kb
+192.168.1.214:43846                         <=> 192.168.1.209:3306                               0b   3.49Kb  10.9Kb
+255.255.255.255:67                          <=> 0.0.0.0:68                                    2.25Kb  3.15Kb  3.83Kb
+192.168.1.214:22                            <=> 192.168.1.105:5849                            2.31Kb  2.63Kb  3.27Kb
+192.168.1.255:54915                         <=> 192.168.1.105:54915                           2.27Kb  2.27Kb  2.27Kb
+
+
+qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+TX:             cum:   2.83MB   peak:    244Kb                                       rates:   48.0Kb  52.8Kb  60.7Kb
+RX:                    1.44MB           43.4Kb                                                29.4Kb  30.7Kb  31.9Kb
+TOTAL:                 4.27MB            283Kb                                                77.3Kb  83.6Kb  92.5Kb
+
+
+```
+
+基础命令就是`iftop`，常用的参数 `-B` 是以bytes为单位显示流量(默认是bits)，按字母`t`是切换流量显示方向，只显示发送、只显示接收，
+一行显示发送和接收，两行显示发送和接收4种方式，字母 `p`是控制端口是否显示的开关
+
+
+
 # 工具命令
 
 1. vi/vim中查看文件编码
