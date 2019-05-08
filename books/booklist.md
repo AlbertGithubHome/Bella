@@ -20,6 +20,8 @@
 - Redis入门指南(第2版)
 - 图解HTTP
 - 自动化平台测试开发 ——Python测试开发实践
+- 图解密码技术
+- 图解TCP/IP
 
 ---
 # Thinking
