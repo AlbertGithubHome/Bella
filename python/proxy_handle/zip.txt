@@ -1,6 +1,1 @@
-<html>
-<head>
-<meta http-equiv="content-type" content="text/html; charset=gb2312">
-<title> 您的IP地址 </title>
-</head>
-<body style="margin:0px"><center>您的IP是：[114.245.74.178] 来自：北京市北京市 联通</center></body></html>
+183.136.163.92

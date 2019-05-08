@@ -18,7 +18,7 @@
     <title>(最新)使用爬虫刷CSDN博客访问量——亲测有效 - cdtaogang的博客 - CSDN博客</title>
 
         
-                    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/detail-7e9cc9c6cc.min.css">
+                    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/detail-e17c3401c9.min.css">
             
         
           <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/themes/skin-blackboard/skin-blackboard-1340d63bd5.min.css">
@@ -43,6 +43,7 @@
         var isCorporate = false;
         var subDomainBlogUrl = "https://blog.csdn.net/"
         var digg_base_url = "https://blog.csdn.net/qq_41782425/phoenix/comment";
+        var articleDetailUrl = "https://blog.csdn.net/qq_41782425/article/details/84993073";
     </script>
     <script type="text/javascript">
         // Traffic Stats of the entire Web site By baidu
@@ -59,8 +60,8 @@
     <script src="https://csdnimg.cn/rabbit/exposure-click/main-1.0.6.js"></script>
     <script src="//g.csdnimg.cn/fixed-sidebar/1.1.3/fixed-sidebar.js" type="text/javascript"></script>
     <!-- 新版上报 -->
-          <script type="text/javascript" src="https://csdnimg.cn/release/phoenix/production/track-c86a2663d0.js" /></script>
-        <!-- 新版上报end -->
+      <script src="//g.csdnimg.cn/track/1.2.4/track.js" type="text/javascript"></script>
+    <!-- 新版上报end -->
 
     <link rel="stylesheet" href="https://csdnimg.cn/public/sandalstrap/1.4/css/sandalstrap.min.css">
     <style>
@@ -73,16 +74,16 @@
 <body class="nodata " > 
     <link rel="stylesheet" href="https://csdnimg.cn/public/common/toolbar/content_toolbar_css/content_toolbar.css">
     <script id="toolbar-tpl-scriptId" src="https://csdnimg.cn/public/common/toolbar/js/content_toolbar.js" type="text/javascript" domain="https://blog.csdn.net/"></script>
-<div id="kp_box_476" data-pid="476" data-track-view='{"mod":"kp_popu_476-865","con":",,"}' data-track-click='{"mod":"kp_popu_476-865","con":",,"}'><script src="//csdnimg.cn/public/common/indexSuperise/1.0.3/indexSuperise.js?20190103190825"></script>
+<div id="kp_box_476" data-pid="476" data-track-view='{"mod":"kp_popu_476-923","con":",,"}' data-track-click='{"mod":"kp_popu_476-923","con":",,"}'><script src="//csdnimg.cn/public/common/indexSuperise/1.0.3/indexSuperise.js?20190103190825"></script>
 <script>
  window.csdn.indexSuperise({
-      smallMoveImg: '//img-ads.csdn.net/2019/201904041737196130.jpg',
-      bigMoveImg: '//img-ads.csdn.net/2019/201904041737454399.jpg',
-     link:'//j.youzan.com/MZVGx9',
+      smallMoveImg: '//img-ads.csdn.net/2019/201904191712004256.png',
+      bigMoveImg: '//img-ads.csdn.net/2019/201904191711482933.png',
+     link:'//edu.csdn.net/topic/ai30?utm_source=blogpopup',
 boxStyle:140,
 trackSuperId:476,
 smallMove:'notMove',  
-trackSId:865
+trackSId:923
     });
 </script></div><link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/blog_code-c3a0c33d5c.css">
 <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/vendor/pagination/paging.css">
@@ -114,7 +115,7 @@ trackSId:865
 				<div class="article-bar-top">
 																									<span class="time">2018年12月13日 20:52:14</span>
 					<a class="follow-nickName" href="https://me.csdn.net/qq_41782425" target="_blank">cdtaogang</a>
-						<span class="read-count">阅读数：78955</span>
+						<span class="read-count">阅读数：86036</span>
 						
 																															</div>
 				<div class="operating">
@@ -548,13 +549,24 @@ if __name__ == "__main__":
 
   <div class="hide-article-box hide-article-pos text-center">
     <div class="border"></div>
-          <a class="btn article-footer-btn" id="btn-readmore" data-track-view='{"mod":"popu_772","con":",https://blog.csdn.net/qq_41782425/article/details/84993073,"}' data-track-click='{"mod":"popu_772","con":",https://blog.csdn.net/qq_41782425/article/details/84993073,"}'>
-        展开阅读全文
-        <svg class="icon" aria-hidden="true">
-          <use xlink:href="#csdnc-chevrondown"></use>
-        </svg>
-      </a>
+        <a class="btn article-footer-btn" id="btn-readmore" data-track-view='{"mod":"popu_376","con":",https://blog.csdn.net/qq_41782425/article/details/84993073,"}' data-track-click='{"mod":"popu_376","con":",https://blog.csdn.net/qq_41782425/article/details/84993073,"}'>阅读更多</a>
+        <a class="btn article-footer-btn article-footer-bookmark-btn" >
+      <svg class="icon no-active hover-hide" aria-hidden="true">
+        <use xlink:href="#csdnc-bookmark"></use>
+      </svg>
+      <span>收藏</span>
+    </a>
+    <div class="btn article-footer-btn  bds_weixin article-footer-share-btn" data-cmd="weixin" title="分享">
+      <svg class="icon no-active hover-hide" aria-hidden="true">
+        <use xlink:href="#csdnc-share"></use>
+      </svg>
+      <span>分享</span>
+      <div class="bdsharebuttonbox">
+        <a href="#"class="bds_weixin clear-share-style-article-footer" data-cmd="weixin" title="分享"></a>
       </div>
+    </div>
+
+  </div>
   
   <script>
   (function(){
@@ -628,7 +640,7 @@ if __name__ == "__main__":
     window.csdn.articleCollection = collection;
     function clearReadMoreBtn(dom) {
       if(userPermission && !(dom instanceof jQuery)) {
-        window.open('https://mall.csdn.net/vip_code?utm_source=brv')
+        window.open('https://mall.csdn.net/vip?utm_source=brv')
         return false;
       }
       dom = dom instanceof jQuery ? dom : $(this);
@@ -671,90 +683,6 @@ if __name__ == "__main__":
 				$('div.markdown_views')[0].className = 'markdown_views';
 		}
 </script>
-<div class="tool-box" data-track-view='{"mod":"popu_773","con":",https://blog.csdn.net/qq_41782425/article/details/84993073,"}' >
-	<ul class="meau-list">
-		<li class="btn-like-box btn-like "  data-track-click='{"mod":"popu_773","con":",https://blog.csdn.net/qq_41782425/article/details/84993073,liked"}'>
-			<a class="btn-like-a">
-				<svg class="icon" aria-hidden="true">
-					<use xlink:href="#csdnc-thumbsup-ok"></use>
-				</svg>
-				<p>4</p>
-			</a>
-		</li>
-		<li class="">
-						<a class="btn-comments hover-box"  href="#commentBox" data-track-click='{"mod":"popu_773","con":",https://blog.csdn.net/qq_41782425/article/details/84993073,comments"}'>
-				<svg class="icon" aria-hidden="true">
-					<use xlink:href="#csdnc-comments"></use>
-				</svg>
-				<p class="tool-comment-count">
-						4条评论
-				</p>
-			</a>
-		</li>
-		<li class="btn-bookmark-box">
-			<a class="btn-bookmark low-height hover-box" data-track-click='{"mod":"popu_773","con":",https://blog.csdn.net/qq_41782425/article/details/84993073,bookmark"}'>
-				<svg class="icon active" aria-hidden="true">
-					<use xlink:href="#csdnc-bookmark-ok"></use>
-				</svg>
-				<svg class="icon no-active" aria-hidden="true">
-					<use xlink:href="#csdnc-bookmark"></use>
-				</svg>
-					<span class="text">收藏</span>
-				<!-- <span class="hover-show text-box text">
-					<span class="no-active">收藏</span>
-					<span class="active">取消收藏</span>
-				</span> -->
-			</a>
-		</li>
-		<li class="bdsharebuttonbox">
-			<div class="weixin-qr btn-comments low-height" >
-        <a href="#" class="bds_weixin clear-share-style" data-cmd="weixin" data-track-click='{"mod":"popu_773","con":",https://blog.csdn.net/qq_41782425/article/details/84993073,weixinshare"}'></a>
-				<svg class="icon" aria-hidden="true">
-					<use xlink:href="#csdnc-share"></use>
-				</svg>
-				<span class="text">
-					分享
-				</span>
-			</div>
-		</li>
-		
-	    	    	    <li class="nextPage">
-	      <a class="btn-comments hover-box low-height" href="https://blog.csdn.net/qq_41782425/article/details/85081107" data-track-click='{"mod":"popu_773","con":",https://blog.csdn.net/qq_41782425/article/details/84993073,nextPage"}'>
-	        <span class="hover-show text text3">下一篇</span>
-	      </a>
-	    </li>
-	    
-    <li class="toc-container-box" id="liTocBox">
-      <button class="btn-toc low-height hover-box" data-track-click='{"mod":"popu_773","con":",https://blog.csdn.net/qq_41782425/article/details/84993073,toc"}'>
-        <span class="text">目录</span>
-      </button>
-      <div class="toc-container">
-        <div class="pos-box">
-          <div class="scroll-box">
-            <div class="toc-box"></div>
-          </div>
-        </div>
-        <div class="opt-box clearfix">
-          <button class="btn-opt prev nomore" title="向上">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#csdnc-chevronup"></use>
-            </svg>
-          </button>
-          <div class="icon-arrow"></div>
-          <button class="btn-opt next">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#csdnc-chevrondown"></use>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </li>
-	</ul>
-</div>
-<div class="tool-Placeholder">
-  
-</div>
-<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'https://csdnimg.cn/static/api/js/share.js?v=89860594'];</script>
         <div id="dmp_ad_58"><div id="kp_box_58" data-pid="58" data-track-view='{"mod":"kp_popu_58-402","con":",,"}' data-track-click='{"mod":"kp_popu_58-402","con":",,"}'><div style="width:100%;background:#fff;border:3px solid #fff;">
 <script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
 <div id="three_ad1" class="mediav_ad" ></div>
@@ -852,12 +780,12 @@ if __name__ == "__main__":
 		</div>
 		<div id="commentPage" class="pagination-box d-none"></div>
 		<div class="opt-box text-center">
-			<button class="btn btn-sm btn-link-blue" id="btnMoreComment"></button>
+			<div class="btn btn-sm btn-link-blue" id="btnMoreComment"></div>
 		</div>
 	</div>
 </div>
         <div class="recommend-box">
-            		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/dala_da/article/details/79401163,BlogCommendFromThirdService_0"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/dala_da/article/details/79401163,BlogCommendFromThirdService_0"}'>
+            		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/dala_da/article/details/79401163,BlogCommendFromThirdService_0"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/dala_da/article/details/79401163" target="_blank" title="使用爬虫刷csdn博客访问量">
 				<h4 class="text-truncate oneline">
@@ -885,27 +813,27 @@ if __name__ == "__main__":
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/dkr380205984/article/details/78999952,BlogCommendFromThirdService_1"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/dkr380205984/article/details/78999952,BlogCommendFromThirdService_1"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/CY19980216/article/details/82825833,BlogCommendFromThirdService_1"}'>
 			<div class="content">
-				<a href="https://blog.csdn.net/dkr380205984/article/details/78999952" target="_blank" title="使用前端js一句话就能在csdn上刷自己写的博客的访问量">
+				<a href="https://blog.csdn.net/CY19980216/article/details/82825833" target="_blank" title="【日常】利用python刷CSDN访问量">
 				<h4 class="text-truncate oneline">
-						<em>使用</em>前端js一句话就能在csdn上刷自己写的博客的<em>访问量</em>				</h4>
+						【日常】利用python刷CSDN<em>访问量</em>				</h4>
 				<div class="info-box d-flex align-content-center">
 					<p class="date-and-readNum oneline">
-						<span class="date hover-show">01-08</span>
+						<span class="date hover-show">09-23</span>
 						<span class="read-num hover-hide">
               阅读数 
-							2259</span>
+							1万+</span>
 						</p>
 					</div>
 				</a>
 					<p class="content">
-						<a href="https://blog.csdn.net/dkr380205984/article/details/78999952" target="_blank" title="使用前端js一句话就能在csdn上刷自己写的博客的访问量">
-							<span class="desc oneline">听说python可以刷访问量，顿时很想学，结果自己随便搞了几下竟然只用1句话就把刷访问量的事情搞定了.....刷访问量的基本思路，点击文章标题--&amp;amp;gt;调接口--&amp;amp;gt;数据库访问量...</span>
+						<a href="https://blog.csdn.net/CY19980216/article/details/82825833" target="_blank" title="【日常】利用python刷CSDN访问量">
+							<span class="desc oneline">最近刚刚进村写博客，精心创作却苦于无人阅览。于是耍了点小聪明准备写个小爬虫给自己的博客刷刷访问量。以下代码是对《【项目记录】雪球网股票组合数据爬虫（包括雪球模拟登录代码）》这篇博客（博客链接：http...</span>
 						</a>
 						  <span class="blog_title_box oneline ">
 							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/dkr380205984">来自：	<span class="blog_title"> 南方程序猿</span></a>
+                                  <a target="_blank" href="https://blog.csdn.net/CY19980216">来自：	<span class="blog_title"> 囚生CYのParadise</span></a>
                 							              </span>
 					</p>
 			</div>
@@ -913,7 +841,7 @@ if __name__ == "__main__":
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/topleeyap/article/details/79119098,BlogCommendFromBaidu_2"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/topleeyap/article/details/79119098,BlogCommendFromBaidu_2"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/topleeyap/article/details/79119098,BlogCommendFromThirdService_2"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/topleeyap/article/details/79119098" target="_blank" title="自动刷CSDN个人博客访问量爬虫">
 				<h4 class="text-truncate oneline">
@@ -923,7 +851,7 @@ if __name__ == "__main__":
 						<span class="date hover-show">01-21</span>
 						<span class="read-num hover-hide">
               阅读数 
-							3731</span>
+							3817</span>
 						</p>
 					</div>
 				</a>
@@ -978,7 +906,7 @@ if __name__ == "__main__":
                   })
                                         </script></div></div>
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/qq_42554007/article/details/83011260,BlogCommendFromBaidu_3"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/qq_42554007/article/details/83011260,BlogCommendFromBaidu_3"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/qq_42554007/article/details/83011260,BlogCommendFromThirdService_3"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/qq_42554007/article/details/83011260" target="_blank" title="用爬虫来对csdn个人博客进行访问，刷访问量">
 				<h4 class="text-truncate oneline">
@@ -988,7 +916,7 @@ if __name__ == "__main__":
 						<span class="date hover-show">10-11</span>
 						<span class="read-num hover-hide">
               阅读数 
-							763</span>
+							849</span>
 						</p>
 					</div>
 				</a>
@@ -1006,27 +934,27 @@ if __name__ == "__main__":
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/u010756046/article/details/80579719,BlogCommendFromBaidu_4"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/u010756046/article/details/80579719,BlogCommendFromBaidu_4"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/dkr380205984/article/details/78999952,BlogCommendFromThirdService_4"}'>
 			<div class="content">
-				<a href="https://blog.csdn.net/u010756046/article/details/80579719" target="_blank" title="刷访客">
+				<a href="https://blog.csdn.net/dkr380205984/article/details/78999952" target="_blank" title="使用前端js一句话就能在csdn上刷自己写的博客的访问量">
 				<h4 class="text-truncate oneline">
-						刷访客				</h4>
+						<em>使用</em>前端js一句话就能在csdn上刷自己写的博客的<em>访问量</em>				</h4>
 				<div class="info-box d-flex align-content-center">
 					<p class="date-and-readNum oneline">
-						<span class="date hover-show">06-06</span>
+						<span class="date hover-show">01-08</span>
 						<span class="read-num hover-hide">
               阅读数 
-							16万+</span>
+							2307</span>
 						</p>
 					</div>
 				</a>
 					<p class="content">
-						<a href="https://blog.csdn.net/u010756046/article/details/80579719" target="_blank" title="刷访客">
-							<span class="desc oneline">importjava.io.BufferedReader;importjava.io.IOException;importjava.io.InputStreamReader;importjava.ne...</span>
+						<a href="https://blog.csdn.net/dkr380205984/article/details/78999952" target="_blank" title="使用前端js一句话就能在csdn上刷自己写的博客的访问量">
+							<span class="desc oneline">听说python可以刷访问量，顿时很想学，结果自己随便搞了几下竟然只用1句话就把刷访问量的事情搞定了.....刷访问量的基本思路，点击文章标题--&amp;amp;gt;调接口--&amp;amp;gt;数据库访问量...</span>
 						</a>
 						  <span class="blog_title_box oneline ">
 							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/u010756046">来自：	<span class="blog_title"> 李子果 - 博客</span></a>
+                                  <a target="_blank" href="https://blog.csdn.net/dkr380205984">来自：	<span class="blog_title"> 南方程序猿</span></a>
                 							              </span>
 					</p>
 			</div>
@@ -1034,35 +962,24 @@ if __name__ == "__main__":
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/polyhedronx/article/details/81479125,BlogCommendFromBaidu_5"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/polyhedronx/article/details/81479125,BlogCommendFromBaidu_5"}'>
-			<div class="content">
-				<a href="https://blog.csdn.net/polyhedronx/article/details/81479125" target="_blank" title="python实战笔记之（4）：刷博客浏览量">
-				<h4 class="text-truncate oneline">
-						python实战笔记之（4）：刷博客浏览量				</h4>
-				<div class="info-box d-flex align-content-center">
-					<p class="date-and-readNum oneline">
-						<span class="date hover-show">08-07</span>
-						<span class="read-num hover-hide">
-              阅读数 
-							1926</span>
-						</p>
-					</div>
-				</a>
-					<p class="content">
-						<a href="https://blog.csdn.net/polyhedronx/article/details/81479125" target="_blank" title="python实战笔记之（4）：刷博客浏览量">
-							<span class="desc oneline">看着自己写的文章浏览数一点一点增加是非常开心的，但总感觉浏览数增长地太慢了，于是自然想到，为什么不能写一个小程序自动刷博客浏览量呢？Let'sdoit首先，我们尝试用requests打开博客url，看...</span>
-						</a>
-						  <span class="blog_title_box oneline ">
-							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/polyhedronx">来自：	<span class="blog_title"> polyhedronx的博客</span></a>
-                							              </span>
-					</p>
+    		<div class="recommend-item-box recommend-box-ident recommend-other-item-box"  data-track-click='{"mod":"popu_614","con":",https://bbs.csdn.net/topics/392462014,BlogCommendFromBaidu_5"}'>
+		<a href="https://bbs.csdn.net/topics/392462014" target="_blank">
+			<h4 class="text-truncate oneline">
+					<em>CSDN博客</em><em>访问量</em>bug			</h4>
+			<div class="info-box d-flex align-content-center">
+					<span class="date">10-16</span>
 			</div>
-					</div>
+			<p class="content oneline">
+        <span class="desc oneline">我的主页博客访问量一直没有更新，有点难过，希望技术人员帮忙看一下后台，谢谢！</span>
+                  <span class="type-show type-show-bbs">论坛</span>
+        			</p>
+		</a>
+
+	</div>
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/l1336037686/article/details/87174008,BlogCommendFromBaidu_6"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/l1336037686/article/details/87174008,BlogCommendFromBaidu_6"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/l1336037686/article/details/87174008,BlogCommendFromBaidu_6"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/l1336037686/article/details/87174008" target="_blank" title="CSDN刷浏览量小脚本">
 				<h4 class="text-truncate oneline">
@@ -1072,7 +989,7 @@ if __name__ == "__main__":
 						<span class="date hover-show">02-13</span>
 						<span class="read-num hover-hide">
               阅读数 
-							272</span>
+							292</span>
 						</p>
 					</div>
 				</a>
@@ -1090,7 +1007,7 @@ if __name__ == "__main__":
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/doubleguy/article/details/88298629,BlogCommendFromBaidu_7"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/doubleguy/article/details/88298629,BlogCommendFromBaidu_7"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/doubleguy/article/details/88298629,BlogCommendFromBaidu_7"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/doubleguy/article/details/88298629" target="_blank" title="一句话狂刷csdn访问量">
 				<h4 class="text-truncate oneline">
@@ -1100,7 +1017,7 @@ if __name__ == "__main__":
 						<span class="date hover-show">03-07</span>
 						<span class="read-num hover-hide">
               阅读数 
-							201</span>
+							232</span>
 						</p>
 					</div>
 				</a>
@@ -1155,27 +1072,27 @@ if __name__ == "__main__":
                   })
                                         </script></div></div>
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/CY19980216/article/details/82825833,BlogCommendFromBaidu_8"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/CY19980216/article/details/82825833,BlogCommendFromBaidu_8"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/lyc_liyanchao/article/details/82724785,BlogCommendFromBaidu_8"}'>
 			<div class="content">
-				<a href="https://blog.csdn.net/CY19980216/article/details/82825833" target="_blank" title="【日常】利用python刷CSDN访问量">
+				<a href="https://blog.csdn.net/lyc_liyanchao/article/details/82724785" target="_blank" title="使用Jsoup刷CSDN刷博客浏览量">
 				<h4 class="text-truncate oneline">
-						【日常】利用python刷CSDN<em>访问量</em>				</h4>
+						<em>使用</em>Jsoup刷CSDN刷博客浏览量				</h4>
 				<div class="info-box d-flex align-content-center">
 					<p class="date-and-readNum oneline">
-						<span class="date hover-show">09-23</span>
+						<span class="date hover-show">09-16</span>
 						<span class="read-num hover-hide">
               阅读数 
-							1万+</span>
+							2166</span>
 						</p>
 					</div>
 				</a>
 					<p class="content">
-						<a href="https://blog.csdn.net/CY19980216/article/details/82825833" target="_blank" title="【日常】利用python刷CSDN访问量">
-							<span class="desc oneline">最近刚刚进村写博客，精心创作却苦于无人阅览。于是耍了点小聪明准备写个小爬虫给自己的博客刷刷访问量。以下代码是对《【项目记录】雪球网股票组合数据爬虫（包括雪球模拟登录代码）》这篇博客（博客链接：http...</span>
+						<a href="https://blog.csdn.net/lyc_liyanchao/article/details/82724785" target="_blank" title="使用Jsoup刷CSDN刷博客浏览量">
+							<span class="desc oneline">最近公司在搞一些抓新闻的东西，使用了Jsoup，加上本人刚开始写CSDN浏览量，想来测试一下，使用Jsoup是否可以通过打开CSDN的链接来增加浏览量，答案是可行的！在抓取网页的时候，如果不使用IP代...</span>
 						</a>
 						  <span class="blog_title_box oneline ">
 							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/CY19980216">来自：	<span class="blog_title"> 囚生CYのParadise</span></a>
+                                  <a target="_blank" href="https://blog.csdn.net/lyc_liyanchao">来自：	<span class="blog_title"> 闲来也无事</span></a>
                 							              </span>
 					</p>
 			</div>
@@ -1183,7 +1100,7 @@ if __name__ == "__main__":
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/flykinghg/article/details/70766310,BlogCommendFromBaidu_9"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/flykinghg/article/details/70766310,BlogCommendFromBaidu_9"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/flykinghg/article/details/70766310,BlogCommendFromBaidu_9"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/flykinghg/article/details/70766310" target="_blank" title="脚本实现自动化增加CSDN博客的访问量">
 				<h4 class="text-truncate oneline">
@@ -1193,7 +1110,7 @@ if __name__ == "__main__":
 						<span class="date hover-show">04-25</span>
 						<span class="read-num hover-hide">
               阅读数 
-							2887</span>
+							2901</span>
 						</p>
 					</div>
 				</a>
@@ -1220,44 +1137,27 @@ if __name__ == "__main__":
 				</div>
       </div>
     
-    		<div class="recommend-item-box recommend-box-ident recommend-other-item-box" data-track-view='{"mod":"popu_614","con":",https://bbs.csdn.net/topics/392462014,BlogCommendFromBaidu_10"}' data-track-click='{"mod":"popu_614","con":",https://bbs.csdn.net/topics/392462014,BlogCommendFromBaidu_10"}'>
-		<a href="https://bbs.csdn.net/topics/392462014" target="_blank">
-			<h4 class="text-truncate oneline">
-					<em>CSDN博客</em><em>访问量</em>bug			</h4>
-			<div class="info-box d-flex align-content-center">
-					<span class="date">10-16</span>
-			</div>
-			<p class="content oneline">
-        <span class="desc oneline">我的主页博客访问量一直没有更新，有点难过，希望技术人员帮忙看一下后台，谢谢！</span>
-                  <span class="type-show type-show-bbs">论坛</span>
-        			</p>
-		</a>
-
-	</div>
-	
-    
-    
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/lyc_liyanchao/article/details/82724785,BlogCommendFromBaidu_11"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/lyc_liyanchao/article/details/82724785,BlogCommendFromBaidu_11"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/polyhedronx/article/details/81479125,BlogCommendFromThirdService_10"}'>
 			<div class="content">
-				<a href="https://blog.csdn.net/lyc_liyanchao/article/details/82724785" target="_blank" title="使用Jsoup刷CSDN刷博客浏览量">
+				<a href="https://blog.csdn.net/polyhedronx/article/details/81479125" target="_blank" title="python实战笔记之（4）：刷博客浏览量">
 				<h4 class="text-truncate oneline">
-						<em>使用</em>Jsoup刷CSDN刷博客浏览量				</h4>
+						python实战笔记之（4）：刷博客浏览量				</h4>
 				<div class="info-box d-flex align-content-center">
 					<p class="date-and-readNum oneline">
-						<span class="date hover-show">09-16</span>
+						<span class="date hover-show">08-07</span>
 						<span class="read-num hover-hide">
               阅读数 
-							2138</span>
+							1966</span>
 						</p>
 					</div>
 				</a>
 					<p class="content">
-						<a href="https://blog.csdn.net/lyc_liyanchao/article/details/82724785" target="_blank" title="使用Jsoup刷CSDN刷博客浏览量">
-							<span class="desc oneline">最近公司在搞一些抓新闻的东西，使用了Jsoup，加上本人刚开始写CSDN浏览量，想来测试一下，使用Jsoup是否可以通过打开CSDN的链接来增加浏览量，答案是可行的！在抓取网页的时候，如果不使用IP代...</span>
+						<a href="https://blog.csdn.net/polyhedronx/article/details/81479125" target="_blank" title="python实战笔记之（4）：刷博客浏览量">
+							<span class="desc oneline">看着自己写的文章浏览数一点一点增加是非常开心的，但总感觉浏览数增长地太慢了，于是自然想到，为什么不能写一个小程序自动刷博客浏览量呢？Let'sdoit首先，我们尝试用requests打开博客url，看...</span>
 						</a>
 						  <span class="blog_title_box oneline ">
 							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/lyc_liyanchao">来自：	<span class="blog_title"> 闲来也无事</span></a>
+                                  <a target="_blank" href="https://blog.csdn.net/polyhedronx">来自：	<span class="blog_title"> polyhedronx的博客</span></a>
                 							              </span>
 					</p>
 			</div>
@@ -1265,27 +1165,55 @@ if __name__ == "__main__":
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/hubingzhong/article/details/82469986,BlogCommendFromBaidu_12"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/hubingzhong/article/details/82469986,BlogCommendFromBaidu_12"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/lemonoil/article/details/74735561,BlogCommendFromThirdService_11"}'>
 			<div class="content">
-				<a href="https://blog.csdn.net/hubingzhong/article/details/82469986" target="_blank" title="Python 爬虫自动访问点击刷CSDN博客文章阅读量">
+				<a href="https://blog.csdn.net/lemonoil/article/details/74735561" target="_blank" title="刷访问量新招[流量精灵]">
 				<h4 class="text-truncate oneline">
-						Python <em>爬虫</em>自动访问点击刷<em>CSDN博客</em>文章阅读量				</h4>
+						刷<em>访问量</em>新招[流量精灵]				</h4>
 				<div class="info-box d-flex align-content-center">
 					<p class="date-and-readNum oneline">
-						<span class="date hover-show">09-06</span>
+						<span class="date hover-show">07-07</span>
 						<span class="read-num hover-hide">
               阅读数 
-							1237</span>
+							690</span>
 						</p>
 					</div>
 				</a>
 					<p class="content">
-						<a href="https://blog.csdn.net/hubingzhong/article/details/82469986" target="_blank" title="Python 爬虫自动访问点击刷CSDN博客文章阅读量">
-							<span class="desc oneline">一段小代码,可以帮助自动刷CSDN阅读量,感兴趣的朋友可以复制代码,然后把自己博客文章的URL修改一下就可以了,两个都修改之后可以使用了,帮助那些有需要的人 #导入需要用到的库importreques...</span>
+						<a href="https://blog.csdn.net/lemonoil/article/details/74735561" target="_blank" title="刷访问量新招[流量精灵]">
+							<span class="desc oneline">不用Pytho，用流量精灵就可以了如图使用方法超级简单，把网页复制粘贴上去就行了，刷的速度取决于电脑性能，免费的，很好用。...</span>
 						</a>
 						  <span class="blog_title_box oneline ">
 							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/hubingzhong">来自：	<span class="blog_title"> hubingzhong的博客</span></a>
+                                  <a target="_blank" href="https://blog.csdn.net/lemonoil">来自：	<span class="blog_title"> lemonoil的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/u010756046/article/details/80579719,BlogCommendFromThirdService_12"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/u010756046/article/details/80579719" target="_blank" title="刷访客">
+				<h4 class="text-truncate oneline">
+						刷访客				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">06-06</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							16万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/u010756046/article/details/80579719" target="_blank" title="刷访客">
+							<span class="desc oneline">importjava.io.BufferedReader;importjava.io.IOException;importjava.io.InputStreamReader;importjava.ne...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/u010756046">来自：	<span class="blog_title"> 李子果 - 博客</span></a>
                 							              </span>
 					</p>
 			</div>
@@ -1330,7 +1258,91 @@ if __name__ == "__main__":
                   })
                                         </script></div></div>
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/t8116189520/article/details/80168572,BlogCommendFromBaidu_13"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/t8116189520/article/details/80168572,BlogCommendFromBaidu_13"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/ctsas/article/details/54668053,BlogCommendFromThirdService_13"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/ctsas/article/details/54668053" target="_blank" title="CSDN刷博 - 最简单有效的方法">
+				<h4 class="text-truncate oneline">
+						CSDN刷博 - 最简单<em>有效</em>的方法				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">01-22</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							2万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/ctsas/article/details/54668053" target="_blank" title="CSDN刷博 - 最简单有效的方法">
+							<span class="desc oneline">首先声明刷博是不对的。ok，明确这一点后我们来探讨技术。csdn是防爬虫功能的，如果直接简单的刷新并不会增加访客数量，如果简单的抓取是得不到也是打不开网页的。经过测试发现-访客数量与ip无关，与coo...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/ctsas">来自：	<span class="blog_title"> chutzpah</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/u013233097/article/details/78795224,BlogCommendFromThirdService_14"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/u013233097/article/details/78795224" target="_blank" title="妈妈再也不用担心我的博客访问量了（一个可以刷博客访问量的小程序java）">
+				<h4 class="text-truncate oneline">
+						妈妈再也不用担心我的博客<em>访问量</em>了（一个可以刷博客<em>访问量</em>的小程序java）				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">12-13</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							2万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/u013233097/article/details/78795224" target="_blank" title="妈妈再也不用担心我的博客访问量了（一个可以刷博客访问量的小程序java）">
+							<span class="desc oneline">前言:相信很多写博客的朋友，会苦恼于博客访问量上不去的问题。博主最近工作比较新手动谢了个小程序，一个可以刷访问量的程序。当然主要是针对csdn博客。有了他就再也不必担心博客访问量上不去的问题了。注：博...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/u013233097">来自：	<span class="blog_title"> _HerO_Zq的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/hubingzhong/article/details/82469986,BlogCommendFromBaidu_15"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/hubingzhong/article/details/82469986" target="_blank" title="Python 爬虫自动访问点击刷CSDN博客文章阅读量">
+				<h4 class="text-truncate oneline">
+						Python <em>爬虫</em>自动访问点击刷<em>CSDN博客</em>文章阅读量				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">09-06</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1260</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/hubingzhong/article/details/82469986" target="_blank" title="Python 爬虫自动访问点击刷CSDN博客文章阅读量">
+							<span class="desc oneline">一段小代码,可以帮助自动刷CSDN阅读量,感兴趣的朋友可以复制代码,然后把自己博客文章的URL修改一下就可以了,两个都修改之后可以使用了,帮助那些有需要的人 #导入需要用到的库importreques...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/hubingzhong">来自：	<span class="blog_title"> hubingzhong的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/t8116189520/article/details/80168572,BlogCommendFromBaidu_16"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/t8116189520/article/details/80168572" target="_blank" title="python刷CSDN访问量的简单方法！">
 				<h4 class="text-truncate oneline">
@@ -1340,7 +1352,7 @@ if __name__ == "__main__":
 						<span class="date hover-show">05-02</span>
 						<span class="read-num hover-hide">
               阅读数 
-							568</span>
+							583</span>
 						</p>
 					</div>
 				</a>
@@ -1358,7 +1370,7 @@ if __name__ == "__main__":
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/JINXINXIN_BEAR_OS/article/details/5593270,BlogCommendFromBaidu_14"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/JINXINXIN_BEAR_OS/article/details/5593270,BlogCommendFromBaidu_14"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/JINXINXIN_BEAR_OS/article/details/5593270,BlogCommendFromBaidu_17"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/JINXINXIN_BEAR_OS/article/details/5593270" target="_blank" title="CSDN刷访问量">
 				<h4 class="text-truncate oneline">
@@ -1368,7 +1380,7 @@ if __name__ == "__main__":
 						<span class="date hover-show">05-14</span>
 						<span class="read-num hover-hide">
               阅读数 
-							944</span>
+							948</span>
 						</p>
 					</div>
 				</a>
@@ -1384,9 +1396,46 @@ if __name__ == "__main__":
 			</div>
 					</div>
 	
+    <div class="recommend-item-box recommend-ad-box"><div id="kp_box_62" data-pid="62" data-track-view='{"mod":"kp_popu_62-556","con":",,"}' data-track-click='{"mod":"kp_popu_62-556","con":",,"}'><div id="three_ad18" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'Afihld',
+                placeholderId: "three_ad18",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
     
-    
-    		<div class="recommend-item-box recommend-box-ident recommend-other-item-box" data-track-view='{"mod":"popu_614","con":",https://bbs.csdn.net/topics/392364597,BlogCommendFromBaidu_15"}' data-track-click='{"mod":"popu_614","con":",https://bbs.csdn.net/topics/392364597,BlogCommendFromBaidu_15"}'>
+    		<div class="recommend-item-box recommend-box-ident recommend-other-item-box"  data-track-click='{"mod":"popu_614","con":",https://bbs.csdn.net/topics/392364597,BlogCommendFromBaidu_18"}'>
 		<a href="https://bbs.csdn.net/topics/392364597" target="_blank">
 			<h4 class="text-truncate oneline">
 					我的博客<em>访问量</em>原创都一直不更新			</h4>
@@ -1403,106 +1452,7 @@ if __name__ == "__main__":
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident recommend-other-item-box" data-track-view='{"mod":"popu_614","con":",https://bbs.csdn.net/topics/392554380,BlogCommendFromBaidu_16"}' data-track-click='{"mod":"popu_614","con":",https://bbs.csdn.net/topics/392554380,BlogCommendFromBaidu_16"}'>
-		<a href="https://bbs.csdn.net/topics/392554380" target="_blank">
-			<h4 class="text-truncate oneline">
-					怎么才能增加文章<em>访问量</em>呢			</h4>
-			<div class="info-box d-flex align-content-center">
-					<span class="date">03-14</span>
-			</div>
-			<p class="content oneline">
-        <span class="desc oneline">花了好长时间写的博文，花费了很多心血，大概3万字，为什么看得人很少呢。。虽然不是什么大事情但是还有有一丢丢失望</span>
-                  <span class="type-show type-show-bbs">论坛</span>
-        			</p>
-		</a>
-
-	</div>
-	
-    
-    
-    		<div class="recommend-item-box recommend-box-ident recommend-other-item-box" data-track-view='{"mod":"popu_614","con":",https://bbs.csdn.net/topics/350231649,BlogCommendFromBaidu_17"}' data-track-click='{"mod":"popu_614","con":",https://bbs.csdn.net/topics/350231649,BlogCommendFromBaidu_17"}'>
-		<a href="https://bbs.csdn.net/topics/350231649" target="_blank">
-			<h4 class="text-truncate oneline">
-					如何搭建大型(50万独立IP<em>访问量</em>，20万同时在线人数)Web服务器?			</h4>
-			<div class="info-box d-flex align-content-center">
-					<span class="date">12-18</span>
-			</div>
-			<p class="content oneline">
-        <span class="desc oneline">各位CSDN的高人、达人、朋友们： 大家好！ 最近公司想搭建一台Web服务器，要满足每天50万独立IP访问量，20万同时在线人数的要求。 希望大家帮忙提出建议，关于以下几方面： &lt;1.带宽（需多大带宽</span>
-                  <span class="type-show type-show-bbs">论坛</span>
-        			</p>
-		</a>
-
-	</div>
-	
-    <div class="recommend-item-box recommend-ad-box"><div id="kp_box_62" data-pid="62" data-track-view='{"mod":"kp_popu_62-902","con":",,"}' data-track-click='{"mod":"kp_popu_62-902","con":",,"}'><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="fluid"
-     data-ad-layout-key="-gw-3+1f-3d+2z"
-     data-ad-client="ca-pub-1076724771190722"
-     data-ad-slot="6440814649"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script></div></div>
-    
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/lemonoil/article/details/74735561,BlogCommendFromBaidu_18"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/lemonoil/article/details/74735561,BlogCommendFromBaidu_18"}'>
-			<div class="content">
-				<a href="https://blog.csdn.net/lemonoil/article/details/74735561" target="_blank" title="刷访问量新招[流量精灵]">
-				<h4 class="text-truncate oneline">
-						刷<em>访问量</em>新招[流量精灵]				</h4>
-				<div class="info-box d-flex align-content-center">
-					<p class="date-and-readNum oneline">
-						<span class="date hover-show">07-07</span>
-						<span class="read-num hover-hide">
-              阅读数 
-							671</span>
-						</p>
-					</div>
-				</a>
-					<p class="content">
-						<a href="https://blog.csdn.net/lemonoil/article/details/74735561" target="_blank" title="刷访问量新招[流量精灵]">
-							<span class="desc oneline">不用Pytho，用流量精灵就可以了如图使用方法超级简单，把网页复制粘贴上去就行了，刷的速度取决于电脑性能，免费的，很好用。...</span>
-						</a>
-						  <span class="blog_title_box oneline ">
-							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/lemonoil">来自：	<span class="blog_title"> lemonoil的博客</span></a>
-                							              </span>
-					</p>
-			</div>
-					</div>
-	
-    
-    
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/sundacheng1989/article/details/7945542,BlogCommendFromBaidu_19"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/sundacheng1989/article/details/7945542,BlogCommendFromBaidu_19"}'>
-			<div class="content">
-				<a href="https://blog.csdn.net/sundacheng1989/article/details/7945542" target="_blank" title="通过编程自动化增加CSDN博客的访问量">
-				<h4 class="text-truncate oneline">
-						通过编程自动化增加<em>CSDN博客</em>的<em>访问量</em>				</h4>
-				<div class="info-box d-flex align-content-center">
-					<p class="date-and-readNum oneline">
-						<span class="date hover-show">09-05</span>
-						<span class="read-num hover-hide">
-              阅读数 
-							32万+</span>
-						</p>
-					</div>
-				</a>
-					<p class="content">
-						<a href="https://blog.csdn.net/sundacheng1989/article/details/7945542" target="_blank" title="通过编程自动化增加CSDN博客的访问量">
-							<span class="desc oneline">前段时间经过观察，我发现，和大多数的博客一样，CSDN在每篇博客文章的上方，都有一个阅读量。这个阅读量的增加，是通过Web用户在浏览器端输入这篇文章的url地址，然后发送请求到服务器端，这时，阅读量就...</span>
-						</a>
-						  <span class="blog_title_box oneline ">
-							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/sundacheng1989">来自：	<span class="blog_title"> 写代码的蜗牛</span></a>
-                							              </span>
-					</p>
-			</div>
-					</div>
-	
-    
-    
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/yzy_1996/article/details/81951189,BlogCommendFromBaidu_20"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/yzy_1996/article/details/81951189,BlogCommendFromBaidu_20"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/yzy_1996/article/details/81951189,BlogCommendFromThirdService_19"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/yzy_1996/article/details/81951189" target="_blank" title="【代码】用最简单的方式刷网页访问量">
 				<h4 class="text-truncate oneline">
@@ -1530,27 +1480,27 @@ if __name__ == "__main__":
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/hannoch/article/details/80401145,BlogCommendFromBaidu_21"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/hannoch/article/details/80401145,BlogCommendFromBaidu_21"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/Marksinoberg/article/details/51510052,BlogCommendFromThirdService_20"}'>
 			<div class="content">
-				<a href="https://blog.csdn.net/hannoch/article/details/80401145" target="_blank" title="python刷博客点击量">
+				<a href="https://blog.csdn.net/Marksinoberg/article/details/51510052" target="_blank" title="Python 自动刷博客浏览量">
 				<h4 class="text-truncate oneline">
-						python刷博客点击量				</h4>
+						Python 自动刷博客浏览量				</h4>
 				<div class="info-box d-flex align-content-center">
 					<p class="date-and-readNum oneline">
-						<span class="date hover-show">05-22</span>
+						<span class="date hover-show">05-26</span>
 						<span class="read-num hover-hide">
               阅读数 
-							327</span>
+							3万+</span>
 						</p>
 					</div>
 				</a>
 					<p class="content">
-						<a href="https://blog.csdn.net/hannoch/article/details/80401145" target="_blank" title="python刷博客点击量">
-							<span class="desc oneline">importurllib.requestimportreimporttimeimportrandomfrombs4importBeautifulSoupp=re.compile('/hannoch/a...</span>
+						<a href="https://blog.csdn.net/Marksinoberg/article/details/51510052" target="_blank" title="Python 自动刷博客浏览量">
+							<span class="desc oneline">哈哈，今天的话题有点那什么了哈。咱们应该秉承学习技术的角度来看，那么就开始今天的话题吧。思路来源今天很偶然的一个机会，听到别人在谈论现在的“刷量”行为，于是就激发了我的好奇心。然后看了下request...</span>
 						</a>
 						  <span class="blog_title_box oneline ">
 							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/hannoch">来自：	<span class="blog_title"> hannoch的博客</span></a>
+                                  <a target="_blank" href="https://blog.csdn.net/Marksinoberg">来自：	<span class="blog_title"> 更上一层楼！</span></a>
                 							              </span>
 					</p>
 			</div>
@@ -1558,31 +1508,37 @@ if __name__ == "__main__":
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/qq_41011336/article/details/83216791,BlogCommendFromBaidu_22"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/qq_41011336/article/details/83216791,BlogCommendFromBaidu_22"}'>
-			<div class="content">
-				<a href="https://blog.csdn.net/qq_41011336/article/details/83216791" target="_blank" title="使用爬虫刷blog访问量   随机代理IP  随机user_agent">
-				<h4 class="text-truncate oneline">
-						<em>使用</em><em>爬虫</em>刷blog<em>访问量</em>   随机代理IP  随机user_agent				</h4>
-				<div class="info-box d-flex align-content-center">
-					<p class="date-and-readNum oneline">
-						<span class="date hover-show">10-20</span>
-						<span class="read-num hover-hide">
-              阅读数 
-							815</span>
-						</p>
-					</div>
-				</a>
-					<p class="content">
-						<a href="https://blog.csdn.net/qq_41011336/article/details/83216791" target="_blank" title="使用爬虫刷blog访问量   随机代理IP  随机user_agent">
-							<span class="desc oneline">好羞耻地写下这篇博客，不过大家一看博主这可怜的访问量，就知道博主十足好孩子！！！呵呵，莫道石人一只眼,挑动黄河天下反首先了解一下常见反爬虫的检测方法频率监测：有些网站会设置一种频率监测的机制，对于同一...</span>
-						</a>
-						  <span class="blog_title_box oneline ">
-							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/qq_41011336">来自：	<span class="blog_title"> qq_41011336的博客</span></a>
-                							              </span>
-					</p>
+    		<div class="recommend-item-box recommend-box-ident recommend-other-item-box"  data-track-click='{"mod":"popu_614","con":",https://bbs.csdn.net/topics/392554380,BlogCommendFromBaidu_21"}'>
+		<a href="https://bbs.csdn.net/topics/392554380" target="_blank">
+			<h4 class="text-truncate oneline">
+					怎么才能增加文章<em>访问量</em>呢			</h4>
+			<div class="info-box d-flex align-content-center">
+					<span class="date">03-14</span>
 			</div>
-					</div>
+			<p class="content oneline">
+        <span class="desc oneline">花了好长时间写的博文，花费了很多心血，大概3万字，为什么看得人很少呢。。虽然不是什么大事情但是还有有一丢丢失望</span>
+                  <span class="type-show type-show-bbs">论坛</span>
+        			</p>
+		</a>
+
+	</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident recommend-other-item-box"  data-track-click='{"mod":"popu_614","con":",https://bbs.csdn.net/topics/350231649,BlogCommendFromBaidu_22"}'>
+		<a href="https://bbs.csdn.net/topics/350231649" target="_blank">
+			<h4 class="text-truncate oneline">
+					如何搭建大型(50万独立IP<em>访问量</em>，20万同时在线人数)Web服务器?			</h4>
+			<div class="info-box d-flex align-content-center">
+					<span class="date">12-18</span>
+			</div>
+			<p class="content oneline">
+        <span class="desc oneline">各位CSDN的高人、达人、朋友们： 大家好！ 最近公司想搭建一台Web服务器，要满足每天50万独立IP访问量，20万同时在线人数的要求。 希望大家帮忙提出建议，关于以下几方面： &lt;1.带宽（需多大带宽</span>
+                  <span class="type-show type-show-bbs">论坛</span>
+        			</p>
+		</a>
+
+	</div>
 	
     <div class="recommend-item-box recommend-ad-box"><div id="kp_box_63" data-pid="63" data-track-view='{"mod":"kp_popu_63-555","con":",,"}' data-track-click='{"mod":"kp_popu_63-555","con":",,"}'><div id="three_ad23" class="mediav_ad" ></div>
 <script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
@@ -1623,7 +1579,91 @@ if __name__ == "__main__":
                   })
                                         </script></div></div>
     
-    		<div class="recommend-item-box recommend-box-ident recommend-other-item-box" data-track-view='{"mod":"popu_614","con":",https://bbs.csdn.net/topics/391987823,BlogCommendFromBaidu_23"}' data-track-click='{"mod":"popu_614","con":",https://bbs.csdn.net/topics/391987823,BlogCommendFromBaidu_23"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/sundacheng1989/article/details/7945542,BlogCommendFromBaidu_23"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/sundacheng1989/article/details/7945542" target="_blank" title="通过编程自动化增加CSDN博客的访问量">
+				<h4 class="text-truncate oneline">
+						通过编程自动化增加<em>CSDN博客</em>的<em>访问量</em>				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">09-05</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							32万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/sundacheng1989/article/details/7945542" target="_blank" title="通过编程自动化增加CSDN博客的访问量">
+							<span class="desc oneline">前段时间经过观察，我发现，和大多数的博客一样，CSDN在每篇博客文章的上方，都有一个阅读量。这个阅读量的增加，是通过Web用户在浏览器端输入这篇文章的url地址，然后发送请求到服务器端，这时，阅读量就...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/sundacheng1989">来自：	<span class="blog_title"> 写代码的蜗牛</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/hannoch/article/details/80401145,BlogCommendFromBaidu_24"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/hannoch/article/details/80401145" target="_blank" title="python刷博客点击量">
+				<h4 class="text-truncate oneline">
+						python刷博客点击量				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">05-22</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							340</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/hannoch/article/details/80401145" target="_blank" title="python刷博客点击量">
+							<span class="desc oneline">importurllib.requestimportreimporttimeimportrandomfrombs4importBeautifulSoupp=re.compile('/hannoch/a...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/hannoch">来自：	<span class="blog_title"> hannoch的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/qq_41011336/article/details/83216791,BlogCommendFromBaidu_25"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/qq_41011336/article/details/83216791" target="_blank" title="使用爬虫刷blog访问量   随机代理IP  随机user_agent">
+				<h4 class="text-truncate oneline">
+						<em>使用</em><em>爬虫</em>刷blog<em>访问量</em>   随机代理IP  随机user_agent				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">10-20</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							847</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/qq_41011336/article/details/83216791" target="_blank" title="使用爬虫刷blog访问量   随机代理IP  随机user_agent">
+							<span class="desc oneline">好羞耻地写下这篇博客，不过大家一看博主这可怜的访问量，就知道博主十足好孩子！！！呵呵，莫道石人一只眼,挑动黄河天下反首先了解一下常见反爬虫的检测方法频率监测：有些网站会设置一种频率监测的机制，对于同一...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/qq_41011336">来自：	<span class="blog_title"> qq_41011336的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident recommend-other-item-box"  data-track-click='{"mod":"popu_614","con":",https://bbs.csdn.net/topics/391987823,BlogCommendFromBaidu_26"}'>
 		<a href="https://bbs.csdn.net/topics/391987823" target="_blank">
 			<h4 class="text-truncate oneline">
 					<em>csdn博客</em>举报有人刷<em>访问量</em>			</h4>
@@ -1640,7 +1680,7 @@ if __name__ == "__main__":
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/my201558503128/article/details/73744121,BlogCommendFromBaidu_24"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/my201558503128/article/details/73744121,BlogCommendFromBaidu_24"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/my201558503128/article/details/73744121,BlogCommendFromBaidu_27"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/my201558503128/article/details/73744121" target="_blank" title="Python刷csdn访问量">
 				<h4 class="text-truncate oneline">
@@ -1650,7 +1690,7 @@ if __name__ == "__main__":
 						<span class="date hover-show">06-26</span>
 						<span class="read-num hover-hide">
               阅读数 
-							327</span>
+							329</span>
 						</p>
 					</div>
 				</a>
@@ -1666,37 +1706,46 @@ if __name__ == "__main__":
 			</div>
 					</div>
 	
+    <div class="recommend-item-box recommend-ad-box"><div id="kp_box_64" data-pid="64" data-track-view='{"mod":"kp_popu_64-81","con":",,"}' data-track-click='{"mod":"kp_popu_64-81","con":",,"}'><div id="three_ad28" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'Afihld',
+                placeholderId: "three_ad28",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
     
-    
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/u013233097/article/details/78795224,BlogCommendFromBaidu_25"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/u013233097/article/details/78795224,BlogCommendFromBaidu_25"}'>
-			<div class="content">
-				<a href="https://blog.csdn.net/u013233097/article/details/78795224" target="_blank" title="妈妈再也不用担心我的博客访问量了（一个可以刷博客访问量的小程序java）">
-				<h4 class="text-truncate oneline">
-						妈妈再也不用担心我的博客<em>访问量</em>了（一个可以刷博客<em>访问量</em>的小程序java）				</h4>
-				<div class="info-box d-flex align-content-center">
-					<p class="date-and-readNum oneline">
-						<span class="date hover-show">12-13</span>
-						<span class="read-num hover-hide">
-              阅读数 
-							2万+</span>
-						</p>
-					</div>
-				</a>
-					<p class="content">
-						<a href="https://blog.csdn.net/u013233097/article/details/78795224" target="_blank" title="妈妈再也不用担心我的博客访问量了（一个可以刷博客访问量的小程序java）">
-							<span class="desc oneline">前言:相信很多写博客的朋友，会苦恼于博客访问量上不去的问题。博主最近工作比较新手动谢了个小程序，一个可以刷访问量的程序。当然主要是针对csdn博客。有了他就再也不必担心博客访问量上不去的问题了。注：博...</span>
-						</a>
-						  <span class="blog_title_box oneline ">
-							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/u013233097">来自：	<span class="blog_title"> _HerO_Zq的博客</span></a>
-                							              </span>
-					</p>
-			</div>
-					</div>
-	
-    
-    
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/ljf_cnyali/article/details/52588603,BlogCommendFromBaidu_26"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/ljf_cnyali/article/details/52588603,BlogCommendFromBaidu_26"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/ljf_cnyali/article/details/52588603,BlogCommendFromBaidu_28"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/ljf_cnyali/article/details/52588603" target="_blank" title="如何刷博客的访问量">
 				<h4 class="text-truncate oneline">
@@ -1724,72 +1773,7 @@ if __name__ == "__main__":
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/ctsas/article/details/54668053,BlogCommendFromBaidu_27"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/ctsas/article/details/54668053,BlogCommendFromBaidu_27"}'>
-			<div class="content">
-				<a href="https://blog.csdn.net/ctsas/article/details/54668053" target="_blank" title="CSDN刷博 - 最简单有效的方法">
-				<h4 class="text-truncate oneline">
-						CSDN刷博 - 最简单<em>有效</em>的方法				</h4>
-				<div class="info-box d-flex align-content-center">
-					<p class="date-and-readNum oneline">
-						<span class="date hover-show">01-22</span>
-						<span class="read-num hover-hide">
-              阅读数 
-							2万+</span>
-						</p>
-					</div>
-				</a>
-					<p class="content">
-						<a href="https://blog.csdn.net/ctsas/article/details/54668053" target="_blank" title="CSDN刷博 - 最简单有效的方法">
-							<span class="desc oneline">首先声明刷博是不对的。ok，明确这一点后我们来探讨技术。csdn是防爬虫功能的，如果直接简单的刷新并不会增加访客数量，如果简单的抓取是得不到也是打不开网页的。经过测试发现-访客数量与ip无关，与coo...</span>
-						</a>
-						  <span class="blog_title_box oneline ">
-							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/ctsas">来自：	<span class="blog_title"> chutzpah</span></a>
-                							              </span>
-					</p>
-			</div>
-					</div>
-	
-    <div class="recommend-item-box recommend-ad-box"><div id="kp_box_64" data-pid="64" data-track-view='{"mod":"kp_popu_64-901","con":",,"}' data-track-click='{"mod":"kp_popu_64-901","con":",,"}'><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="fluid"
-     data-ad-layout-key="-gc+3r+68-9q-29"
-     data-ad-client="ca-pub-1076724771190722"
-     data-ad-slot="4012648776"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script></div></div>
-    
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/Marksinoberg/article/details/51510052,BlogCommendFromBaidu_28"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/Marksinoberg/article/details/51510052,BlogCommendFromBaidu_28"}'>
-			<div class="content">
-				<a href="https://blog.csdn.net/Marksinoberg/article/details/51510052" target="_blank" title="Python 自动刷博客浏览量">
-				<h4 class="text-truncate oneline">
-						Python 自动刷博客浏览量				</h4>
-				<div class="info-box d-flex align-content-center">
-					<p class="date-and-readNum oneline">
-						<span class="date hover-show">05-26</span>
-						<span class="read-num hover-hide">
-              阅读数 
-							3万+</span>
-						</p>
-					</div>
-				</a>
-					<p class="content">
-						<a href="https://blog.csdn.net/Marksinoberg/article/details/51510052" target="_blank" title="Python 自动刷博客浏览量">
-							<span class="desc oneline">哈哈，今天的话题有点那什么了哈。咱们应该秉承学习技术的角度来看，那么就开始今天的话题吧。思路来源今天很偶然的一个机会，听到别人在谈论现在的“刷量”行为，于是就激发了我的好奇心。然后看了下request...</span>
-						</a>
-						  <span class="blog_title_box oneline ">
-							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/Marksinoberg">来自：	<span class="blog_title"> 更上一层楼！</span></a>
-                							              </span>
-					</p>
-			</div>
-					</div>
-	
-    
-    
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/XiaHeShun/article/details/80076074,BlogCommendFromBaidu_29"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/XiaHeShun/article/details/80076074,BlogCommendFromBaidu_29"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/XiaHeShun/article/details/80076074,BlogCommendFromBaidu_29"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/XiaHeShun/article/details/80076074" target="_blank" title="博客刷访问量（基于代理实现）">
 				<h4 class="text-truncate oneline">
@@ -1817,7 +1801,7 @@ if __name__ == "__main__":
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/zhuming3834/article/details/57083142,BlogCommendFromBaidu_30"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/zhuming3834/article/details/57083142,BlogCommendFromBaidu_30"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/zhuming3834/article/details/57083142,BlogCommendFromBaidu_30"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/zhuming3834/article/details/57083142" target="_blank" title="Node.js批量刷CSDN博客访问量">
 				<h4 class="text-truncate oneline">
@@ -1827,7 +1811,7 @@ if __name__ == "__main__":
 						<span class="date hover-show">02-25</span>
 						<span class="read-num hover-hide">
               阅读数 
-							3956</span>
+							3967</span>
 						</p>
 					</div>
 				</a>
@@ -1845,7 +1829,7 @@ if __name__ == "__main__":
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/ssjdoudou/article/details/84109362,BlogCommendFromBaidu_31"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/ssjdoudou/article/details/84109362,BlogCommendFromBaidu_31"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/ssjdoudou/article/details/84109362,BlogCommendFromBaidu_31"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/ssjdoudou/article/details/84109362" target="_blank" title="教你如何用urllib刷csdn访问量(11.22更新，抛个异常）">
 				<h4 class="text-truncate oneline">
@@ -1873,7 +1857,7 @@ if __name__ == "__main__":
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident recommend-other-item-box" data-track-view='{"mod":"popu_614","con":",https://bbs.csdn.net/topics/392045454,BlogCommendFromBaidu_32"}' data-track-click='{"mod":"popu_614","con":",https://bbs.csdn.net/topics/392045454,BlogCommendFromBaidu_32"}'>
+    		<div class="recommend-item-box recommend-box-ident recommend-other-item-box"  data-track-click='{"mod":"popu_614","con":",https://bbs.csdn.net/topics/392045454,BlogCommendFromBaidu_32"}'>
 		<a href="https://bbs.csdn.net/topics/392045454" target="_blank">
 			<h4 class="text-truncate oneline">
 					怎么提升<em>CSDN博客</em><em>访问量</em>			</h4>
@@ -1888,18 +1872,45 @@ if __name__ == "__main__":
 
 	</div>
 	
-    <div class="recommend-item-box recommend-ad-box"><div id="kp_box_65" data-pid="65" data-track-view='{"mod":"kp_popu_65-900","con":",,"}' data-track-click='{"mod":"kp_popu_65-900","con":",,"}'><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="fluid"
-     data-ad-layout-key="-h5-e+23-3z+3s"
-     data-ad-client="ca-pub-1076724771190722"
-     data-ad-slot="4012648776"></ins>
+    <div class="recommend-item-box recommend-ad-box"><div id="kp_box_65" data-pid="65" data-track-view='{"mod":"kp_popu_65-84","con":",,"}' data-track-click='{"mod":"kp_popu_65-84","con":",,"}'><div id="three_ad33" class="mediav_ad" ></div>
 <script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script></div></div>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'GNKXx7',
+                placeholderId: "three_ad33",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/tcl415829566/article/details/77942937,BlogCommendFromBaidu_33"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/tcl415829566/article/details/77942937,BlogCommendFromBaidu_33"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/tcl415829566/article/details/77942937,BlogCommendFromBaidu_33"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/tcl415829566/article/details/77942937" target="_blank" title="Python 实现自动刷CSDN博客浏览量">
 				<h4 class="text-truncate oneline">
@@ -1909,7 +1920,7 @@ if __name__ == "__main__":
 						<span class="date hover-show">09-12</span>
 						<span class="read-num hover-hide">
               阅读数 
-							3282</span>
+							3284</span>
 						</p>
 					</div>
 				</a>
@@ -1927,7 +1938,7 @@ if __name__ == "__main__":
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/WilliamLee1979/article/details/47082443,BlogCommendFromBaidu_34"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/WilliamLee1979/article/details/47082443,BlogCommendFromBaidu_34"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/WilliamLee1979/article/details/47082443,BlogCommendFromBaidu_34"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/WilliamLee1979/article/details/47082443" target="_blank" title="免费真实增加网站访问量的方法">
 				<h4 class="text-truncate oneline">
@@ -1937,7 +1948,7 @@ if __name__ == "__main__":
 						<span class="date hover-show">07-27</span>
 						<span class="read-num hover-hide">
               阅读数 
-							6585</span>
+							6677</span>
 						</p>
 					</div>
 				</a>
@@ -1955,7 +1966,7 @@ if __name__ == "__main__":
 	
     
     
-    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-track-view='{"mod":"popu_614","con":",https://download.csdn.net/download/baidu_34525519/9501149,BlogCommendFromBaidu_35"}' data-track-click='{"mod":"popu_614","con":",https://download.csdn.net/download/baidu_34525519/9501149,BlogCommendFromBaidu_35"}'>
+    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix"  data-track-click='{"mod":"popu_614","con":",https://download.csdn.net/download/baidu_34525519/9501149,BlogCommendFromBaidu_35"}'>
 			<a href="https://download.csdn.net/download/baidu_34525519/9501149" target="_blank">
 				<div class="content clearfix">
 					<div class="">
@@ -1972,7 +1983,7 @@ if __name__ == "__main__":
 	
     
     
-    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-track-view='{"mod":"popu_614","con":",https://download.csdn.net/download/suixin_616/2564785,BlogCommendFromBaidu_36"}' data-track-click='{"mod":"popu_614","con":",https://download.csdn.net/download/suixin_616/2564785,BlogCommendFromBaidu_36"}'>
+    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix"  data-track-click='{"mod":"popu_614","con":",https://download.csdn.net/download/suixin_616/2564785,BlogCommendFromBaidu_36"}'>
 			<a href="https://download.csdn.net/download/suixin_616/2564785" target="_blank">
 				<div class="content clearfix">
 					<div class="">
@@ -1989,7 +2000,7 @@ if __name__ == "__main__":
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/hiwoshixiaoyu/article/details/72830694,BlogCommendFromBaidu_37"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/hiwoshixiaoyu/article/details/72830694,BlogCommendFromBaidu_37"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/hiwoshixiaoyu/article/details/72830694,BlogCommendFromBaidu_37"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/hiwoshixiaoyu/article/details/72830694" target="_blank" title="Qt之小项目实战----刷csdn访问量工具">
 				<h4 class="text-truncate oneline">
@@ -1999,7 +2010,7 @@ if __name__ == "__main__":
 						<span class="date hover-show">06-01</span>
 						<span class="read-num hover-hide">
               阅读数 
-							1067</span>
+							1069</span>
 						</p>
 					</div>
 				</a>
@@ -2025,7 +2036,7 @@ if __name__ == "__main__":
   p4CSDNRender_T("_4paradigm_T38_render", "T38");
 </script></div></div>
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/ziyunyangyong/article/details/6941750,BlogCommendFromBaidu_38"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/ziyunyangyong/article/details/6941750,BlogCommendFromBaidu_38"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/ziyunyangyong/article/details/6941750,BlogCommendFromBaidu_38"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/ziyunyangyong/article/details/6941750" target="_blank" title="刷访问量的小程序">
 				<h4 class="text-truncate oneline">
@@ -2035,7 +2046,7 @@ if __name__ == "__main__":
 						<span class="date hover-show">11-06</span>
 						<span class="read-num hover-hide">
               阅读数 
-							9769</span>
+							9844</span>
 						</p>
 					</div>
 				</a>
@@ -2053,7 +2064,7 @@ if __name__ == "__main__":
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/yanggd1987/article/details/52148529,BlogCommendFromBaidu_39"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/yanggd1987/article/details/52148529,BlogCommendFromBaidu_39"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/yanggd1987/article/details/52148529,BlogCommendFromBaidu_39"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/yanggd1987/article/details/52148529" target="_blank" title="python爬虫之csdn刷博客访问量">
 				<h4 class="text-truncate oneline">
@@ -2063,7 +2074,7 @@ if __name__ == "__main__":
 						<span class="date hover-show">08-08</span>
 						<span class="read-num hover-hide">
               阅读数 
-							3979</span>
+							3987</span>
 						</p>
 					</div>
 				</a>
@@ -2081,7 +2092,7 @@ if __name__ == "__main__":
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/gxiangzi/article/details/5651361,BlogCommendFromBaidu_40"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/gxiangzi/article/details/5651361,BlogCommendFromBaidu_40"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/gxiangzi/article/details/5651361,BlogCommendFromBaidu_40"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/gxiangzi/article/details/5651361" target="_blank" title="刷CSDN个人主页访问量">
 				<h4 class="text-truncate oneline">
@@ -2091,7 +2102,7 @@ if __name__ == "__main__":
 						<span class="date hover-show">06-06</span>
 						<span class="read-num hover-hide">
               阅读数 
-							7047</span>
+							7060</span>
 						</p>
 					</div>
 				</a>
@@ -2109,7 +2120,7 @@ if __name__ == "__main__":
 	
     
     
-    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-track-view='{"mod":"popu_614","con":",https://download.csdn.net/download/oyxm0/3744857,BlogCommendFromBaidu_41"}' data-track-click='{"mod":"popu_614","con":",https://download.csdn.net/download/oyxm0/3744857,BlogCommendFromBaidu_41"}'>
+    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix"  data-track-click='{"mod":"popu_614","con":",https://download.csdn.net/download/oyxm0/3744857,BlogCommendFromBaidu_41"}'>
 			<a href="https://download.csdn.net/download/oyxm0/3744857" target="_blank">
 				<div class="content clearfix">
 					<div class="">
@@ -2126,7 +2137,7 @@ if __name__ == "__main__":
 	
     
     
-    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-track-view='{"mod":"popu_614","con":",https://download.csdn.net/download/qq_16486739/8463423,BlogCommendFromBaidu_42"}' data-track-click='{"mod":"popu_614","con":",https://download.csdn.net/download/qq_16486739/8463423,BlogCommendFromBaidu_42"}'>
+    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix"  data-track-click='{"mod":"popu_614","con":",https://download.csdn.net/download/qq_16486739/8463423,BlogCommendFromBaidu_42"}'>
 			<a href="https://download.csdn.net/download/qq_16486739/8463423" target="_blank">
 				<div class="content clearfix">
 					<div class="">
@@ -2151,7 +2162,7 @@ if __name__ == "__main__":
   p4CSDNRender_T("_4paradigm_T43_render", "T43");
 </script></div></div>
     
-    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix" data-track-view='{"mod":"popu_614","con":",https://download.csdn.net/download/xyisv/10250534,BlogCommendFromBaidu_43"}' data-track-click='{"mod":"popu_614","con":",https://download.csdn.net/download/xyisv/10250534,BlogCommendFromBaidu_43"}'>
+    			<div class="recommend-item-box recommend-box-ident recommend-download-box clearfix"  data-track-click='{"mod":"popu_614","con":",https://download.csdn.net/download/xyisv/10250534,BlogCommendFromBaidu_43"}'>
 			<a href="https://download.csdn.net/download/xyisv/10250534" target="_blank">
 				<div class="content clearfix">
 					<div class="">
@@ -2168,7 +2179,7 @@ if __name__ == "__main__":
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/hzxmsn/article/details/2342875,BlogCommendFromBaidu_44"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/hzxmsn/article/details/2342875,BlogCommendFromBaidu_44"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/hzxmsn/article/details/2342875,BlogCommendFromBaidu_44"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/hzxmsn/article/details/2342875" target="_blank" title="多次访问某地址(刷刷点击率)">
 				<h4 class="text-truncate oneline">
@@ -2196,7 +2207,7 @@ if __name__ == "__main__":
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/carl_jiang/article/details/49618125,BlogCommendFromBaidu_45"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/carl_jiang/article/details/49618125,BlogCommendFromBaidu_45"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/carl_jiang/article/details/49618125,BlogCommendFromBaidu_45"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/carl_jiang/article/details/49618125" target="_blank" title="页面刷新一次，加一次访客记录">
 				<h4 class="text-truncate oneline">
@@ -2206,7 +2217,7 @@ if __name__ == "__main__":
 						<span class="date hover-show">11-03</span>
 						<span class="read-num hover-hide">
               阅读数 
-							924</span>
+							943</span>
 						</p>
 					</div>
 				</a>
@@ -2224,7 +2235,7 @@ if __name__ == "__main__":
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/SH_UANG/article/details/53653218,BlogCommendFromBaidu_46"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/SH_UANG/article/details/53653218,BlogCommendFromBaidu_46"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/SH_UANG/article/details/53653218,BlogCommendFromBaidu_46"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/SH_UANG/article/details/53653218" target="_blank" title="CSDN论坛刷阅读次数的方法">
 				<h4 class="text-truncate oneline">
@@ -2234,7 +2245,7 @@ if __name__ == "__main__":
 						<span class="date hover-show">12-15</span>
 						<span class="read-num hover-hide">
               阅读数 
-							2505</span>
+							2521</span>
 						</p>
 					</div>
 				</a>
@@ -2252,7 +2263,7 @@ if __name__ == "__main__":
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/u013190268/article/details/49622801,BlogCommendFromBaidu_47"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/u013190268/article/details/49622801,BlogCommendFromBaidu_47"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/u013190268/article/details/49622801,BlogCommendFromBaidu_47"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/u013190268/article/details/49622801" target="_blank" title="CSDN有效访问量判别机制分析">
 				<h4 class="text-truncate oneline">
@@ -2262,7 +2273,7 @@ if __name__ == "__main__":
 						<span class="date hover-show">11-03</span>
 						<span class="read-num hover-hide">
               阅读数 
-							7910</span>
+							7913</span>
 						</p>
 					</div>
 				</a>
@@ -2289,7 +2300,7 @@ if __name__ == "__main__":
   p4CSDNRender_T("_4paradigm_T48_render", "T48");
 </script></div></div>
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/hurmishine/article/details/53033831,BlogCommendFromBaidu_48"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/hurmishine/article/details/53033831,BlogCommendFromBaidu_48"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/hurmishine/article/details/53033831,BlogCommendFromBaidu_48"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/hurmishine/article/details/53033831" target="_blank" title="简单CSDN爬虫，实现博客访问量记录">
 				<h4 class="text-truncate oneline">
@@ -2299,7 +2310,7 @@ if __name__ == "__main__":
 						<span class="date hover-show">11-04</span>
 						<span class="read-num hover-hide">
               阅读数 
-							2114</span>
+							2116</span>
 						</p>
 					</div>
 				</a>
@@ -2317,7 +2328,7 @@ if __name__ == "__main__":
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/comedate/article/details/47186985,BlogCommendFromBaidu_49"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/comedate/article/details/47186985,BlogCommendFromBaidu_49"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/comedate/article/details/47186985,BlogCommendFromBaidu_49"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/comedate/article/details/47186985" target="_blank" title="【转】通过编程自动化增加CSDN博客的访问量">
 				<h4 class="text-truncate oneline">
@@ -2345,7 +2356,326 @@ if __name__ == "__main__":
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/zztfj/article/details/10103621,BlogCommendHotData_0"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/zztfj/article/details/10103621,BlogCommendHotData_0"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/csdn_aiyang/article/details/73177084,BlogCommendHotData_0"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/csdn_aiyang/article/details/73177084" target="_blank" title="23种开发设计模式总结，追求高内聚低耦合的编程思想。">
+				<h4 class="text-truncate oneline">
+						23种开发设计模式总结，追求高内聚低耦合的编程思想。				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">06-13</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							6358</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/csdn_aiyang/article/details/73177084" target="_blank" title="23种开发设计模式总结，追求高内聚低耦合的编程思想。">
+							<span class="desc oneline">一、概述
+二、7个设计原则
+三、创建型模式(5种)
+四、结构型模式(7种)
+五、行为型模式(11种)
+六、总结
+
+前言：熟练地掌握设计模式，并能在实际编程开发中灵活运用它们，不仅能使代码更规范，重用性...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/csdn_aiyang">来自：	<span class="blog_title"> csdn_aiyang的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/diandianxiyu/article/details/53068012,BlogCommendHotData_1"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/diandianxiyu/article/details/53068012" target="_blank" title="【小程序】微信小程序开发实践">
+				<h4 class="text-truncate oneline">
+						【小程序】微信小程序开发实践				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">11-07</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							27万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/diandianxiyu/article/details/53068012" target="_blank" title="【小程序】微信小程序开发实践">
+							<span class="desc oneline">帐号相关流程注册范围
+企业
+政府
+媒体
+其他组织换句话讲就是不让个人开发者注册。 :)填写企业信息不能使用和之前的公众号账户相同的邮箱,也就是说小程序是和微信公众号一个层级的。填写公司机构信息,对公账...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/diandianxiyu">来自：	<span class="blog_title"> 小雨同学的技术博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/wangyaninglm/article/details/52142217,BlogCommendHotData_2"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/wangyaninglm/article/details/52142217" target="_blank" title="OpenCV+OpenGL 双目立体视觉三维重建">
+				<h4 class="text-truncate oneline">
+						OpenCV+OpenGL 双目立体视觉三维重建				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">08-08</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							4万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/wangyaninglm/article/details/52142217" target="_blank" title="OpenCV+OpenGL 双目立体视觉三维重建">
+							<span class="desc oneline">0.绪论这篇文章主要为了研究双目立体视觉的最终目标——三维重建，系统的介绍了三维重建的整体步骤。双目立体视觉的整体流程包括：图像获取，摄像机标定，特征提取（稠密匹配中这一步可以省略），立体匹配，三维重...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/wangyaninglm">来自：	<span class="blog_title"> shiter编写程序的艺术</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/wangjun_pfc/article/details/3827631,BlogCommendHotData_3"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/wangjun_pfc/article/details/3827631" target="_blank" title="修改mysql数据库的默认编码方式">
+				<h4 class="text-truncate oneline">
+						修改mysql数据库的默认编码方式				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">01-18</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							6万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/wangjun_pfc/article/details/3827631" target="_blank" title="修改mysql数据库的默认编码方式">
+							<span class="desc oneline">修改my.ini文件加上default-character-set=gb2312设定数据库字符集alter database da_name default character set charset...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/wangjun_pfc">来自：	<span class="blog_title"> 血色残阳的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/VBcom/article/details/7245186,BlogCommendHotData_4"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/VBcom/article/details/7245186" target="_blank" title="DirectX修复工具增强版">
+				<h4 class="text-truncate oneline">
+						DirectX修复工具增强版				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">02-09</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							196万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/VBcom/article/details/7245186" target="_blank" title="DirectX修复工具增强版">
+							<span class="desc oneline">最后更新：2018-12-20
+
+DirectX修复工具最新版：DirectX Repair V3.8 增强版  NEW!
+
+版本号：V3.8.0.11638
+
+大小: 107MB/7z格式压缩，18...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/VBcom">来自：	<span class="blog_title"> VBcom的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/themagickeyjianan/article/details/52386981,BlogCommendHotData_5"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/themagickeyjianan/article/details/52386981" target="_blank" title="python图片处理类之~PIL.Image模块(ios android icon图标自动生成处理)">
+				<h4 class="text-truncate oneline">
+						python图片处理类之~PIL.Image模块(ios android icon图标自动生成处理)				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">08-31</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							7万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/themagickeyjianan/article/details/52386981" target="_blank" title="python图片处理类之~PIL.Image模块(ios android icon图标自动生成处理)">
+							<span class="desc oneline">1.从pyCharm提示下载PIL包
+
+ http://www.pythonware.com/products/pil/
+
+ 
+
+2.解压后，进入到目录下
+
+
+cd /Users/jianan/Dow...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/themagickeyjianan">来自：	<span class="blog_title"> 专注于cocos+unity+服务器全栈</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/roguesir/article/details/77104246,BlogCommendHotData_6"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/roguesir/article/details/77104246" target="_blank" title="人脸检测工具face_recognition的安装与应用">
+				<h4 class="text-truncate oneline">
+						人脸检测工具face_recognition的安装与应用				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">08-11</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							6万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/roguesir/article/details/77104246" target="_blank" title="人脸检测工具face_recognition的安装与应用">
+							<span class="desc oneline">人脸检测工具face_recognition的安装与应用</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/roguesir">来自：	<span class="blog_title"> roguesir的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/lxhjh/article/details/51764604,BlogCommendHotData_7"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/lxhjh/article/details/51764604" target="_blank" title="SpringBoot入门系列：第六篇 mybatis">
+				<h4 class="text-truncate oneline">
+						SpringBoot入门系列：第六篇 mybatis				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">06-26</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							2万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/lxhjh/article/details/51764604" target="_blank" title="SpringBoot入门系列：第六篇 mybatis">
+							<span class="desc oneline">这一篇，代码折腾的时间较长，完成之后都是一些小细节，主要有三：
+1、引入的依赖错误；
+2、启动配置错误；
+3、xml文件的mapper命名空间错误。
+一、完整的pom.xml
+
+...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/lxhjh">来自：	<span class="blog_title"> lxhjh的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/hjl240/article/details/51460884,BlogCommendHotData_8"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/hjl240/article/details/51460884" target="_blank" title="虚拟机下Ubuntu安装CPU版本的caffe">
+				<h4 class="text-truncate oneline">
+						虚拟机下Ubuntu安装CPU版本的caffe				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">05-20</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/hjl240/article/details/51460884" target="_blank" title="虚拟机下Ubuntu安装CPU版本的caffe">
+							<span class="desc oneline">安装环境：ubuntu14.04+CUDA_7.5.18
+
+
+
+    由于虚拟机下的Ubuntu系统一般不包含GPU，故这次安装时为了在无GUP环境下运行caffe。
+ 有GPU安装caffe与无G...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/hjl240">来自：	<span class="blog_title"> hjl240的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/laoshangxyc/article/details/8759140,BlogCommendHotData_9"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/laoshangxyc/article/details/8759140" target="_blank" title="Oracle 动态注册监听无效解决方法">
+				<h4 class="text-truncate oneline">
+						Oracle 动态注册监听无效解决方法				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">04-04</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							33</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/laoshangxyc/article/details/8759140" target="_blank" title="Oracle 动态注册监听无效解决方法">
+							<span class="desc oneline">用alter system register动态注册监听后用户lsnrctl status查看无效。
+于是查看local_listener参数内容：
+SQL&gt; show parameter loc...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/laoshangxyc">来自：	<span class="blog_title"> 一玩儿家的田地</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/zztfj/article/details/10103621,BlogCommendHotData_10"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/zztfj/article/details/10103621" target="_blank" title="单机最大的TCP连接数及其修改">
 				<h4 class="text-truncate oneline">
@@ -2355,7 +2685,7 @@ if __name__ == "__main__":
 						<span class="date hover-show">08-20</span>
 						<span class="read-num hover-hide">
               阅读数 
-							1万+</span>
+							2万+</span>
 						</p>
 					</div>
 				</a>
@@ -2375,27 +2705,30 @@ if __name__ == "__main__":
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/supe_king/article/details/58121993,BlogCommendHotData_1"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/supe_king/article/details/58121993,BlogCommendHotData_1"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/lutinghuan/article/details/46820023,BlogCommendHotData_11"}'>
 			<div class="content">
-				<a href="https://blog.csdn.net/supe_king/article/details/58121993" target="_blank" title="caffe下fcn数据集制作的简化">
+				<a href="https://blog.csdn.net/lutinghuan/article/details/46820023" target="_blank" title="4种方法让SpringMVC接收多个对象">
 				<h4 class="text-truncate oneline">
-						caffe下fcn数据集制作的简化				</h4>
+						4种方法让SpringMVC接收多个对象				</h4>
 				<div class="info-box d-flex align-content-center">
 					<p class="date-and-readNum oneline">
-						<span class="date hover-show">02-27</span>
+						<span class="date hover-show">07-10</span>
 						<span class="read-num hover-hide">
               阅读数 
-							8741</span>
+							14万+</span>
 						</p>
 					</div>
 				</a>
 					<p class="content">
-						<a href="https://blog.csdn.net/supe_king/article/details/58121993" target="_blank" title="caffe下fcn数据集制作的简化">
-							<span class="desc oneline">前面一直跑caffe下的fcn，同时上一篇博客，也说明了关于fcn的数据集的制作。但是过程还是显的很复杂，因为我们都是模仿作者的数据集而作，而作者为了完成多任务，数据集制作的略显复杂，比如还需用到.m...</span>
+						<a href="https://blog.csdn.net/lutinghuan/article/details/46820023" target="_blank" title="4种方法让SpringMVC接收多个对象">
+							<span class="desc oneline">问题背景： 
+我要在一个表单里同时一次性提交多名乘客的个人信息到SpringMVC，前端HTML和SpringMVC Controller里该如何处理？
+第1种方法：表单提交，以字段数组接收；
+第2种...</span>
 						</a>
 						  <span class="blog_title_box oneline ">
 							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/supe_king">来自：	<span class="blog_title"> supe_king的博客</span></a>
+                                  <a target="_blank" href="https://blog.csdn.net/lutinghuan">来自：	<span class="blog_title"> 一个情绪猿的脖克...</span></a>
                 							              </span>
 					</p>
 			</div>
@@ -2403,97 +2736,7 @@ if __name__ == "__main__":
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/yang_lover/article/details/45057181,BlogCommendHotData_2"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/yang_lover/article/details/45057181,BlogCommendHotData_2"}'>
-			<div class="content">
-				<a href="https://blog.csdn.net/yang_lover/article/details/45057181" target="_blank" title="避免 Hibernate 中用get/load方法获取的实体调用set方法后自动更新">
-				<h4 class="text-truncate oneline">
-						避免 Hibernate 中用get/load方法获取的实体调用set方法后自动更新				</h4>
-				<div class="info-box d-flex align-content-center">
-					<p class="date-and-readNum oneline">
-						<span class="date hover-show">04-15</span>
-						<span class="read-num hover-hide">
-              阅读数 
-							1万+</span>
-						</p>
-					</div>
-				</a>
-					<p class="content">
-						<a href="https://blog.csdn.net/yang_lover/article/details/45057181" target="_blank" title="避免 Hibernate 中用get/load方法获取的实体调用set方法后自动更新">
-							<span class="desc oneline">1、问题症状描述
-      最近在处理一个新需求问题，代码的大致逻辑是获取一个实体对象，调用该对象的set方法设置其中的某些字段，然后把修改后的实体作为参数供其他地方调用，根据返回值来决定是否更新这...</span>
-						</a>
-						  <span class="blog_title_box oneline ">
-							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/yang_lover">来自：	<span class="blog_title"> Mr_Alex</span></a>
-                							              </span>
-					</p>
-			</div>
-					</div>
-	
-    
-    
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/tostq/article/details/70846702,BlogCommendHotData_3"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/tostq/article/details/70846702,BlogCommendHotData_3"}'>
-			<div class="content">
-				<a href="https://blog.csdn.net/tostq/article/details/70846702" target="_blank" title="【深度剖析HMM（附Python代码）】1.前言及隐马尔科夫链HMM的背景">
-				<h4 class="text-truncate oneline">
-						【深度剖析HMM（附Python代码）】1.前言及隐马尔科夫链HMM的背景				</h4>
-				<div class="info-box d-flex align-content-center">
-					<p class="date-and-readNum oneline">
-						<span class="date hover-show">04-27</span>
-						<span class="read-num hover-hide">
-              阅读数 
-							1万+</span>
-						</p>
-					</div>
-				</a>
-					<p class="content">
-						<a href="https://blog.csdn.net/tostq/article/details/70846702" target="_blank" title="【深度剖析HMM（附Python代码）】1.前言及隐马尔科夫链HMM的背景">
-							<span class="desc oneline">1. 前言
-隐马尔科夫HMM模型是一类重要的机器学习方法，其主要用于序列数据的分析，广泛应用于语音识别、文本翻译、序列预测、中文分词等多个领域。虽然近年来，由于RNN等深度学习方法的发展，HMM模型...</span>
-						</a>
-						  <span class="blog_title_box oneline ">
-							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/tostq">来自：	<span class="blog_title"> tostq的专栏</span></a>
-                							              </span>
-					</p>
-			</div>
-					</div>
-	
-    
-    
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/HEYIAMCOMING/article/details/76584531,BlogCommendHotData_4"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/HEYIAMCOMING/article/details/76584531,BlogCommendHotData_4"}'>
-			<div class="content">
-				<a href="https://blog.csdn.net/HEYIAMCOMING/article/details/76584531" target="_blank" title="C语言实现图的最短路径Floyd算法">
-				<h4 class="text-truncate oneline">
-						C语言实现图的最短路径Floyd算法				</h4>
-				<div class="info-box d-flex align-content-center">
-					<p class="date-and-readNum oneline">
-						<span class="date hover-show">08-02</span>
-						<span class="read-num hover-hide">
-              阅读数 
-							716</span>
-						</p>
-					</div>
-				</a>
-					<p class="content">
-						<a href="https://blog.csdn.net/HEYIAMCOMING/article/details/76584531" target="_blank" title="C语言实现图的最短路径Floyd算法">
-							<span class="desc oneline">Floyd算法直接使用二维数组求出所有顶点到所有顶点的最短路径。
-D代表顶点到顶点的最短路径权值和的矩阵。
-P代表对应顶点的最小路径的前驱矩阵。
-以下程序在DEV C++中调试运行通过。
-#inclu...</span>
-						</a>
-						  <span class="blog_title_box oneline ">
-							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/HEYIAMCOMING">来自：	<span class="blog_title"> KittyGirl</span></a>
-                							              </span>
-					</p>
-			</div>
-					</div>
-	
-    
-    
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/u011860731/article/details/48733073,BlogCommendHotData_5"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/u011860731/article/details/48733073,BlogCommendHotData_5"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/u011860731/article/details/48733073,BlogCommendHotData_12"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/u011860731/article/details/48733073" target="_blank" title="ThreadLocal的设计理念与作用">
 				<h4 class="text-truncate oneline">
@@ -2521,29 +2764,29 @@ P代表对应顶点的最小路径的前驱矩阵。
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/diudiu2025/article/details/51890673,BlogCommendHotData_6"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/diudiu2025/article/details/51890673,BlogCommendHotData_6"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/Lu597203933/article/details/46575871,BlogCommendHotData_13"}'>
 			<div class="content">
-				<a href="https://blog.csdn.net/diudiu2025/article/details/51890673" target="_blank" title="hive初次使用报错">
+				<a href="https://blog.csdn.net/Lu597203933/article/details/46575871" target="_blank" title="CNN公式推导">
 				<h4 class="text-truncate oneline">
-						hive初次使用报错				</h4>
+						CNN公式推导				</h4>
 				<div class="info-box d-flex align-content-center">
 					<p class="date-and-readNum oneline">
-						<span class="date hover-show">07-12</span>
+						<span class="date hover-show">06-20</span>
 						<span class="read-num hover-hide">
               阅读数 
-							4098</span>
+							3万+</span>
 						</p>
 					</div>
 				</a>
 					<p class="content">
-						<a href="https://blog.csdn.net/diudiu2025/article/details/51890673" target="_blank" title="hive初次使用报错">
-							<span class="desc oneline">hive（元数据存储在mysql） 启动
-
-Exception in thread &quot;main&quot; java.lang.RuntimeException: Hive metastore database...</span>
+						<a href="https://blog.csdn.net/Lu597203933/article/details/46575871" target="_blank" title="CNN公式推导">
+							<span class="desc oneline">CNN公式推导
+1 前言
+         在看此blog之前，请确保已经看懂我的前两篇blog【深度学习笔记1(卷积神经网络)】和【BP算法与公式推导】。并且已经看过文献[1]的论文【Notes o...</span>
 						</a>
 						  <span class="blog_title_box oneline ">
 							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/diudiu2025">来自：	<span class="blog_title"> diudiu2025的博客</span></a>
+                                  <a target="_blank" href="https://blog.csdn.net/Lu597203933">来自：	<span class="blog_title"> 小村长技术blog</span></a>
                 							              </span>
 					</p>
 			</div>
@@ -2551,505 +2794,14 @@ Exception in thread &quot;main&quot; java.lang.RuntimeException: Hive metastore 
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/boling_cavalry/article/details/76857936,BlogCommendHotData_7"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/boling_cavalry/article/details/76857936,BlogCommendHotData_7"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/yenange/article/details/12198829,BlogCommendHotData_14"}'>
 			<div class="content">
-				<a href="https://blog.csdn.net/boling_cavalry/article/details/76857936" target="_blank" title="Docker下实战zabbix三部曲之一：极速体验">
+				<a href="https://blog.csdn.net/yenange/article/details/12198829" target="_blank" title="ODAC (odp.net)  从开发到部署">
 				<h4 class="text-truncate oneline">
-						Docker下实战zabbix三部曲之一：极速体验				</h4>
+						ODAC (odp.net)  从开发到部署				</h4>
 				<div class="info-box d-flex align-content-center">
 					<p class="date-and-readNum oneline">
-						<span class="date hover-show">08-10</span>
-						<span class="read-num hover-hide">
-              阅读数 
-							1万+</span>
-						</p>
-					</div>
-				</a>
-					<p class="content">
-						<a href="https://blog.csdn.net/boling_cavalry/article/details/76857936" target="_blank" title="Docker下实战zabbix三部曲之一：极速体验">
-							<span class="desc oneline">用docker来缩减搭建时间，让读者们尽快投入zabbix系统的体验和实践</span>
-						</a>
-						  <span class="blog_title_box oneline ">
-							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/boling_cavalry">来自：	<span class="blog_title"> boling_cavalry的博客</span></a>
-                							              </span>
-					</p>
-			</div>
-					</div>
-	
-    
-    
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/ohmygirl/article/details/17846199,BlogCommendHotData_8"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/ohmygirl/article/details/17846199,BlogCommendHotData_8"}'>
-			<div class="content">
-				<a href="https://blog.csdn.net/ohmygirl/article/details/17846199" target="_blank" title="【HTTP】Fiddler（一） - Fiddler简介">
-				<h4 class="text-truncate oneline">
-						【HTTP】Fiddler（一） - Fiddler简介				</h4>
-				<div class="info-box d-flex align-content-center">
-					<p class="date-and-readNum oneline">
-						<span class="date hover-show">01-04</span>
-						<span class="read-num hover-hide">
-              阅读数 
-							30万+</span>
-						</p>
-					</div>
-				</a>
-					<p class="content">
-						<a href="https://blog.csdn.net/ohmygirl/article/details/17846199" target="_blank" title="【HTTP】Fiddler（一） - Fiddler简介">
-							<span class="desc oneline">1.为什么是Fiddler?
-抓包工具有很多，小到最常用的web调试工具firebug，达到通用的强大的抓包工具wireshark.为什么使用fiddler?原因如下：
-a.Firebug虽然可以抓包...</span>
-						</a>
-						  <span class="blog_title_box oneline ">
-							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/ohmygirl">来自：	<span class="blog_title"> 专注、专心</span></a>
-                							              </span>
-					</p>
-			</div>
-					</div>
-	
-    
-    
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/VBcom/article/details/7245186,BlogCommendHotData_9"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/VBcom/article/details/7245186,BlogCommendHotData_9"}'>
-			<div class="content">
-				<a href="https://blog.csdn.net/VBcom/article/details/7245186" target="_blank" title="DirectX修复工具增强版">
-				<h4 class="text-truncate oneline">
-						DirectX修复工具增强版				</h4>
-				<div class="info-box d-flex align-content-center">
-					<p class="date-and-readNum oneline">
-						<span class="date hover-show">02-09</span>
-						<span class="read-num hover-hide">
-              阅读数 
-							193万+</span>
-						</p>
-					</div>
-				</a>
-					<p class="content">
-						<a href="https://blog.csdn.net/VBcom/article/details/7245186" target="_blank" title="DirectX修复工具增强版">
-							<span class="desc oneline">最后更新：2018-12-20
-
-DirectX修复工具最新版：DirectX Repair V3.8 增强版  NEW!
-
-版本号：V3.8.0.11638
-
-大小: 107MB/7z格式压缩，18...</span>
-						</a>
-						  <span class="blog_title_box oneline ">
-							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/VBcom">来自：	<span class="blog_title"> VBcom的专栏</span></a>
-                							              </span>
-					</p>
-			</div>
-					</div>
-	
-    
-    
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/themagickeyjianan/article/details/52386981,BlogCommendHotData_10"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/themagickeyjianan/article/details/52386981,BlogCommendHotData_10"}'>
-			<div class="content">
-				<a href="https://blog.csdn.net/themagickeyjianan/article/details/52386981" target="_blank" title="python图片处理类之~PIL.Image模块(ios android icon图标自动生成处理)">
-				<h4 class="text-truncate oneline">
-						python图片处理类之~PIL.Image模块(ios android icon图标自动生成处理)				</h4>
-				<div class="info-box d-flex align-content-center">
-					<p class="date-and-readNum oneline">
-						<span class="date hover-show">08-31</span>
-						<span class="read-num hover-hide">
-              阅读数 
-							6万+</span>
-						</p>
-					</div>
-				</a>
-					<p class="content">
-						<a href="https://blog.csdn.net/themagickeyjianan/article/details/52386981" target="_blank" title="python图片处理类之~PIL.Image模块(ios android icon图标自动生成处理)">
-							<span class="desc oneline">1.从pyCharm提示下载PIL包
-
- http://www.pythonware.com/products/pil/
-
- 
-
-2.解压后，进入到目录下
-
-
-cd /Users/jianan/Dow...</span>
-						</a>
-						  <span class="blog_title_box oneline ">
-							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/themagickeyjianan">来自：	<span class="blog_title"> 专注于cocos+unity+服务器全栈</span></a>
-                							              </span>
-					</p>
-			</div>
-					</div>
-	
-    
-    
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/diandianxiyu/article/details/53068012,BlogCommendHotData_11"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/diandianxiyu/article/details/53068012,BlogCommendHotData_11"}'>
-			<div class="content">
-				<a href="https://blog.csdn.net/diandianxiyu/article/details/53068012" target="_blank" title="【小程序】微信小程序开发实践">
-				<h4 class="text-truncate oneline">
-						【小程序】微信小程序开发实践				</h4>
-				<div class="info-box d-flex align-content-center">
-					<p class="date-and-readNum oneline">
-						<span class="date hover-show">11-07</span>
-						<span class="read-num hover-hide">
-              阅读数 
-							26万+</span>
-						</p>
-					</div>
-				</a>
-					<p class="content">
-						<a href="https://blog.csdn.net/diandianxiyu/article/details/53068012" target="_blank" title="【小程序】微信小程序开发实践">
-							<span class="desc oneline">帐号相关流程注册范围
-企业
-政府
-媒体
-其他组织换句话讲就是不让个人开发者注册。 :)填写企业信息不能使用和之前的公众号账户相同的邮箱,也就是说小程序是和微信公众号一个层级的。填写公司机构信息,对公账...</span>
-						</a>
-						  <span class="blog_title_box oneline ">
-							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/diandianxiyu">来自：	<span class="blog_title"> 小雨同学的技术博客</span></a>
-                							              </span>
-					</p>
-			</div>
-					</div>
-	
-    
-    
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/SuperFPE/article/details/5788636,BlogCommendHotData_12"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/SuperFPE/article/details/5788636,BlogCommendHotData_12"}'>
-			<div class="content">
-				<a href="https://blog.csdn.net/SuperFPE/article/details/5788636" target="_blank" title="Qt的Signal和Slot机制(二)">
-				<h4 class="text-truncate oneline">
-						Qt的Signal和Slot机制(二)				</h4>
-				<div class="info-box d-flex align-content-center">
-					<p class="date-and-readNum oneline">
-						<span class="date hover-show">08-04</span>
-						<span class="read-num hover-hide">
-              阅读数 
-							1万+</span>
-						</p>
-					</div>
-				</a>
-					<p class="content">
-						<a href="https://blog.csdn.net/SuperFPE/article/details/5788636" target="_blank" title="Qt的Signal和Slot机制(二)">
-							<span class="desc oneline">第二节 Signal和Slot的粘合剂
-
-
-如果要连接一个Signal和Slot我们会用connect函数，下面我们就看一下connect是如何把Signal和Slot粘合在一起的。
-
-以下是conn...</span>
-						</a>
-						  <span class="blog_title_box oneline ">
-							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/SuperFPE">来自：	<span class="blog_title"> SuperFPE的专栏</span></a>
-                							              </span>
-					</p>
-			</div>
-					</div>
-	
-    
-    
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/wangjieest/article/details/7042108,BlogCommendHotData_13"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/wangjieest/article/details/7042108,BlogCommendHotData_13"}'>
-			<div class="content">
-				<a href="https://blog.csdn.net/wangjieest/article/details/7042108" target="_blank" title="WSAEventSelect模型编程 详解">
-				<h4 class="text-truncate oneline">
-						WSAEventSelect模型编程 详解				</h4>
-				<div class="info-box d-flex align-content-center">
-					<p class="date-and-readNum oneline">
-						<span class="date hover-show">12-05</span>
-						<span class="read-num hover-hide">
-              阅读数 
-							9328</span>
-						</p>
-					</div>
-				</a>
-					<p class="content">
-						<a href="https://blog.csdn.net/wangjieest/article/details/7042108" target="_blank" title="WSAEventSelect模型编程 详解">
-							<span class="desc oneline">WSAEventSelect模型编程     
-
-
-
-
-WSAEventSelect模型编程
-这个模型是一个简单的异步事件模型，使用起来比较方便，现在说一下其的具体的用法和需要注意的地方。...</span>
-						</a>
-						  <span class="blog_title_box oneline ">
-							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/wangjieest">来自：	<span class="blog_title"> wangjieest的专栏</span></a>
-                							              </span>
-					</p>
-			</div>
-					</div>
-	
-    
-    
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/qq_30124547/article/details/53184754,BlogCommendHotData_14"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/qq_30124547/article/details/53184754,BlogCommendHotData_14"}'>
-			<div class="content">
-				<a href="https://blog.csdn.net/qq_30124547/article/details/53184754" target="_blank" title="装饰设计——开放拓展，关闭修改">
-				<h4 class="text-truncate oneline">
-						装饰设计——开放拓展，关闭修改				</h4>
-				<div class="info-box d-flex align-content-center">
-					<p class="date-and-readNum oneline">
-						<span class="date hover-show">11-16</span>
-						<span class="read-num hover-hide">
-              阅读数 
-							282</span>
-						</p>
-					</div>
-				</a>
-					<p class="content">
-						<a href="https://blog.csdn.net/qq_30124547/article/details/53184754" target="_blank" title="装饰设计——开放拓展，关闭修改">
-							<span class="desc oneline">1. 设计原则遵循开闭原则：对拓展开放，对修改关闭。2. 特点：1、装饰对象和真实对象有相同的接口。 
-2、装饰对象包含一个真实对象的引用。3. 优缺点优点：动态的给一个对象添加一些额外的职责，就扩展...</span>
-						</a>
-						  <span class="blog_title_box oneline ">
-							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/qq_30124547">来自：	<span class="blog_title"> Sloven</span></a>
-                							              </span>
-					</p>
-			</div>
-					</div>
-	
-    
-    
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/roguesir/article/details/77104246,BlogCommendHotData_15"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/roguesir/article/details/77104246,BlogCommendHotData_15"}'>
-			<div class="content">
-				<a href="https://blog.csdn.net/roguesir/article/details/77104246" target="_blank" title="人脸检测工具face_recognition的安装与应用">
-				<h4 class="text-truncate oneline">
-						人脸检测工具face_recognition的安装与应用				</h4>
-				<div class="info-box d-flex align-content-center">
-					<p class="date-and-readNum oneline">
-						<span class="date hover-show">08-11</span>
-						<span class="read-num hover-hide">
-              阅读数 
-							5万+</span>
-						</p>
-					</div>
-				</a>
-					<p class="content">
-						<a href="https://blog.csdn.net/roguesir/article/details/77104246" target="_blank" title="人脸检测工具face_recognition的安装与应用">
-							<span class="desc oneline">人脸检测工具face_recognition的安装与应用</span>
-						</a>
-						  <span class="blog_title_box oneline ">
-							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/roguesir">来自：	<span class="blog_title"> roguesir的博客</span></a>
-                							              </span>
-					</p>
-			</div>
-					</div>
-	
-    
-    
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/jiangcaiyang123/article/details/10295961,BlogCommendHotData_16"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/jiangcaiyang123/article/details/10295961,BlogCommendHotData_16"}'>
-			<div class="content">
-				<a href="https://blog.csdn.net/jiangcaiyang123/article/details/10295961" target="_blank" title="编写基于Qt的GLSL程序需要注意的几点">
-				<h4 class="text-truncate oneline">
-						编写基于Qt的GLSL程序需要注意的几点				</h4>
-				<div class="info-box d-flex align-content-center">
-					<p class="date-and-readNum oneline">
-						<span class="date hover-show">08-25</span>
-						<span class="read-num hover-hide">
-              阅读数 
-							5543</span>
-						</p>
-					</div>
-				</a>
-					<p class="content">
-						<a href="https://blog.csdn.net/jiangcaiyang123/article/details/10295961" target="_blank" title="编写基于Qt的GLSL程序需要注意的几点">
-							<span class="desc oneline">最近尝试着编写基于Qt和GLSL的小例子，遇到了一些小问题，在这里给大家分享一下，希望大家不要重蹈覆辙。...</span>
-						</a>
-						  <span class="blog_title_box oneline ">
-							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/jiangcaiyang123">来自：	<span class="blog_title"> 开发游戏，辉煌全中国</span></a>
-                							              </span>
-					</p>
-			</div>
-					</div>
-	
-    
-    
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/jinping_shi/article/details/59613054,BlogCommendHotData_17"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/jinping_shi/article/details/59613054,BlogCommendHotData_17"}'>
-			<div class="content">
-				<a href="https://blog.csdn.net/jinping_shi/article/details/59613054" target="_blank" title="高斯混合模型（GMM）及其EM算法的理解">
-				<h4 class="text-truncate oneline">
-						高斯混合模型（GMM）及其EM算法的理解				</h4>
-				<div class="info-box d-flex align-content-center">
-					<p class="date-and-readNum oneline">
-						<span class="date hover-show">03-02</span>
-						<span class="read-num hover-hide">
-              阅读数 
-							10万+</span>
-						</p>
-					</div>
-				</a>
-					<p class="content">
-						<a href="https://blog.csdn.net/jinping_shi/article/details/59613054" target="_blank" title="高斯混合模型（GMM）及其EM算法的理解">
-							<span class="desc oneline">一个例子高斯混合模型（Gaussian Mixed Model）指的是多个高斯分布函数的线性组合，理论上GMM可以拟合出任意类型的分布，通常用于解决同一集合下的数据包含多个不同的分布的情况（或者是同一...</span>
-						</a>
-						  <span class="blog_title_box oneline ">
-							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/jinping_shi">来自：	<span class="blog_title"> 小平子的专栏</span></a>
-                							              </span>
-					</p>
-			</div>
-					</div>
-	
-    
-    
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/qq_36892341/article/details/73918672,BlogCommendHotData_18"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/qq_36892341/article/details/73918672,BlogCommendHotData_18"}'>
-			<div class="content">
-				<a href="https://blog.csdn.net/qq_36892341/article/details/73918672" target="_blank" title="linux上安装Docker(非常简单的安装方法)">
-				<h4 class="text-truncate oneline">
-						linux上安装Docker(非常简单的安装方法)				</h4>
-				<div class="info-box d-flex align-content-center">
-					<p class="date-and-readNum oneline">
-						<span class="date hover-show">06-29</span>
-						<span class="read-num hover-hide">
-              阅读数 
-							20万+</span>
-						</p>
-					</div>
-				</a>
-					<p class="content">
-						<a href="https://blog.csdn.net/qq_36892341/article/details/73918672" target="_blank" title="linux上安装Docker(非常简单的安装方法)">
-							<span class="desc oneline">最近比较有空，大四出来实习几个月了，作为实习狗的我，被叫去研究Docker了，汗汗！
-
-Docker的三大核心概念：镜像、容器、仓库
-镜像：类似虚拟机的镜像、用俗话说就是安装文件。
-容器：类似一个轻量...</span>
-						</a>
-						  <span class="blog_title_box oneline ">
-							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/qq_36892341">来自：	<span class="blog_title"> 我走小路的博客</span></a>
-                							              </span>
-					</p>
-			</div>
-					</div>
-	
-    
-    
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/ghost_Programmer/article/details/51923895,BlogCommendHotData_19"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/ghost_Programmer/article/details/51923895,BlogCommendHotData_19"}'>
-			<div class="content">
-				<a href="https://blog.csdn.net/ghost_Programmer/article/details/51923895" target="_blank" title="Java断点续传实现原理很简单">
-				<h4 class="text-truncate oneline">
-						Java断点续传实现原理很简单				</h4>
-				<div class="info-box d-flex align-content-center">
-					<p class="date-and-readNum oneline">
-						<span class="date hover-show">07-16</span>
-						<span class="read-num hover-hide">
-              阅读数 
-							1万+</span>
-						</p>
-					</div>
-				</a>
-					<p class="content">
-						<a href="https://blog.csdn.net/ghost_Programmer/article/details/51923895" target="_blank" title="Java断点续传实现原理很简单">
-							<span class="desc oneline">原理解析在开发当中，“断点续传”这种功能很实用和常见，听上去也是比较有“逼格”的感觉。所以通常我们都有兴趣去研究研究这种功能是如何实现的？  
-以Java来说，网络上也能找到不少关于实现类似功能的资料...</span>
-						</a>
-						  <span class="blog_title_box oneline ">
-							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/ghost_Programmer">来自：	<span class="blog_title"> LaterEqualsNever</span></a>
-                							              </span>
-					</p>
-			</div>
-					</div>
-	
-    
-    
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/yuzhiqiang_1993/article/details/76152454,BlogCommendHotData_20"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/yuzhiqiang_1993/article/details/76152454,BlogCommendHotData_20"}'>
-			<div class="content">
-				<a href="https://blog.csdn.net/yuzhiqiang_1993/article/details/76152454" target="_blank" title="fragment清除页面数据（重新加载布局）">
-				<h4 class="text-truncate oneline">
-						fragment清除页面数据（重新加载布局）				</h4>
-				<div class="info-box d-flex align-content-center">
-					<p class="date-and-readNum oneline">
-						<span class="date hover-show">07-27</span>
-						<span class="read-num hover-hide">
-              阅读数 
-							1万+</span>
-						</p>
-					</div>
-				</a>
-					<p class="content">
-						<a href="https://blog.csdn.net/yuzhiqiang_1993/article/details/76152454" target="_blank" title="fragment清除页面数据（重新加载布局）">
-							<span class="desc oneline">上一篇博客介绍了如何解决Fragment重叠的问题，有需要的同学可以看一下，底部有demo下载。 
-直通车：完美解决Fragment重叠本篇博客我们来说一下怎么让fragment重新加载布局资源文件。...</span>
-						</a>
-						  <span class="blog_title_box oneline ">
-							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/yuzhiqiang_1993">来自：	<span class="blog_title"> 喻志强的博客</span></a>
-                							              </span>
-					</p>
-			</div>
-					</div>
-	
-    
-    
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/wusd1256/article/details/78218755,BlogCommendHotData_21"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/wusd1256/article/details/78218755,BlogCommendHotData_21"}'>
-			<div class="content">
-				<a href="https://blog.csdn.net/wusd1256/article/details/78218755" target="_blank" title="IDEA 中 如何通过数据库表生成带注解的实体类">
-				<h4 class="text-truncate oneline">
-						IDEA 中 如何通过数据库表生成带注解的实体类				</h4>
-				<div class="info-box d-flex align-content-center">
-					<p class="date-and-readNum oneline">
-						<span class="date hover-show">10-12</span>
-						<span class="read-num hover-hide">
-              阅读数 
-							1621</span>
-						</p>
-					</div>
-				</a>
-					<p class="content">
-						<a href="https://blog.csdn.net/wusd1256/article/details/78218755" target="_blank" title="IDEA 中 如何通过数据库表生成带注解的实体类">
-							<span class="desc oneline">Springboot搭建后台项目中，对DB的操作一般会用到JPA,怎么将数据库中的表生成对应的实体类呢？下面的教程记录了详细的操作步骤：转载记录下来，
-      http://blog.csdn....</span>
-						</a>
-						  <span class="blog_title_box oneline ">
-							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/wusd1256">来自：	<span class="blog_title"> wusd1256的专栏</span></a>
-                							              </span>
-					</p>
-			</div>
-					</div>
-	
-    
-    
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/lielieyu/article/details/78662839,BlogCommendHotData_22"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/lielieyu/article/details/78662839,BlogCommendHotData_22"}'>
-			<div class="content">
-				<a href="https://blog.csdn.net/lielieyu/article/details/78662839" target="_blank" title="bash：权限不够">
-				<h4 class="text-truncate oneline">
-						bash：权限不够				</h4>
-				<div class="info-box d-flex align-content-center">
-					<p class="date-and-readNum oneline">
-						<span class="date hover-show">11-29</span>
-						<span class="read-num hover-hide">
-              阅读数 
-							1345</span>
-						</p>
-					</div>
-				</a>
-					<p class="content">
-						<a href="https://blog.csdn.net/lielieyu/article/details/78662839" target="_blank" title="bash：权限不够">
-							<span class="desc oneline">解决办法：http://blog.csdn.net/christprince007/article/details/38339485
-
-如何查看文件的权限：
-https://zhidao.bai...</span>
-						</a>
-						  <span class="blog_title_box oneline ">
-							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/lielieyu">来自：	<span class="blog_title"> lielieyu的博客</span></a>
-                							              </span>
-					</p>
-			</div>
-					</div>
-	
-    
-    
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/ArtX/article/details/1540539,BlogCommendHotData_23"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/ArtX/article/details/1540539,BlogCommendHotData_23"}'>
-			<div class="content">
-				<a href="https://blog.csdn.net/ArtX/article/details/1540539" target="_blank" title="图像缩放双线性插值算法">
-				<h4 class="text-truncate oneline">
-						图像缩放双线性插值算法				</h4>
-				<div class="info-box d-flex align-content-center">
-					<p class="date-and-readNum oneline">
-						<span class="date hover-show">03-25</span>
+						<span class="date hover-show">09-30</span>
 						<span class="read-num hover-hide">
               阅读数 
 							2万+</span>
@@ -3057,11 +2809,12 @@ https://zhidao.bai...</span>
 					</div>
 				</a>
 					<p class="content">
-						<a href="https://blog.csdn.net/ArtX/article/details/1540539" target="_blank" title="图像缩放双线性插值算法">
-							<span class="desc oneline">插值算法对于缩放比例较小的情况是完全可以接受的，令人信服的。一般的，缩小0.5倍以上或放大3.0倍以下，对任何图像都是可以接受的。最邻近插值（近邻取样法）：　　最临近插值的的思想很简单。对于通过反向变...</span>
+						<a href="https://blog.csdn.net/yenange/article/details/12198829" target="_blank" title="ODAC (odp.net)  从开发到部署">
+							<span class="desc oneline">test</span>
 						</a>
-						  <span class="blog_title_box oneline no-title">
+						  <span class="blog_title_box oneline ">
 							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/yenange">来自：	<span class="blog_title"> 我想我是海 冬天的大海 心情随风轻摆</span></a>
                 							              </span>
 					</p>
 			</div>
@@ -3069,7 +2822,186 @@ https://zhidao.bai...</span>
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/qq574857122/article/details/16361033,BlogCommendHotData_24"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/qq574857122/article/details/16361033,BlogCommendHotData_24"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/realxie/article/details/7260072,BlogCommendHotData_15"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/realxie/article/details/7260072" target="_blank" title="矩阵乘法的并行算法">
+				<h4 class="text-truncate oneline">
+						矩阵乘法的并行算法				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">02-15</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/realxie/article/details/7260072" target="_blank" title="矩阵乘法的并行算法">
+							<span class="desc oneline">设两个矩阵A和B，大小分别为M * N 和 N * P， 如果C = A * B， 则C的大小为M * P。
+矩阵算法的算法表示，伪代码如下：
+for (i = 0; i &lt; M; ++i){
+	...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/realxie">来自：	<span class="blog_title"> realxie的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/liyuanbhu/article/details/49387483,BlogCommendHotData_16"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/liyuanbhu/article/details/49387483" target="_blank" title="灰度图像的自动阈值分割（Otsu 法）">
+				<h4 class="text-truncate oneline">
+						灰度图像的自动阈值分割（Otsu 法）				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">10-24</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							3万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/liyuanbhu/article/details/49387483" target="_blank" title="灰度图像的自动阈值分割（Otsu 法）">
+							<span class="desc oneline">灰度图像的自动阈值分割（Otsu 法）机器视觉领域许多算法都要求先对图像进行二值化。这种二值化操作阈值的选取非常重要。阈值选取的不合适，可能得到的结果就毫无用处。今天就来讲讲一种自动计算阈值的方法。这...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/liyuanbhu">来自：	<span class="blog_title"> Ivan 的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/maoyuanming0806/article/details/78067446,BlogCommendHotData_17"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/maoyuanming0806/article/details/78067446" target="_blank" title="搭建图片服务器《二》-linux安装nginx">
+				<h4 class="text-truncate oneline">
+						搭建图片服务器《二》-linux安装nginx				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">09-22</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							4万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/maoyuanming0806/article/details/78067446" target="_blank" title="搭建图片服务器《二》-linux安装nginx">
+							<span class="desc oneline">nginx是个好东西，Nginx (engine x) 是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/SMTP服务器。Nginx是由伊戈尔·赛索耶夫为俄罗斯访问量第二的Rambl...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/maoyuanming0806">来自：	<span class="blog_title"> maoyuanming0806的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/neonlight/article/details/5975764,BlogCommendHotData_18"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/neonlight/article/details/5975764" target="_blank" title="vsftpd匿名用户上传和下载的配置">
+				<h4 class="text-truncate oneline">
+						vsftpd匿名用户上传和下载的配置				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">10-30</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/neonlight/article/details/5975764" target="_blank" title="vsftpd匿名用户上传和下载的配置">
+							<span class="desc oneline">　　看到很多朋友配置vsftpd时不能使用匿名用户上传和下载（创建目录或删除、重命名文件夹），本文主要解决vsftpd的匿名用户权限配制问题。...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/neonlight">来自：	<span class="blog_title"> 九宫霓虹</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/fallinlovelj/article/details/54343520,BlogCommendHotData_19"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/fallinlovelj/article/details/54343520" target="_blank" title="python 给QQ好友发信息">
+				<h4 class="text-truncate oneline">
+						python 给QQ好友发信息				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">01-11</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/fallinlovelj/article/details/54343520" target="_blank" title="python 给QQ好友发信息">
+							<span class="desc oneline">python给QQ好友发信息</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/fallinlovelj">来自：	<span class="blog_title"> fallinlovelj的技术专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/J_Anson/article/details/51456298,BlogCommendHotData_20"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/J_Anson/article/details/51456298" target="_blank" title="SQL Server之查询检索操作">
+				<h4 class="text-truncate oneline">
+						SQL Server之查询检索操作				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">05-19</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1574</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/J_Anson/article/details/51456298" target="_blank" title="SQL Server之查询检索操作">
+							<span class="desc oneline">SQL Server查询和检索操作。
+
+
+一道例题学会查询和检索操作：
+
+
+
+1、在SQL SERVER 2008上附加teaching数据库,其中三张表的含义解释如下：
+学生表dbo...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/J_Anson">来自：	<span class="blog_title"> J.Anson的博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/qq574857122/article/details/16361033,BlogCommendHotData_21"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/qq574857122/article/details/16361033" target="_blank" title="强连通分量及缩点tarjan算法解析">
 				<h4 class="text-truncate oneline">
@@ -3079,7 +3011,7 @@ https://zhidao.bai...</span>
 						<span class="date hover-show">11-16</span>
 						<span class="read-num hover-hide">
               阅读数 
-							57万+</span>
+							59万+</span>
 						</p>
 					</div>
 				</a>
@@ -3104,7 +3036,217 @@ int Ti...</span>
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/wuchengzeng/article/details/50037611,BlogCommendHotData_25"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/wuchengzeng/article/details/50037611,BlogCommendHotData_25"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/u010402372/article/details/51585555,BlogCommendHotData_22"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/u010402372/article/details/51585555" target="_blank" title="连接Linux服务器：Win免费SSH客户端工具">
+				<h4 class="text-truncate oneline">
+						连接Linux服务器：Win免费SSH客户端工具				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">06-04</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							9164</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/u010402372/article/details/51585555" target="_blank" title="连接Linux服务器：Win免费SSH客户端工具">
+							<span class="desc oneline">1Win免费SSH客户端工具a
+
+
+　　作为一个Windows操作系统用户，如果想要连接Linux服务器来进行文件之间的传送，那么需要一个Secure Shell软件（简称SSH的）。实际上，S...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/u010402372">来自：	<span class="blog_title"> u010402372的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/yincheng01/article/details/3511525,BlogCommendHotData_23"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/yincheng01/article/details/3511525" target="_blank" title=" 微软语音技术   Windows 语音编程初步">
+				<h4 class="text-truncate oneline">
+						 微软语音技术   Windows 语音编程初步				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">12-13</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							1万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/yincheng01/article/details/3511525" target="_blank" title=" 微软语音技术   Windows 语音编程初步">
+							<span class="desc oneline"> 一、SAPI简介软件中的语音技术包括两方面的内容，一个是语音识别(speech recognition) 和语音合成(speech synthesis)。这两个技术都需要语音引擎的支持。微软推出的应...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/yincheng01">来自：	<span class="blog_title"> 尹成的技术博客</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/Luvinahlc/article/details/10442743,BlogCommendHotData_24"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/Luvinahlc/article/details/10442743" target="_blank" title="单元测试及框架简介 --junit、jmock、mockito、powermock的简单使用">
+				<h4 class="text-truncate oneline">
+						单元测试及框架简介 --junit、jmock、mockito、powermock的简单使用				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">08-28</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							7438</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/Luvinahlc/article/details/10442743" target="_blank" title="单元测试及框架简介 --junit、jmock、mockito、powermock的简单使用">
+							<span class="desc oneline">一、单元测试
+单元测试概念：
+所谓MT（MK23），又称为模块测试，是指对软件中的最小可测试单元进行检查和验证。对于面向对象编程，最小单元就是方法。单元测试的目标是隔离程序部件并证明这些单个部件是正确...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/Luvinahlc">来自：	<span class="blog_title"> Luvinahlc的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/updog/article/details/6625975,BlogCommendHotData_25"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/updog/article/details/6625975" target="_blank" title="实现header file (.h)相应的source file (.cc/.cpp)文件时的注意事项">
+				<h4 class="text-truncate oneline">
+						实现header file (.h)相应的source file (.cc/.cpp)文件时的注意事项				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">07-22</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							8638</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/updog/article/details/6625975" target="_blank" title="实现header file (.h)相应的source file (.cc/.cpp)文件时的注意事项">
+							<span class="desc oneline">本帖慢慢扩充……1. 假设是实现namespace Abc中的一个class，不要因为是在.cc中就肆无忌惮的在global scope或者namespace Abc{}中定义辅助变量和函数，或者ty...</span>
+						</a>
+						  <span class="blog_title_box oneline no-title">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/hubbybob1/article/details/54863662,BlogCommendHotData_26"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/hubbybob1/article/details/54863662" target="_blank" title="Libusb库在Android下的使用例程">
+				<h4 class="text-truncate oneline">
+						Libusb库在Android下的使用例程				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">02-06</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							8845</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/hubbybob1/article/details/54863662" target="_blank" title="Libusb库在Android下的使用例程">
+							<span class="desc oneline">转载请注明：http://blog.csdn.net/hubbybob1/article/details/54863662 
+阅读本文前清先了解相关基础内容，操作步骤请阅读博客：libusb1.0在a...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/hubbybob1">来自：	<span class="blog_title"> hubbybob1专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/supermapsupport/article/details/50353285,BlogCommendHotData_27"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/supermapsupport/article/details/50353285" target="_blank" title="SuperMap iObjects .NET 8C技术文档 ——三维管线">
+				<h4 class="text-truncate oneline">
+						SuperMap iObjects .NET 8C技术文档 ——三维管线				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">12-18</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							5633</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/supermapsupport/article/details/50353285" target="_blank" title="SuperMap iObjects .NET 8C技术文档 ——三维管线">
+							<span class="desc oneline">SuperMap iObjects .NET 8C技术文档 ——三维管线
+作者：博哥 
+  北京超图软件股份有限公司 
+  中国•北京 
+  
+目录
+1. 概述1.1   三维管线场景的组成2. 构建...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/supermapsupport">来自：	<span class="blog_title"> SuperMap技术控</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/gefangshuai/article/details/50328451,BlogCommendHotData_28"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/gefangshuai/article/details/50328451" target="_blank" title="关于SpringBoot bean无法注入的问题（与文件包位置有关）">
+				<h4 class="text-truncate oneline">
+						关于SpringBoot bean无法注入的问题（与文件包位置有关）				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">12-16</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							19万+</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/gefangshuai/article/details/50328451" target="_blank" title="关于SpringBoot bean无法注入的问题（与文件包位置有关）">
+							<span class="desc oneline">问题场景描述整个项目通过Maven构建，大致结构如下：
+核心Spring框架一个module spring-boot-base
+service和dao一个module server-core
+提供系统...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/gefangshuai">来自：	<span class="blog_title"> 开发随笔</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/wuchengzeng/article/details/50037611,BlogCommendHotData_29"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/wuchengzeng/article/details/50037611" target="_blank" title="jquery/js实现一个网页同时调用多个倒计时(最新的)">
 				<h4 class="text-truncate oneline">
@@ -3114,7 +3256,7 @@ int Ti...</span>
 						<span class="date hover-show">11-25</span>
 						<span class="read-num hover-hide">
               阅读数 
-							44万+</span>
+							46万+</span>
 						</p>
 					</div>
 				</a>
@@ -3139,14 +3281,71 @@ int Ti...</span>
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/pengjc2001/article/details/54924699,BlogCommendHotData_26"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/pengjc2001/article/details/54924699,BlogCommendHotData_26"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/lsy17096535/article/details/78644844,BlogCommendHotData_30"}'>
 			<div class="content">
-				<a href="https://blog.csdn.net/pengjc2001/article/details/54924699" target="_blank" title="三菱FX系列PLC与PC通讯的实现之专有协议（计算机联接）的程序设计之一">
+				<a href="https://blog.csdn.net/lsy17096535/article/details/78644844" target="_blank" title="Faceboxes 人脸检测及开源实现">
 				<h4 class="text-truncate oneline">
-						三菱FX系列PLC与PC通讯的实现之专有协议（计算机联接）的程序设计之一				</h4>
+						Faceboxes 人脸检测及开源实现				</h4>
 				<div class="info-box d-flex align-content-center">
 					<p class="date-and-readNum oneline">
-						<span class="date hover-show">02-11</span>
+						<span class="date hover-show">11-27</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							4225</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/lsy17096535/article/details/78644844" target="_blank" title="Faceboxes 人脸检测及开源实现">
+							<span class="desc oneline">一篇速度还可以的多尺度人脸检测文章。 方法和SSD大同小异。文章链接： 《FaceBoxes: A CPU Real-time Face Detector with High Accuracy》1. ...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/lsy17096535">来自：	<span class="blog_title"> HyperLPR中文车牌识别安装(Windows版)</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/zhang11wu4/article/details/8133969,BlogCommendHotData_31"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/zhang11wu4/article/details/8133969" target="_blank" title="视频监控与跟踪，部分测试视频或图像序列地址">
+				<h4 class="text-truncate oneline">
+						视频监控与跟踪，部分测试视频或图像序列地址				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">10-31</span>
+						<span class="read-num hover-hide">
+              阅读数 
+							7156</span>
+						</p>
+					</div>
+				</a>
+					<p class="content">
+						<a href="https://blog.csdn.net/zhang11wu4/article/details/8133969" target="_blank" title="视频监控与跟踪，部分测试视频或图像序列地址">
+							<span class="desc oneline">http://fw306.blog.163.com/blog/static/9053371720110169370483/
+http://research.microsoft.com/en-us/u...</span>
+						</a>
+						  <span class="blog_title_box oneline ">
+							                <span class="type-show type-show-blog type-show-after">博文</span>
+                                  <a target="_blank" href="https://blog.csdn.net/zhang11wu4">来自：	<span class="blog_title"> 飞龙马的专栏</span></a>
+                							              </span>
+					</p>
+			</div>
+					</div>
+	
+    
+    
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/zhhp1001/article/details/79004559,BlogCommendHotData_32"}'>
+			<div class="content">
+				<a href="https://blog.csdn.net/zhhp1001/article/details/79004559" target="_blank" title="VS2015+Qt5+OpenCV3开发环境配置">
+				<h4 class="text-truncate oneline">
+						VS2015+Qt5+OpenCV3开发环境配置				</h4>
+				<div class="info-box d-flex align-content-center">
+					<p class="date-and-readNum oneline">
+						<span class="date hover-show">01-08</span>
 						<span class="read-num hover-hide">
               阅读数 
 							1万+</span>
@@ -3154,16 +3353,14 @@ int Ti...</span>
 					</div>
 				</a>
 					<p class="content">
-						<a href="https://blog.csdn.net/pengjc2001/article/details/54924699" target="_blank" title="三菱FX系列PLC与PC通讯的实现之专有协议（计算机联接）的程序设计之一">
-							<span class="desc oneline">阅读内容为：FX系列微型可编程控制器用户手册（通讯篇）中计算机链接功能章节。
-采用本方法通信，pc端的实现，其实就是，把操作按照协议（2种）翻译成相应的字符串，通过串口发送给plc。
-
-
-编写一应用程...</span>
+						<a href="https://blog.csdn.net/zhhp1001/article/details/79004559" target="_blank" title="VS2015+Qt5+OpenCV3开发环境配置">
+							<span class="desc oneline">本文介绍如何使用VS2015作为编译开发环境，调用OpenCV3.31和Qt5.9.1写图像处理的GUI。
+1.目录结构
+假设我们要创建一个名为VideoZoom的工程，那么首先按下图构建目录结构...</span>
 						</a>
 						  <span class="blog_title_box oneline ">
 							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/pengjc2001">来自：	<span class="blog_title"> pengjc2001的博客</span></a>
+                                  <a target="_blank" href="https://blog.csdn.net/zhhp1001">来自：	<span class="blog_title"> zhhp1001的博客</span></a>
                 							              </span>
 					</p>
 			</div>
@@ -3171,30 +3368,28 @@ int Ti...</span>
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/gefangshuai/article/details/50328451,BlogCommendHotData_27"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/gefangshuai/article/details/50328451,BlogCommendHotData_27"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/xu__cg/article/details/52923835,BlogCommendHotData_33"}'>
 			<div class="content">
-				<a href="https://blog.csdn.net/gefangshuai/article/details/50328451" target="_blank" title="关于SpringBoot bean无法注入的问题（与文件包位置有关）">
+				<a href="https://blog.csdn.net/xu__cg/article/details/52923835" target="_blank" title="Java设计模式学习03——建造者模式">
 				<h4 class="text-truncate oneline">
-						关于SpringBoot bean无法注入的问题（与文件包位置有关）				</h4>
+						Java设计模式学习03——建造者模式				</h4>
 				<div class="info-box d-flex align-content-center">
 					<p class="date-and-readNum oneline">
-						<span class="date hover-show">12-16</span>
+						<span class="date hover-show">10-25</span>
 						<span class="read-num hover-hide">
               阅读数 
-							17万+</span>
+							7353</span>
 						</p>
 					</div>
 				</a>
 					<p class="content">
-						<a href="https://blog.csdn.net/gefangshuai/article/details/50328451" target="_blank" title="关于SpringBoot bean无法注入的问题（与文件包位置有关）">
-							<span class="desc oneline">问题场景描述整个项目通过Maven构建，大致结构如下：
-核心Spring框架一个module spring-boot-base
-service和dao一个module server-core
-提供系统...</span>
+						<a href="https://blog.csdn.net/xu__cg/article/details/52923835" target="_blank" title="Java设计模式学习03——建造者模式">
+							<span class="desc oneline">一、场景 
+        当需要生产一辆汽车时，我们需要为其装配发动机、轮胎、座椅等等部件，这个装配过程是比较复杂的而且也需要较高的组装技术。而建造者模式（Builder Pattern）就是为了将...</span>
 						</a>
 						  <span class="blog_title_box oneline ">
 							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/gefangshuai">来自：	<span class="blog_title"> 开发随笔</span></a>
+                                  <a target="_blank" href="https://blog.csdn.net/xu__cg">来自：	<span class="blog_title"> 小小本科生成长之路</span></a>
                 							              </span>
 					</p>
 			</div>
@@ -3202,29 +3397,27 @@ service和dao一个module server-core
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/naibozhuan3744/article/details/78807529,BlogCommendHotData_28"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/naibozhuan3744/article/details/78807529,BlogCommendHotData_28"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/lubiaopan/article/details/6233517,BlogCommendHotData_34"}'>
 			<div class="content">
-				<a href="https://blog.csdn.net/naibozhuan3744/article/details/78807529" target="_blank" title="Qt5.9编译MQTT错误解决办法">
+				<a href="https://blog.csdn.net/lubiaopan/article/details/6233517" target="_blank" title=".NET和java的RSA互通，仅此而已">
 				<h4 class="text-truncate oneline">
-						Qt5.9编译MQTT错误解决办法				</h4>
+						.NET和java的RSA互通，仅此而已				</h4>
 				<div class="info-box d-flex align-content-center">
 					<p class="date-and-readNum oneline">
-						<span class="date hover-show">12-14</span>
+						<span class="date hover-show">03-09</span>
 						<span class="read-num hover-hide">
               阅读数 
-							2710</span>
+							4万+</span>
 						</p>
 					</div>
 				</a>
 					<p class="content">
-						<a href="https://blog.csdn.net/naibozhuan3744/article/details/78807529" target="_blank" title="Qt5.9编译MQTT错误解决办法">
-							<span class="desc oneline">本文主要总结Qt5.9在编译MQTT3.1时，遇到的问题和对应的解决办法。
-一、我用上述的编译环境构建时，出现了如下错误：
-D:\1Project\Qt5project\qmqtt-master\sr...</span>
+						<a href="https://blog.csdn.net/lubiaopan/article/details/6233517" target="_blank" title=".NET和java的RSA互通，仅此而已">
+							<span class="desc oneline">RSA .net jva 互通 解决不能互通的问题</span>
 						</a>
 						  <span class="blog_title_box oneline ">
 							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/naibozhuan3744">来自：	<span class="blog_title"> 净无邪博客</span></a>
+                                  <a target="_blank" href="https://blog.csdn.net/lubiaopan">来自：	<span class="blog_title"> lubiaopan的专栏</span></a>
                 							              </span>
 					</p>
 			</div>
@@ -3232,32 +3425,27 @@ D:\1Project\Qt5project\qmqtt-master\sr...</span>
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/a359877454/article/details/52679041,BlogCommendHotData_29"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/a359877454/article/details/52679041,BlogCommendHotData_29"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/taomanman/article/details/46741957,BlogCommendHotData_35"}'>
 			<div class="content">
-				<a href="https://blog.csdn.net/a359877454/article/details/52679041" target="_blank" title="vs2015一键卸载所有组件工具，彻底卸载干净。">
+				<a href="https://blog.csdn.net/taomanman/article/details/46741957" target="_blank" title="asp.net中利用NPOI导出数据到excel中">
 				<h4 class="text-truncate oneline">
-						vs2015一键卸载所有组件工具，彻底卸载干净。				</h4>
+						asp.net中利用NPOI导出数据到excel中				</h4>
 				<div class="info-box d-flex align-content-center">
 					<p class="date-and-readNum oneline">
-						<span class="date hover-show">09-27</span>
+						<span class="date hover-show">07-03</span>
 						<span class="read-num hover-hide">
               阅读数 
-							12万+</span>
+							5723</span>
 						</p>
 					</div>
 				</a>
 					<p class="content">
-						<a href="https://blog.csdn.net/a359877454/article/details/52679041" target="_blank" title="vs2015一键卸载所有组件工具，彻底卸载干净。">
-							<span class="desc oneline">1.手动卸载VS主体
-
-
-2.下载工具并解压
-下载地址：https://pan.baidu.com/s/1eSHRYxW
-3.管理员运行，并输入Y（yes）,等待卸载完成。...</span>
+						<a href="https://blog.csdn.net/taomanman/article/details/46741957" target="_blank" title="asp.net中利用NPOI导出数据到excel中">
+							<span class="desc oneline">asp.net中利用NPOI实现导出DataSet到Excel中，首先下载对应的dll，下载地址：将其添加到项目引用中。下面给出一个方法NPOIHelper.cs，代码如下：using System;...</span>
 						</a>
 						  <span class="blog_title_box oneline ">
 							                <span class="type-show type-show-blog type-show-after">博文</span>
-                                  <a target="_blank" href="https://blog.csdn.net/a359877454">来自：	<span class="blog_title"> a359877454的博客</span></a>
+                                  <a target="_blank" href="https://blog.csdn.net/taomanman">来自：	<span class="blog_title"> 分享经验，共同进步.</span></a>
                 							              </span>
 					</p>
 			</div>
@@ -3265,7 +3453,7 @@ D:\1Project\Qt5project\qmqtt-master\sr...</span>
 	
     
     
-    		<div class="recommend-item-box recommend-box-ident type_blog clearfix" data-track-view='{"mod":"popu_614","con":",https://blog.csdn.net/yu_xiaofei/article/details/13287899,BlogCommendHotData_30"}' data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/yu_xiaofei/article/details/13287899,BlogCommendHotData_30"}'>
+    		<div class="recommend-item-box recommend-box-ident type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/yu_xiaofei/article/details/13287899,BlogCommendHotData_36"}'>
 			<div class="content">
 				<a href="https://blog.csdn.net/yu_xiaofei/article/details/13287899" target="_blank" title="SNMP协议详解&lt;二&gt;">
 				<h4 class="text-truncate oneline">
@@ -3275,7 +3463,7 @@ D:\1Project\Qt5project\qmqtt-master\sr...</span>
 						<span class="date hover-show">10-29</span>
 						<span class="read-num hover-hide">
               阅读数 
-							12万+</span>
+							13万+</span>
 						</p>
 					</div>
 				</a>
@@ -3320,28 +3508,24 @@ D:\1Project\Qt5project\qmqtt-master\sr...</span>
                   <div class="content clearfix">
         <div class="float-left">
                   <span>
-            <a href="https://www.csdn.net/gather_1a/MtjaEg4sMDU2My1kb3dubG9hZAO0O0OO0O0O.html" target="_blank">
-            ios获取idfa</a>
+            <a href="https://www.csdn.net/gather_24/MtTaEg3sMDM5MS1ibG9n.html" target="_blank">
+            mysql关联查询两次本表</a>
           </span>
                   <span>
-            <a href="https://www.csdn.net/gather_10/MtTaYgwsNzkyMS1kb3dubG9hZAO0O0OO0O0O.html" target="_blank">
-            server的安全控制模型是什么 sql</a>
+            <a href="https://www.csdn.net/gather_10/MtjaIg3sMTUzMy1kb3dubG9hZAO0O0OO0O0O.html" target="_blank">
+            native底部 react</a>
           </span>
                   <span>
-            <a href="https://www.csdn.net/gather_12/MtTakgxsODg1Ni1kb3dubG9hZAO0O0OO0O0O.html" target="_blank">
-            android title搜索</a>
+            <a href="https://www.csdn.net/gather_1b/Ntzagg1sOTU3LWRvd25sb2Fk.html" target="_blank">
+            extjs glyph 图标</a>
           </span>
                   <span>
-            <a href="https://www.csdn.net/gather_11/MtjaIgwsNzk3Ni1kb3dubG9hZAO0O0OO0O0O.html" target="_blank">
-            ios 动态修改约束</a>
+            <a href="https://www.csdn.net/gather_4a/NtzacgysMTQtZWR1.html" target="_blank">
+            csdn博客java学习</a>
           </span>
                   <span>
-            <a href="https://www.csdn.net/gather_4a/MtTaEg3sNy1lZHUO0O0O.html" target="_blank">
-            python爬虫教程csdn</a>
-          </span>
-                  <span>
-            <a href="https://www.csdn.net/gather_4a/NtDaIg0sNC1lZHUO0O0O.html" target="_blank">
-            python3爬虫教程csdn</a>
+            <a href="https://www.csdn.net/gather_4a/NtzaAgzsNzEtZWR1.html" target="_blank">
+            java学习csdn博客</a>
           </span>
                 </div>
       </div>
@@ -3379,17 +3563,17 @@ D:\1Project\Qt5project\qmqtt-master\sr...</span>
         </div>
             </div>
     <div class="data-info d-flex item-tiling">
-                <dl class="text-center" title="45">
+                <dl class="text-center" title="47">
                         <dt><a href="https://blog.csdn.net/qq_41782425?t=1">原创</a></dt>
-            <dd><a href="https://blog.csdn.net/qq_41782425?t=1"><span class="count">45</span></a></dd>
+            <dd><a href="https://blog.csdn.net/qq_41782425?t=1"><span class="count">47</span></a></dd>
                     </dl>
         <dl class="text-center" id="fanBox" title="34">
             <dt>粉丝</dt>
             <dd><span class="count" id="fan">34</span></dd>
         </dl>
-        <dl class="text-center" title="59">
+        <dl class="text-center" title="63">
             <dt>喜欢</dt>
-            <dd><span class="count">59</span></dd>
+            <dd><span class="count">63</span></dd>
         </dl>
         <dl class="text-center" title="18">
             <dt>评论</dt>
@@ -3409,22 +3593,43 @@ D:\1Project\Qt5project\qmqtt-master\sr...</span>
         </dl>
         <dl>
             <dt>访问：</dt>
-            <dd title="2169714">
-                216万+            </dd>
+            <dd title="2477417">
+                247万+            </dd>
         </dl>
         <dl>
             <dt>积分：</dt>
-            <dd title="4635">
-                4635            </dd>
+            <dd title="4937">
+                4937            </dd>
         </dl>
-        <dl title="10584">
+        <dl title="9701">
             <dt>排名：</dt>
-            <dd>1万+</dd>
+            <dd>9701</dd>
         </dl>
     </div>
         <div class="badge-box d-flex">
         <span>勋章：</span>
         <div class="badge d-flex">
+                    <div class="icon-badge" title="专栏达人">
+              <div class="mouse-box">
+                  <svg class="icon" aria-hidden="true">
+                      <use xlink:href="#csdnc-m-columns"></use>
+                  </svg>
+                  <div class="icon-arrow"></div>
+              </div>
+              <div class="grade-detail-box">
+                  <div class="pos-box">
+                      <div class="left-box d-flex justify-content-center align-items-center flex-column">
+                          <svg class="icon" aria-hidden="true">
+                              <use xlink:href="#csdnc-m-columns"></use>
+                          </svg>
+                          <p>专栏达人</p>
+                      </div>
+                      <div class="right-box d-flex justify-content-center align-items-center">
+                          授予成功创建个人博客专栏的用户。专栏中添加五篇以上博文即可点亮！撰写博客专栏浓缩技术精华，专栏达人就是你！
+                      </div>
+                  </div>
+              </div>
+          </div>
                               <div class="icon-badge" title="持之以恒">
               <div class="mouse-box">
                   <svg class="icon" aria-hidden="true">
@@ -3446,7 +3651,23 @@ D:\1Project\Qt5project\qmqtt-master\sr...</span>
                   </div>
               </div>
           </div>
-                                                                                          </div>
+                                                                                       <div class="icon-badge" title="勤写标兵Lv1">
+                   <div class="mouse-box">
+                      <img src="https://g.csdnimg.cn/static/user-medal/qinxiebiaobing_l1_t1.svg" alt="">
+                      <div class="icon-arrow"></div>
+                   </div>
+                   <div class="grade-detail-box">
+                       <div class="pos-box">
+                           <div class="left-box d-flex justify-content-center align-items-center flex-column">
+                                <img src="https://g.csdnimg.cn/static/user-medal/qinxiebiaobing_l1_t1.svg" alt="">
+                               <p>勤写标兵Lv1</p>
+                           </div>
+                           <div class="right-box">
+                               授予每个自然周发布1篇到3篇原创IT博文的用户。本勋章将于次周上午根据用户上周的博文发布情况由系统自动颁发。                           </div>
+                       </div>
+                   </div>
+               </div>
+                              </div>
         <script>
             (function ($) {
                 setTimeout(function(){
@@ -3478,19 +3699,19 @@ D:\1Project\Qt5project\qmqtt-master\sr...</span>
     <div class="aside-content">
         <ul class="inf_list clearfix csdn-tracking-statistics tracking-click" data-mod="popu_382">
                         <li class="clearfix">
+                <a href="https://blog.csdn.net/qq_41782425/article/details/89574562" target="_blank">Flask项目之前台结合后台管理的个性化微电影网站（四）</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/qq_41782425/article/details/89445426" target="_blank">Flask项目之前台结合后台管理的个性化微电影网站（三）</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/qq_41782425/article/details/89340922" target="_blank">Flask项目之前台结合后台管理的个性化微电影网站（二）</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/qq_41782425/article/details/89297099" target="_blank">Flask项目之前台结合后台管理的个性化微电影网站（一）</a>
+            </li>
+                        <li class="clearfix">
                 <a href="https://blog.csdn.net/qq_41782425/article/details/89289287" target="_blank">搭建Redis集群（详细图解）</a>
-            </li>
-                        <li class="clearfix">
-                <a href="https://blog.csdn.net/qq_41782425/article/details/89287723" target="_blank">Redis主从同步配置（详细图解）</a>
-            </li>
-                        <li class="clearfix">
-                <a href="https://blog.csdn.net/qq_41782425/article/details/89059800" target="_blank">Django项目之Web端电商网站的实战开发（完结）</a>
-            </li>
-                        <li class="clearfix">
-                <a href="https://blog.csdn.net/qq_41782425/article/details/89015816" target="_blank">Django项目之Web端电商网站的实战开发（五）</a>
-            </li>
-                        <li class="clearfix">
-                <a href="https://blog.csdn.net/qq_41782425/article/details/88921322" target="_blank">Django项目之Web端电商网站的实战开发（四）</a>
             </li>
                     </ul>
     </div>
@@ -3507,7 +3728,7 @@ D:\1Project\Qt5project\qmqtt-master\sr...</span>
                     </div>
                     <div class="info">
                         <p class="title"><a href="https://blog.csdn.net/qq_41782425/column/info/32082">Python从入门到实践</a></p>
-                        <div class="data">文章数：<span class="count">0 篇</span> 访问量：<span>16万+</span></div>
+                        <div class="data">文章数：<span class="count">6 篇</span> 访问量：<span>16万+</span></div>
                     </div>
                 </li>
                     </ul>
@@ -3550,7 +3771,7 @@ D:\1Project\Qt5project\qmqtt-master\sr...</span>
                         <li>
                 <a class="clearfix" href="https://blog.csdn.net/qq_41782425/article/category/8568965">
                     <span class="title oneline">Flask</span>
-                    <span class="count float-right">21篇</span>
+                    <span class="count float-right">23篇</span>
                 </a>
             </li>
                         <li>
@@ -3584,7 +3805,7 @@ D:\1Project\Qt5project\qmqtt-master\sr...</span>
                         <!--归档统计-->
             <li>
                 <a href="https://blog.csdn.net/qq_41782425/article/month/2019/04">
-                    2019年4月                    <span class="count float-right">7篇</span>
+                    2019年4月                    <span class="count float-right">9篇</span>
                 </a>
             </li>
                         <!--归档统计-->
@@ -3620,23 +3841,23 @@ D:\1Project\Qt5project\qmqtt-master\sr...</span>
 		<ul class="hotArticle-list csdn-tracking-statistics tracking-click" data-mod="popu_521">
 							<li>
 					<a href="https://blog.csdn.net/qq_41782425/article/details/84934224">第一个Python程序(全面)</a>
-					<p class="read">阅读数 <span>78508</span></p>
+					<p class="read">阅读数 <span>86547</span></p>
 				</li>
 							<li>
 					<a href="https://blog.csdn.net/qq_41782425/article/details/84993073">(最新)使用爬虫刷CSDN博客访问量——亲测有效</a>
-					<p class="read">阅读数 <span>77706</span></p>
+					<p class="read">阅读数 <span>85814</span></p>
 				</li>
 							<li>
 					<a href="https://blog.csdn.net/qq_41782425/article/details/85081107">PyCharm下载主题以及个性化设置(详细)</a>
-					<p class="read">阅读数 <span>74345</span></p>
+					<p class="read">阅读数 <span>82634</span></p>
 				</li>
 							<li>
 					<a href="https://blog.csdn.net/qq_41782425/article/details/85085937">VMware Windows安装详细过程(详细图解)</a>
-					<p class="read">阅读数 <span>71869</span></p>
+					<p class="read">阅读数 <span>79774</span></p>
 				</li>
 							<li>
 					<a href="https://blog.csdn.net/qq_41782425/article/details/85119258">VMware Ubuntu安装详细过程（详细图解）</a>
-					<p class="read">阅读数 <span>70642</span></p>
+					<p class="read">阅读数 <span>78562</span></p>
 				</li>
 					</ul>
 	</div>
@@ -3709,24 +3930,26 @@ print('万分感谢！')
 <div class="pulllog-box" style="display: block;">
 	<div class="pulllog clearfix">
 		<span class="text float-left">
-            <div id="dmp_ad_69"><div id="kp_box_69" data-pid="69" data-track-view='{"mod":"kp_popu_69-796","con":",,"}' data-track-click='{"mod":"kp_popu_69-796","con":",,"}'><div style="float:left;margin-right:5px;border:1px solid #f13d3d;padding:2px 5px 0px 5px;">
-<a href="https://edu.csdn.net/topic/python115?utm_source=ditong" target="_blank" style="color:#f13d3d;font-weight:bold;text-decoration:none;font-size:15px;">Python岗薪资对比</a>
+            <div id="dmp_ad_69"><div id="kp_box_69" data-pid="69" data-track-view='{"mod":"kp_popu_69-911","con":",,"}' data-track-click='{"mod":"kp_popu_69-911","con":",,"}'><div style="float:left;margin-right:5px;border:1px solid #f13d3d;padding:2px 5px 0px 5px;">
+<a href="https://edu.csdn.net/topic/python115?utm_source=ditong" target="_blank" style="color:#f13d3d;font-weight:bold;text-decoration:none;font-size:15px;">Python系统学习路线</a>
 </div>
 
 <div style="float:left;margin-right:5px;border:1px solid #00BFFF;padding:2px 5px 0px 5px;background:#FFF0F5;">
-<a href="https://edu.csdn.net/topic/ai30?utm_source=ditong" target="_blank" style="color:#00BFFF;font-weight:bold;text-decoration:none;font-size:15px;">BAT的AI岗能力测试</a>
+<a href="https://edu.csdn.net/topic/ai30?utm_source=ditong" target="_blank" style="color:#00BFFF;font-weight:bold;text-decoration:none;font-size:15px;">转型AI岗测试</a>
 </div>
 
 <div style="float:left;margin-right:5px;border:1px solid #f13d3d;padding:2px 5px 0px 5px;">
-<a href="https://edu.csdn.net/huiyiCourse/detail/985?utm_source=ditong" target="_blank" style="color:#f13d3d;font-weight:bold;text-decoration:none;font-size:15px;">Python21天通关学</a>
+<a href="https://click.hm.baidu.com/clk?f0c042dba56023c89b3a117e314e3ce2" target=" target="_blank" style="color:#f13d3d;font-weight:bold;text-decoration:none;font-size:15px;">无人机开发</a>
 </div>
 
 <div style="float:left;margin-right:5px;border:1px solid #00BFFF;padding:2px 5px 0px 5px;background:#FFF0F5;">
-<a href="https://gitbook.cn/gitchat/column/5cb417a3b6ca132f00f31eae?utm_source=wzl1904165" target="_blank" style="color:#00BFFF;font-weight:bold;text-decoration:none;font-size:15px;">15天共读深度学习</a>
+<a href="https://click.hm.baidu.com/clk?1753d1ddb6d32a6b2c742cf40ce98905" target="_blank" style="color:#00BFFF;font-weight:bold;text-decoration:none;font-size:15px;">电子设计赛</a>
 </div>
 
+
+
 <div style="float:left;margin-right:5px;border:1px solid #f13d3d;padding:2px 5px 0px 5px;">
-<a href="https://edu.csdn.net/topic/blockchain10?utm_source=ditong" target="_blank" style="color:#f13d3d;font-weight:bold;text-decoration:none;font-size:15px;">区块链新趋势解析</a>
+<a href="https://edu.csdn.net/topic/blockchain10?utm_source=ditong" target="_blank" style="color:#f13d3d;font-weight:bold;text-decoration:none;font-size:15px;">区块链还没凉？</a>
 </div>
 
 
@@ -3752,8 +3975,136 @@ print('万分感谢！')
 	</div>
 </div>
 <div id="loginWrap" style="display:none"></div>
+<div class="tool-box">
+	<ul class="meau-list">
+		<li class="btn-like-box long-width">
+			<button class=" long-height hover-box btn-like " title="点赞">
+				<svg class="icon active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup-ok"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup"></use>
+				</svg>
+				<span class="hover-show text-box text">
+					<span class="no-active">点赞</span>
+					<span class="active">取消点赞</span>
+				</span>
+				<p>3</p>
+			</button>
+		</li>
+		<li class="">
+						<a class="btn-comments long-height hover-box" title="写评论" href="#commentBox">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-comments"></use>
+				</svg>
+				<span class="hover-show text">评论</span>
+				<p class="">
+						4				</p>
+			</a>
+		</li>
+		<li class="toc-container-box" id="liTocBox">
+			<button class="btn-toc low-height hover-box" title="目录">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-contents"></use>
+				</svg>
+				<span class="hover-show text">目录</span>
+			</button>
+			<div class="toc-container">
+				<div class="pos-box">
+					<div class="icon-arrow"></div>
+					<div class="scroll-box">
+						<div class="toc-box"></div>
+					</div>
+				</div>
+				<div class="opt-box">
+					<button class="btn-opt prev nomore" title="向上">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevronup"></use>
+						</svg>
+					</button>
+					<button class="btn-opt next">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevrondown"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</li>
+		<li>
+			<button class="btn-bookmark low-height hover-box" title="收藏">
+				<svg class="icon active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark-ok"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark"></use>
+				</svg>
+					<span class="hover-show text">收藏</span>
+				<!-- <span class="hover-show text-box text">
+					<span class="no-active">收藏</span>
+					<span class="active">取消收藏</span>
+				</span> -->
+			</button>
+		</li>
+		<li class="bdsharebuttonbox">
+			<div class="weixin-qr btn-comments low-height hover-box" >
+        <a href="#" class="bds_weixin clear-share-style" data-cmd="weixin" title="手机看"></a>
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-usephone"></use>
+				</svg>
+				<span class="hover-show text text3">
+					手机看
+				</span>
+			</div>
+		</li>
+							<li class="widescreen-hide">
+				<a class="btn-comments low-height hover-box" href="https://blog.csdn.net/qq_41782425/article/details/84934224" title="第一个Python程序(全面)">
+					<svg class="icon hover-hide" aria-hidden="true">
+						<use xlink:href="#csdnc-chevronleft"></use>
+					</svg>
+					<span class="hover-show text text3">上一篇</span>
+				</a>
+			</li>
+								<li class="widescreen-hide">
+			<a class="btn-comments hover-box low-height" href="https://blog.csdn.net/qq_41782425/article/details/85081107" title="PyCharm下载主题以及个性化设置(详细)">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-chevronright"></use>
+				</svg>
+				<span class="hover-show text text3">下一篇</span>
+			</a>
+		</li>
+						<!-- 宽屏更多按钮 -->
+		<li class="widescreen-more">
+			<a class="btn-comments chat-ask-button low-height hover-box" title="快问" href="#chatqa">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-more"></use>
+				</svg>
+				<span class="hover-show text">更多</span>
+				
+			</a>
+			<ul class="widescreen-more-box">
+													<li class="widescreen-more">
+						<a class="btn-comments low-height hover-box" href="https://blog.csdn.net/qq_41782425/article/details/84934224" title="第一个Python程序(全面)">
+							<svg class="icon hover-hide" aria-hidden="true">
+								<use xlink:href="#csdnc-chevronleft"></use>
+							</svg>
+							<span class="hover-show text text3">上一篇</span>
+						</a>
+					</li>
+																<li class="widescreen-more">
+					<a class="btn-comments hover-box low-height" href="https://blog.csdn.net/qq_41782425/article/details/85081107" title="PyCharm下载主题以及个性化设置(详细)">
+						<svg class="icon hover-hide" aria-hidden="true">
+							<use xlink:href="#csdnc-chevronright"></use>
+						</svg>
+						<span class="hover-show text text3">下一篇</span>
+					</a>
+				</li>
+							</ul>
+		</li>
+	</ul>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'https://csdnimg.cn/static/api/js/share.js?v=89860594'];</script>
 <script>
-    var recommendCount = 81;
+    var recommendCount = 87;
     recommendCount = recommendCount > 1 ? (recommendCount + (recommendCount>6 ? 2 : 1)) : recommendCount;
     var articleTit = articleTitles;
     var ChannelId = 16;
@@ -3778,8 +4129,7 @@ print('万分感谢！')
 </script>
 <script src="https://csdnimg.cn/public/sandalstrap/1.4/js/sandalstrap.min.js"></script>
 <script src="https://csdnimg.cn/release/phoenix/vendor/pagination/paging.js"></script>
-<script src='https://csdnimg.cn/public/common/gotop/js/goTop-v1.0.min.js?v201811201455'></script>
-<script>
+<script src="https://csdnimg.cn/public/common/gotop/js/goTop-v1.0.min.js?v201904241615"></script><script>
     GoTop({
         right: 8,
         hasReport: true,
@@ -3791,10 +4141,10 @@ print('万分感谢！')
 </body>
 
 <!-- 高亮未与 markdown兼容  -->
-	<link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.3.8/ckeditor/plugins/chart/chart.css" />
-	<script type="text/javascript" src="https://csdnimg.cn/release/blog_editor_html/release1.3.8/ckeditor/plugins/chart/lib/chart.min.js"></script>
-	<script type="text/javascript" src="https://csdnimg.cn/release/blog_editor_html/release1.3.8/ckeditor/plugins/chart/widget2chart.js"></script>
-	<link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.3.8/ckeditor/plugins/codesnippet/lib/highlight/styles/atom-one-dark.css">
+	<link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.3.9/ckeditor/plugins/chart/chart.css" />
+	<script type="text/javascript" src="https://csdnimg.cn/release/blog_editor_html/release1.3.9/ckeditor/plugins/chart/lib/chart.min.js"></script>
+	<script type="text/javascript" src="https://csdnimg.cn/release/blog_editor_html/release1.3.9/ckeditor/plugins/chart/widget2chart.js"></script>
+	<link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.3.9/ckeditor/plugins/codesnippet/lib/highlight/styles/atom-one-dark.css">
 	<script type="text/javascript" src="https://csdnimg.cn/release/phoenix/production/pc_wap_common-3bc59f8f2b.js" /></script>
 
 	<script type="text/javascript">
@@ -3829,9 +4179,9 @@ print('万分感谢！')
 
 <script src="//g.csdnimg.cn/??login-box/1.0.5/login-box.js,login-box/1.0.5/login-auto.js?t=20190307095522"></script>
 <script src="https://csdnimg.cn/release/phoenix/template/js/common-e6b3fe420a.min.js"></script>
-<script src="https://csdnimg.cn/release/phoenix/template/js/detail-ebaf09dca8.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/detail-83ae771a76.min.js"></script>
 
-	<script src="https://csdnimg.cn/release/phoenix/themes/skin-yellow/skin-yellow-313260b123.min.js"></script>
+	<script src="https://csdnimg.cn/release/phoenix/themes/skin-yellow/skin-yellow-fc7383b956.min.js"></script>
 
 <script src="//g.csdnimg.cn/baidu-search/1.0.0/baidu-search.js"  type="text/javascript"></script>
 

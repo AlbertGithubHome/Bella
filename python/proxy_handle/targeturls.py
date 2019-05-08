@@ -10,7 +10,8 @@ __author__ = 'AlbertS'
 URLS = [
     #'https://www.baidu.com/',
     #'http://2019.ip138.com/ic.asp'
-    'https://blog.csdn.net/qq_41782425/article/details/84993073'
+    'https://blog.csdn.net/qq_41782425/article/details/84993073',
+    'https://blog.csdn.net/albertsh/article/details/52231311',
 ]
 
 def get_urls():
