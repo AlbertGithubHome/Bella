@@ -1,0 +1,1 @@
+g++ threadtest.cpp -O0 -pthread -o threadtest
