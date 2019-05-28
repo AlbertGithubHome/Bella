@@ -7,5 +7,15 @@
 __author__ = 'AlbertS'
 # @Subject  : draw a line use python lib
 
+import numpy as np
+import matplotlib.pyplot as plt
 
+x = np.arange(20)
+y = x * 2 + 3
 
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('line')
+
+plt.plot(x, y, ":g")
+plt.show()
