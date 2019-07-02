@@ -21,4 +21,14 @@
             { "key": "auto_complete_visible", "operator": "equal", "operand": false }
         ]
     },
+
+    {
+        "keys": ["ctrl+alt+o"],
+        "command": "open_dir",
+        "args":
+        {
+            "dir": "$file_path",
+            "file": "$file_name"
+        }
+     },
 ]
