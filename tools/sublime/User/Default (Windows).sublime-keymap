@@ -22,6 +22,7 @@
         ]
     },
 
+    // open this file in directory
     {
         "keys": ["ctrl+alt+o"],
         "command": "open_dir",
@@ -30,5 +31,10 @@
             "dir": "$file_path",
             "file": "$file_name"
         }
-     },
+    },
+
+    // svn opetator
+    { "keys": ["alt+l"], "command": "svn_log" },
+    { "keys": ["alt+d"], "command": "svn_diff" },
+    { "keys": ["alt+b"], "command": "svn_blame" },
 ]
