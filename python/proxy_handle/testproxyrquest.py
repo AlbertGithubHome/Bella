@@ -9,8 +9,11 @@ __author__ = 'AlbertS'
 
 import requests
 
-test_ip = '116.209.56.118'
-test_port = '9999'
+test_ip = '111.231.140.109'
+test_port = '8888'
+
+test_ip = '119.39.68.151'
+test_port = '808'
 
 def test_proxy_request(ip, port):
     # 代理IP地址
@@ -21,7 +24,8 @@ def test_proxy_request(ip, port):
 
     # 客户端说明
     head_data = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0',
+        #'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0',
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.221 Safari/537.36 SE 2.X MetaSr 1.0",
         'Connection': 'keep-alive'
     }
 
@@ -29,6 +33,7 @@ def test_proxy_request(ip, port):
         # 该返回当前的IP地址，http://icanhazip.com提供返回当前外网IP的服务
         response = requests.get('http://icanhazip.com', headers=head_data, proxies=proxy_data)
         outer_ip = response.text.strip().replace('\n', '')
+        print(outer_ip)
         return outer_ip == ip
     except:
         return False
