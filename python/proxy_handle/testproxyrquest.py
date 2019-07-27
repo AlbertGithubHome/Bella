@@ -12,7 +12,7 @@ import requests
 test_ip = '111.231.140.109'
 test_port = '8888'
 
-test_ip = '119.39.68.151'
+test_ip = '119.39.68.151' # https://www.xicidaili.com/
 test_port = '808'
 
 def test_proxy_request(ip, port):
