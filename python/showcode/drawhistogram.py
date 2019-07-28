@@ -21,10 +21,12 @@ score = np.array([87,72,63,56,73,55,54,79,31,27,96,11,90,51,75])
 # 分数段
 section = [0,20,40,60,80,100]
 
-# plt.hist(score, bins=section)#bins=[x for x in range(0, 100, 10)])
+#bins=[x for x in range(0, 100, 10)])
+
+# plt.hist(score, bins=section)
 # plt.show()
 
-plt.hist(score, bins=section, edgecolor='b')#bins=[x for x in range(0, 100, 10)])
+plt.hist(score, bins=section, edgecolor='b')
 
 hist, bins = np.histogram(score, bins=section)
 for a,b in zip(section, hist):
