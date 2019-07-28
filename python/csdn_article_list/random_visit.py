@@ -27,7 +27,24 @@ def random_visit(count, url_list):
         print("try error")
 
 
+def proxy_visit():
+    try:
+        visit_url = 'https://blog.csdn.net/albertsh/article/details/73512880'
+        head = {'User-Agent': toolbox.get_random_user_agent(), 'Connection': 'keep-alive'}
+        proxy_ip_port = toolbox.get_random_proxy()
+        proxy_data = {'http': proxy_ip_port, 'https': proxy_ip_port}
+
+        print("curtime = {0}, proxy= {1}, visit_url={2}".format(
+            datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'), proxy_ip_port, visit_url))
+        
+        requests.get(visit_url, headers=head, proxies=proxy_data)
+        print("visit success")
+    except:
+        print("try error")
+
+
 
 if __name__ == '__main__':
-    random_visit(10, collect_articlelist.get_aticle_list())
+    proxy_visit()
+    #random_visit(10, collect_articlelist.get_aticle_list())
     #print(collect_articlelist.get_aticle_list())

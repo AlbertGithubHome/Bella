@@ -15,11 +15,14 @@ test_port = '8888'
 test_ip = '119.39.68.151' # https://www.xicidaili.com/
 test_port = '808'
 
+test_ip = '120.83.100.118'
+test_port = '9999'
+
 def test_proxy_request(ip, port):
     # 代理IP地址
     proxy_data = {
-        'http': 'http://' + ip + ':' + port,
-        'https': 'http://' + ip + ':' + port,
+        'http': ip + ':' + port,
+        'https': ip + ':' + port,
     }
 
     # 客户端说明
