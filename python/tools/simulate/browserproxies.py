@@ -63,4 +63,5 @@ def get_proxies(refresh=False):
         data = file.read();
         return data.split("\n")
 
-#print(get_proxies())
+if __name__ == '__main__':
+    update_proxies()
