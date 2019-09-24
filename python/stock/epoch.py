@@ -8,8 +8,9 @@ __author__ = 'AlbertS'
 # @Subject  : draw a picture about stock
 
 from matplotlib import pyplot as plt
-import matplotlib.finance as mpf
 from matplotlib.pylab import date2num
+
+import mpl_finance as mpf
 import pandas as pd
 import datetime
 
