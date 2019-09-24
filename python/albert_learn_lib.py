@@ -426,3 +426,12 @@ import configparser
 # 用来读取配置文件，配置文件的格式跟windows下的ini配置文件相似，可以包含一个或多个节(section),
 # 每个节可以有多个参数（键=值），在看《自动化平台测试开发》一书时（2019-4-2 10:05:59）第一次发现
 # 当时只是看文档，还没来得及试一下
+
+import mpl_finance as mpf
+# 这个库原来的引用方法是import matplotlib.finance as mpf（python2.2），后来从 matplotlib 独立出来成为mpl_finance
+# 一般使用其中的candlestick_ochl和candlestick_ohlc函数来画股票的K线图，在研究画K线时（2019-9-24 20:27:01）第一次发现
+# 本来还打算使用matplotlib自己画呢，现在来看画K线很方便了
+
+import pandas as pd
+# 分析不识潘大师(PANDAS)，纵是老手也枉然——之前偶然间看到这句话，今天（2019-9-24 20:30:37）在画K线时了解一下
+# pandas是基于numpy的专业数据分析工具，可以灵活高效的处理各种数据集
