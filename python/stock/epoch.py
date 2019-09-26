@@ -26,16 +26,17 @@ columns = ['time','open','high','low','close'])
 # adjust time format
 dfcvs['time']= pd.to_datetime(dfcvs['time'], format="%Y/%m/%d-%H:%M")
 dfcvs['time']= dfcvs['time'].apply(lambda x:dates.date2num(x)*1440) #1440=24*60，转换成分钟整数
-#print(dfcvs)
+print(dfcvs)
+# dfcvs = dfcvs[['time','high','open','low','close']]
+# print(dfcvs)
 
 # FutureWarning: Method .as_matrix will be removed in a future version. Use .values instead.
 # data_matrix = dfcvs.as_matrix()
 # convert to matrix
 data_matrix = dfcvs.values
-print(data_matrix)
+#print(data_matrix)
 
 fig, ax = plt.subplots(figsize=(800/72, 600/72))
-
 fig.subplots_adjust(bottom=0.1)
 mpf.candlestick_ohlc(ax, data_matrix, colordown='#53c156', colorup='#ff1717', width=0.2, alpha=1)
 
@@ -59,7 +60,7 @@ for label in ax.get_xticklabels():
     label.set_rotation(45)
     label.set_horizontalalignment('right')
 
-plt.show()
+#plt.show()
 
 
 
