@@ -7,13 +7,16 @@
 __author__ = 'AlbertS'
 # @Subject  : draw a candle
 
+import datetime
 import numpy as np
 import pandas as pd
 import tushare as ts
 import mpl_finance as mpf
 import matplotlib.pyplot as plt
 import matplotlib.dates as dates
+import matplotlib.ticker as ticker
 from matplotlib.ticker import Formatter
+
 
 stock_code = '600588'
 
@@ -27,36 +30,36 @@ def draw_candle():
     dfcvs.sort_values(by='date', ascending=True, inplace=True)
 
     interval_quotes = [tuple([i]+list(quote[1:])) for i,quote in enumerate(dfcvs.values)]
+    date_quotes = dfcvs.date.values;
     #print(interval_quotes)
-    #print(dfcvs.date.values)
+    #print(date_quotes)
 
     fig, ax = plt.subplots(figsize=(800/72, 450/72))
     fig.subplots_adjust(bottom=0.1)
     mpf.candlestick_ohlc(ax, interval_quotes, colordown='#53c156', colorup='#ff1717', width=0.2, alpha=1)
 
     # #https://matplotlib.org/examples/pylab_examples/date_index_formatter.html
-    # class MyFormatter(Formatter):
-    #     def __init__(self, dates, fmt='%Y-%m-%d %H:%M'):
-    #         self.dates = dates
-    #         self.fmt = fmt
+    class MyFormatter(Formatter):
+        def __init__(self, fmt='%Y-%m-%d %H:%M'):
+            self.fmt = fmt
 
-    #     def __call__(self, x, pos=0):
-    #         'Return the label for time x at position pos'
-    #         ind = int(np.round(x))
-    #         #ind就是x轴的刻度数值，不是日期的下标
-    #         return dates.num2date(ind/1440).strftime(self.fmt)
+        def __call__(self, x, pos=0): #x就是x轴的刻度数值，但是是浮点数
+            if x<0 or x>=len(date_quotes):
+                return ''
+            return date_quotes[int(x)][:-3] # slice seconds
 
-    # # set xaxix format
-    # formatter = MyFormatter(data_matrix[:,0])
-    # ax.xaxis.set_major_formatter(formatter)
+    # set xaxix format
+    formatter = MyFormatter(date_quotes)
+    ax.xaxis.set_major_formatter(formatter)
+    ax.xaxis.set_major_locator(ticker.MultipleLocator(len(date_quotes)//4)) # 根据数据量控制间隔
 
-    # for label in ax.get_xticklabels():
-    #     label.set_rotation(45)
-    #     label.set_horizontalalignment('right')
+    for label in ax.get_xticklabels():
+        #label.set_rotation(45)
+        label.set_horizontalalignment('center')
 
     plt.show()
 
 
 if __name__ == '__main__':
-    #update_stock_data()
+    update_stock_data()
     draw_candle()
