@@ -435,3 +435,11 @@ import mpl_finance as mpf
 import pandas as pd
 # 分析不识潘大师(PANDAS)，纵是老手也枉然——之前偶然间看到这句话，今天（2019-9-24 20:30:37）在画K线时了解一下
 # pandas是基于numpy的专业数据分析工具，可以灵活高效的处理各种数据集
+
+import tushare as ts
+# Tushare是一个免费、开源的python财经数据接口包。
+# 主要实现对股票等金融数据从数据采集、清洗加工 到 数据存储的过程，
+# 能够为金融分析人员提供快速、整洁、和多样的便于分析的数据，为他们在数据获取方面极大地减轻工作量，
+# 使他们更加专注于策略和模型的研究与实现上，今天（2019-9-26 19:49:00）在查询股票数据时开始接触,
+# 依赖pandas和lxml两个库，安装方法pip insall tushare(pip install pandas, pip install lxml)
+# 后来安装时发现还需要bs4
