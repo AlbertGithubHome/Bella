@@ -57,9 +57,9 @@ def draw_candle():
         #label.set_rotation(45)
         label.set_horizontalalignment('center')
 
-    plt.show()
+    #plt.show()
 
 
 if __name__ == '__main__':
-    update_stock_data()
+    #update_stock_data()
     draw_candle()

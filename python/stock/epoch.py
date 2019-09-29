@@ -49,6 +49,7 @@ class MyFormatter(Formatter):
     def __call__(self, x, pos=0):
         'Return the label for time x at position pos'
         ind = int(np.round(x))
+        print(ind)
         #ind就是x轴的刻度数值，不是日期的下标
         return dates.num2date(ind/1440).strftime(self.fmt)
 
