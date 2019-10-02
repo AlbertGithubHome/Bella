@@ -193,6 +193,16 @@ def draw_candle():
     print(ylist)
 
     plt.plot(xlist, ylist, color='y')
+    
+    listlen = len(xlist)
+    for n in range(listlen):
+        plt.annotate(r'({0}, {1})'.format(xlist[n], ylist[n]),
+             xy=(xlist[n], ylist[n]),  xycoords='data',
+             xytext=(-21, +0), textcoords='offset points', fontsize=10)
+
+    plt.title("600588")
+    plt.xlabel("date")
+    plt.ylabel("price")
     plt.show()
 
 
