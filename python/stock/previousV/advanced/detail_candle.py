@@ -7,6 +7,7 @@
 __author__ = 'AlbertS'
 # @Subject  : draw extra line on a candle
 
+import math
 import datetime
 import numpy as np
 import pandas as pd
@@ -27,9 +28,6 @@ class relation_type(Enum):
     CLOSE = 5
 
 # print(relation_type.OPEN)
-
-
-stock_code = '600588'
 
 def get_relation(pre_data, cur_data):
     if pre_data == None or cur_data == None:
@@ -110,10 +108,6 @@ def analyze_tendency(low_list, high_list, xlist, ylist):
     print(ylist)
     print(item_count)
 
-def update_stock_data():
-    df = ts.get_hist_data(stock_code, ktype='30')
-    df.to_csv(stock_code+'.csv', columns=['open','high','low','close'])
-
 def smooth_guides(xlist, ylist):
     listlen = len(xlist)
     retlistx = []
@@ -134,10 +128,14 @@ def smooth_guides(xlist, ylist):
         #     retlistx.append(xlist[n])
         #     retlisty.append(ylist[n])
         #     prex = xlist[n]
+        elif xlist[n] - prex >= 8:
+            retlistx.append(xlist[n])
+            retlisty.append(ylist[n])
+            prex = xlist[n]
         elif xlist[n+1] - xlist[n] < 3:
             n += 1
-        # elif xlist[n] - prex <= 2:
-        #     n += 1
+        elif xlist[n] - prex <= 2:
+            n += 1
         else:
             retlistx.append(xlist[n])
             retlisty.append(ylist[n])
@@ -145,10 +143,12 @@ def smooth_guides(xlist, ylist):
         n += 1
     return retlistx, retlisty
 
-def draw_candle():
+def draw_candle(stock_code):
     csv_data = pd.read_csv(stock_code+'.csv', low_memory = False) #防止弹出警告
     dfcvs = pd.DataFrame(csv_data)
+    dfcvs = dfcvs[:73]
     dfcvs.sort_values(by='date', ascending=True, inplace=True)
+    
 
     interval_quotes = [tuple([i]+list(quote[1:])) for i,quote in enumerate(dfcvs.values)]
     date_quotes = dfcvs.date.values;
@@ -188,6 +188,7 @@ def draw_candle():
     ylist = []
     analyze_tendency(low_quotes, high_quotes, xlist, ylist);
 
+    plt.plot(xlist, ylist, color='b', linewidth=0.6, linestyle="--")
     xlist, ylist = smooth_guides(xlist, ylist);
     print(xlist)
     print(ylist)
@@ -196,16 +197,20 @@ def draw_candle():
     
     listlen = len(xlist)
     for n in range(listlen):
-        plt.annotate(r'({0}, {1})'.format(xlist[n], ylist[n]),
+        plt.annotate(r'({0}, {1})'.format(xlist[n], round(ylist[n],2)),
              xy=(xlist[n], ylist[n]),  xycoords='data',
              xytext=(-21, +0), textcoords='offset points', fontsize=10)
 
-    plt.title("600588")
+    plt.title(stock_code)
     plt.xlabel("date")
     plt.ylabel("price")
     plt.show()
 
+def update_stock_data(stock_code):
+    df = ts.get_hist_data(stock_code, ktype='5')
+    df.to_csv(stock_code+'.csv', columns=['open','high','low','close'])
 
 if __name__ == '__main__':
-    #update_stock_data()
-    draw_candle()
+    stock_code = '600588'
+    update_stock_data(stock_code)
+    draw_candle(stock_code)
