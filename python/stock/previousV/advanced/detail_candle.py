@@ -104,9 +104,9 @@ def analyze_tendency(low_list, high_list, xlist, ylist):
     ylist.append(high_list[item_count - 1] if pre_relation == relation_type.UP else low_list[item_count - 1])
 
     # plt.plot(xlist, ylist, color='y')
-    print(xlist)
-    print(ylist)
-    print(item_count)
+    # print(xlist)
+    # print(ylist)
+    # print(item_count)
 
 def smooth_guides(xlist, ylist):
     listlen = len(xlist)
@@ -143,7 +143,7 @@ def smooth_guides(xlist, ylist):
         n += 1
     return retlistx, retlisty
 
-def draw_candle(stock_code):
+def draw_candle(stock_code, key_type):
     csv_data = pd.read_csv(stock_code+'.csv', low_memory = False) #防止弹出警告
     dfcvs = pd.DataFrame(csv_data)
     dfcvs = dfcvs[:73]
@@ -172,7 +172,10 @@ def draw_candle(stock_code):
         def __call__(self, x, pos=0): #x就是x轴的刻度数值，但是是浮点数
             if x<0 or x>=len(date_quotes):
                 return ''
-            return date_quotes[int(x)][:-3] # slice seconds
+
+            # slice seconds
+            # print(date_quotes[int(x)][-3:-2])
+            return date_quotes[int(x)][:-3] if date_quotes[int(x)][-3:-2] == ':' else date_quotes[int(x)]
 
     # set xaxix format
     formatter = MyFormatter(date_quotes)
@@ -199,18 +202,19 @@ def draw_candle(stock_code):
     for n in range(listlen):
         plt.annotate(r'({0}, {1})'.format(xlist[n], round(ylist[n],2)),
              xy=(xlist[n], ylist[n]),  xycoords='data',
-             xytext=(-21, +0), textcoords='offset points', fontsize=10)
+             xytext=(-21, +0), textcoords='offset points', fontsize=7)
 
-    plt.title(stock_code)
+    plt.title(stock_code + ' ' + key_type + '-line')
     plt.xlabel("date")
     plt.ylabel("price")
     plt.show()
 
-def update_stock_data(stock_code):
-    df = ts.get_hist_data(stock_code, ktype='5')
+def update_stock_data(stock_code, key_type):
+    df = ts.get_hist_data(stock_code, ktype=key_type)
     df.to_csv(stock_code+'.csv', columns=['open','high','low','close'])
 
 if __name__ == '__main__':
     stock_code = '600588'
-    update_stock_data(stock_code)
-    draw_candle(stock_code)
+    key_type = 'D'
+    update_stock_data(stock_code, key_type)
+    draw_candle(stock_code, key_type)
