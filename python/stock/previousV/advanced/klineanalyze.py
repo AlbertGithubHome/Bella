@@ -72,54 +72,39 @@ def tendency(low_list, high_list):
 
     return xlist, ylist
 
+def add2smoothpath(retlistx, retlisty, x, y):
+    retlistx.append(x)
+    retlisty.append(y)
+    return x, y
+
 def smooth(xlist, ylist):
     listlen = len(xlist)
     retlistx = []
     retlisty = []
 
     if listlen > 0:
-        retlistx.append(xlist[0])
-        retlisty.append(ylist[0])
-        prex = xlist[0]
-        prey = ylist[0]
+        prex, prey = add2smoothpath(retlistx, retlisty, xlist[0], ylist[0])
 
     n = 1
     while n < listlen:
         if n == listlen - 1:
-            retlistx.append(xlist[n])
-            retlisty.append(ylist[n])
-            prex = xlist[n]
-            prey = ylist[n]
-        # elif xlist[n] - xlist[n - 1] >= 6:
-        #     retlistx.append(xlist[n])
-        #     retlisty.append(ylist[n])
-        #     prex = xlist[n]
-        #     prey = ylist[n]
+            prex, prey = add2smoothpath(retlistx, retlisty, xlist[n], ylist[n])
         elif xlist[n] - prex >= 7:
             if n+2 < listlen:
                 if (ylist[n] - prey)*(ylist[n+2] - ylist[n]) > 0: # tendency continue
                     n += 1
-                # elif n+4 < listlen and (ylist[n] - prey)*(ylist[n+4] - ylist[n]) > 0: # tendency continue
+                # elif n+4 < listlen and (ylist[n] - prey)*(ylist[n+4] - ylist[n]) > 0 : # tendency continue
                 #     n += 1
                 else:
-                    retlistx.append(xlist[n])
-                    retlisty.append(ylist[n])
-                    prex = xlist[n]
-                    prey = ylist[n]
+                    prex, prey = add2smoothpath(retlistx, retlisty, xlist[n], ylist[n])
             else: 
-                retlistx.append(xlist[n])
-                retlisty.append(ylist[n])
-                prex = xlist[n]
-                prey = ylist[n]
+                prex, prey = add2smoothpath(retlistx, retlisty, xlist[n], ylist[n])
         elif xlist[n+1] - xlist[n] < 3:
             n += 1
         elif xlist[n] - prex <= 2 and prex != xlist[0]: # ingore start point
             n += 1
         else:
-            retlistx.append(xlist[n])
-            retlisty.append(ylist[n])
-            prex = xlist[n]
-            prey = ylist[n]
+            prex, prey = add2smoothpath(retlistx, retlisty, xlist[n], ylist[n])
         n += 1
     return retlistx, retlisty
 

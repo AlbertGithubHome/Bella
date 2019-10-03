@@ -28,7 +28,7 @@ def add_annotate(stock_code, key_type, xlist, ylist):
 def add_guides(stock_code, key_type, low_quotes, high_quotes):
     # get point data
     xlist, ylist = klineanalyze.tendency(low_quotes, high_quotes);
-    plt.plot(xlist, ylist, color='b', linewidth=0.6, linestyle="--")
+    plt.plot(xlist, ylist, color='b', linewidth=0.5, linestyle="--")
     # print(xlist)
     # print(ylist)
 
@@ -89,7 +89,7 @@ def draw_multiple_candlestick(stock_code, key_type_list, need_update, key_count=
 
 if __name__ == '__main__':
     stock_code = '600588'
-    stock_code = '002108'
+    #stock_code = '002108'
     stock_code = '601611'
     key_type = 'D'
     key_type_list = ['5', '30', 'D', 'W']
