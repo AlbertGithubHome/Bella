@@ -77,7 +77,7 @@ def draw_single_candlestick(stock_code, key_type, need_update, key_count=73):
 
 def draw_multiple_candlestick(stock_code, key_type_list, need_update, key_count=73):
     type_len = len(key_type_list)
-    plt.figure(num='K line analyze', figsize=(18, 9))
+    plt.figure(num='K analyze', figsize=(18, 9))
     #fig, ax_array = plt.subplots(2, 2, figsize=(16, 9))
     #fig.subplots_adjust(bottom=0.1)
 
