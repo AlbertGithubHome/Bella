@@ -70,7 +70,7 @@ def draw_candlestick_on_ax(ax, stock_code, key_type, need_update, key_count=73):
 
 
 def draw_single_candlestick(stock_code, key_type, need_update, key_count=73):
-    fig, ax = plt.subplots(figsize=(800/72, 900/72))
+    fig, ax = plt.subplots(figsize=(800/72, 450/72))
     fig.subplots_adjust(bottom=0.1)
     draw_candlestick_on_ax(ax, stock_code, key_type, need_update, key_count);
     plt.show()
@@ -89,7 +89,7 @@ def draw_multiple_candlestick(stock_code, key_type_list, need_update, key_count=
 
 if __name__ == '__main__':
     stock_code = '600588'
-    key_type = '30'
+    key_type = 'W'
     key_type_list = ['5', '30', 'D', 'W']
     if False:
         draw_single_candlestick(stock_code, key_type, False)

@@ -99,7 +99,7 @@ def smooth(xlist, ylist):
             prex = xlist[n]
         elif xlist[n+1] - xlist[n] < 3:
             n += 1
-        elif xlist[n] - prex <= 2:
+        elif xlist[n] - prex <= 2 and prex != xlist[0]: # ingore start point
             n += 1
         else:
             retlistx.append(xlist[n])
