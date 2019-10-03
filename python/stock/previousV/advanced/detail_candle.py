@@ -89,8 +89,9 @@ def draw_multiple_candlestick(stock_code, key_type_list, need_update, key_count=
 
 if __name__ == '__main__':
     stock_code = '600588'
-    #stock_code = '002108'
-    key_type = 'W'
+    stock_code = '002108'
+    stock_code = '601611'
+    key_type = 'D'
     key_type_list = ['5', '30', 'D', 'W']
     if False:
         draw_single_candlestick(stock_code, key_type, False)

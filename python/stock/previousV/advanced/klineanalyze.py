@@ -16,7 +16,6 @@ def tendency(low_list, high_list):
     pre_relation = relation_type.UP
     pre_data = (low_list[0], high_list[0])
     next_data = (0, 0)
-    start_pos = (low_list[0] / 2 + high_list[0] / 2)
     pre_n = 0
     next_n = 0
 
@@ -55,13 +54,13 @@ def tendency(low_list, high_list):
         if ret_relation != pre_relation:
             if n == 0:
                 xlist.append(n)
-                ylist.append(start_pos)
+                ylist.append(high_list[0])
             else:
                 xlist.append(pre_n)
                 ylist.append(pre_data[1] if pre_relation == relation_type.UP else pre_data[0])
         elif n == 0:
             xlist.append(n)
-            ylist.append(start_pos)
+            ylist.append(low_list[0])
 
         pre_data = next_data
         pre_relation = ret_relation
@@ -82,6 +81,7 @@ def smooth(xlist, ylist):
         retlistx.append(xlist[0])
         retlisty.append(ylist[0])
         prex = xlist[0]
+        prey = ylist[0]
 
     n = 1
     while n < listlen:
@@ -89,14 +89,28 @@ def smooth(xlist, ylist):
             retlistx.append(xlist[n])
             retlisty.append(ylist[n])
             prex = xlist[n]
+            prey = ylist[n]
         # elif xlist[n] - xlist[n - 1] >= 6:
         #     retlistx.append(xlist[n])
         #     retlisty.append(ylist[n])
         #     prex = xlist[n]
-        elif xlist[n] - prex >= 8:
-            retlistx.append(xlist[n])
-            retlisty.append(ylist[n])
-            prex = xlist[n]
+        #     prey = ylist[n]
+        elif xlist[n] - prex >= 7:
+            if n+2 < listlen:
+                if (ylist[n] - prey)*(ylist[n+2] - ylist[n]) > 0: # tendency continue
+                    n += 1
+                # elif n+4 < listlen and (ylist[n] - prey)*(ylist[n+4] - ylist[n]) > 0: # tendency continue
+                #     n += 1
+                else:
+                    retlistx.append(xlist[n])
+                    retlisty.append(ylist[n])
+                    prex = xlist[n]
+                    prey = ylist[n]
+            else: 
+                retlistx.append(xlist[n])
+                retlisty.append(ylist[n])
+                prex = xlist[n]
+                prey = ylist[n]
         elif xlist[n+1] - xlist[n] < 3:
             n += 1
         elif xlist[n] - prex <= 2 and prex != xlist[0]: # ingore start point
@@ -105,6 +119,7 @@ def smooth(xlist, ylist):
             retlistx.append(xlist[n])
             retlisty.append(ylist[n])
             prex = xlist[n]
+            prey = ylist[n]
         n += 1
     return retlistx, retlisty
 
