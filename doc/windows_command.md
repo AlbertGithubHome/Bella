@@ -309,3 +309,15 @@ C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin>dumpbin /all  G:\test
 ```
 
 参考查看dll信息就可以，但是使用`-exports`选项不行，需要`/all`选项
+
+# 图形操作界面
+
+这些图形界面一般直接使用快捷键Win+R，然后敲击命令回车后即可打开对应操作界面，简单方便。
+
+1. 打开系统信息
+
+- **msinfo32**
+
+2. 打开控制面板
+
+- **control**
