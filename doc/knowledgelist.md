@@ -181,3 +181,35 @@ return ：子程序返回语句（可以带参数，也看不带参数）
 (3)typedef：用以给数据类型取别名（当然还有其他作用）
 
 (4)volatile：说明变量在程序执行中可被隐含地改变
+
+
+# 职位
+
+SEO是由英文Search Engine Optimization缩写而来，中文意译为“搜索引擎优化”。SEO是指通过站内优化比如网站结构调整、网站内容建设、网站代码优化等以及站外优化，比如网站站外推广、网站品牌建设等，使网站满足搜索引擎收录排名需求，在搜索引擎中提高关键词排名，从而吸引精准用户进入网站，获得免费流量，产生直接销售或品牌推广。
+
+HRBP又称为人力资源业务合作伙伴。HRBP(HR BUSINESS PARTNER)实际上就是企业派驻到各个业务或事业部的人力资源管理者，主要协助各业务单元高层及经理在员工发展、人才发掘、能力培养等方面的工作。
+
+# Windows和Linux
+
+- windows文件名不区分大小写，linux文件名区分大小写，这常常是导致问题的根源，比如数据库表的名字。
+- 路径分隔符不同，windows上是\，在字符串中会转义，所以常常写成\\，而在linux系统上是/。
+
+
+.bat批处理（八）：各种形式的变量%0、%i、%%i、var、%var%、!var!的含义和区别
+
+for之后的形式变量i必须使用单百分号引用
+
+在cmd窗口中使用格式：
+
+for %variable in (set) do command [command-parameters]
+
+在批处理脚本中使用格式：
+
+for %%variable in (set) do command [command-parameters]
+
+　　1. 在cmd窗口中使用，变量名必须用单%引用（即：%variable）；在批处理脚本中使用，变量名必须用双%引用（即：%%variable）。
+
+　　2. for、in和do是for命令的三个关键字，缺一不可。
+
+　　3. 关键字in之后，do之前的括号不能省略。
+setlocal EnableDelayedExpansion
