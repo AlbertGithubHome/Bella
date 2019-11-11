@@ -321,3 +321,7 @@ C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin>dumpbin /all  G:\test
 2. 打开控制面板
 
 - **control**
+
+3. 查询Windows激活信息
+
+-- **slmgr.vbs -dlv**

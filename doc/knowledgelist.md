@@ -213,3 +213,5 @@ for %%variable in (set) do command [command-parameters]
 
 　　3. 关键字in之后，do之前的括号不能省略。
 setlocal EnableDelayedExpansion
+
+.bat批处理（八）：各种形式的变量%0、%i、%%i、var、%var%的含义和区别
