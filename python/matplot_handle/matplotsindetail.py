@@ -71,7 +71,7 @@ def test2():
     # cosine 标注
     t = 2*np.pi/3
     plt.plot([t,t],[0,np.cos(t)], color ='blue',  linewidth=1.5, linestyle="--")
-    plt.scatter([t,],[np.cos(t),], 50, color ='blue')
+    plt.scatter([t,],[np.cos(t),], 50, color ='blue', alpha=0.8)
     plt.annotate(r'$\cos(\frac{2\pi}{3})=-\frac{1}{2}$',
                  xy=(t, np.cos(t)),  xycoords='data',
                  xytext=(-90, -50), textcoords='offset points', fontsize=16,
