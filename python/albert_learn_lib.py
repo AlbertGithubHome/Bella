@@ -443,3 +443,9 @@ import tushare as ts
 # 使他们更加专注于策略和模型的研究与实现上，今天（2019-9-26 19:49:00）在查询股票数据时开始接触,
 # 依赖pandas和lxml两个库，安装方法pip insall tushare(pip install pandas, pip install lxml)
 # 后来安装时发现还需要bs4
+
+from selenium import webdriver
+# 模拟网页点击的一个库，可以先下载对应浏览器的驱动，然后就可以使用python代码通过驱动程序控制浏览器行为了
+# 今天（2019-11-21 10:56:09）第一次使用，之前再看自动化测试的时候接触过，不过没有具体的使用过,
+# 比如火狐浏览器的驱动名字是geckodriver.exe，下载地址：https://github.com/mozilla/geckodriver/releases
+# 被代码操控火狐浏览器的地址栏会有一个小机器人，看起来比较有意思
