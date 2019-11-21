@@ -189,29 +189,33 @@ SEO是由英文Search Engine Optimization缩写而来，中文意译为“搜索
 
 HRBP又称为人力资源业务合作伙伴。HRBP(HR BUSINESS PARTNER)实际上就是企业派驻到各个业务或事业部的人力资源管理者，主要协助各业务单元高层及经理在员工发展、人才发掘、能力培养等方面的工作。
 
+
 # Windows和Linux
 
 - windows文件名不区分大小写，linux文件名区分大小写，这常常是导致问题的根源，比如数据库表的名字。
 - 路径分隔符不同，windows上是\，在字符串中会转义，所以常常写成\\，而在linux系统上是/。
 
 
-.bat批处理（八）：各种形式的变量%0、%i、%%i、var、%var%、!var!的含义和区别
+# Windows的注册表
 
-for之后的形式变量i必须使用单百分号引用
+注册表的根键共六个，以 `HKEY_` 为前缀，均为大写字母表示，可以通过命令regedit打开后注册表编辑器进行查看和编辑，实际存储在Windows目录下的system.dat和user.dat两个文件中，虽然看起来六个根键处于一种并列的地位，但事实并非如此，更多的数据属于包含关系。
 
-在cmd窗口中使用格式：
+- HKEY_CLASSES_ROOT
+ 实际上HKEY_CLASSES_ROOT就是HKEY_LOCAL_MACHINE\SOFTWARE\Classes，为了便于用户查看和编辑，系统专门把它作为一个根键，把应用程序与文件扩展名联系起来，由于众多文件类型的存在，导致这个建成为了一个庞大的子键。
 
-for %variable in (set) do command [command-parameters]
+- HKEY_CURRENT_USER
+ 该根键包含本地工作站中存放的当前登录的用户信息，包括用户登录用户名和暂存的密码(此密码在输入时是隐藏的)，用户登录Windows时，其信息从HKEY_USERS中相应的项拷贝到HKEY_CURRENT_USER中。
 
-在批处理脚本中使用格式：
+- HKEY_LOCAL_MACHINE
+ 该根键存放本地计算机硬件数据，此根键下的子关键字包括在system.dat中，用来提供HKEY_LOCAL_MACHINE所需的信息，或者在远程计算机中可访问的一组键中。
 
-for %%variable in (set) do command [command-parameters]
+- HKEY_USERS
+ 该根键保存了存放在本地计算机口令列表中的用户标识和密码列表。每个用户的预配置信息都存储在HKEY_USERS根键中，是远程计算机中访问的根键之一，数据保存在user.dat中
 
-　　1. 在cmd窗口中使用，变量名必须用单%引用（即：%variable）；在批处理脚本中使用，变量名必须用双%引用（即：%%variable）。
+- HKEY_CURRENT_CONFIG
+该根键存放着定义当前用户桌面配置(如显示器等)的数据，最后使用的文档列表（MRU）和其他有关当前用户的Windows中文版的安装的信息。
 
-　　2. for、in和do是for命令的三个关键字，缺一不可。
+- HKEY_DYN_DATA
+ 目前Win10系统中未发现该键，据说该根键存放了系统在运行时动态数据，此数据在每次显示时都是变化的，因此，此根键下的信息没有放在注册表中。图8显示了HKEY_DYN_DATA根键下的各个子键的情况。
 
-　　3. 关键字in之后，do之前的括号不能省略。
-setlocal EnableDelayedExpansion
-
-.bat批处理（八）：各种形式的变量%0、%i、%%i、var、%var%的含义和区别
+总的来说HKEY_LOCAL_MACHINE存储在system.dat，HKEY_USERS存储在user.dat，剩下的键基本上都是这两个键的分支，为了操作方便单独做出来的映射。
