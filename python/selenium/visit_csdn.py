@@ -33,7 +33,6 @@ def collect_article_url_list(max_page):
                 time.sleep(random.uniform(6.18, 8.26)) # wait page open
 
                 div_list = browser.find_elements_by_class_name('article-item-box')
-                print(div_list)
                 for element in div_list:
                     entrance = element.get_attribute('data-articleid')
                     outfile.write(article_detail_main_url.format(entrance))
