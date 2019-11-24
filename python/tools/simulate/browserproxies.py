@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# @Date     : 2019-7-28 21:42:48
+# @Date     : 2019-11-24 00:01:54
 # @Author   : Albert Shi
 # @Link     : http://blog.csdn.net/albertsh
 # @Github   : https://github.com/AlbertGithubHome
@@ -9,9 +9,9 @@ __author__ = 'AlbertS'
 
 import os
 import sys
-cur_path = os.path.dirname(__file__) + '\\'
+#cur_path = os.path.dirname(__file__) + '\\'
 
-sys.path.append(cur_path)
+#sys.path.append(cur_path)
 import browseragents
 import requests
 import datetime
@@ -34,7 +34,7 @@ def archive_proxies(is_https=True, save=True):
                 port_result = re.search('.*<td>([0-9]+?)</td>.*', line_list[count+1])
                 if port_result:
                     proxies_list.append(ip_result.groups()[0]+':'+port_result.groups()[0])
-                count += 1     
+                count += 1
             count += 1
     except:
         print("get proxy ip error!")
@@ -64,4 +64,5 @@ def get_proxies(refresh=False):
         return data.split("\n")
 
 if __name__ == '__main__':
-    update_proxies()
+    pass#update_proxies()
+    print(os.path.dirname(__file__))

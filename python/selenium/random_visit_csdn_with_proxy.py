@@ -5,13 +5,16 @@
 # @Link     : http://blog.csdn.net/albertsh
 # @Github   : https://github.com/AlbertGithubHome
 __author__ = 'AlbertS'
-# @Subject  : use selenium to random visit csdn article
+# @Subject  : use selenium to random visit csdn article with proxy
 
+import sys
 import time
 import random
 import pandas
 from selenium import webdriver
 
+sys.path.append('../')
+from tools.simulate.browseragents import *
 
 def get_csdn_pv(browser_obj):
     try:
@@ -44,4 +47,5 @@ def get_article_url_list():
     return pandas.read_csv('articlelist.txt', header=None)[0].values.tolist();
 
 if __name__ == '__main__':
-    print(random_visit_article(10))
+    #print(random_visit_article(10))
+    print(get_random_user_agent())

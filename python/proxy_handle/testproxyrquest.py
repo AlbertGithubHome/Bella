@@ -18,8 +18,8 @@ test_port = '808'
 test_ip = '124.65.4.97'
 test_port = '9999'
 
-test_ip = '114.239.147.227'
-test_port = '808'
+test_ip = '49.51.193.128'
+test_port = '1080'
 
 #test_ip = '222.190.163.41'
 
