@@ -36,7 +36,7 @@ def get_part_proxies(main_url):
 def generate_proxies():
     proxies_list = []
     with open('66iplist.txt', 'w') as file:
-        for x in range(30):
+        for x in range(10):
             part_list = get_part_proxies('http://www.66ip.cn/areaindex_{0}/1.html'.format(x+1));
             proxies_list.extend(part_list)
             print(x)
