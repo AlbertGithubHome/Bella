@@ -55,6 +55,20 @@ def ip66_proxy_filter():
     with open('66iplist.dat', 'w') as file:
         file.write('\n'.join(valid_list))
 
+def ip89_proxy_filter():
+    data_list = []
+    with open('89iplist.txt', 'r') as file:
+        data = file.read();
+        data_list = data.split("\n")
+
+    valid_list = []
+    for ip_port in data_list:
+        if test_proxy_valid(ip_port):
+            valid_list.apped(ip_port);
+
+    with open('89iplist.dat', 'w') as file:
+        file.write('\n'.join(valid_list))
+
 if __name__ == '__main__':
     #zdaye_proxy_filter()
     ip66_proxy_filter()
