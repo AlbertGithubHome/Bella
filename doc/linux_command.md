@@ -10,15 +10,15 @@
 - **lsb_release -a**  =>>有些系统没有
 
 ```bash
-[shihengzhen@localhost#20:16:15#/home/shihengzhen]$date
+[albert@localhost#20:16:15#/home/albert]$date
 2018年 06月 28日 星期四 20:16:19 CST
-[shihengzhen@localhost#20:16:19#/home/shihengzhen]$uname -r
+[albert@localhost#20:16:19#/home/albert]$uname -r
 2.6.32-279.el6.x86_64
-[shihengzhen@localhost#20:16:23#/home/shihengzhen]$uname -a
+[albert@localhost#20:16:23#/home/albert]$uname -a
 Linux localhost.localdomain 2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012 x86_64 x86_64 x86_64 GNU/Linux
-[shihengzhen@localhost#20:16:25#/home/shihengzhen]$cat /proc/version
+[albert@localhost#20:16:25#/home/albert]$cat /proc/version
 Linux version 2.6.32-279.el6.x86_64 (mockbuild@c6b9.bsys.dev.centos.org) (gcc version 4.4.6 20120305 (Red Hat 4.4.6-4) (GCC) ) #1 SMP Fri Jun 22 12:19:21 UTC 2012
-[shihengzhen@localhost#20:16:28#/home/shihengzhen]$
+[albert@localhost#20:16:28#/home/albert]$
 ```
 
 其中 2.6.32-279.el6.x86_64 就是版本号，一般查询工具的使用环境时用到，也可根据内核版本确定是否可以使用某个工具，这次查询（2018-06-18 20:10:30）查询内核就是因为学习epoll时，有一句话提到“epoll是在2.6内核中提出的，是之前的select和poll的增强版本”，所以查了下开发环境的内核版本，经确定此内核可以使用epoll
@@ -28,7 +28,7 @@ Linux version 2.6.32-279.el6.x86_64 (mockbuild@c6b9.bsys.dev.centos.org) (gcc ve
 - **df -TH**
 
 ```bash
-[shihengzhen@localhost#12:20:24#/tmp]$df -TH
+[albert@localhost#12:20:24#/tmp]$df -TH
 文件系统    类型      容量  已用  可用 已用%% 挂载点
 /dev/mapper/VolGroup-lv_root
               ext4      53G    51G      0 100% /
@@ -43,7 +43,7 @@ tmpfs        tmpfs     4.2G      0   4.2G   0% /dev/shm
 - **du -m**
 
 ```bash
-[shihengzhen@localhost#20:50:24#/home/shihengzhen/test]$du -m
+[albert@localhost#20:50:24#/home/albert/test]$du -m
 1   ./epoll_cs_demo
 1   ./mysql/include/mysql
 1   ./mysql/include
@@ -61,7 +61,7 @@ tmpfs        tmpfs     4.2G      0   4.2G   0% /dev/shm
 - **du -h --max-depth=1**
 
 ```bash
-[shihengzhen@localhost#14:57:40#/home/shihengzhen]$sudo du -h --max-depth=1
+[albert@localhost#14:57:40#/home/albert]$sudo du -h --max-depth=1
 5.0M    ./encoding
 4.0K    ./.gnome2
 332K    ./link_test
@@ -98,7 +98,7 @@ tmpfs        tmpfs     4.2G      0   4.2G   0% /dev/shm
 - **sudo fdisk -l**
 
 ```bash
-[shihengzhen@localhost#12:27:06#/home/shihengzhen]$sudo fdisk -l
+[albert@localhost#12:27:06#/home/albert]$sudo fdisk -l
 
 Disk /dev/sda: 146.8 GB, 146815733760 bytes
 255 heads, 63 sectors/track, 17849 cylinders
@@ -138,7 +138,7 @@ Disk identifier: 0x00000000
 如果直接执行没有输出任何信息应该是没有权限，尝试用root用户执行
 
 ```bash
-[shihengzhen@localhost#14:01:25#/home/shihengzhen]$sudo fdisk /dev/sda1
+[albert@localhost#14:01:25#/home/albert]$sudo fdisk /dev/sda1
 Device contains neither a valid DOS partition table, nor Sun, SGI or OSF disklabel
 Building a new DOS disklabel with disk identifier 0xb9c2964d.
 Changes will remain in memory only, until you decide to write them.
@@ -185,7 +185,7 @@ i: unknown command
 - **netstat | grep 'Recv-Q\|8876'**
 
 ```bash
-[shihengzhen@localhost#17:54:57#/home/shihengzhen]$netstat | grep 'Recv-Q\|8876'
+[albert@localhost#17:54:57#/home/albert]$netstat | grep 'Recv-Q\|8876'
 Proto Recv-Q Send-Q Local Address               Foreign Address             State
 tcp        0      0 192.168.1.214:8876          192.168.1.108:64711         ESTABLISHED
 tcp        0    228 192.168.1.214:8876          192.168.1.151:31064         ESTABLISHED
@@ -201,21 +201,21 @@ tcp        0    228 192.168.1.214:8876          192.168.1.151:31064         ESTA
 
 
 ```bash
-[shihengzhen@localhost#20:02:20#/home/shihengzhen/test/gdbtest]$ll
+[albert@localhost#20:02:20#/home/albert/test/gdbtest]$ll
 总用量 76
--rwxrwxr-x 1 shihengzhen shihengzhen 47049 8月  16 19:44 a.out
--rwxr-xr-x 1 shihengzhen shihengzhen   221 8月  16 18:08 cc.sh
--rw-rw-r-- 1 shihengzhen shihengzhen 18595 8月  16 19:39 gdbhelp.txt
--rw-rw-r-- 1 shihengzhen shihengzhen   306 8月  16 19:44 main.cpp
-[shihengzhen@localhost#20:03:23#/home/shihengzhen/test/gdbtest]$file a.out
+-rwxrwxr-x 1 albert albert 47049 8月  16 19:44 a.out
+-rwxr-xr-x 1 albert albert   221 8月  16 18:08 cc.sh
+-rw-rw-r-- 1 albert albert 18595 8月  16 19:39 gdbhelp.txt
+-rw-rw-r-- 1 albert albert   306 8月  16 19:44 main.cpp
+[albert@localhost#20:03:23#/home/albert/test/gdbtest]$file a.out
 a.out: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.18, not stripped
-[shihengzhen@localhost#20:03:34#/home/shihengzhen/test/gdbtest]$file cc.sh
+[albert@localhost#20:03:34#/home/albert/test/gdbtest]$file cc.sh
 cc.sh: ASCII text
-[shihengzhen@localhost#20:03:39#/home/shihengzhen/test/gdbtest]$file gdbhelp.txt
+[albert@localhost#20:03:39#/home/albert/test/gdbtest]$file gdbhelp.txt
 gdbhelp.txt: ASCII English text, with CRLF line terminators
-[shihengzhen@localhost#20:03:51#/home/shihengzhen/test/gdbtest]$file main.cpp
+[albert@localhost#20:03:51#/home/albert/test/gdbtest]$file main.cpp
 main.cpp: ISO-8859 C program text
-[shihengzhen@localhost#20:04:02#/home/shihengzhen/test/gdbtest]$
+[albert@localhost#20:04:02#/home/albert/test/gdbtest]$
 ```
 file xxx就可以查看文件的类型，只要把xxx替换成要查看的文件就可以了。
 
@@ -225,12 +225,12 @@ file xxx就可以查看文件的类型，只要把xxx替换成要查看的文件
 - **ln -s source newlink**
 
 ```bash
-[shihengzhen@localhost#17:28:54#/home/shihengzhen]$ll | grep git
-drwxrwxr-x  3 shihengzhen shihengzhen      4096 3月  17 2017 gitproject
-[shihengzhen@localhost#17:29:06#/home/shihengzhen]$ln -s gitproject gittest
-[shihengzhen@localhost#17:29:37#/home/shihengzhen]$ll | grep git
-drwxrwxr-x  3 shihengzhen shihengzhen      4096 3月  17 2017 gitproject
-lrwxrwxrwx  1 shihengzhen shihengzhen        10 12月 18 17:29 gittest -> gitproject
+[albert@localhost#17:28:54#/home/albert]$ll | grep git
+drwxrwxr-x  3 albert albert      4096 3月  17 2017 gitproject
+[albert@localhost#17:29:06#/home/albert]$ln -s gitproject gittest
+[albert@localhost#17:29:37#/home/albert]$ll | grep git
+drwxrwxr-x  3 albert albert      4096 3月  17 2017 gitproject
+lrwxrwxrwx  1 albert albert        10 12月 18 17:29 gittest -> gitproject
 ```
 使用的时候要注意源文件与新的链接文件的顺序，不要搞反了，个人理解硬链接类似于引用计数，软连接是一个特殊的
 文本文件，其中包含指向源文件的信息'
@@ -266,38 +266,38 @@ lrwxrwxrwx  1 shihengzhen shihengzhen        10 12月 18 17:29 gittest -> gitpro
 
 ```bash
 # 查看定时任务
-[shihengzhen@localhost#13:48:51#/home/shihengzhen]$crontab -l
-*/10 * * * * /bin/sh /home/shihengzhen/checkmemforlord.sh
-*/1 * * * * /bin/sh /home/shihengzhen/trun.sh
-*/1 * * * * /bin/sh /home/shihengzhen/t.sh
+[albert@localhost#13:48:51#/home/albert]$crontab -l
+*/10 * * * * /bin/sh /home/albert/checkmemforlord.sh
+*/1 * * * * /bin/sh /home/albert/trun.sh
+*/1 * * * * /bin/sh /home/albert/t.sh
 
 # 编辑定时任务
-[shihengzhen@localhost#13:58:13#/home/shihengzhen]$crontab -e
+[albert@localhost#13:58:13#/home/albert]$crontab -e
 crontab: no changes made to crontab
 
-      1 */10 * * * * /bin/sh /home/shihengzhen/checkmemforlord.sh
-      2 */1 * * * * /bin/sh /home/shihengzhen/trun.sh
-      3 */1 * * * * /bin/sh /home/shihengzhen/t.sh
+      1 */10 * * * * /bin/sh /home/albert/checkmemforlord.sh
+      2 */1 * * * * /bin/sh /home/albert/trun.sh
+      3 */1 * * * * /bin/sh /home/albert/t.sh
 
 # 直接编辑定时任务文件
-[shihengzhen@localhost#13:56:54#/home/shihengzhen]$sudo vi /var/spool/cron/shihengzhen
+[albert@localhost#13:56:54#/home/albert]$sudo vi /var/spool/cron/albert
 Error detected while processing /root/.vimrc:
 line    1:
 E484: Can't open file ${save}/.vimrc
 Press ENTER or type command to continue
 
-*/10 * * * * /bin/sh /home/shihengzhen/checkmemforlord.sh
-*/1 * * * * /bin/sh /home/shihengzhen/trun.sh
-*/1 * * * * /bin/sh /home/shihengzhen/t.sh
+*/10 * * * * /bin/sh /home/albert/checkmemforlord.sh
+*/1 * * * * /bin/sh /home/albert/trun.sh
+*/1 * * * * /bin/sh /home/albert/t.sh
 
 # 查看定时任务日志
-[shihengzhen@localhost#14:15:51#/home/shihengzhen]$sudo more /var/log/cron
+[albert@localhost#14:15:51#/home/albert]$sudo more /var/log/cron
 Feb 17 03:07:01 localhost run-parts(/etc/cron.daily)[24635]: finished logrotate
 Feb 17 03:07:01 localhost run-parts(/etc/cron.daily)[24623]: starting makewhatis.cron
 Feb 17 03:07:02 localhost run-parts(/etc/cron.daily)[24754]: finished makewhatis.cron
 Feb 17 03:07:02 localhost anacron[24558]: Job `cron.daily' terminated
 Feb 17 03:07:02 localhost anacron[24558]: Normal exit (1 job run)
-Feb 17 03:08:01 localhost CROND[24757]: (shihengzhen) CMD (/bin/sh /home/shihengzhen/t.sh)
+Feb 17 03:08:01 localhost CROND[24757]: (albert) CMD (/bin/sh /home/albert/t.sh)
 ...
 ```
 
@@ -310,12 +310,12 @@ Feb 17 03:08:01 localhost CROND[24757]: (shihengzhen) CMD (/bin/sh /home/shiheng
 - **service xxxd start**
 
 ```bash
-[shihengzhen@localhost#14:04:02#/home/shihengzhen]$service crond status
+[albert@localhost#14:04:02#/home/albert]$service crond status
 crond (pid  1181) 正在运行...
-[shihengzhen@localhost#14:04:05#/home/shihengzhen]$service mysqld status
+[albert@localhost#14:04:05#/home/albert]$service mysqld status
 mysqld 已停
 
-[shihengzhen@localhost#14:04:13#/home/shihengzhen]$service mysqld start
+[albert@localhost#14:04:13#/home/albert]$service mysqld start
 正在启动 mysqld：                                          [失败]
 ```
 
@@ -327,17 +327,17 @@ mysqld 已停
 - **tail [-f] filename**
 
 ```bash
-[shihengzhen@localhost#14:16:30#/home/shihengzhen]$sudo tail -f /var/log/cron
-Feb 19 14:13:01 localhost CROND[11719]: (shihengzhen) CMD (/bin/sh /home/shihengzhen/t.sh)
-Feb 19 14:13:01 localhost CROND[11720]: (shihengzhen) CMD (/bin/sh /home/shihengzhen/trun.sh)
-Feb 19 14:14:01 localhost CROND[11729]: (shihengzhen) CMD (/bin/sh /home/shihengzhen/t.sh)
-Feb 19 14:14:01 localhost CROND[11730]: (shihengzhen) CMD (/bin/sh /home/shihengzhen/trun.sh)
-Feb 19 14:15:01 localhost CROND[11744]: (shihengzhen) CMD (/bin/sh /home/shihengzhen/t.sh)
-Feb 19 14:15:01 localhost CROND[11745]: (shihengzhen) CMD (/bin/sh /home/shihengzhen/trun.sh)
-Feb 19 14:16:01 localhost CROND[11758]: (shihengzhen) CMD (/bin/sh /home/shihengzhen/t.sh)
-Feb 19 14:16:01 localhost CROND[11759]: (shihengzhen) CMD (/bin/sh /home/shihengzhen/trun.sh)
-Feb 19 14:17:01 localhost CROND[11769]: (shihengzhen) CMD (/bin/sh /home/shihengzhen/t.sh)
-Feb 19 14:17:01 localhost CROND[11770]: (shihengzhen) CMD (/bin/sh /home/shihengzhen/trun.sh)
+[albert@localhost#14:16:30#/home/albert]$sudo tail -f /var/log/cron
+Feb 19 14:13:01 localhost CROND[11719]: (albert) CMD (/bin/sh /home/albert/t.sh)
+Feb 19 14:13:01 localhost CROND[11720]: (albert) CMD (/bin/sh /home/albert/trun.sh)
+Feb 19 14:14:01 localhost CROND[11729]: (albert) CMD (/bin/sh /home/albert/t.sh)
+Feb 19 14:14:01 localhost CROND[11730]: (albert) CMD (/bin/sh /home/albert/trun.sh)
+Feb 19 14:15:01 localhost CROND[11744]: (albert) CMD (/bin/sh /home/albert/t.sh)
+Feb 19 14:15:01 localhost CROND[11745]: (albert) CMD (/bin/sh /home/albert/trun.sh)
+Feb 19 14:16:01 localhost CROND[11758]: (albert) CMD (/bin/sh /home/albert/t.sh)
+Feb 19 14:16:01 localhost CROND[11759]: (albert) CMD (/bin/sh /home/albert/trun.sh)
+Feb 19 14:17:01 localhost CROND[11769]: (albert) CMD (/bin/sh /home/albert/t.sh)
+Feb 19 14:17:01 localhost CROND[11770]: (albert) CMD (/bin/sh /home/albert/trun.sh)
 ```
 
 `tail`可以查看文件的最后几行，如果加上参数`-f`当文件修改后会实时更新
@@ -357,7 +357,7 @@ Feb 19 14:17:01 localhost CROND[11770]: (shihengzhen) CMD (/bin/sh /home/shiheng
 - **ps -eo pid,lstart,cmd | grep gameserver**
 
 ```bash
-[shihengzhen@localhost#11:04:22#/home/shihengzhen/legend/Server]$ps -eo pid,lstart,cmd | grep ini
+[albert@localhost#11:04:22#/home/albert/legend/Server]$ps -eo pid,lstart,cmd | grep ini
     1 Thu Feb 21 11:49:59 2019 /sbin/init
 30936 Tue Feb 26 11:04:25 2019 grep ini
 ```
@@ -369,7 +369,7 @@ Feb 19 14:17:01 localhost CROND[11770]: (shihengzhen) CMD (/bin/sh /home/shiheng
 - **grep -rn 'socket' . --include=\*.cpp**
 
 ```bash
-[shihengzhen@localhost#16:04:11#/home/shihengzhen/test]$grep -rn 'socket' . --include=*.cpp
+[albert@localhost#16:04:11#/home/albert/test]$grep -rn 'socket' . --include=*.cpp
 ./epoll_cs_demo/testfd.cpp:5:   int listen_fd = socket(AF_INET, SOCK_STREAM, 0);
 ./epoll_cs_demo/testfd.cpp:8:   listen_fd = socket(AF_INET, SOCK_STREAM, 0);
 ./epoll_cs_demo/testfd.cpp:11:  listen_fd = socket(AF_INET, SOCK_STREAM, 0);
@@ -386,19 +386,19 @@ grep原来还可以这样用，感觉参数比find简单啊
 - **ls --full-time**
 
 ```bash
-[shihengzhen@localhost#15:12:18#/home/shihengzhen/test/so]$ls --full-time
+[albert@localhost#15:12:18#/home/albert/test/so]$ls --full-time
 总用量 36212
--rw-rw-r-- 1 shihengzhen shihengzhen 37025922 2017-07-05 19:36:18.461884977 +0800 JgMir.txt
--rwxrwxr-x 1 shihengzhen shihengzhen     5887 2017-07-05 18:01:45.025882762 +0800 libtesta.so
--rwxrwxr-x 1 shihengzhen shihengzhen     5887 2017-07-05 18:02:03.801822586 +0800 libtestb.so
--rwxrwxr-x 1 shihengzhen shihengzhen     6911 2017-07-05 18:19:38.101697879 +0800 main
--rw-rw-r-- 1 shihengzhen shihengzhen      262 2017-07-05 18:07:58.824796782 +0800 main.c
--rw-rw-r-- 1 shihengzhen shihengzhen     1592 2017-07-05 18:03:28.328884445 +0800 main.o
--rw-rw-r-- 1 shihengzhen shihengzhen      123 2017-07-05 17:56:04.210889388 +0800 testliba.c
--rw-rw-r-- 1 shihengzhen shihengzhen       82 2017-07-05 17:54:38.023060881 +0800 testliba.h
--rw-rw-r-- 1 shihengzhen shihengzhen      123 2017-07-05 17:56:54.336764733 +0800 testlibb.c
--rw-rw-r-- 1 shihengzhen shihengzhen       82 2017-07-05 17:57:12.535697631 +0800 testlibb.h
-drwxrwxr-x 2 shihengzhen shihengzhen     4096 2017-07-06 10:30:20.430765733 +0800 withoutvoice
+-rw-rw-r-- 1 albert albert 37025922 2017-07-05 19:36:18.461884977 +0800 JgMir.txt
+-rwxrwxr-x 1 albert albert     5887 2017-07-05 18:01:45.025882762 +0800 libtesta.so
+-rwxrwxr-x 1 albert albert     5887 2017-07-05 18:02:03.801822586 +0800 libtestb.so
+-rwxrwxr-x 1 albert albert     6911 2017-07-05 18:19:38.101697879 +0800 main
+-rw-rw-r-- 1 albert albert      262 2017-07-05 18:07:58.824796782 +0800 main.c
+-rw-rw-r-- 1 albert albert     1592 2017-07-05 18:03:28.328884445 +0800 main.o
+-rw-rw-r-- 1 albert albert      123 2017-07-05 17:56:04.210889388 +0800 testliba.c
+-rw-rw-r-- 1 albert albert       82 2017-07-05 17:54:38.023060881 +0800 testliba.h
+-rw-rw-r-- 1 albert albert      123 2017-07-05 17:56:54.336764733 +0800 testlibb.c
+-rw-rw-r-- 1 albert albert       82 2017-07-05 17:57:12.535697631 +0800 testlibb.h
+drwxrwxr-x 2 albert albert     4096 2017-07-06 10:30:20.430765733 +0800 withoutvoice
 
 ```
 
@@ -409,7 +409,7 @@ drwxrwxr-x 2 shihengzhen shihengzhen     4096 2017-07-06 10:30:20.430765733 +080
 - **iftop -B**
 
 ```bash
-[shihengzhen@localhost#10:18:27#/home/shihengzhen]$sudo iftop
+[albert@localhost#10:18:27#/home/albert]$sudo iftop
 interface: eth0
 IP address is: 192.168.1.214
 MAC address is: 00:13:72:5b:a2:84
