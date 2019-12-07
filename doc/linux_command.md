@@ -436,6 +436,20 @@ TOTAL:                 4.27MB            283Kb                                  
 基础命令就是`iftop`，常用的参数 `-B` 是以bytes为单位显示流量(默认是bits)，按字母`t`是切换流量显示方向，只显示发送、只显示接收，
 一行显示发送和接收，两行显示发送和接收4种方式，字母 `p`是控制端口是否显示的开关
 
+19. 查询端口占用的进程
+
+- **sudo lsof -i:8876**
+
+```bash
+[albert@localhost#17:39:14#/home/albert]$sudo lsof -i:8876
+COMMAND     PID USER   FD   TYPE  DEVICE SIZE/OFF NODE NAME
+game_dev_ 29442 root   12u  IPv4 6349597      0t0  TCP *:8876 (LISTEN)
+game_dev_ 29442 root   13u  IPv4 6349598      0t0  TCP 192.168.1.214:8876->192.168.1.161:61826 (ESTABLISHED)
+game_dev_ 29442 root   18u  IPv4 6349749      0t0  TCP 192.168.1.214:8876->192.168.1.77:4-tieropmcli (ESTABLISHED)
+
+```
+
+这个命令一般需要root权限，如果不是root账户可以使用sudo命令尝试一下。
 
 
 # 工具命令
