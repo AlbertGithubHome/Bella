@@ -46,5 +46,35 @@ def retrieve_story(url_format, start_page, max_count):
     else:
         return True
 
+def story_content_for_page(browser_obj, file):
+    try:
+        div_list = browser_obj.find_elements_by_id('chaptercontent')
+        for element in div_list:
+            file.write(element.text)
+        a_list = browser_obj.find_elements_by_id('pt_next')
+        for element in a_list:
+            return element.get_attribute('href');
+
+    except:
+        return None
+
+def retrieve_story_for_page(main_page, max_count):
+    target_url = main_page
+    try:
+        with open('chenzhuang2.txt', 'w', encoding='UTF-8') as file:
+            browser = webdriver.Firefox()
+            for x in range(max_count):
+                browser.get(target_url)
+                print(target_url, x, time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
+                time.sleep(random.uniform(1.18, 3.26))
+                target_url = story_content_for_page(browser, file);
+            browser.quit()
+    except Exception as e:
+        raise e
+        return False
+    else:
+        return True
+
 if __name__ == '__main__':
-    print(retrieve_story('https://m.xxxx.com/98/98171/{0}.html', 44067603, 100))
+    #print(retrieve_story('https://m.xxxx.com/98/98171/{0}.html', 44067603, 100))
+    print(retrieve_story_for_page('https://m.7kzw.com/98/98171/46703552.html', 200))
