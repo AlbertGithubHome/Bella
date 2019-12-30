@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 
-class CBase1
+class CBase
 {
 public:
     void func() {}
@@ -12,7 +12,7 @@ public:
     int m_var1;
 };
 
-class CDerived : public CBase1
+class CDerived : public CBase
 {
 public:
     void func() {}
