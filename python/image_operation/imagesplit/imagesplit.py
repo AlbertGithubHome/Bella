@@ -57,8 +57,8 @@ class App(tk.Frame):
         self.path=tk.StringVar()
         self.row_part = tk.StringVar(value='3')
         self.col_part = tk.StringVar(value='1')
-        tk.Entry(self,state='readonly',text=self.path).grid(row=0,column=0,columnspan=2,sticky=tk.E+tk.W)
-        tk.Button(self,text='选择图片',command=self.choose_pic).grid(row=0,column=3,sticky=tk.E+tk.W)
+        tk.Entry(self,state='readonly',text=self.path).grid(row=0,column=0,columnspan=2)#,sticky=tk.E+tk.W)
+        tk.Button(self,text='选择图片',command=self.choose_pic).grid(row=0,column=3)
 
         tk.Label(self, text='切割行数：').grid(row=1,column=0)
         self.entry_row=tk.Entry(self,text=self.path, textvariable=self.row_part)
@@ -105,6 +105,7 @@ class App(tk.Frame):
 def mainApp(w, h):
     root = tk.Tk()
     root.geometry('{0}x{1}+400+200'.format(w, h))
+    #root.resizable(0,0)
     root.title('图片切割程序')
     #root.overrideredirect(1)
     root.iconbitmap('icon.ico')
