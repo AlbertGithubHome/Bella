@@ -32,7 +32,8 @@ def random_visit_article(max_count):
             target_url = random.choice(url_list)
             browser.get(target_url)
             time.sleep(random.uniform(6.18, 50.26))
-            print(target_url, get_csdn_pv(browser), x)
+            print(target_url, get_csdn_pv(browser), x,
+                time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time())))
         browser.quit()
     except Exception as e:
         raise e
