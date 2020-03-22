@@ -79,6 +79,8 @@ def draw_multiple_candlestick(stock_code, key_type_list, need_update, key_count=
         ax = plt.subplot(math.ceil(type_len/2), 2, n+1)
         key_type = key_type_list[n]
         draw_candlestick_on_ax(ax, stock_code, key_type, need_update, key_count);
+    mngr = plt.get_current_fig_manager()  # 获取当前figure manager
+    mngr.window.wm_geometry("+16+16")    # 调整窗口在屏幕上弹出的位置
     plt.show()
 
 if __name__ == '__main__':
