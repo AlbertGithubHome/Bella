@@ -427,10 +427,19 @@ import configparser
 # 每个节可以有多个参数（键=值），在看《自动化平台测试开发》一书时（2019-4-2 10:05:59）第一次发现
 # 当时只是看文档，还没来得及试一下
 
-import mpl_finance as mpf
+#import mpl_finance as mpf
+import mplfinance as mpf
 # 这个库原来的引用方法是import matplotlib.finance as mpf（python2.2），后来从 matplotlib 独立出来成为mpl_finance
 # 一般使用其中的candlestick_ochl和candlestick_ohlc函数来画股票的K线图，在研究画K线时（2019-9-24 20:27:01）第一次发现
 # 本来还打算使用matplotlib自己画呢，现在来看画K线很方便了
+
+# 2020-3-21 23:27:45 被提醒该库已经不赞成使用，要换成不带下划线的
+'''
+WARNING: `mpl_finance` is deprecated:
+    Please use `mplfinance` instead (no hyphen, no underscore).
+    To install: `pip install --upgrade mplfinance`
+    For more information, see: https://pypi.org/project/mplfinance/
+'''
 
 import pandas as pd
 # 分析不识潘大师(PANDAS)，纵是老手也枉然——之前偶然间看到这句话，今天（2019-9-24 20:30:37）在画K线时了解一下
@@ -449,3 +458,19 @@ from selenium import webdriver
 # 今天（2019-11-21 10:56:09）第一次使用，之前再看自动化测试的时候接触过，不过没有具体的使用过,
 # 比如火狐浏览器的驱动名字是geckodriver.exe，下载地址：https://github.com/mozilla/geckodriver/releases
 # 被代码操控火狐浏览器的地址栏会有一个小机器人，看起来比较有意思
+
+import xlutils
+import xlwings
+import openpyxl
+# 这三个库都是用于操作Excel表的库，xlutils 是配合之前学的 xlrd 和 xlwt 两个库的，只要操作 xls 格式
+# xlwings 和 openpyxl 是两个不同的库，常用来操作 xlsx 格式，个人偏向于库xlwings的使用
+# 前几天（2020-3-10 10:25:23）在工作中开始使用这几个库，用来编写工作中的脚本
+
+import redis
+# 虽然之前一直学习 redis，但是只局限于在命令行中使用，这次因为工作关系使用 python 来操作 redis，
+# 前几天（2020-3-16 11:32:57）第一次使用
+
+import google.protobuf
+# pip install protobuf
+# 这个模块不用直接引用，但是在使用 google protobuf 前需要安装，因为导出 protobuf 格式的文件中会引用这个模块
+# 工作时（2020-3-16 12:39:55）第一次使用
