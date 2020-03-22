@@ -1,0 +1,2 @@
+#!/bin/sh
+python quick_candle.py $1
