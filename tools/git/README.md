@@ -74,6 +74,18 @@ $ git config --global core.autocrlf input
 $ git config --global core.autocrlf false
 ```
 
+## 常见错误
+
+### Mac和Linux
+
+git add . 的时候出现，对于Unix结尾文件（原来是LF换行的文件）
+- warning: CRLF will be replaced by LF in XXX . The file will have its original line endings in your working directory.
+
+### Windows
+
+git add . 的时候出现，对于Windows结尾文件（原来是CRLF换行的文件）
+- warning: LF will be replaced by CRLF in XXX . The file will have its original line endings in your working directory.
+
 # 别名
 
 在 linux 系统中很多长长的命令总是会被人起一个别名，这样方便记忆和输入，而在 git 的使用中也常常需要设置别名，比如一个查看工作目录状态的 `git status` 每天要输入很多遍可以起一个别名，用 `git st` 来代替 `git status`，具体的设置方法如下：
