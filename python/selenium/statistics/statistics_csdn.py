@@ -12,7 +12,8 @@ import random
 import datetime
 from selenium import webdriver
 
-data_title = ['原创', '粉丝', '获赞', '评论', '访问']
+#data_title = ['原创', '粉丝', '获赞', '评论', '访问']
+data_title = ['原创', '粉丝', '获赞', '评论', '访问', '积分', '收藏', '周排名', '总排名']
 article_main_url='https://blog.csdn.net/albertsh/article/details/104719370'
 
 def get_csdn_title_data(title_name, browser_obj):
@@ -47,9 +48,9 @@ def statistics_once():
                 log_str = '{0}:{1} '.format(title_name, get_csdn_title_data(title_name, browser))
                 outfile.write(log_str)
                 print(log_str)
-            log_end_str = get_csdn_rank_data(browser)
-            outfile.write(log_end_str)
-            print(log_end_str)
+            #log_end_str = get_csdn_rank_data(browser)
+            #outfile.write(log_end_str)
+            #print(log_end_str)
             browser.quit()
 
     except Exception as e:
