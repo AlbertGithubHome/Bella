@@ -42,7 +42,7 @@ def output_image():
     print (word_counts_top10) # 输出检查
 
     # 词频展示
-    mask = np.array(Image.open('bg.png')) # 定义词频背景
+    mask = np.array(Image.open('db4.png')) # 定义词频背景
     wc = wordcloud.WordCloud(
         font_path='C:/Windows/Fonts/simhei.ttf', # 设置字体格式
         #background_color="white",
