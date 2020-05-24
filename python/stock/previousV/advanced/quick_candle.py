@@ -89,4 +89,4 @@ def draw_multiple_candlestick(stock_code, key_type_list, need_update, key_count=
 if __name__ == '__main__':
     stock_code = '600588'
     key_type_list = ['5', '30', 'D', 'W']
-    draw_multiple_candlestick(stock_code if len(sys.argv) <= 1 else sys.argv[1], key_type_list, True)
+    draw_multiple_candlestick(stock_code if len(sys.argv) <= 1 else sys.argv[1], key_type_list, True, 96)
