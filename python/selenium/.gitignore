@@ -1,3 +1,4 @@
 # generated files
 *.txt
 *.log
+geckodriver.log
