@@ -94,19 +94,23 @@ class csdn_blog_visitor(object):
                     else:
                         print("[WARN] 代理出现问题，静默4秒")
                         time.sleep(4)
-                except Exception as err:
-                    print("[ERRO] CSDN访问出现问题，错误原因为 {0}，静默10秒".format(err))
+                except Exception as e:
+                    print("[ERRO] 代理访问出现错误 {0}，静默10秒".format(e))
                     time.sleep(10)
             else:
-                print("[WARN] 代理为空，放弃代理，直接访问CSDN，静默5秒")
-                for x in range(5):
-                    article_url = random.choice(self.article_list)
-                    headers = {'User-Agent': self.agentpool.get_random_user_agent(), 'Connection': 'keep-alive'}
-                    response = requests.get(article_url,  headers=headers, timeout=2)
-                    if response.status_code == 200:
-                        print("[INFO] 直接访问 {0} 成功!".format(article_url))
-                        time.sleep(2)
-                time.sleep(5)
+                try:
+                    print("[WARN] 代理为空，放弃代理，直接访问CSDN，静默5秒")
+                    for x in range(5):
+                        article_url = random.choice(self.article_list)
+                        headers = {'User-Agent': self.agentpool.get_random_user_agent(), 'Connection': 'keep-alive'}
+                        response = requests.get(article_url,  headers=headers, timeout=5)
+                        if response.status_code == 200:
+                            print("[INFO] 直接访问 {0} 成功!".format(article_url))
+                            time.sleep(random.uniform(3.14, 6.18))
+                except Exception as e:
+                    print("[ERRO] 直接访问出现错误 {0}，静默5秒".format(err))
+                finally:
+                    time.sleep(5)
         print('[INFO] 线程 {0} 退出 ...'.format(thread_name))
 
     def run(self):
