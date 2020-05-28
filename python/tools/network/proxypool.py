@@ -9,20 +9,22 @@ __author__ = 'AlbertS'
 #
 # 思路：每次请求从指定地址获取可用IP和PORT
 
+import sys
 import time
 import requests
 from lxml import etree
 from agentpool import agentpool
 
 class proxypool(object):
-    def __init__(self, init_url = 'https://www.xicidaili.com/nn/', ip_type_list=['HTTPS']):
+    def __init__(self, init_url = 'https://www.xicidaili.com/nn/', max_count = 50, ip_type_list=['HTTPS']):
         self.proxy_info_page = init_url
         self.ip_type_list = ip_type_list
+        self.max_count = max_count
         self.proxy_list = []
         self.proxy_count = 0
         self.agent_pool = agentpool()
 
-    def get_proxy_list(self):
+    def get_proxy_list(self, show_msg=True):
         self.proxy_count = 0
         headers={"User-Agent": self.agent_pool.get_random_user_agent()}
         response = requests.get(self.proxy_info_page, headers=headers)
@@ -40,20 +42,29 @@ class proxypool(object):
                 try:
                     if ip_type == 'HTTP':
                         proxies = {"http": ip + ":" + port}
-                        response = requests.get('http://icanhazip.com', proxies=proxies, timeout=2)
+                        response = requests.get('http://icanhazip.com', proxies=proxies, timeout=3)
                     else:
                         proxies = {"https": ip + ":" + port}
-                        response = requests.get('https://icanhazip.com', proxies=proxies, timeout=2)
+                        response = requests.get('https://icanhazip.com', proxies=proxies, timeout=3)
 
                     if response.status_code == 200:
+                        #print(response.text)
                         if response.text.strip().replace('\n', '') == ip:
                             self.proxy_count += 1
-                            print(response.text)
-                            print("[Info] 成功获取代理{},现在所存代理数为{}".format(proxies, self.proxy_count))
+                            self.proxy_list.append(proxies)
+                            if show_msg:
+                                print("[INFO] 成功获取代理{0}，现在得到的代理总数为{1}".format(proxies, self.proxy_count))
                 except:
                     continue
-        return self.proxy_list
+
+        list_len = len(self.proxy_list)
+        list_len = list_len if list_len > 0 else 1
+
+        if list_len < self.max_count:
+            self.proxy_list = self.proxy_list * int(self.max_count / list_len + 1)
+        return self.proxy_list[:50]
 
 if __name__ == '__main__':
     pool = proxypool()
-    print(pool.get_proxy_list())
+    proxy_list = pool.get_proxy_list()
+    print(proxy_list, len(proxy_list))

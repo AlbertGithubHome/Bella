@@ -24,15 +24,17 @@ class csdn_blog_visitor(object):
     def __init__(self, entry_url):
         self.blog_url = entry_url
         self.article_list = []
+        self.max_proxy_count = 10
         self.proxy_queue = Queue()
         self.agentpool = agentpool()
-        self.proxypool = proxypool()
+        self.proxypool = proxypool('https://www.xicidaili.com/nn/', self.max_proxy_count)
+
 
     def retrieve_article_list(self):
         artcle_count = 0;
         with open('csdn_blog_article_list.txt', 'w', encoding='UTF-8') as file:
             for i in range(1, 10):
-                headers = {'User-Agent': self.agentpool.get_random_user_agent(), 'Connection': 'keep-alive'}
+                headers = {'User-Agent': self.agentpool.get_random_user_agent()} #, 'Connection': 'keep-alive'}
                 response = requests.get(self.blog_url + '/article/list/' + str(i),  headers=headers)
                 if response.status_code == 200:
                     dom = etree.HTML(response.text)
@@ -60,13 +62,13 @@ class csdn_blog_visitor(object):
             return
 
         while True:
-            while self.proxy_queue.qsize() < 50:
+            while self.proxy_queue.qsize() < self.max_proxy_count:
                 proxy_list = self.proxypool.get_proxy_list()
                 for proxy_item in proxy_list:
                     self.proxy_queue.put(proxy_item)
             else:
-                print("[WARN] 当前代理池超过50，正等待消耗")
-                print('[WARN] 线程 {0} 沉睡 {1} 秒'.format(thread_name, 8))
+                print('[INFO] 当前代理池超过{0}，正等待消耗'.format(self.max_proxy_count))
+                print('[INFO] 线程 {0} 沉睡 {1} 秒'.format(thread_name, 8))
                 time.sleep(8)
         print('[INFO] 线程 {0} 退出 ...'.format(thread_name))
 
@@ -86,7 +88,7 @@ class csdn_blog_visitor(object):
                 article_url = random.choice(self.article_list)
 
                 try:
-                    headers = {'User-Agent': self.agentpool.get_random_user_agent(), 'Connection': 'keep-alive'}
+                    headers = {'User-Agent': self.agentpool.get_random_user_agent()}
                     response = requests.get(article_url,  headers=headers, proxies=proxies, timeout=10)
                     if response.status_code == 200:
                         print("[INFO] 代理访问 {0} 成功!".format(article_url))
@@ -102,13 +104,13 @@ class csdn_blog_visitor(object):
                     print("[WARN] 代理为空，放弃代理，直接访问CSDN，静默5秒")
                     for x in range(5):
                         article_url = random.choice(self.article_list)
-                        headers = {'User-Agent': self.agentpool.get_random_user_agent(), 'Connection': 'keep-alive'}
+                        headers = {'User-Agent': self.agentpool.get_random_user_agent()}
                         response = requests.get(article_url,  headers=headers, timeout=5)
                         if response.status_code == 200:
                             print("[INFO] 直接访问 {0} 成功!".format(article_url))
                             time.sleep(random.uniform(3.14, 6.18))
                 except Exception as e:
-                    print("[ERRO] 直接访问出现错误 {0}，静默5秒".format(err))
+                    print("[ERRO] 直接访问出现错误 {0}，静默5秒".format(e))
                 finally:
                     time.sleep(5)
         print('[INFO] 线程 {0} 退出 ...'.format(thread_name))
