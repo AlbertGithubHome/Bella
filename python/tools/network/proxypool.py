@@ -24,6 +24,38 @@ class proxypool(object):
         self.proxy_count = 0
         self.agent_pool = agentpool()
 
+    def extract_valid_data(self, ip, port, ip_type, show_msg):
+        try:
+            if ip_type == 'HTTP':
+                proxies = {"http": ip + ":" + port}
+                response = requests.get('http://icanhazip.com', proxies=proxies, timeout=3)
+            else:
+                proxies = {"https": ip + ":" + port}
+                response = requests.get('https://icanhazip.com', proxies=proxies, timeout=3)
+
+            if response.status_code != 200:
+                return False
+
+            if response.text.strip().replace('\n', '') == ip:
+                self.proxy_count += 1
+                self.proxy_list.append(proxies)
+                if show_msg:
+                    print("[INFO] 成功获取代理{0}，现在得到的代理总数为{1}".format(proxies, self.proxy_count))
+                return True
+        except:
+            return False
+
+    # 从页面内容上提取IP和PORT，并将可用代理保留
+    def extract_for_xicidaili(self, html_text, show_msg):
+        dom = etree.HTML(html_text)
+        ip_list = dom.xpath('//*[@id="ip_list"]/tr[/]/td[2]//text()')
+        port_list = dom.xpath('//*[@id="ip_list"]/tr[/]/td[3]//text()')
+        type_list = dom.xpath('//*[@id="ip_list"]/tr[/]/td[6]//text()')
+
+        for ip, port, ip_type in zip(ip_list, port_list, type_list):
+            if ip_type in self.ip_type_list:
+                self.extract_valid_data(ip, port, ip_type, show_msg)
+
     def get_proxy_list(self, show_msg=True):
         self.proxy_count = 0
         headers={"User-Agent": self.agent_pool.get_random_user_agent()}
@@ -32,30 +64,10 @@ class proxypool(object):
             return self.proxy_list
 
         # 解析代理IP地址和端口
-        dom = etree.HTML(response.text)
-        ip_list = dom.xpath('//*[@id="ip_list"]/tr[/]/td[2]//text()')
-        port_list = dom.xpath('//*[@id="ip_list"]/tr[/]/td[3]//text()')
-        type_list = dom.xpath('//*[@id="ip_list"]/tr[/]/td[6]//text()')
-
-        for ip, port, ip_type in zip(ip_list, port_list, type_list):
-            if ip_type in self.ip_type_list:
-                try:
-                    if ip_type == 'HTTP':
-                        proxies = {"http": ip + ":" + port}
-                        response = requests.get('http://icanhazip.com', proxies=proxies, timeout=3)
-                    else:
-                        proxies = {"https": ip + ":" + port}
-                        response = requests.get('https://icanhazip.com', proxies=proxies, timeout=3)
-
-                    if response.status_code == 200:
-                        #print(response.text)
-                        if response.text.strip().replace('\n', '') == ip:
-                            self.proxy_count += 1
-                            self.proxy_list.append(proxies)
-                            if show_msg:
-                                print("[INFO] 成功获取代理{0}，现在得到的代理总数为{1}".format(proxies, self.proxy_count))
-                except:
-                    continue
+        if 'xicidaili' in self.proxy_info_page:
+            self.extract_for_xicidaili(response.text, show_msg)
+        else:
+            pass
 
         list_len = len(self.proxy_list)
         list_len = list_len if list_len > 0 else 1

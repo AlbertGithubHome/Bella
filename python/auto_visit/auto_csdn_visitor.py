@@ -16,7 +16,7 @@ from lxml import etree
 from queue import Queue
 from threading import Thread
 
-sys.path.append(r"D:/data//maingit/Bella/python/tools/network")
+sys.path.append(os.path.abspath("../tools/network"))
 from agentpool import agentpool
 from proxypool import proxypool
 
@@ -28,7 +28,6 @@ class csdn_blog_visitor(object):
         self.proxy_queue = Queue()
         self.agentpool = agentpool()
         self.proxypool = proxypool('https://www.xicidaili.com/nn/', self.max_proxy_count)
-
 
     def retrieve_article_list(self):
         artcle_count = 0;
@@ -101,7 +100,7 @@ class csdn_blog_visitor(object):
                         print("[WARN] 代理出现问题，静默4秒")
                         time.sleep(4)
                 except Exception as e:
-                    print("[ERRO] 代理访问出现错误 {0}，静默10秒".format(e))
+                    print("[ERRO] 代理访问出现错误 {0} 静默10秒".format(e))
                     time.sleep(10)
             else:
                 try:
@@ -114,7 +113,7 @@ class csdn_blog_visitor(object):
                             print("[INFO] 直接访问 {0} 成功!".format(article_url))
                             time.sleep(random.uniform(3.14, 6.18))
                 except Exception as e:
-                    print("[ERRO] 直接访问出现错误 {0}，静默5秒".format(e))
+                    print("[ERRO] 直接访问出现错误 {0} 静默5秒".format(e))
                 finally:
                     time.sleep(5)
         print('[INFO] 线程 {0} 退出 ...'.format(thread_name))
