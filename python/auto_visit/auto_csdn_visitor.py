@@ -24,7 +24,7 @@ class csdn_blog_visitor(object):
     def __init__(self, entry_url):
         self.blog_url = entry_url
         self.article_list = []
-        self.max_proxy_count = 10
+        self.max_proxy_count = 5
         self.proxy_queue = Queue()
         self.agentpool = agentpool()
         self.proxypool = proxypool('https://www.xicidaili.com/nn/', self.max_proxy_count)
@@ -64,6 +64,10 @@ class csdn_blog_visitor(object):
         while True:
             while self.proxy_queue.qsize() < self.max_proxy_count:
                 proxy_list = self.proxypool.get_proxy_list()
+                if not proxy_list:
+                    print('[WARN] 尝试获取代理失败，代理网站不给力啊 ...')
+                    continue
+
                 for proxy_item in proxy_list:
                     self.proxy_queue.put(proxy_item)
             else:
