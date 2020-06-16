@@ -474,3 +474,8 @@ import google.protobuf
 # pip install protobuf
 # 这个模块不用直接引用，但是在使用 google protobuf 前需要安装，因为导出 protobuf 格式的文件中会引用这个模块
 # 工作时（2020-3-16 12:39:55）第一次使用
+
+import rsa
+# pip install rsa
+# 这个模块用来实现非对称加密的操作，公钥加密、私钥解密、私钥签名、公钥验证
+# 工作时（2020-6-15 16:52:55）第一次使用
