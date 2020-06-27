@@ -27,7 +27,9 @@ class csdn_blog_visitor(object):
         self.max_proxy_count = 5
         self.proxy_queue = Queue()
         self.agentpool = agentpool()
-        self.proxypool = proxypool('https://www.xicidaili.com/nn/', self.max_proxy_count)
+        self.proxy_pool_list = [proxypool('https://www.xicidaili.com/nn/', self.max_proxy_count),
+            proxypool('https://www.xicidaili.com/nn/', self.max_proxy_count),
+            proxypool('https://www.xicidaili.com/nn/', self.max_proxy_count)]
 
     def retrieve_article_list(self):
         artcle_count = 0;
@@ -53,6 +55,12 @@ class csdn_blog_visitor(object):
                         artcle_count += 1
         print('[INFO] 当前账号总共查找到 {0} 篇文章'.format(artcle_count))
 
+    def checker(self, thread_name): # 迷惑
+        print('[INFO] 启动线程 {0} ...'.format(thread_name))
+        content = input()
+        if content == 'Q' or content == 'q':
+            self.running = False
+
     def producer(self, thread_name):
         print('[INFO] 启动线程 {0} ...'.format(thread_name))
 
@@ -60,11 +68,12 @@ class csdn_blog_visitor(object):
             print('[INFO] 没有文章需要访问，退出线程 {0} ...'.format(thread_name))
             return
 
-        while True:
+        while self.running:
             while self.proxy_queue.qsize() < self.max_proxy_count:
-                proxy_list = self.proxypool.get_proxy_list()
+                proxy_pool = random.choice(self.proxy_pool_list)
+                proxy_list = proxy_pool.get_proxy_list()
                 if not proxy_list:
-                    print('[WARN] 尝试获取代理失败，代理网站不给力啊 ...')
+                    print('[WARN] 尝试从 {0} 获取代理失败 ...'.format(proxy_pool.get_proxy_info_page()))
                     continue
 
                 for proxy_item in proxy_list:
@@ -84,7 +93,7 @@ class csdn_blog_visitor(object):
         print("[INFO] 开始等待准备代理，静默60秒")
         time.sleep(60)
 
-        while True:
+        while self.running:
             while not self.proxy_queue.empty():
                 proxies = self.proxy_queue.get()
                 print("[INFO] 当前使用代理 {0} ...".format(proxies))
@@ -120,6 +129,8 @@ class csdn_blog_visitor(object):
 
     def run(self):
         self.retrieve_article_list()
+        self.running = True
+        Thread(target=self.checker, args=("checker",)).start()
         Thread(target=self.producer, args=("producer",)).start()
         Thread(target=self.consumer, args=("consumer",)).start()
 
