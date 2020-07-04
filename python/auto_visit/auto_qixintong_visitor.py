@@ -84,27 +84,34 @@ class qinxintong_visitor(object):
 
 
     def looking_for_investment(self, cur_level, max_level, url_list):
+        if cur_level > max_level: return
+
         next_level_url_list = []
         with open(self.main_dir + '/company_detail_info_' + str(cur_level) +'.txt', 'a', encoding='UTF-8') as file:
             for url in url_list:
                 headers = {'User-Agent': self.agentpool.get_random_user_agent(), 'Connection': 'keep-alive'}
 
-                self.write_log('open {0}, level[{1}]\n'.format(url, cur_level), False)
-                time.sleep(random.uniform(5.18, 17.26))
+                self.write_log('open {0}, level[{1}]'.format(url, cur_level), False)
+                time.sleep(random.uniform(6.18, 10.21))
 
                 response = requests.get(url, headers=headers, cookies=self.cookies, timeout=60)
-                if response.status_code == 200:
-                    dom = etree.HTML(response.text)
-                    #self.write_log(response.text)
-                    info_list = self.collect_company_info(dom, cur_level)
-                    file.write('\t'.join(info_list) + '\n')
+                if response.status_code != 200:
+                    self.write_log('url {0} visit failed.'.format(url))
+                    continue
 
-                    next_level_url_list = []
-                    if cur_level < max_level:
-                        next_level_url_list = self.collect_company_investment(dom, cur_level, info_list[0] if info_list else '')
+                dom = etree.HTML(response.text)
+                #self.write_log(response.text)
+                info_list = self.collect_company_info(dom, cur_level)
+                file.write('\t'.join(info_list) + '\n')
 
-        if cur_level <= max_level:
-            self.looking_for_investment(cur_level + 1, max_level, next_level_url_list)
+                if cur_level >= max_level:
+                    continue
+
+                ul = self.collect_company_investment(dom, cur_level, info_list[0] if info_list else '')
+                self.write_log('共 {0} 家下级单位'.format(len(ul)), False)
+                next_level_url_list.extend(ul)
+
+        self.looking_for_investment(cur_level + 1, max_level, next_level_url_list)
 
     def init_top_target_list(self):
         with open('./1levelcompany.txt', 'r', encoding='UTF-8') as file:
