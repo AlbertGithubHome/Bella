@@ -12,6 +12,7 @@ import sys
 import time
 import random
 import requests
+import browsercookie
 from lxml import etree
 from queue import Queue
 from threading import Thread
@@ -19,15 +20,17 @@ from threading import Thread
 sys.path.append(os.path.abspath("../tools/network"))
 from agentpool import agentpool
 from proxypool import proxypool
+#pip install -i https://pypi.doubanio.com/simple pysqlite
 
 class qinxintong_visitor(object):
-    def __init__(self, entry_url):
+    def __init__(self, entry_url, user_cookies):
         self.main_url = entry_url
         self.top_target_list = []
         self.main_dir = ''
         self.max_proxy_count = 5
         self.proxy_queue = Queue()
         self.agentpool = agentpool()
+        self.user_cookies = user_cookies
         self.proxy_pool_list = [proxypool('https://www.xicidaili.com/nn/', self.max_proxy_count),
             proxypool('https://www.xicidaili.com/nn/', self.max_proxy_count)]
 
@@ -85,32 +88,45 @@ class qinxintong_visitor(object):
         with open(self.main_dir + '/company_detail_info_' + str(cur_level) +'.txt', 'a', encoding='UTF-8') as file:
             for url in url_list:
                 headers = {'User-Agent': self.agentpool.get_random_user_agent(), 'Connection': 'keep-alive'}
+
+                self.write_log('open {0}, level[{1}]\n'.format(url, cur_level), False)
                 time.sleep(random.uniform(5.18, 17.26))
-                response = requests.get(url,  headers=headers)
+
+                response = requests.get(url, headers=headers, cookies=self.cookies, timeout=60)
                 if response.status_code == 200:
-
                     dom = etree.HTML(response.text)
-                    #file.write(response.text)
-                    info_list = []
-
+                    #self.write_log(response.text)
                     info_list = self.collect_company_info(dom, cur_level)
                     file.write('\t'.join(info_list) + '\n')
-                    next_level_url_list = self.collect_company_investment(dom, cur_level, info_list[0] if info_list else '')
 
-        if cur_level < max_level:
+                    next_level_url_list = []
+                    if cur_level < max_level:
+                        next_level_url_list = self.collect_company_investment(dom, cur_level, info_list[0] if info_list else '')
+
+        if cur_level <= max_level:
             self.looking_for_investment(cur_level + 1, max_level, next_level_url_list)
 
-    def init_top_target_list():
-        self.top_target_list.append('https://www.qixintong.cn/company/5a376162665636346b5a43');
+    def init_top_target_list(self):
+        with open('./1levelcompany.txt', 'r', encoding='UTF-8') as file:
+            self.top_target_list = file.read().strip().split('\n')
+        self.write_log('一共 {0} 家企业，开始检索信息...\n'.format(len(self.top_target_list)));
 
-    def write_log(str_info):
-        print(str_info)
+    def write_log(self, str_info, console_show=True):
+        with open(self.main_dir + '/runtime.log', 'a', encoding='UTF-8') as file:
+            file.write(str_info + '\n')
+        if console_show: print(str_info)
+
+    def init_cookies(self):
+        self.cookies = dict(map(lambda x:x.split('='), self.user_cookies.split(";")))
 
     def run(self):
         self.main_dir = time.strftime("%Y-%m-%d %H%M%S", time.localtime())
         os.makedirs(self.main_dir)
+        self.init_top_target_list()
+        self.init_cookies()
         self.looking_for_investment(1, 3, self.top_target_list)
 
 if __name__ == '__main__':
-    auto_visitor = qinxintong_visitor('https://www.qixintong.cn')
+    auto_visitor = qinxintong_visitor('https://www.qixintong.cn',
+     'advert=1; utype=2; sessionid=1n6ic4ry8xt75mlr9vlf9z1my9e2g4wz; tel=15321905915')
     auto_visitor.run()
