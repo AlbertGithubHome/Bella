@@ -20,6 +20,11 @@ sys.path.append(os.path.abspath("../tools/network"))
 from agentpool import agentpool
 from proxypool import proxypool
 
+import datetime
+from selenium import webdriver
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+
 class tianyan_visitor(object):
     def __init__(self, entry_url):
         self.blog_url = entry_url
@@ -101,6 +106,76 @@ class tianyan_visitor(object):
         if cur_level < max_level:
             self.looking_for_investment(cur_level + 1, max_level, next_level_url_list)
 
+    def selenium_looking_for_investment(self, browser, cur_level, max_level, url_list):
+        try:
+            next_level_url_list = []
+            with open('company_detail_info_' + str(cur_level) +'.txt', 'a+', encoding='UTF-8') as file:
+                for url in url_list:
+                    browser.get(url)
+                    time.sleep(random.uniform(5.18, 7.26))
+                    dom = etree.HTML(browser.page_source)
+                    info_list = []
+
+                    val = dom.xpath('//*[@id="company_web_top"]/div[2]/div[3]/div[1]/h1/text()') # 公司名称
+                    info_list.append(val[0])
+                    company_name = val[0]
+                    print(company_name)
+
+                    val = dom.xpath('//*[@id="_container_baseInfo"]/table[1]/tbody/tr[1]/td[1]/div[1]/div[1]/div[2]/div[1]/a/text()') # 法定代表人
+                    info_list.append(val[0])
+
+                    val = dom.xpath('//*[@id="_container_baseInfo"]/table[2]/tbody/tr[1]/td[2]/div/text()') # 注册资本
+                    info_list.append(val[0])
+                    val = dom.xpath('//*[@id="_container_baseInfo"]/table[2]/tbody/tr[1]/td[4]/text()') # 实缴资本
+                    info_list.append(val[0])
+                    val = dom.xpath('//*[@id="_container_baseInfo"]/table[2]/tbody/tr[2]/td[2]/div/text()') # 成立日期
+                    info_list.append(val[0])
+                    val = dom.xpath('//*[@id="_container_baseInfo"]/table[2]/tbody/tr[2]/td[4]/text()') # 经营状态
+                    info_list.append(val[0])
+                    val = dom.xpath('//*[@id="_container_baseInfo"]/table[2]/tbody/tr[3]/td[2]/text()') # 统一社会信用代码
+                    info_list.append(val[0])
+                    val = dom.xpath('//*[@id="_container_baseInfo"]/table[2]/tbody/tr[3]/td[4]/text()') # 工商注册号
+                    info_list.append(val[0])
+                    val = dom.xpath('//*[@id="_container_baseInfo"]/table[2]/tbody/tr[4]/td[2]/text()') # 纳税人识别号
+                    info_list.append(val[0])
+                    val = dom.xpath('//*[@id="_container_baseInfo"]/table[2]/tbody/tr[4]/td[4]/text()') # 组织机构代码
+                    info_list.append(val[0])
+                    val = dom.xpath('//*[@id="_container_baseInfo"]/table[2]/tbody/tr[5]/td[2]/text()') # 公司类型
+                    info_list.append(val[0])
+                    val = dom.xpath('//*[@id="_container_baseInfo"]/table[2]/tbody/tr[5]/td[4]/text()') # 行业
+                    info_list.append(val[0])
+                    val = dom.xpath('//*[@id="_container_baseInfo"]/table[2]/tbody/tr[6]/td[2]/text/text()') # 核准日期
+                    info_list.append(val[0])
+                    val = dom.xpath('//*[@id="_container_baseInfo"]/table[2]/tbody/tr[6]/td[4]/text()') # 登记机关
+                    info_list.append(val[0])
+                    val = dom.xpath('//*[@id="_container_baseInfo"]/table[2]/tbody/tr[7]/td[2]/span/text()') # 营业期限
+                    info_list.append(val[0])
+                    val = dom.xpath('//*[@id="_container_baseInfo"]/table[2]/tbody/tr[7]/td[4]/text()') # 纳税人资质
+                    info_list.append(val[0])
+                    val = dom.xpath('//*[@id="_container_baseInfo"]/table[2]/tbody/tr[10]/td[2]/text()') # 注册地址
+                    info_list.append(val[0])
+                    val = dom.xpath('//*[@id="_container_baseInfo"]/table[2]/tbody/tr[11]/td[2]/span/text()') # 经营范围
+                    info_list.append(val[0])
+
+                    file.write('\t'.join(info_list) + '\n')
+
+                    if cur_level == max_level:
+                        continue
+
+                    with open('company_invest_info_' + str(cur_level) +'.txt', 'a+', encoding='UTF-8') as outfile:
+                        name_list = dom.xpath('//*[@id="_container_invest"]/div/table/tbody/tr/td[2]/table/tr[1]/td[2]/div/a/text()') # 被投资企业名称
+                        rate_list = dom.xpath('//*[@id="_container_invest"]/div/table/tbody/tr/td[6]/span/text()') # 投资比例
+                        next_level_url_list = dom.xpath('//*[@id="_container_invest"]/div/table/tbody/tr/td[2]/table/tr[1]/td[2]/div/a/@href') # 网址
+                        for name, rate, new_url in zip(name_list, rate_list, next_level_url_list):
+                            outfile.write('{0}\t{1}\t{2}\n'.format(name, rate, new_url))
+
+
+            if cur_level < max_level:
+                self.lselenium_looking_for_investment(browser, cur_level + 1, max_level, next_level_url_list)
+        except Exception as e:
+            #raise e
+            print("get_newest_url error!")
+
 
     def checker(self, thread_name): # 迷惑
         print('[INFO] 启动线程 {0} ...'.format(thread_name))
@@ -175,7 +250,12 @@ class tianyan_visitor(object):
         print('[INFO] 线程 {0} 退出 ...'.format(thread_name))
 
     def run(self):
-        self.looking_for_investment(1, 3, [self.blog_url])
+        #self.looking_for_investment(1, 3, [self.blog_url])
+        browser = webdriver.Firefox()
+        browser.get(self.blog_url)
+        time.sleep(random.uniform(35.18, 57.26))
+        self.selenium_looking_for_investment(browser, 1, 3, [self.blog_url])
+        browser.quit()
         #self.running = True
         #Thread(target=self.checker, args=("checker",)).start()
         #Thread(target=self.producer, args=("producer",)).start()
