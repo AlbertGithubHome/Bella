@@ -31,52 +31,125 @@ class qinxintong_visitor(object):
         self.max_proxy_count = 5
         self.proxy_queue = Queue()
         self.agentpool = agentpool()
-        self.proxy_pool_list = [proxypool('https://www.xicidaili.com/nn/', self.max_proxy_count),
-            proxypool('https://www.xicidaili.com/nn/', self.max_proxy_count)]
+        self.use_proxy = False
+        self.proxy_list = [{"https" : "121.36.223.244:8888"}]
 
     def get_headers(self):
         headers = {'User-Agent': self.agentpool.get_random_user_agent(), 'Connection': 'keep-alive'}
         return headers
 
     def get(self, url):
-        response = requests.get(url, headers=self.get_headers(), cookies=self.cookies, timeout=60)
         time.sleep(random.uniform(6.18, 10.21))
+        if self.use_proxy:
+            proxies = random.choice(self.proxy_list)
+            response = requests.get(url, headers=self.get_headers(), proxies=proxies, cookies=self.cookies, timeout=30)
+        else:
+            response = requests.get(url, headers=self.get_headers(), cookies=self.cookies, timeout=60)
         return response
 
     def post(self, url, payload):
-        response = requests.post(url, data=payload, headers=self.get_headers(), cookies=self.cookies, timeout=60)
         time.sleep(random.uniform(3.14, 6.05))
+        if self.use_proxy:
+            proxies = random.choice(self.proxy_list)
+            response = requests.post(url, data=payload, headers=self.get_headers(), proxies=proxies, cookies=self.cookies, timeout=30)
+        else:
+            response = requests.post(url, data=payload, headers=self.get_headers(), cookies=self.cookies, timeout=60)
         return response
 
     def collect_company_info(self, dom, cur_level):
         info_list = []
-        val = dom.xpath('//*[@id="companyName"]/text()') # 公司名称
-        info_list.append(val[0])
 
-        val = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[2]/table/tr[1]/td[2]/a/text()') # 企业法人
-        info_list.append(val[0].replace('\n', '').strip())
-        val = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[2]/table/tr[3]/td[1]/text()') # 企业类型
-        info_list.append(val[0])
-        val = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[2]/table/tr[4]/td[1]/text()') # 注册资本
-        info_list.append(val[0])
-        val = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[2]/table/tr[5]/td[1]/text()') # 成立日期
-        info_list.append(val[0])
-        val = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[2]/table/tr[4]/td[2]/text()') # 经营状态
-        info_list.append(val[0])
-        val = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[2]/table/tr[5]/td[2]/text()') # 核准日期
-        info_list.append(val[0])
-        val = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[2]/table/tr[7]/td[1]/text()') # 统一社会信用代码
-        info_list.append(val[0])
-        val = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[2]/table/tr[8]/td[1]/text()') # 工商注册号
-        info_list.append(val[0])
-        val = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[2]/table/tr[7]/td[2]/text()') # 纳税人识别号
-        info_list.append(val[0])
-        val = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[2]/table/tr[8]/td[2]/text()') # 组织机构代码
-        info_list.append(val[0])
-        val = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[2]/table/tr[9]/td/text()') # 注册地址
-        info_list.append(val[0])
-        val = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[2]/table/tr[10]/td/text()') # 经营范围
-        info_list.append(val[0])
+        try:
+            val = dom.xpath('//*[@id="companyName"]/text()') # 公司名称
+            info_list.append(val[0])
+        except Exception as e:
+            self.write_log('A样式不一致：{0}'.format(str(e)))
+            info_list.append('-')
+
+        try:
+            val = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[2]/table/tr[1]/td[2]/a/text()') # 企业法人
+            info_list.append(val[0].replace('\n', '').strip())
+        except Exception as e:
+            self.write_log('B样式不一致：{0}'.format(str(e)))
+            val = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[2]/table/tr[1]/td[2]/text()') # 企业法人
+            info_list.append(val[0].replace('\n', '').strip())
+
+        try:
+            val = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[2]/table/tr[3]/td[1]/text()') # 企业类型
+            info_list.append(val[0])
+        except Exception as e:
+            self.write_log('C样式不一致：{0}'.format(str(e)))
+            info_list.append('-')
+
+        try:
+            val = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[2]/table/tr[4]/td[1]/text()') # 注册资本
+            info_list.append(val[0])
+        except Exception as e:
+            self.write_log('D样式不一致：{0}'.format(str(e)))
+            info_list.append('-')
+
+        try:
+            val = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[2]/table/tr[5]/td[1]/text()') # 成立日期
+            info_list.append(val[0])
+        except Exception as e:
+            self.write_log('E样式不一致：{0}'.format(str(e)))
+            info_list.append('-')
+
+        try:
+            val = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[2]/table/tr[4]/td[2]/text()') # 经营状态
+            info_list.append(val[0])
+        except Exception as e:
+            self.write_log('F样式不一致：{0}'.format(str(e)))
+            info_list.append('-')
+
+        try:
+            val = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[2]/table/tr[5]/td[2]/text()') # 核准日期
+            info_list.append(val[0])
+        except Exception as e:
+            self.write_log('G样式不一致：{0}'.format(str(e)))
+            info_list.append('-')
+
+        try:
+            val = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[2]/table/tr[7]/td[1]/text()') # 统一社会信用代码
+            info_list.append(val[0])
+        except Exception as e:
+            self.write_log('H样式不一致：{0}'.format(str(e)))
+            info_list.append('-')
+
+        try:
+            val = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[2]/table/tr[8]/td[1]/text()') # 工商注册号
+            info_list.append(val[0])
+        except Exception as e:
+            self.write_log('I样式不一致：{0}'.format(str(e)))
+            info_list.append('-')
+
+        try:
+            val = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[2]/table/tr[7]/td[2]/text()') # 纳税人识别号
+            info_list.append(val[0])
+        except Exception as e:
+            self.write_log('G样式不一致：{0}'.format(str(e)))
+            info_list.append('-')
+
+        try:
+            val = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[2]/table/tr[8]/td[2]/text()') # 组织机构代码
+            info_list.append(val[0])
+        except Exception as e:
+            self.write_log('K样式不一致：{0}'.format(str(e)))
+            info_list.append('-')
+
+        try:
+            val = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[2]/table/tr[9]/td/text()') # 注册地址
+            info_list.append(val[0])
+        except Exception as e:
+            self.write_log('L样式不一致：{0}'.format(str(e)))
+            info_list.append('-')
+
+        try:
+            val = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[2]/table/tr[10]/td/text()') # 经营范围
+            info_list.append(val[0])
+        except Exception as e:
+            self.write_log('M样式不一致：{0}'.format(str(e)))
+            info_list.append('-')
 
         self.write_log("收集 [{0}级]【{1}】 详细信息...".format(cur_level, info_list[0] if info_list else ''))
         return info_list
@@ -91,7 +164,7 @@ class qinxintong_visitor(object):
         with open(self.main_dir + '/company_invest_info_' + str(cur_level) +'.txt', 'a', encoding='UTF-8') as outfile:
             name_list = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[14]/table[1]/tr/td[2]/div/a/text()')          # 被投资企业名称
             rate_list = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[14]/table[1]/tr/td[4]/text()')                # 投资比例
-            boss_list = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[14]/table[1]/tr/td[3]/a//text()')             # 企业法人
+            boss_list = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[14]/table[1]/tr/td[3]/a/text()')              # 企业法人
             next_level_url_list = dom.xpath('/html/body/div[3]/div[2]/div/div[2]/div[2]/div[14]/table[1]/tr/td[2]/div/a/@href') # 网址
             for name, rate, boss, new_url in zip(name_list, rate_list, boss_list, next_level_url_list):
                 next_level_url = self.main_url + new_url
