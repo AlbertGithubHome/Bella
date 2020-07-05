@@ -479,3 +479,10 @@ import rsa
 # pip install rsa
 # 这个模块用来实现非对称加密的操作，公钥加密、私钥解密、私钥签名、公钥验证
 # 工作时（2020-6-15 16:52:55）第一次使用
+
+import json
+# json.load(content)
+# json_data = response.json() #json.load(response.text)
+# 这个模块用来处理json数据的，从内容生成json对象
+# 自学时（2020-7-5 14:09:31）第一次使用，用来爬取网页中动态加载的分页数据
+# 采用Post请求，请求分页数据，返回json类型
