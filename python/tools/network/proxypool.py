@@ -22,9 +22,13 @@ class proxypool(object):
         self.max_count = max_count
         self.proxy_list = []
         self.proxy_count = 0
+        self.show_msg = True
         self.agent_pool = agentpool()
 
-    def extract_valid_data(self, ip, port, ip_type, show_msg):
+    def get_proxy_info_page(self):
+        return self.proxy_info_page
+
+    def extract_valid_data(self, ip, port, ip_type):
         try:
             if ip_type == 'HTTP':
                 proxies = {"http": ip + ":" + port}
@@ -39,14 +43,14 @@ class proxypool(object):
             if response.text.strip().replace('\n', '') == ip:
                 self.proxy_count += 1
                 self.proxy_list.append(proxies)
-                if show_msg:
+                if self.show_msg:
                     print("[INFO] 成功获取代理{0}，现在得到的代理总数为{1}".format(proxies, self.proxy_count))
                 return True
         except:
             return False
 
     # 从页面内容上提取IP和PORT，并将可用代理保留
-    def extract_for_xicidaili(self, html_text, show_msg):
+    def extract_for_xicidaili(self, html_text):
         dom = etree.HTML(html_text)
         ip_list = dom.xpath('//*[@id="ip_list"]/tr[/]/td[2]//text()')
         port_list = dom.xpath('//*[@id="ip_list"]/tr[/]/td[3]//text()')
@@ -54,10 +58,11 @@ class proxypool(object):
 
         for ip, port, ip_type in zip(ip_list, port_list, type_list):
             if ip_type in self.ip_type_list:
-                self.extract_valid_data(ip, port, ip_type, show_msg)
+                self.extract_valid_data(ip, port, ip_type)
 
     def get_proxy_list(self, show_msg=True):
         self.proxy_count = 0
+        self.show_msg = show_msg
         headers={"User-Agent": self.agent_pool.get_random_user_agent()}
         response = requests.get(self.proxy_info_page, headers=headers)
         if response.status_code != 200:
@@ -65,7 +70,7 @@ class proxypool(object):
 
         # 解析代理IP地址和端口
         if 'xicidaili' in self.proxy_info_page:
-            self.extract_for_xicidaili(response.text, show_msg)
+            self.extract_for_xicidaili(response.text)
         else:
             pass
 
