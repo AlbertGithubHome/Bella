@@ -50,7 +50,7 @@ class proxypool(object):
             return False
 
     # 从页面内容上提取IP和PORT，并将可用代理保留
-    def extract_for_xicidaili(self, html_text):
+    def extract_from_xicidaili(self, html_text):
         dom = etree.HTML(html_text)
         ip_list = dom.xpath('//*[@id="ip_list"]/tr[/]/td[2]//text()')
         port_list = dom.xpath('//*[@id="ip_list"]/tr[/]/td[3]//text()')
@@ -60,17 +60,32 @@ class proxypool(object):
             if ip_type in self.ip_type_list:
                 self.extract_valid_data(ip, port, ip_type)
 
+
+    # 从本地文件提取IP和PORT，并将可用代理保留
+    def extract_from_localhost(self):
+        with open('proxy.dat', 'r', encoding='UTF-8') as file:
+            for line in file:
+                proxy_info = line.replace('\n', '').split(' ')
+                if proxy_info[2] in self.ip_type_list:
+                    self.extract_valid_data(proxy_info[0], proxy_info[1], proxy_info[2])
+
     def get_proxy_list(self, show_msg=True):
         self.proxy_count = 0
         self.show_msg = show_msg
-        headers={"User-Agent": self.agent_pool.get_random_user_agent()}
-        response = requests.get(self.proxy_info_page, headers=headers)
-        if response.status_code != 200:
-            return self.proxy_list
+
+        html_content = ''
+        if 'localhost' not in self.proxy_info_page:
+            headers={"User-Agent": self.agent_pool.get_random_user_agent()}
+            response = requests.get(self.proxy_info_page, headers=headers)
+            if response.status_code != 200:
+                return self.proxy_list
+            html_content = response.text
 
         # 解析代理IP地址和端口
         if 'xicidaili' in self.proxy_info_page:
-            self.extract_for_xicidaili(response.text)
+            self.extract_from_xicidaili(html_content)
+        elif 'localhost' in self.proxy_info_page:
+            self.extract_from_localhost()
         else:
             pass
 
@@ -82,6 +97,7 @@ class proxypool(object):
         return self.proxy_list[:50]
 
 if __name__ == '__main__':
-    pool = proxypool()
+    #pool = proxypool()
+    pool = proxypool('localhost')
     proxy_list = pool.get_proxy_list()
     print(proxy_list, len(proxy_list))
