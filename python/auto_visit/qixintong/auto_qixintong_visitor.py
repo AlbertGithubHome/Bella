@@ -123,26 +123,25 @@ class qinxintong_visitor(object):
     def looking_for_investment(self, cur_level, max_level, url_list):
         if cur_level > max_level: return
 
-        next_level_url_list = []
         for url in url_list:
+            self.write_log('open {0}, level[{1}]'.format(url, cur_level), False)
+
+            response = self.get(url)
+            if response.status_code != 200:
+                self.write_log('url {0} visit failed.'.format(url))
+                continue
+
+            self.write_page(response.text)
+            dom = etree.HTML(response.text)
+
+            info_list = self.collect_company_info(dom, cur_level)
             with open(self.main_dir + '/company_detail_info_' + str(cur_level) +'.txt', 'a', encoding='UTF-8') as file:
-                self.write_log('open {0}, level[{1}]'.format(url, cur_level), False)
-
-                response = self.get(url)
-                if response.status_code != 200:
-                    self.write_log('url {0} visit failed.'.format(url))
-                    continue
-
-                self.write_page(response.text)
-                dom = etree.HTML(response.text)
-
-                info_list = self.collect_company_info(dom, cur_level)
                 file.write('\t'.join(info_list) + '\n')
 
-                if cur_level < max_level:
-                    next_level_url_list = self.collect_company_investment(dom, cur_level, info_list[0] if info_list else '', url)
-                    self.write_log('共 {0} 家下级单位'.format(len(url)), False)
-                    self.looking_for_investment(cur_level + 1, max_level, next_level_url_list)
+            if cur_level < max_level:
+                next_level_url_list = self.collect_company_investment(dom, cur_level, info_list[0] if info_list else '', url)
+                self.write_log('共 {0} 家下级单位'.format(len(next_level_url_list)), False)
+                self.looking_for_investment(cur_level + 1, max_level, next_level_url_list)
 
 
     def init_top_target_list(self):
