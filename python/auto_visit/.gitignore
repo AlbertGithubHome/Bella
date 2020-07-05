@@ -1,1 +1,9 @@
 tmp_csdn_blog_article_list.txt
+
+backup_data
+build
+2020-*
+dist
+*.spec
+*.exe
+visit_qixintong.py
