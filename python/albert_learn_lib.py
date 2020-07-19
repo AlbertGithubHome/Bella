@@ -486,3 +486,10 @@ import json
 # 这个模块用来处理json数据的，从内容生成json对象
 # 自学时（2020-7-5 14:09:31）第一次使用，用来爬取网页中动态加载的分页数据
 # 采用Post请求，请求分页数据，返回json类型
+
+import Scrapy
+# 一个爬虫框架
+# 安装方式 pip install -i https://pypi.doubanio.com/simple Scrapy
+# 依赖 Twisted 和 pyOpenSSL
+# 自学时（2020-7-19 21:08:23）第一次使用
+
