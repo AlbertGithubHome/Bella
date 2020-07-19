@@ -82,9 +82,13 @@ class csdn_blog_visitor(object):
                         # 手动滑稽
                         file_path, file_name = os.path.split(article_url)
                         article_url = self.blog_url + '/article/details/' + file_name
+                        prob = int(int(article_pv) / 500) + 1; # 非等概率，强者恒强
+
+                        for x in range(prob):
+                            self.article_list.append(article_url)
+
                         # 内存记录并写入文件
-                        self.article_list.append(article_url)
-                        file.write('{0}\t{1}\n'.format(article_url, article_pv))
+                        file.write('{0}\t{1}\t{2}\n'.format(article_url, article_pv, prob))
                         artcle_count += 1
         self.write_log('[INFO] 当前账号总共查找到 {0} 篇文章'.format(artcle_count))
 
