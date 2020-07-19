@@ -42,7 +42,17 @@ class csdn_blog_visitor(object):
         print(content)
 
     def get_request_header(self):
-        return {'User-Agent': self.agentpool.get_random_user_agent()} #, 'Connection': 'keep-alive'}
+        return {'User-Agent': self.agentpool.get_random_user_agent(),
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+                'Accept-Language': 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+                'Accept-Encoding': 'gzip, deflate, br',
+                #'Referer': 'https://blog.csdn.net/albertsh',
+                'Connection': 'keep-alive',
+                #'Cookie': 'uuid_tt_dd=10_30249464780-1582439878423-153400; dc_session_id=10_1582439878423.177641; UserName=weixin_41142820; UserInfo=9df529a9dd33454482a5c2ae179f9536; UserToken=9df529a9dd33454482a5c2ae179f9536; UserNick=AlbertS; AU=0C3; UN=shihengzhen101; BT=1582449168049; p_uid=U100000; __yadk_uid=q8v6OQ3c4n9H4SYvaAgCPuplvZ7HFqrn; Hm_lvt_3999cb4c6bca41993e741b74e1f08ef3=1591510544; Hm_up_3999cb4c6bca41993e741b74e1f08ef3=%7B%22islogin%22%3A%7B%22value%22%3A%221%22%2C%22scope%22%3A1%7D%2C%22isonline%22%3A%7B%22value%22%3A%221%22%2C%22scope%22%3A1%7D%2C%22isvip%22%3A%7B%22value%22%3A%221%22%2C%22scope%22%3A1%7D%2C%22uid_%22%3A%7B%22value%22%3A%22shihengzhen101%22%2C%22scope%22%3A1%7D%7D; Hm_ct_3999cb4c6bca41993e741b74e1f08ef3=5744*1*shihengzhen101!6525*1*10_30249464780-1582439878423-153400; Hm_lvt_6bcd52f51e9b3dce32bec4a3997715ac=1591510544; searchHistoryArray=%255B%2522%25E5%258D%2597%25E5%25A2%2599%2522%252C%2522%25E4%25BD%25A0%25E5%25B1%2585%25E7%2584%25B6%25E8%25BF%2598%25E5%258E%25BB%25E6%259C%258D%25E5%258A%25A1%25E5%2599%25A8%25E4%25B8%258A%25E6%258D%259E%25E6%2597%25A5%25E5%25BF%2597%2522%255D; announcement=%257B%2522isLogin%2522%253Atrue%252C%2522announcementUrl%2522%253A%2522https%253A%252F%252Flive.csdn.net%252Froom%252Fcompanyzh%252F5o1Kf1RQ%253Futm_source%253D1593515841%2522%252C%2522announcementCount%2522%253A0%257D; dc_sid=fcc9fdd50534e9f672a9c8df1412f52e; TY_SESSION_ID=9389fe13-968a-4bd0-aaa9-16a18639b65c; c_first_ref=www.baidu.com; c_first_page=https%3A//blog.csdn.net/qq_42873554/article/details/106604859; c_utm_source=itdadao; c_utm_medium=distribute.pc_feed.none-task-blog-alirecmd-4.nonecase; dc_tos=qdptw5; c_ref=https%3A//blog.csdn.net/weixin_41142820; c_segment=8',
+                'Upgrade-Insecure-Requests': '1',
+                'Cache-Control': 'max-age=0',
+                'TE': 'Trailers'
+                }
 
     def get(self, url, sleep_pair=[0.1, 0.2], **kw):
         headers = self.get_request_header()
@@ -142,7 +152,7 @@ class csdn_blog_visitor(object):
                 self.write_log("[INFO] 当前使用代理 {0} ...".format(proxies))
 
                 try:
-                    response = self.get(article_url, [6.18, 13.14], proxies=proxies, timeout=10)
+                    response = self.get(article_url, [10.21, 64.0], proxies=proxies, timeout=10)
                     if response.status_code != 200:
                         self.write_log("[WARN] 代理出现问题，静默4秒")
                         time.sleep(4)
