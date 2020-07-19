@@ -25,11 +25,12 @@ class csdn_blog_visitor(object):
         self.blog_url = 'https://blog.csdn.net/albertsh'
         self.article_list = []
         self.visit_count = 0
-        self.use_proxy = False
-        self.max_proxy_count = 5
+        self.use_proxy = True
+        self.max_proxy_count = 50
         self.proxy_queue = Queue()
         self.agentpool = agentpool()
-        self.proxy_pool_list = [proxypool('https://www.xicidaili.com/nn/', self.max_proxy_count),
+        self.proxy_pool_list = [#proxypool('https://www.xicidaili.com/nn/', self.max_proxy_count),
+            proxypool('localhost', self.max_proxy_count),
             proxypool('localhost', self.max_proxy_count)]
 
     def parse_commands(self):
@@ -58,7 +59,7 @@ class csdn_blog_visitor(object):
         sleep_time = random.uniform(sleep_pair[0], sleep_pair[1])
         if response.status_code == 200:
             self.visit_count += 1
-            self.write_log("[INFO] [{0}] 访问 {1} 成功! 睡一会[{2}]".format(self.visit_count, url, round(sleep_time, 2)))
+            self.write_log("[INFO] [{0}] 访问 {1} 成功! 睡一会儿[{2}]".format(self.visit_count, url, round(sleep_time, 2)))
 
         time.sleep(sleep_time)
 
@@ -93,13 +94,13 @@ class csdn_blog_visitor(object):
         self.write_log('[INFO] 当前账号总共查找到 {0} 篇文章'.format(artcle_count))
 
     def checker(self, thread_name): # 迷惑
-        self.write_log('[INFO] 启动线程 {0} ...'.format(thread_name))
+        self.write_log('[INFO] 启动线程 [{0}] ...'.format(thread_name))
         content = input()
         if content == 'Q' or content == 'q':
             self.running = False
 
     def producer(self, thread_name):
-        self.write_log('[INFO] 启动线程 {0} ...'.format(thread_name))
+        self.write_log('[INFO] 启动线程 [{0}] ...'.format(thread_name))
 
         if not self.article_list:
             self.write_log('[INFO] 没有文章需要访问，退出线程 {0} ...'.format(thread_name))
@@ -116,13 +117,14 @@ class csdn_blog_visitor(object):
                 for proxy_item in proxy_list:
                     self.proxy_queue.put(proxy_item)
             else:
-                self.write_log('[INFO] 当前代理池超过{0}，正等待消耗'.format(self.max_proxy_count))
-                self.write_log('[INFO] 线程 {0} 沉睡 {1} 秒'.format(thread_name, 8))
-                time.sleep(8)
-        self.write_log('[INFO] 线程 {0} 退出 ...'.format(thread_name))
+                self.write_log('[INFO] 当前代理池个数 {0} 超过 {1}，正等待消耗'.format(
+                    self.proxy_queue.qsize(), self.max_proxy_count))
+                self.write_log('[INFO] 线程 [{0}] 沉睡 {1} 秒'.format(thread_name, 250))
+                time.sleep(250)
+        self.write_log('[INFO] 线程 [{0}] 退出 ...'.format(thread_name))
 
     def consumer(self, thread_name):
-        self.write_log('[INFO] 启动线程 {0} ...'.format(thread_name))
+        self.write_log('[INFO] 启动线程 [{0}] ...'.format(thread_name))
 
         if not self.article_list:
             self.write_log('[INFO] 没有文章需要访问，退出线程 {0} ...'.format(thread_name))
@@ -134,7 +136,8 @@ class csdn_blog_visitor(object):
 
         while self.running:
             article_url = random.choice(self.article_list)
-            while self.use_proxy and not self.proxy_queue.empty():
+            pick_val = random.choice([1,2,3])
+            if self.use_proxy and not self.proxy_queue.empty() and pick_val > 1:
                 proxies = self.proxy_queue.get()
                 self.write_log("[INFO] 当前使用代理 {0} ...".format(proxies))
 
@@ -154,7 +157,7 @@ class csdn_blog_visitor(object):
                     self.write_log("[ERRO] 直接访问出现错误 {0} 静默5秒".format(e))
                 finally:
                     time.sleep(5)
-        self.write_log('[INFO] 线程 {0} 退出 ...'.format(thread_name))
+        self.write_log('[INFO] 线程 [{0}] 退出 ...'.format(thread_name))
 
     def run(self):
         self.collect_article_list()
