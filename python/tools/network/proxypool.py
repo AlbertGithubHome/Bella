@@ -9,6 +9,7 @@ __author__ = 'AlbertS'
 #
 # 思路：每次请求从指定地址获取可用IP和PORT
 
+import os
 import sys
 import time
 import requests
@@ -63,7 +64,7 @@ class proxypool(object):
 
     # 从本地文件提取IP和PORT，并将可用代理保留
     def extract_from_localhost(self):
-        with open('proxy.dat', 'r', encoding='UTF-8') as file:
+        with open(os.path.dirname(__file__) + '/proxy.dat', 'r', encoding='UTF-8') as file:
             for line in file:
                 proxy_info = line.replace('\n', '').split(' ')
                 if proxy_info[2] in self.ip_type_list:
