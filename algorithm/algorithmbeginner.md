@@ -9,7 +9,7 @@
 |   算法名字   |  算法名字  |     关键词     |   解决问题   | 时间复杂度 |                           参考链接                           |
 | :----------: | :--------: | :------------: | :----------: | :--------: | :----------------------------------------------------------: |
 |    Floyd     |  弗洛伊德  | 中转，动态规划 | 多源最短路径 |   O(N^3)   | [Floyd](https://wiki.jikexueyuan.com/project/easy-learn-algorithm/floyd.html) |
-|   Dijkstra   | 迪杰斯特拉 | 最短，贪心算法 | 单源最短路径 |   O(N^2)   | [Dijkstra](https://wiki.jikexueyuan.com/project/easy-learn-algorithm/dijkstra.html) |
+|   Dijkstra   | 迪杰斯特拉 | 松弛，贪心算法 | 单源最短路径 |   O(N^2)   | [Dijkstra](https://wiki.jikexueyuan.com/project/easy-learn-algorithm/dijkstra.html) |
 |   Kruskal    | 克鲁斯卡尔 |                |  最小生成树  |            |                                                              |
 |     Prim     |   普里姆   |                |  最小生成树  |            |                                                              |
 | Bellmen_Ford |            |                |              |            |                                                              |
