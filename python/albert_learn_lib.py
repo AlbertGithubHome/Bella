@@ -493,3 +493,111 @@ import Scrapy
 # 依赖 Twisted 和 pyOpenSSL
 # 自学时（2020-7-19 21:08:23）第一次使用
 
+
+import jieba # 结巴分词
+import wordcloud # 词云展示库
+import collections # 词频统计库
+# 一个词云生成的组合库
+# 2020-03-01 22:13:22 学习词云时第一次使用
+# 参考例子 https://github.com/AlbertGithubHome/Bella/blob/master/python/wordcloud/simplewordcloud.py
+
+
+import stylecloud
+# 一个worldcloud的美化版本，2020-8-1 14:20:46练习时第一次使用
+# 安装方式
+# pip install -i https://pypi.doubanio.com/simple stylecloud
+# 使用方法2行即可
+# from stylecloud import gen_stylecloud
+# gen_stylecloud(file_path='simplewordcloud.py')
+
+
+
+
+
+
+
+
+'''
+C:\Users\Albert>pip list
+Package            Version
+------------------ ---------
+altgraph           0.17
+attrs              19.3.0
+Automat            20.2.0
+beautifulsoup4     4.8.2
+browsercookie      0.7.7
+bs4                0.0.1
+certifi            2019.9.11
+cffi               1.13.2
+chardet            3.0.4
+comtypes           1.1.7
+constantly         15.1.0
+cryptography       2.8
+csdn-visitors      0.0.1
+cssselect          1.1.0
+cycler             0.10.0
+et-xmlfile         1.0.1
+fire               0.3.1
+future             0.18.2
+hyperlink          19.0.0
+icon-font-to-png   0.4.1
+idna               2.8
+importlib-metadata 1.7.0
+incremental        17.5.0
+itemadapter        0.1.0
+jdcal              1.4.1
+jieba              0.42.1
+keyring            21.2.1
+kiwisolver         1.1.0
+lxml               4.5.0
+lz4                3.1.0
+matplotlib         3.1.3
+mpl-finance        0.10.1
+mplfinance         0.12.3a3
+numpy              1.17.4
+openpyxl           3.0.3
+palettable         3.3.0
+pandas             0.25.3
+parsel             1.6.0
+pefile             2019.4.18
+Pillow             7.0.0
+pip                19.2.3
+Protego            0.1.16
+pyasn1             0.4.8
+pyasn1-modules     0.2.8
+pycparser          2.19
+pycryptodome       3.9.8
+PyDispatcher       2.0.5
+PyHamcrest         2.0.2
+PyInstaller        3.6
+pyOpenSSL          19.1.0
+pyparsing          2.4.6
+python-dateutil    2.8.1
+pytz               2019.3
+pywin32            227
+pywin32-ctypes     0.2.0
+queuelib           1.5.0
+requests           2.22.0
+Scrapy             2.2.1
+selenium           3.141.0
+service-identity   18.1.0
+setuptools         41.2.0
+simplejson         3.17.0
+six                1.13.0
+soupsieve          2.0
+stylecloud         0.5.1
+termcolor          1.1.0
+tinycss            0.4
+tushare            1.2.54
+Twisted            20.3.0
+urllib3            1.25.7
+w3lib              1.22.0
+websocket-client   0.57.0
+wordcloud          1.6.0
+xlrd               1.2.0
+xlutils            2.0.0
+xlwings            0.18.0
+xlwt               1.3.0
+zipp               3.1.0
+zope.interface     5.1.0
+'''

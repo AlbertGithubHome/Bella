@@ -12,7 +12,8 @@
 
 ## 词云
 
-- 一个简单的小例子 [代码地址](https://github.com/AlbertGithubHome/Bella/blob/master/python/worldcloud/simplewordcloud.py)
+- 一个简单wordcloud的小例子 [代码地址](https://github.com/AlbertGithubHome/Bella/blob/master/python/wordcloud/simplewordcloud.py)
+- 彩色加强版词云，使用stylecloud库比较简单 [代码地址](https://github.com/AlbertGithubHome/Bella/blob/master/python/wordcloud/simplestylecloud.py)
 
 ## Excel操作实例
 
