@@ -15,6 +15,7 @@ import requests
 from lxml import etree
 from queue import Queue
 from threading import Thread
+from selenium import webdriver
 
 sys.path.append(os.path.abspath("../tools/network"))
 from agentpool import agentpool
@@ -32,9 +33,13 @@ class csdn_blog_visitor(object):
         self.proxy_pool_list = [#proxypool('https://www.xicidaili.com/nn/', self.max_proxy_count),
             proxypool('localhost', self.max_proxy_count),
             proxypool('localhost', self.max_proxy_count)]
+        self.use_selenium = False
 
     def parse_commands(self):
         self.log_file = 'logs/csdn_{0}.log'.format(time.strftime("%Y_%m_%d_%H%M%S", time.localtime()))
+
+        if self.use_selenium:
+            self.browser = webdriver.Firefox()
 
     def write_log(self, content):
         with open(self.log_file, 'a+', encoding='UTF-8') as file:
@@ -57,14 +62,17 @@ class csdn_blog_visitor(object):
     def get(self, url, sleep_pair=[0.1, 0.2], **kw):
         headers = self.get_request_header()
 
-        if 'proxies' in kw and 'timeout' in kw:
-            response = requests.get(url, headers=headers, proxies=kw['proxies'], timeout=kw['timeout'])
-        elif 'proxies' in kw:
-            response = requests.get(url, headers=headers, proxies=kw['proxies'])
-        elif 'timeout' in kw:
-            response = requests.get(url, headers=headers, timeout=kw['timeout'])
+        if self.use_selenium:
+            response = browser.get(url)
         else:
-            response = requests.get(url, headers=headers)
+            if 'proxies' in kw and 'timeout' in kw:
+                response = requests.get(url, headers=headers, proxies=kw['proxies'], timeout=kw['timeout'])
+            elif 'proxies' in kw:
+                response = requests.get(url, headers=headers, proxies=kw['proxies'])
+            elif 'timeout' in kw:
+                response = requests.get(url, headers=headers, timeout=kw['timeout'])
+            else:
+                response = requests.get(url, headers=headers)
 
         sleep_time = random.uniform(sleep_pair[0], sleep_pair[1])
         if response.status_code == 200:
@@ -167,6 +175,10 @@ class csdn_blog_visitor(object):
                     self.write_log("[ERRO] 直接访问出现错误 {0} 静默5秒".format(e))
                 finally:
                     time.sleep(5)
+
+        if self.use_selenium:
+            self.browser.quit()
+
         self.write_log('[INFO] 线程 [{0}] 退出 ...'.format(thread_name))
 
     def run(self):
