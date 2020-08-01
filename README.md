@@ -25,11 +25,11 @@
 - 自动访问，用于模拟正常浏览网站的情景 [代码地址](https://github.com/AlbertGithubHome/Bella/blob/master/python/auto_visit/auto_csdn_visitor.py)
 - 代理获取，一个获取网站代理的模块文件 [代码地址](https://github.com/AlbertGithubHome/Bella/blob/master/python/tools/network/proxypool.py)
 - Agent获取，用于获取 `UserAgent` 的模块文件 [代码地址](https://github.com/AlbertGithubHome/Bella/blob/master/python/tools/network/agentpool.py)
-
+- CSDN排名粉丝数统计 [代码地址](https://github.com/AlbertGithubHome/Bella/blob/master/python/selenium/statistics/statistics_csdn.py)
 ## 常用的Python库
 
 - 自从学习python用到的库文件都在这了 [代码地址](https://github.com/AlbertGithubHome/Bella/blob/master/python/albert_learn_lib.py)
 
 ## 股票分析
 
-缠论基础划线，参考买卖点 [代码地址](https://github.com/AlbertGithubHome/Bella/blob/master/python/stock/previousV/advanced/quick_candle.py)
+- 缠论基础画线，参考买卖点 [代码地址](https://github.com/AlbertGithubHome/Bella/blob/master/python/stock/previousV/advanced/quick_candle.py)
