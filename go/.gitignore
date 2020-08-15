@@ -1,4 +1,4 @@
 github.com
 golang.org
 
-!/exercise/pkg
+__debug*
