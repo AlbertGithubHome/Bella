@@ -1,6 +1,14 @@
 # go 语言学习
 
-> go go go !
+> go go go go go go go go go
+> go go go go go go go go
+> go go go go go go go
+> go go go go go go
+> go go go go go
+> go go go go
+> go go go
+> go go
+> go
 
 ## 居然没有三目运算符
 
@@ -10,10 +18,11 @@ go语言居然没有三目运算符，这让人有点想不通，这么优秀的
 int joseph_ring(int n, int m) {
     return n == 1 ? 0 : (joseph_ring(n - 1, m) + m) % n
 }
+```
 
-写成go版本居然要：
+写成go版本居然要这么长，有些让人难以接受
 
-```go
+```golang
 func JosephRing(n int, m int) int {
     if n == 1 {
         return 0
@@ -22,5 +31,3 @@ func JosephRing(n int, m int) int {
     return (JosephRing(n - 1, m) + m) % n
 }
 ```
-
-有些让人难以接受
