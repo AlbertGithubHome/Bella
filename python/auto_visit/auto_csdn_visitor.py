@@ -91,8 +91,9 @@ class csdn_blog_visitor(object):
                 response = self.get(self.blog_url + '/article/list/' + str(i), [1, 2])
                 if response.status_code == 200:
                     dom = etree.HTML(response.text)
-                    article_url_list = dom.xpath('//*[@id="mainBox"]/main/div[2]/div[*]/h4/a/@href')
-                    atticle_pv_list = dom.xpath('//*[@id="mainBox"]/main/div[2]/div[*]/div[1]/p/span[2]/text()')
+                    article_url_list = dom.xpath('//*[@id="mainBox"]/main/div[2]/div[2]/div[*]/h4/a/@href')
+                    atticle_pv_list = dom.xpath('//*[@id="mainBox"]/main/div[2]/div[2]/div[*]/div[1]/p/span[2]/text()')
+
                     # 文章查找完毕
                     if not article_url_list:
                         break
