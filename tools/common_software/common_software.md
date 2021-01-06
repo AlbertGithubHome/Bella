@@ -117,5 +117,16 @@
 
 
 
+---------------------------------------------
+
+>以下为2021-1-6 22:33:51以后更新
+
+
+- WSL - Windows Subsystem for Linux
+- Windows Terminal
+- Quicker
+- Terminus
+
+
 
 
