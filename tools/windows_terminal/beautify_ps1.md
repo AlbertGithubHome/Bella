@@ -60,3 +60,11 @@ Set-Theme PowerLine
 `Agnoster`, `Avit`, `Darkblood`, `Fish`, `Honukai`, `Paradox`, `PowerLine`, `robbyrussell`, `Sorin`, `tehrob`
 
 以上主题由 `oh my posh` 默认提供，使用 `Set-Theme Agnoster` 命令就可以切换
+
+
+-----------------
+
+参考文档：
+
+- [5 个 PowerShell 主题，让你的 Windows 终端更好看](https://sspai.com/post/52907)
+- [Windows Terminal 终极美化](https://www.chuchur.com/article/windows-terminal-beautify)
