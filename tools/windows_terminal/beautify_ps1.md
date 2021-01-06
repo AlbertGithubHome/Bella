@@ -53,7 +53,7 @@ Set-Theme PowerLine
 
 至此就可以看到配置美化后的PowerShell了
 
-[Beautiful PowerShell](https://cdn.jsdelivr.net/gh/albertgithubhome/cdn/img/powershell.png)
+[Beautiful PowerShell](https://cdn.jsdelivr.net/gh/albertgithubhome/cdn/img/tools/powershell.png)
 
 ## 可选主题
 

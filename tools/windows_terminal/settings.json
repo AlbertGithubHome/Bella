@@ -40,7 +40,11 @@
 
                 "useAcrylic": true,
                 "acrylicOpacity": 0.8,
-                "colorScheme": "deep"
+                "colorScheme": "deep",
+                "fontFace": "Sarasa Term SC"
+                //"fontSize": 14
+
+
             },
             {
                 // Make changes here to the cmd.exe profile.
@@ -79,6 +83,7 @@
     // To learn more about color schemes, visit https://aka.ms/terminal-color-schemes
     "schemes": [
         {
+            // to pick color theme from https://windowsterminalthemes.dev/ 
             "name": "Argonaut",
             "black": "#232323",
             "red": "#ff000f",
