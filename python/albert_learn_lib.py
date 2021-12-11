@@ -511,9 +511,83 @@ import stylecloud
 # gen_stylecloud(file_path='simplewordcloud.py')
 
 
+from tqdm import tqdm
+# 可以用来控制显示进度条，2021-2-27 17:50:49第一次使用
+# passwd/zip_try 破解zip密码时使用
 
+import pyzipper
+# 可以用来解压zip文件，2021-2-27 17:54:36第一次使用
+# 相比于zipfile来说，这个库可以处理非传统加密的文件解密
+# 安装时报错，升级pip之后安装成功
+'''
+C:\Users\Albert>pip install -i https://pypi.doubanio.com/simple pyzipper
+Looking in indexes: https://pypi.doubanio.com/simple
+Collecting pyzipper
+  Using cached https://pypi.doubanio.com/packages/e7/9c/f9cc3811bcc74e5d56f88297d44ca700fda8dcaf8e2840113443366c7471/pyzipper-0.3.4-py2.py3-none-any.whl
+Collecting pycryptodomex (from pyzipper)
+  Using cached https://pypi.doubanio.com/packages/82/e2/a0f9f5452a59bafaa3420585f22b58a8566c4717a88c139af2276bb5695d/pycryptodomex-3.10.1.tar.gz
+    ERROR: Command errored out with exit status 1:
+     command: 'd:\program files\python\python37\python.exe' -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'C:\\Users\\Albert\\AppData\\Local\\Temp\\pip-install-n0pzegyr\\pycryptodomex\\setup.py'"'"'; __file__='"'"'C:\\Users\\Al
+bert\\AppData\\Local\\Temp\\pip-install-n0pzegyr\\pycryptodomex\\setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"')
+)' egg_info --egg-base pip-egg-info
+         cwd: C:\Users\Albert\AppData\Local\Temp\pip-install-n0pzegyr\pycryptodomex\
+    Complete output (31 lines):
+    Testing support for clang
+    Traceback (most recent call last):
+      File "d:\program files\python\python37\lib\site-packages\setuptools\msvc.py", line 489, in _find_latest_available_vc_ver
+        return self.find_available_vc_vers()[-1]
+    IndexError: list index out of range
 
+    During handling of the above exception, another exception occurred:
 
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+      File "C:\Users\Albert\AppData\Local\Temp\pip-install-n0pzegyr\pycryptodomex\setup.py", line 468, in <module>
+        set_compiler_options(package_root, ext_modules)
+      File "C:\Users\Albert\AppData\Local\Temp\pip-install-n0pzegyr\pycryptodomex\compiler_opt.py", line 341, in set_compiler_options
+        clang = compiler_is_clang()
+      File "C:\Users\Albert\AppData\Local\Temp\pip-install-n0pzegyr\pycryptodomex\compiler_opt.py", line 251, in compiler_is_clang
+        return test_compilation(source, msg="clang")
+      File "C:\Users\Albert\AppData\Local\Temp\pip-install-n0pzegyr\pycryptodomex\compiler_opt.py", line 82, in test_compilation
+        objects = compiler.compile([fname], extra_postargs=extra_cc_options)
+      File "d:\program files\python\python37\lib\distutils\_msvccompiler.py", line 346, in compile
+        self.initialize()
+      File "d:\program files\python\python37\lib\distutils\_msvccompiler.py", line 239, in initialize
+        vc_env = _get_vc_env(plat_spec)
+      File "d:\program files\python\python37\lib\site-packages\setuptools\msvc.py", line 185, in msvc14_get_vc_env
+        return EnvironmentInfo(plat_spec, vc_min_ver=14.0).return_env()
+      File "d:\program files\python\python37\lib\site-packages\setuptools\msvc.py", line 843, in __init__
+        self.si = SystemInfo(self.ri, vc_ver)
+      File "d:\program files\python\python37\lib\site-packages\setuptools\msvc.py", line 485, in __init__
+        self.vc_ver = vc_ver or self._find_latest_available_vc_ver()
+      File "d:\program files\python\python37\lib\site-packages\setuptools\msvc.py", line 492, in _find_latest_available_vc_ver
+        raise distutils.errors.DistutilsPlatformError(err)
+    distutils.errors.DistutilsPlatformError: Microsoft Visual C++ 14.0 is required. Get it with "Microsoft Visual C++ Build Tools": https://visualstudio.microsoft.com/downloads/
+    ----------------------------------------
+ERROR: Command errored out with exit status 1: python setup.py egg_info Check the logs for full command output.
+WARNING: You are using pip version 19.2.3, however version 21.0.1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' command.
+
+C:\Users\Albert>python -m pip install --upgrade pip
+Collecting pip
+  Downloading https://files.pythonhosted.org/packages/fe/ef/60d7ba03b5c442309ef42e7d69959f73aacccd0d86008362a681c4698e83/pip-21.0.1-py3-none-any.whl (1.5MB)
+     |████████████████████████████████| 1.5MB 25kB/s
+Installing collected packages: pip
+  Found existing installation: pip 19.2.3
+    Uninstalling pip-19.2.3:
+      Successfully uninstalled pip-19.2.3
+Successfully installed pip-21.0.1
+
+C:\Users\Albert>pip install -i https://pypi.doubanio.com/simple pyzipper
+Looking in indexes: https://pypi.doubanio.com/simple
+Collecting pyzipper
+  Using cached https://pypi.doubanio.com/packages/e7/9c/f9cc3811bcc74e5d56f88297d44ca700fda8dcaf8e2840113443366c7471/pyzipper-0.3.4-py2.py3-none-any.whl (162 kB)
+Collecting pycryptodomex
+  Downloading https://pypi.doubanio.com/packages/1c/63/185b403c095031aca67d753998d9a734201a5b7272a1dcbe758f13de7cec/pycryptodomex-3.10.1-cp35-abi3-win_amd64.whl (1.6 MB)
+     |████████████████████████████████| 1.6 MB 2.2 MB/s
+Installing collected packages: pycryptodomex, pyzipper
+Successfully installed pycryptodomex-3.10.1 pyzipper-0.3.4
+'''
 
 
 
