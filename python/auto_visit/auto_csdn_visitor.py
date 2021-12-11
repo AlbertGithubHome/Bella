@@ -59,6 +59,10 @@ class csdn_blog_visitor(object):
                 'TE': 'Trailers'
                 }
 
+    def is_code_night(self):
+        l = time.localtime(time.time())
+        return l.tm_hour in [23, 0, 1, 2, 3, 4, 5, 6, 7]
+
     def get(self, url, sleep_pair=[0.1, 0.2], **kw):
         headers = self.get_request_header()
 
@@ -73,6 +77,9 @@ class csdn_blog_visitor(object):
                 response = requests.get(url, headers=headers, timeout=kw['timeout'])
             else:
                 response = requests.get(url, headers=headers)
+
+        if self.is_code_night():
+            sleep_pair[0], sleep_pair[1] = sleep_pair[0]*6, sleep_pair[1]*6
 
         sleep_time = random.uniform(sleep_pair[0], sleep_pair[1])
         if response.status_code == 200:
