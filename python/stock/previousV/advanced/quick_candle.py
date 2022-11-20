@@ -15,6 +15,7 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import klineanalyze
 import klinedata
+import datetime
 
 def add_annotate(stock_code, key_type, xlist, ylist):
     listlen = len(xlist)
@@ -69,7 +70,7 @@ def draw_candlestick_on_ax(ax, stock_code, key_type, need_update, key_count=73):
 
         add_guides(stock_code, key_type, low_quotes, high_quotes)
 
-def draw_multiple_candlestick(stock_code, key_type_list, need_update, key_count=73):
+def draw_multiple_candlestick(stock_code, key_type_list, need_update, key_count=73, show=True):
     type_len = len(key_type_list)
     plt.figure(num='K analyze', figsize=(18, 9))
     #fig, ax_array = plt.subplots(2, 2, figsize=(16, 9))
@@ -79,14 +80,19 @@ def draw_multiple_candlestick(stock_code, key_type_list, need_update, key_count=
         ax = plt.subplot(math.ceil(type_len/2), 2, n+1)
         key_type = key_type_list[n]
         draw_candlestick_on_ax(ax, stock_code, key_type, need_update, key_count);
-    mgr = plt.get_current_fig_manager()  # 获取当前figure manager
-    mgr.window.wm_geometry("+16+16")    # 调整窗口在屏幕上弹出的位置
-    mgr.window.state('zoomed')
-    # mgr.full_screen_toggle()
-    # mgr.frame.Maximize(True)
-    plt.show()
+
+    if show:
+        mgr = plt.get_current_fig_manager()  # 获取当前figure manager
+        mgr.window.wm_geometry("+16+16")    # 调整窗口在屏幕上弹出的位置
+        mgr.window.state('zoomed')
+        # mgr.full_screen_toggle()
+        # mgr.frame.Maximize(True)
+        plt.show()
+    else:
+        plt.savefig('pic/{0}-{1}.jpg'.format(datetime.datetime.now().strftime('%Y%m%d'), stock_code))
 
 if __name__ == '__main__':
     stock_code = '600588'
     key_type_list = ['5', '30', 'D', 'W']
-    draw_multiple_candlestick(stock_code if len(sys.argv) <= 1 else sys.argv[1], key_type_list, True, 96)
+    draw_multiple_candlestick(stock_code if len(sys.argv) <= 1 else sys.argv[1], key_type_list, True, 110,
+        True if len(sys.argv) <= 2 else False)
