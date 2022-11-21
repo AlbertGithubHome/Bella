@@ -45,4 +45,4 @@ if __name__ == "__main__":
         if tk:
             print(tk)
             print(ct)
-            #post_wechat_msg(tk, '{0}-技术分析'.format(today), ct)
+            post_wechat_msg(tk, '{0}-技术分析'.format(today), ct)
