@@ -10,11 +10,11 @@ __author__ = 'AlbertS'
 def get_token():
     with open('token', 'r') as file:
         tk = file.read(-1);
-        return tk
+        return tk.replace('\n', '').replace(' ', '')
     return ""
 
 def get_content():
     with open('content', 'r', encoding='utf-8') as file:
-        tk = file.read(-1);
-        return tk
+        ct = file.read(-1);
+        return ct
     return ""
