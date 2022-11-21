@@ -14,7 +14,7 @@ import pushutils
 
 def get_content(today, imgs):
     content = ""
-    img_list = imgs.split(' ')
+    img_list = imgs.replace('\n', ' ').split(' ')
     for img in img_list:
         one_img = "<br/><img src='http://rlotflz4b.hn-bkt.clouddn.com/{0}/{1}' />".format(today, img)
         print(one_img)
@@ -46,6 +46,7 @@ if __name__ == "__main__":
         tk = pushutils.get_token()
         ct = get_content(today, imgs)
         if tk:
+            print(imgs)
             print(tk)
             print(ct)
             post_wechat_msg(tk, '{0}-技术分析'.format(today), ct)
