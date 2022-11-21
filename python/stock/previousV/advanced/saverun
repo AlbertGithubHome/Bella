@@ -1,2 +1,2 @@
 #!/bin/sh
-python quick_candle.py $1 False
+python3 quick_candle.py $1 False
