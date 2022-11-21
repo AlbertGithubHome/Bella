@@ -16,9 +16,12 @@ def get_content(today, imgs):
     content = ""
     img_list = imgs.split(' ')
     for img in img_list:
-        content += "<br/><img src='https://cdn.jsdelivr.net/gh/albertgithubhome/cdn/img/analyze/stock/{0}/{1}' />".format(today, img)
-        content += "<br/> https://cdn.jsdelivr.net/gh/albertgithubhome/cdn/img/analyze/stock/{0}/{1}".format(today, img)
+        one_img = "<br/><img src='http://rlotflz4b.hn-bkt.clouddn.com/{1}/{2}' />".format(today, img)
+        print(one_img)
+        #content += "<br/><img src='https://cdn.jsdelivr.net/gh/albertgithubhome/cdn/img/analyze/stock/{0}/{1}' />".format(today, img)
+        #content += "<br/> https://cdn.jsdelivr.net/gh/albertgithubhome/cdn/img/analyze/stock/{0}/{1}".format(today, img)
         #content += "<br/>[{0}](https://cdn.jsdelivr.net/gh/albertgithubhome/cdn/img/analyze/stock/{1}/{2}) ".format(img, today, img)
+        content += one_img
     return content
 
 def post_wechat_msg(token, title, content):
