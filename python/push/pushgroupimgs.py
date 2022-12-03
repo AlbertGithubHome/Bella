@@ -16,7 +16,8 @@ def get_content(today, imgs):
     content = ""
     img_list = imgs.replace('\n', ' ').split(' ')
     for img in img_list:
-        one_img = "<br/><img src='http://rlotflz4b.hn-bkt.clouddn.com/{0}/{1}' />".format(today, img)
+        #one_img = "<br/><img src='http://rlotflz4b.hn-bkt.clouddn.com/{0}/{1}' />".format(today, img)
+        one_img = "<br/><img src='http://qncdn.stockanalyze.008ct.space/{0}/{1}' />".format(today, img)
         print(one_img)
         #content += "<br/><img src='https://cdn.jsdelivr.net/gh/albertgithubhome/cdn/img/analyze/stock/{0}/{1}' />".format(today, img)
         #content += "<br/> https://cdn.jsdelivr.net/gh/albertgithubhome/cdn/img/analyze/stock/{0}/{1}".format(today, img)
