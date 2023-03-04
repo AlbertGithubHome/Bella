@@ -13,21 +13,23 @@ import math
 import mpl_finance as mpf
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
+import matplotlib.font_manager as fm
 import klineanalyze
 import klinedata
 import datetime
 
-def add_annotate(stock_code, key_type, xlist, ylist):
+def add_annotate(stock_code, stock_name, key_type, xlist, ylist):
     listlen = len(xlist)
     for n in range(listlen):
         plt.annotate(r'({0}, {1})'.format(xlist[n], round(ylist[n],2)),
              xy=(xlist[n], ylist[n]),  xycoords='data',
              xytext=(-21, +0), textcoords='offset points', fontsize=7)
 
-    plt.title(stock_code + '-' + key_type + '-line')
+    #font_set = fm.FontProperties(fname=r"c:\windows\fonts\SIMLI.TTF", size=15)
+    plt.title(stock_name + '-' + stock_code + '-' + key_type + '-line')#, FontProperties=font_set)
     plt.ylabel("price")
 
-def add_guides(stock_code, key_type, low_quotes, high_quotes):
+def add_guides(stock_code, stock_name, key_type, low_quotes, high_quotes):
     # get point data
     xlist, ylist = klineanalyze.tendency(low_quotes, high_quotes);
     plt.plot(xlist, ylist, color='b', linewidth=0.5, linestyle="--")
@@ -40,9 +42,9 @@ def add_guides(stock_code, key_type, low_quotes, high_quotes):
 
     # print(xlist)
     # print(ylist)
-    add_annotate(stock_code, key_type, xlist, ylist)
+    add_annotate(stock_code, stock_name, key_type, xlist, ylist)
 
-def draw_candlestick_on_ax(ax, stock_code, key_type, need_update, key_count=73):
+def draw_candlestick_on_ax(ax, stock_code, stock_name, key_type, need_update, key_count=73):
         key_quotes,date_quotes,low_quotes,high_quotes = klinedata.load_klinedata(stock_code,
             key_type, need_update, key_count)
         mpf.candlestick_ohlc(ax, key_quotes, colordown='#53c156', colorup='#ff1717',
@@ -68,7 +70,7 @@ def draw_candlestick_on_ax(ax, stock_code, key_type, need_update, key_count=73):
         for label in ax.get_xticklabels():
             label.set_horizontalalignment('center')
 
-        add_guides(stock_code, key_type, low_quotes, high_quotes)
+        add_guides(stock_code, stock_name, key_type, low_quotes, high_quotes)
 
 def draw_multiple_candlestick(stock_code, key_type_list, need_update, key_count=73, show=True):
     type_len = len(key_type_list)
@@ -76,10 +78,13 @@ def draw_multiple_candlestick(stock_code, key_type_list, need_update, key_count=
     #fig, ax_array = plt.subplots(2, 2, figsize=(16, 9))
     #fig.subplots_adjust(bottom=0.1)
 
+    stock_map = klinedata.load_stock_map()
+    stock_name = stock_map.get(stock_code, 'flying')
+
     for n in range(type_len):
         ax = plt.subplot(math.ceil(type_len/2), 2, n+1)
         key_type = key_type_list[n]
-        draw_candlestick_on_ax(ax, stock_code, key_type, need_update, key_count);
+        draw_candlestick_on_ax(ax, stock_code, stock_name, key_type, need_update, key_count);
 
     if show:
         mgr = plt.get_current_fig_manager()  # 获取当前figure manager
@@ -92,7 +97,7 @@ def draw_multiple_candlestick(stock_code, key_type_list, need_update, key_count=
         plt.savefig('pic/{0}-{1}.jpg'.format(datetime.datetime.now().strftime('%Y%m%d'), stock_code))
 
 if __name__ == '__main__':
-    stock_code = '600588'
+    stock_code = '000002'
     key_type_list = ['5', '30', 'D', 'W']
     draw_multiple_candlestick(stock_code if len(sys.argv) <= 1 else sys.argv[1], key_type_list, True, 110,
         True if len(sys.argv) <= 2 else False)

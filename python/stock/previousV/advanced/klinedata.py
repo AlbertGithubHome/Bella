@@ -19,7 +19,7 @@ def load_show_data(stock_code, key_type, key_count=73):
     dfcvs = pd.DataFrame(csv_data)
     dfcvs = dfcvs[:key_count]
     dfcvs.sort_values(by='date', ascending=True, inplace=True)
-    
+
     key_quotes = [tuple([i]+list(quote[1:])) for i,quote in enumerate(dfcvs.values)]
     date_quotes = dfcvs.date.values;
     high_quotes = dfcvs.high.values;
@@ -36,7 +36,21 @@ def load_klinedata(stock_code, key_type, need_update=True, key_count=73):
         update_stock_data(stock_code, key_type)
     return load_show_data(stock_code, key_type, key_count)
 
+def load_stock_map():
+    stock_map = {}
+    with open('data/stocklist.csv', 'r', encoding='utf-8') as file:
+        for line in file:
+            if not line:
+                continue
+            data = line.strip()
+            data = data.split(',')
+            stock_map[data[0]] = data[1]
+    return stock_map
+
 if __name__ == '__main__':
     stock_code = '600588'
     key_type = 'D'
     print(load_klinedata(stock_code, key_type))
+    #print(load_stock_map())
+    # with open('output', 'w') as file:
+    #     data = ts.get_stock_basics()
