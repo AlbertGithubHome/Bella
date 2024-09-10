@@ -1,5 +1,8 @@
 {
     "name": "file-explorer",
     "version": "0.0.1",
-    "description": "A command file explorer!"
+    "description": "A command file explorer!",
+    "dependencies": {
+        "nodemailer": "^6.9.15"
+    }
 }
