@@ -1,0 +1,51 @@
+本意是服务器[82.156.125.169](#)每天执行脚本 `dailyanalyze.sh` 以缠论方法分析指定票的每笔画线，然后将各周期的分析图推送到微信消息，时间长了难免会忘记，所以记录一下
+
+# 计划任务
+
+每周五9点中分析前一天的数据，并通知
+
+```bash
+[root@VM-0-3-centos scripts]# crontab -l
+0 9 * * 1-5 /export/scripts/dailyanalyze.sh >> /export/scripts/analyze.log 2>&1
+```
+
+# 脚本路径
+
+```bash
+[root@VM-0-3-centos scripts]# tree /export/scripts/
+/export/scripts/
+|-- analyze.log
+|-- dailyanalyze.sh
+|-- debug-dailyanalyze.sh
+|-- requirements.txt
+`-- stocklist
+
+0 directories, 5 files
+```
+
+## 文件内容
+
+stocklist 里存储的是需要分析的票
+
+```bash
+[root@VM-0-3-centos scripts]# cat stocklist
+600036
+000002
+601318
+000333
+002415
+601138
+```
+
+## 具体步骤
+
+遵循 `dailyanalyze.sh` 脚本的执行顺序，主要分为三大部分：
+
+1. 将传入的多个票逐个运行自定义分析程序，得到输出结果图
+2. 将结果图拷贝到图片git库，并上传到七牛云
+3. 获取到图片的外部连接，将图片信息推送到微信
+
+## 脚本解析
+
+- [/root/maingit/Bella](git@github.com:AlbertGithubHome/Bella.git)
+-[ /root/maingit/qiniu-image-bed](git@gitee.com:AlbertSH/qiniu-image-bed.git)
