@@ -9,7 +9,7 @@ __author__ = 'AlbertS'
 
 import numpy as np
 import pandas as pd
-import mpl_finance as mpf
+import mplfinance as mpf
 import matplotlib.pyplot as plt
 import matplotlib.dates as dates
 from matplotlib.ticker import Formatter
@@ -25,7 +25,8 @@ columns = ['time','open','high','low','close'])
 
 # adjust time format
 dfcvs['time']= pd.to_datetime(dfcvs['time'], format="%Y/%m/%d-%H:%M")
-dfcvs['time']= dfcvs['time'].apply(lambda x:dates.date2num(x)*1440) #1440=24*60，转换成分钟整数
+#dfcvs['time']= dfcvs['time'].apply(lambda x:dates.date2num(x)*1440) #1440=24*60，转换成分钟整数
+dfcvs.set_index('time', inplace=True)
 print(dfcvs)
 # dfcvs = dfcvs[['time','high','open','low','close']]
 # print(dfcvs)
@@ -36,9 +37,15 @@ print(dfcvs)
 data_matrix = dfcvs.values
 #print(data_matrix)
 
+# 设置样式
+mc = mpf.make_marketcolors(up='#ff1717', down='#53c156')
+s = mpf.make_mpf_style(marketcolors=mc)
+
 fig, ax = plt.subplots(figsize=(800/72, 600/72))
 fig.subplots_adjust(bottom=0.1)
-mpf.candlestick_ohlc(ax, data_matrix, colordown='#53c156', colorup='#ff1717', width=0.2, alpha=1)
+#mpf.candlestick_ohlc(ax, data_matrix, colordown='#53c156', colorup='#ff1717', width=0.2, alpha=1)
+mpf.plot(dfcvs, type='candle', ax=ax, style=s, width_adjuster_version='v0', xrotation=45)
+
 
 #https://matplotlib.org/examples/pylab_examples/date_index_formatter.html
 class MyFormatter(Formatter):
@@ -61,7 +68,7 @@ for label in ax.get_xticklabels():
     label.set_rotation(45)
     label.set_horizontalalignment('right')
 
-#plt.show()
+plt.show()
 
 
 
