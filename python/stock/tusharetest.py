@@ -7,24 +7,20 @@
 __author__ = 'AlbertS'
 # @Subject  : tushare test usage
 
-import numpy as np
-import pandas as pd
 import tushare as ts
-import mpl_finance as mpf
-import matplotlib.pyplot as plt
-import matplotlib.dates as dates
-from matplotlib.ticker import Formatter
+# import mplfinance as mpf
 
 
 #print(ts.get_deposit_rate())
-df = ts.get_hist_data('000875', ktype='5')
+#df = ts.get_hist_data('000875', ktype='5')
 #直接保存
-df.to_csv('000875.csv')
+#df.to_csv('000875.csv')
 
 #选择保存
 #df.to_csv('c:/day/000875.csv',columns=['open','high','low','close'])
 
 #https://tushare.pro/user/token 获取
 ts.set_token('11b0b54fc47e99ed0127a63ed000445be3570639c900739894eaf721')
-df = ts.pro_bar(ts_code='000001.SZ', adj='qfq', start_date='20180101', end_date='20181011')
-df.to_csv('000001.csv')
+pro = ts.pro_api()
+df = pro.daily(ts_code='000002.SZ', start_date='20180101', end_date='20181011')
+df.to_csv('000002.csv')
