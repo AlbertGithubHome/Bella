@@ -50,7 +50,6 @@ class CrossMA5Strategy(bt.Strategy):
         if not self.position:
             if prev_close < prev_ma5 and close > ma5:
                 self.log(f'满足买入条件：昨收 {prev_close:.2f} < 昨MA5 {prev_ma5:.2f} 且 今收 {close:.2f} > 今MA5 {ma5:.2f}')
-                self.buy(size=1000)
                 cash = self.broker.get_cash()
                 size = int(cash // close // 2)
                 if size > 0:
@@ -88,4 +87,4 @@ print("夏普比率:", strat.analyzers.sharpe.get_analysis())
 print("最大回撤:", strat.analyzers.drawdown.get_analysis())
 
 # === 4. 绘图：蜡烛图 + 买卖点箭头 ===
-cerebro.plot(style='candlestick')
+#cerebro.plot(style='candlestick')
