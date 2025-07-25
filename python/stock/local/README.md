@@ -1,0 +1,1 @@
+pip install tushare backtrader yfinance matplotlib
