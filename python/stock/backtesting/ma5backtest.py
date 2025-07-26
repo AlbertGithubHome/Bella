@@ -7,7 +7,7 @@ import skdata as sdt
 '''
 def load_data(code):
     try:
-        df = pd.read_csv(f'{code}.csv')
+        df = pd.read_csv(f'data/{code}.csv')
     except FileNotFoundError:
         raise FileNotFoundError(f"未找到文件：{code}.csv")
 
