@@ -33,7 +33,7 @@ def zprint_init(*args, **kwargs):
 
 '''
 策略类
-买入信号：股价在20日线上方，上穿5日线买入
+买入信号：股价在20日线上方，上穿5日线；股价在5日线上方，上穿20日线
 卖出信号：跌破5日线第二日收盘依旧在5日线之下卖出
 '''
 class CrossMA5Strategy(bt.Strategy):
@@ -81,10 +81,12 @@ class CrossMA5Strategy(bt.Strategy):
         prev_close = self.data.close[-1]
         ma5 = self.ma5[0]
         prev_ma5 = self.ma5[-1]
+        ma20 = self.ma20[0]
+        prev_ma20 = self.ma20[-1]
 
         # 当日直接买入
         if not self.position:
-            if prev_close < prev_ma5 and close > ma5 and close > self.ma20[0]:
+            if (prev_close < prev_ma5 and close > ma5 and close >= ma20) or (prev_close < prev_ma20 and close > ma20 and close >= ma5):
                 self.log(f'满足买入条件：昨收 {prev_close:.2f} < 昨MA5 {prev_ma5:.2f} 且 今收 {close:.2f} > 今MA5 {ma5:.2f}')
                 #self.buy()
                 self.order = self.order_target_percent(target=0.99)
@@ -95,7 +97,7 @@ class CrossMA5Strategy(bt.Strategy):
                 self.order = self.order_target_percent(target=0.0)
 
 def run(code, show_plot):
-    # Cerebro设置 ===
+    # Cerebro设置
     cerebro = bt.Cerebro()
     cerebro.addstrategy(CrossMA5Strategy)
 
@@ -146,7 +148,7 @@ def normalize_code(code):
     return code
 
 if __name__ == '__main__':
-    code = '600644'
+    code = '002882'
     code = normalize_code(code)
     skd.download_last_year_data(code)
     # skd.download_data_from_date(code, '20241201')
