@@ -1,6 +1,6 @@
 import backtrader as bt
 import pandas as pd
-import skdata as sdt
+import skdata as skd
 
 '''
 加载数据
@@ -22,6 +22,15 @@ def load_data(code):
 
     return df
 
+def zprint(*args, **kwargs):
+    # 打印到文件
+    with open(".testing.log", "a", encoding="utf-8") as f: print(*args, **kwargs, file=f)
+    # 打印到控制台
+    print(*args, **kwargs)
+
+def zprint_init(*args, **kwargs):
+    with open(".testing.log", "w", encoding="utf-8") as f: print(*args, **kwargs, file=f)
+
 '''
 策略类
 买入信号：上穿5日线买入
@@ -36,7 +45,7 @@ class CrossMA5Strategy(bt.Strategy):
 
     def log(self, txt):
         dt = self.datas[0].datetime.date(0)
-        print(f'{dt.isoformat()}, {txt}')
+        zprint(f'{dt.isoformat()}, {txt}')
 
     def notify_order(self, order):
         if order.status in [order.Completed]:
@@ -107,24 +116,24 @@ def run(code, show_plot):
 
     # 执行回测
     initial_cash = cerebro.broker.getvalue()  # 初始资金
-    print('初始资金: %.2f' % initial_cash)
+    zprint('初始资金: %.2f' % initial_cash)
     results = cerebro.run()
     final_cash = cerebro.broker.getvalue()
-    print('结束资金: %.2f' % final_cash)
+    zprint('结束资金: %.2f' % final_cash)
 
     # 回测区间
     start = df.index[0].strftime('%Y-%m-%d')
     end = df.index[-1].strftime('%Y-%m-%d')
-    print(f'\n+++++++++++++++++++++++++++++++++\n回测区间: {start} ~ {end}')
+    zprint(f'\n+++++++++++++++++++++++++++++++++\n回测区间: {start} ~ {end}')
 
     # 计算盈亏百分比
     profit_percent = (final_cash - initial_cash) / initial_cash * 100
-    print('总计收益: %.2f%%' % profit_percent)
+    zprint('总计收益: %.2f%%' % profit_percent)
 
     # 输出分析器结果
     strat = results[0]
-    print("夏普比率:", strat.analyzers.sharpe.get_analysis())
-    print("最大回撤:", strat.analyzers.drawdown.get_analysis())
+    zprint("夏普比率:", strat.analyzers.sharpe.get_analysis())
+    zprint("最大回撤:", strat.analyzers.drawdown.get_analysis())
 
     # 绘图：蜡烛图 + 买卖点箭头
     if show_plot:
@@ -138,6 +147,7 @@ def normalize_code(code):
 if __name__ == '__main__':
     code = '600644'
     code = normalize_code(code)
-    sdt.download_last_year_data(code)
-    # sdt.download_data_from_date(code, '20241101')
+    skd.download_last_year_data(code)
+    # skd.download_data_from_date(code, '20241101')
+    zprint_init()
     run(code, True)
