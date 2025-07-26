@@ -33,12 +33,13 @@ def zprint_init(*args, **kwargs):
 
 '''
 策略类
-买入信号：上穿5日线买入
+买入信号：股价在30日线上方，上穿5日线买入
 卖出信号：跌破5日线第二日收盘依旧在5日线之下卖出
 '''
 class CrossMA5Strategy(bt.Strategy):
     def __init__(self):
         self.ma5 = bt.ind.SMA(self.data.close, period=5)
+        self.ma30 = bt.ind.SMA(self.data.close, period=30)
         self.buy_price = None  # 记录买入价格
         self.order = None # 存在订单
         self.buy_count = 0 # 买入次数
@@ -83,7 +84,7 @@ class CrossMA5Strategy(bt.Strategy):
 
         # 当日直接买入
         if not self.position:
-            if prev_close < prev_ma5 and close > ma5:
+            if prev_close < prev_ma5 and close > ma5 and close > self.ma30[0]:
                 self.log(f'满足买入条件：昨收 {prev_close:.2f} < 昨MA5 {prev_ma5:.2f} 且 今收 {close:.2f} > 今MA5 {ma5:.2f}')
                 #self.buy()
                 self.order = self.order_target_percent(target=0.99)
