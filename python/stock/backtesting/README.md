@@ -1,1 +1,1 @@
-pip install tushare backtrader yfinance matplotlib
+pip install tushare backtrader yfinance matplotlib python-dotenv
