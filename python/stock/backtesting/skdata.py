@@ -44,5 +44,14 @@ def download_last_year_data(code):
     # 下载最近一年的数据
     download_last_ndays_data(code, 366)
 
+'''
+下载从指定日期开始的K线数据
+'''
+def download_data_from_date(code, start_date):
+    # 获取今天的日期
+    today = datetime.today()
+    # 下载数据
+    download_daily_data(code, start_date, today.strftime('%Y%m%d'))
+
 # download_daily_data('600644.SH', '20240324', '20250726')
 # download_last_year_data('600644.SH')

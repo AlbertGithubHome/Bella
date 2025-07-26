@@ -32,6 +32,7 @@ class CrossMA5Strategy(bt.Strategy):
         self.ma5 = bt.ind.SMA(self.data.close, period=5)
         self.buy_price = None  # 记录买入价格
         self.order = None # 存在订单
+        self.buy_count = 0 # 买入次数
 
     def log(self, txt):
         dt = self.datas[0].datetime.date(0)
@@ -44,7 +45,8 @@ class CrossMA5Strategy(bt.Strategy):
             size = order.executed.size
             if order.isbuy():
                 self.buy_price = price
-                self.log(f'买入 成交价: {price:.2f} 数量: {size:.0f}（成交时间: {dt}）')
+                self.buy_count += 1
+                self.log(f'买入 成交价: {price:.2f} 数量: {size:.0f}（成交时间: {dt}，买入次数：{self.buy_count}）')
             elif order.issell():
                 sell_price = price
                 if self.buy_price:
@@ -82,7 +84,7 @@ class CrossMA5Strategy(bt.Strategy):
                 #self.sell()
                 self.order = self.order_target_percent(target=0.0)
 
-def run(code):
+def run(code, show_plot):
     # Cerebro设置 ===
     cerebro = bt.Cerebro()
     cerebro.addstrategy(CrossMA5Strategy)
@@ -125,10 +127,17 @@ def run(code):
     print("最大回撤:", strat.analyzers.drawdown.get_analysis())
 
     # 绘图：蜡烛图 + 买卖点箭头
-    # cerebro.plot(style='candlestick')
-    cerebro.plot(style='candlestick', barup='lightcoral', bardown='lightgreen', volup='lightcoral', voldown='lightgreen')
+    if show_plot:
+        cerebro.plot(style='candlestick')
+        # cerebro.plot(style='candlestick', barup='lightcoral', bardown='lightgreen', volup='lightcoral', voldown='lightgreen')
+
+def normalize_code(code):
+    if len(code) == 6: code = code + ".SZ" if code[0] < '6' else code + '.SH'
+    return code
 
 if __name__ == '__main__':
-    code = '600644.SH'
+    code = '600644'
+    code = normalize_code(code)
     sdt.download_last_year_data(code)
-    run(code)
+    # sdt.download_data_from_date(code, '20241101')
+    run(code, True)
