@@ -1,3 +1,5 @@
+import matplotlib
+matplotlib.use('Agg')  # 必须最先设置
 import backtrader as bt
 import pandas as pd
 import skdata as skd
