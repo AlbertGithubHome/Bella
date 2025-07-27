@@ -6,6 +6,7 @@ import backtrader as bt
 import pandas as pd
 import skdata as skd
 import datetime
+import sys
 
 '''
 加载数据
@@ -171,9 +172,8 @@ def normalize_code(code):
     return code
 
 if __name__ == '__main__':
-    code = '600644'
+    code = '600644' if len(sys.argv) <= 1 else sys.argv[1]
     code = normalize_code(code)
     skd.download_last_year_data(code)
-    # skd.download_data_from_date(code, '20241201')
     zprint_init()
     run(code, True, False)

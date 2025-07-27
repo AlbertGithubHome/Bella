@@ -160,8 +160,8 @@ def run(code, save_lot, show_plot):
                 )
                 zprint(title_text)
                 fig.suptitle(title_text, fontsize=10, y=0.04)
-                # 保存图像到本地，路径和文件名你可以自定义
-                fig.set_size_inches(19.2, 10.8)  # 1080P
+                # 保存图像到本地
+                fig.set_size_inches(19.2, 10.8)  # 1080P = 1920 * 1080
                 fig.savefig('pic/{0}-{1}.png'.format(datetime.datetime.now().strftime('%Y%m%d'), code), dpi=100, bbox_inches='tight')
             if show_plot:
                 original_show()
