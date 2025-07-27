@@ -180,4 +180,4 @@ if __name__ == '__main__':
     skd.download_last_year_data(code)
     # skd.download_data_from_date(code, '20241201')
     zprint_init()
-    run(code, True, True)
+    run(code, True, False)
