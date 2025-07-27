@@ -108,6 +108,8 @@ def run(code, show_plot):
     # 加载数据
     df = load_data(code)
     data = bt.feeds.PandasData(dataname=df)
+    data.plotinfo.title = f"xxxxx: {code}"  # 添加这行设置标题
+    data.code = code  # 绑定代码
     cerebro.adddata(data)
 
     # 初始资金与手续费
@@ -140,27 +142,41 @@ def run(code, show_plot):
     zprint("最大回撤:", strat.analyzers.drawdown.get_analysis())
 
     # 绘图：蜡烛图 + 买卖点箭头
-    if show_plot:
+    # if show_plot:
+        # cerebro.plot(style='candlestick')#, scheme=MyPlotScheme(f"zzzz: {code}"))
         # cerebro.plot(style='candlestick', barup='lightcoral', bardown='lightgreen', volup='lightcoral', voldown='lightgreen')
-        # cerebro.plot(style='candlestick')
+
+    if show_plot:
         from backtrader import plot
         plotter = plot.Plot(style='candlestick')
         original_show = plotter.show
 
         def new_show(self, *args, **kwargs):
+            # 传入策略实例 strat
             figs = self.plot(strat, **kwargs)
+
             for fig in figs:
-                sharpe = strat.analyzers.sharpe.get_analysis().get('sharperatio', None)
-                drawdown = strat.analyzers.drawdown.get_analysis().max.drawdown  # 最大回撤 %
-                title_text = (
-                    f"Code: {code} | Date Range: {bt_start} ~ {bt_end} | "
-                    f"Initial Cash: {initial_cash:.2f} | Final Cash: {final_cash:.2f} | Total Return: {profit_percent:.2f}% | "
-                    f"Sharpe Ratio: {sharpe:.2f} | Max Drawdown: {drawdown:.2f}% | Buy Count: {strat.buy_count}"
+                # ax = fig.axes[0]
+                # ax.text(
+                #     0.5, 1.16, f"{code}",
+                #     transform=ax.transAxes,
+                #     fontsize=8,
+                #     verticalalignment='top',
+                #     bbox=dict(boxstyle='round', facecolor='white', alpha=0.8),
+                #     zorder=1000
+                # )
+                fig.text(
+                    0.01, 0.01,  # figure 坐标系，x 轴左边，y 轴靠底部
+                    f"code: {code}",
+                    fontsize=12,
+                    verticalalignment='bottom',
+                    bbox=dict(boxstyle='round', facecolor='white', alpha=0.8),
+                    zorder=1000
                 )
-                zprint(title_text)
-                fig.suptitle(title_text, fontsize=10, y=0.04)
+                fig.suptitle(f'股票代码: {code} | 回测期间: {bt_start} ~ {bt_end}', fontsize=14)
             original_show()
             return figs
+
         plotter.show = new_show.__get__(plotter)
         cerebro.plot(plotter=plotter)
 
@@ -170,7 +186,7 @@ def normalize_code(code):
     return code
 
 if __name__ == '__main__':
-    code = '600644'
+    code = '000665'
     code = normalize_code(code)
     skd.download_last_year_data(code)
     # skd.download_data_from_date(code, '20241201')
