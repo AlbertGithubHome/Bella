@@ -1,5 +1,7 @@
 import matplotlib
+print(matplotlib.get_backend())  # 应输出 'agg'
 matplotlib.use('Agg')  # 必须最先设置
+print(matplotlib.get_backend())  # 应输出 'agg'
 import backtrader as bt
 import pandas as pd
 import skdata as skd
