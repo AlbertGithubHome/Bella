@@ -146,28 +146,20 @@ def run(code, save_lot, show_plot):
         # cerebro.plot(style='candlestick')
         from backtrader import plot
         plotter = plot.Plot(style='candlestick')
-        original_show = plotter.show
-
-        def new_show(self, *args, **kwargs):
-            figs = self.plot(strat, **kwargs)
-            for fig in figs:
-                sharpe = strat.analyzers.sharpe.get_analysis().get('sharperatio', None)
-                drawdown = strat.analyzers.drawdown.get_analysis().max.drawdown  # 最大回撤 %
-                title_text = (
-                    f"Code: {code} | Date Range: {bt_start} ~ {bt_end} | "
-                    f"Initial Cash: {initial_cash:.2f} | Final Cash: {final_cash:.2f} | Total Return: {profit_percent:.2f}% | "
-                    f"Sharpe Ratio: {sharpe:.2f} | Max Drawdown: {drawdown:.2f}% | Buy Count: {strat.buy_count}"
-                )
-                zprint(title_text)
-                fig.suptitle(title_text, fontsize=10, y=0.04)
-                # 保存图像到本地，路径和文件名你可以自定义
-                fig.set_size_inches(19.2, 10.8)  # 1080P
-                fig.savefig('pic/{0}-{1}.png'.format(datetime.datetime.now().strftime('%Y%m%d'), code), dpi=100, bbox_inches='tight')
-            if show_plot:
-                original_show()
-            return figs
-        plotter.show = new_show.__get__(plotter)
-        cerebro.plot(plotter=plotter)
+        figs = plotter.plot(strat)
+        for fig in figs:
+            sharpe = strat.analyzers.sharpe.get_analysis().get('sharperatio', None)
+            drawdown = strat.analyzers.drawdown.get_analysis().max.drawdown  # 最大回撤 %
+            title_text = (
+                f"Code: {code} | Date Range: {bt_start} ~ {bt_end} | "
+                f"Initial Cash: {initial_cash:.2f} | Final Cash: {final_cash:.2f} | Total Return: {profit_percent:.2f}% | "
+                f"Sharpe Ratio: {sharpe:.2f} | Max Drawdown: {drawdown:.2f}% | Buy Count: {strat.buy_count}"
+            )
+            zprint(title_text)
+            fig.suptitle(title_text, fontsize=10, y=0.04)
+            # 保存图像到本地，路径和文件名你可以自定义
+            fig.set_size_inches(19.2, 10.8)  # 1080P
+            fig.savefig('pic/{0}-{1}.png'.format(datetime.datetime.now().strftime('%Y%m%d'), code), dpi=100, bbox_inches='tight')
 
 
 def normalize_code(code):
