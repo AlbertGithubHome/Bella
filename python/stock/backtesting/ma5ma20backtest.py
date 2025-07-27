@@ -2,6 +2,7 @@ import backtrader as bt
 import pandas as pd
 import skdata as skd
 import datetime
+import sys
 
 '''
 加载数据
@@ -98,7 +99,28 @@ class CrossMA5Strategy(bt.Strategy):
                 #self.sell()
                 self.order = self.order_target_percent(target=0.0)
 
-def run(code, save_lot, show_plot):
+'''
+订单观察类
+记录已经完成的订单
+'''
+class TradeObserver(bt.Analyzer):
+    def __init__(self):
+        self.trades = []
+
+    def notify_trade(self, trade):
+        if trade.isclosed:
+            self.trades.append({
+                'open_dt': trade.open_datetime(),
+                'close_dt': trade.close_datetime(),
+                'pnl': trade.pnl
+            })
+
+    def get_analysis(self):
+        return self.trades
+
+
+
+def run(code, show_plot, save_lot):
     # Cerebro设置
     cerebro = bt.Cerebro()
     cerebro.addstrategy(CrossMA5Strategy)
@@ -118,6 +140,7 @@ def run(code, save_lot, show_plot):
     # 添加分析器（可选）
     cerebro.addanalyzer(bt.analyzers.SharpeRatio, _name='sharpe')
     cerebro.addanalyzer(bt.analyzers.DrawDown, _name='drawdown')
+    cerebro.addanalyzer(TradeObserver, _name='trades')
 
     # 执行回测
     initial_cash = cerebro.broker.getvalue()  # 初始资金
@@ -141,15 +164,17 @@ def run(code, save_lot, show_plot):
     zprint("最大回撤:", strat.analyzers.drawdown.get_analysis())
 
     # 绘图：蜡烛图 + 买卖点箭头
-    if save_lot:
+    if show_plot or save_lot:
         # cerebro.plot(style='candlestick', barup='lightcoral', bardown='lightgreen', volup='lightcoral', voldown='lightgreen')
         # cerebro.plot(style='candlestick')
         from backtrader import plot
+        import matplotlib.dates as mdates
         plotter = plot.Plot(style='candlestick')
         original_show = plotter.show
 
         def new_show(self, *args, **kwargs):
             figs = self.plot(strat, **kwargs)
+            trade_analysis = strat.analyzers.trades.get_analysis()
             for fig in figs:
                 sharpe = strat.analyzers.sharpe.get_analysis().get('sharperatio', None)
                 drawdown = strat.analyzers.drawdown.get_analysis().max.drawdown  # 最大回撤 %
@@ -160,9 +185,11 @@ def run(code, save_lot, show_plot):
                 )
                 zprint(title_text)
                 fig.suptitle(title_text, fontsize=10, y=0.04)
+
                 # 保存图像到本地
-                fig.set_size_inches(19.2, 10.8)  # 1080P = 1920 * 1080
-                fig.savefig('pic/{0}-{1}.png'.format(datetime.datetime.now().strftime('%Y%m%d'), code), dpi=100, bbox_inches='tight')
+                if save_lot:
+                    fig.set_size_inches(19.2, 10.8)  # 1080P = 1920 * 1080
+                    fig.savefig('pic/{0}-{1}.png'.format(datetime.datetime.now().strftime('%Y%m%d'), code), dpi=100, bbox_inches='tight')
             if show_plot:
                 original_show()
             return figs
@@ -175,9 +202,9 @@ def normalize_code(code):
     return code
 
 if __name__ == '__main__':
-    code = '600644'
+    code = '000678' if len(sys.argv) <= 1 else sys.argv[1]
     code = normalize_code(code)
     skd.download_last_year_data(code)
     # skd.download_data_from_date(code, '20241201')
     zprint_init()
-    run(code, True, True)
+    run(code, True, False)
