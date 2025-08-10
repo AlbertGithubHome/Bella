@@ -53,5 +53,32 @@ def download_data_from_date(code, start_date):
     # 下载数据
     download_daily_data(code, start_date, today.strftime('%Y%m%d'))
 
+'''
+从tushare下载指数日线数据
+'''
+def download_daily_index_data(code, start_date, end_date):
+    print('ready to download [{0}] data between [{1} ~ {2}].'.format(code, start_date, end_date))
+    df = pro.index_daily(ts_code=code, start_date=start_date, end_date=end_date)
+    df.to_csv(f'data/{code}.csv')
+
+'''
+下载最近N天K线数据
+'''
+def download_last_ndays_index_data(code, days):
+    # 获取今天的日期
+    today = datetime.today()
+    # 计算N天前的日期
+    one_year_ago = today - timedelta(days=days)
+    # 下载数据
+    download_daily_index_data(code, one_year_ago.strftime('%Y%m%d'), today.strftime('%Y%m%d'))
+
+'''
+下载最近1年指数K线数据
+'''
+def download_last_year_index_data(code):
+    # 下载最近一年的数据
+    download_last_ndays_index_data(code, 366)
+
 # download_daily_data('600644.SH', '20240324', '20250726')
 # download_last_year_data('600644.SH')
+# download_last_year_index_data('000001.SH')

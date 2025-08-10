@@ -170,6 +170,7 @@ def run(code, show_plot, save_lot):
         from backtrader import plot
         import matplotlib.dates as mdates
         plotter = plot.Plot(style='candlestick')
+        # plotter = plot.Plot(style='candlestick', barup='lightcoral', bardown='lightgreen', volup='lightcoral', voldown='lightgreen')
         original_show = plotter.show
 
         def new_show(self, *args, **kwargs):
@@ -202,9 +203,10 @@ def normalize_code(code):
     return code
 
 if __name__ == '__main__':
-    code = '000678' if len(sys.argv) <= 1 else sys.argv[1]
+    code = '002640' if len(sys.argv) <= 1 else sys.argv[1]
     code = normalize_code(code)
     skd.download_last_year_data(code)
     # skd.download_data_from_date(code, '20241201')
+    # skd.download_last_year_index_data(code)
     zprint_init()
     run(code, True, False)
